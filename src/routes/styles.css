@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    direction: rtl;
+    font-family: 'medium';
+    scroll-behavior: smooth;
+    background: #ede5de;
+    color: #1c1a1b;
+}
+
+@layer base {
+
+    @font-face {
+        font-family: 'medium';
+        src: url('../lib/Fonts/Medium.woff2') format('woff2');
+        font-weight: 600;
+        font-display: swap;
+        font-style: normal;
+    }
+
+    @font-face {
+        font-family: 'black';
+        src: url('../lib/Fonts/Black.woff2') format('woff2');
+        font-weight: 600;
+        font-display: swap;
+        font-style: normal;
+    }
+
+    /* main {
+        @apply md:p-7 md:px-32 p-2
+    } */
+
+    .card {
+        @apply py-5 cursor-pointer transition-all ease-in-out duration-300 w-full
+    }
+    
+    section {
+        @apply my-9 md:p-7 md:px-32 p-5
+    }
+    
+    /* article {
+        @apply my-9 md:p-7 md:px-32 p-5
+    } */
+
+    h1 {
+        @apply text-4xl my-4 font-black
+    }
+
+    h2 {
+        @apply text-3xl space-y-4 font-black
+    }
+
+    h3 {
+        @apply text-2xl my-4 font-black
+    }
+
+    a {
+        @apply text-blue-800 font-bold
+    }
+
+    .Whitebtn {
+        @apply p-3 border-b-white border-b-4 text-white w-fit font-bold transition-all ease-in-out duration-300 whitespace-nowrap
+    }
+
+    .Blackbtn {
+        @apply p-3 border border-b-black border-b-4 text-black w-fit font-bold py-5 transition-all ease-in-out duration-300 whitespace-nowrap flex justify-between items-center gap-10
+    }
+}

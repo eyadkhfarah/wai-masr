@@ -1,0 +1,50 @@
+<script>
+	import logo from '../images/logo.svg';
+
+	// @ts-ignore
+	import Icon from 'svelte-icons-pack/Icon.svelte';
+	import RiLogoFacebookCircleFill from 'svelte-icons-pack/ri/RiLogoFacebookCircleFill';
+	import RiLogoInstagramLine from 'svelte-icons-pack/ri/RiLogoInstagramLine';
+	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
+	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
+</script>
+
+<footer class="grid gap-5 md:p-7 md:px-32 p-5 text-white bg-red">
+	<div class="grid gap-5 text-center">
+		<h2 class="text-4xl">سجل في نشرتـــنا الاخبــــارية</h2>
+		<p>وخليك متابع اخر مقالاتنا والمناسبات</p>
+
+		<div class="border-b-8 border-black mb-14">
+			<form action="" class="flex items-center">
+				<input
+					type="email"
+					name=""
+					class="bg-transparent border-none py-6 px-0 text-white placeholder:text-white w-full"
+					placeholder="بريدك الالكتروني"
+					id=""
+				/>
+				<span class="cursor-pointer flex gap-2 items-center">
+					<input type="button" value="اشترك دلوقتي" class="w-36" />
+					<Icon src={RiSystemArrowLeftLine} />
+				</span>
+			</form>
+		</div>
+	</div>
+	<div class="flex items-center justify-center">
+		<a href="/" class="space-y-20 py-26 "><img src={logo} alt="لوجو وعي مصر" class="h-24" /></a>
+	</div>
+
+	<div class="flex gap-4 text-white text-3xl">
+		<a href="https://www.facebook.com/" aria-label="صفحة الفيسبوك"
+			><Icon src={RiLogoFacebookCircleFill} color="white" /></a
+		>
+		<a href="https://www.instagram.com/" aria-label="صفحة الانستجرام"
+			><Icon src={RiLogoInstagramLine} color="white" /></a
+		>
+		<a href="https://www.twitter.com/" aria-label="صفحة الاكس"
+			><Icon src={RiLogoTwitterFill} color="white" /></a
+		>
+	</div>
+
+	<p>© {new Date().getFullYear()} وعي مصر - جميع الحقوق محفوظة</p>
+</footer>
