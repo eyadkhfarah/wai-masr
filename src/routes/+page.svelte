@@ -83,7 +83,7 @@
 		<div class="w-2 bg-black rounded-3xl" />
 		<h2>أجدد المقالات</h2>
 	</div> -->
-	<div class="grid md:grid-cols-4 grid-cols-none gap-16 h-fit">
+	<div class="grid md:grid-cols-4 md:grid-rows-1 gap-10 h-fit">
 		<div class="grid gap-14 w-full">
 			{#each article as card, index (card.sys.id)}
 				{#if index < 3}
@@ -137,16 +137,16 @@
 				<span class="border cursor-pointer py-4">الاكثر قراءة</span>
 				<span class="border cursor-pointer py-4">اخبار تضرف</span>
 			</div>
-			{#each example as card, index (card.id)}
+			{#each article as card, index (card.sys.id)}
 				{#if index < 5}
-					<a href={`/post/${card.id}`}>
+					<a href={`/post/${card.fields.slug}`}>
 						<div class="card p-0 flex gap-4">
 							<img src={square} alt="وعي مصر" class="w-20 h-20" />
 							<div class="grid h-fit gap-3">
-								<h2 class="text-black text-xl">{card.title}</h2>
-								<p class="text-text">
+								<h2 class="text-black text-base">{card.fields.title}</h2>
+								<p class="text-gray-400">
 									منذ ديقيتين | <span class="text-blue-600 font-black"
-										><a href="/">تصنيف</a></span
+										><a href="/">{card.fields.category}</a></span
 									>
 								</p>
 							</div>
