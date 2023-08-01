@@ -1,7 +1,13 @@
 <script>
-	// export let data
+	// @ts-nocheck
+
+	export let data;
 
 	// console.log(data)
+
+	let article = data.articles;
+
+	console.log(article); 
 
 	import { example } from '../utils/articles';
 
@@ -78,22 +84,16 @@
 		<h2>أجدد المقالات</h2>
 	</div> -->
 	<div class="grid md:grid-cols-4 grid-cols-none gap-16 h-fit">
-		<!-- {#each data as blog}
-			<div class="card">
-				 <h2>{blog.items.fields.title}</h2>
-				 <p class="text-slate-500">{card.desc}</p>
-			</div>
-		{/each} -->
 		<div class="grid gap-14 w-full">
-			{#each example as card, index (card.id)}
+			{#each article as card, index (card.sys.id)}
 				{#if index < 3}
-					<a href={`/post/${card.id}`}>
+					<a href={`/post/${card.fields.slug}`}>
 						<div class="card p-0 grid gap-4">
 							<div class="flex text-text gap-3 h-fit">
 								<div class="w-2 bg-red rounded-3xl" />
-								التصنيف
+								{card.fields.category}
 							</div>
-							<h2 class="text-black text-xl">{card.title}</h2>
+							<h2 class="text-black text-xl">{card.fields.title}</h2>
 							<p class="text-gray-400">
 								منذ ديقيتين | <span class="text-blue-600 font-black">إياد فرح</span>
 							</p>
@@ -116,16 +116,16 @@
 				<div class="absolute bottom-16 grid place-items-center gap-4 text-center w-full px-7">
 					<div class="flex font-black text-text gap-3 h-fit">
 						<div class="w-2 bg-red rounded-3xl" />
-						التصنيف
+						{article[0].fields.category}
 					</div>
 					<h2 class="text-white">
-						مقالة جوا الصورة وهتكون كتابة طويلة علشان اختبر ازا كان هيبقي لايق
+						{article[0].fields.title}
 					</h2>
 					<p class="text-gray-400">
-						منذ ديقيتين | <span class="text-blue-600 font-black">إياد فرح</span>
+						منذ ديقيتين | <span class="text-blue-600 font-black">{article[0].fields.author.fields.name}</span>
 					</p>
 				</div>
-				<img src={square} alt="وعي مصر" class="w-fit opacity-25" />
+				<img src={article[0].fields.thumbnail.fields.file.url} alt="وعي مصر" class="w-fit opacity-25" />
 			</a>
 		</div>
 
@@ -146,7 +146,7 @@
 								<h2 class="text-black text-xl">{card.title}</h2>
 								<p class="text-text">
 									منذ ديقيتين | <span class="text-blue-600 font-black"
-										><a href="/article/1">تصنيف</a></span
+										><a href="/">تصنيف</a></span
 									>
 								</p>
 							</div>
