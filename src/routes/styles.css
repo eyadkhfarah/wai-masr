@@ -60,7 +60,7 @@ body {
     }
 
     a {
-        @apply text-blue-800 font-bold
+        @apply text-blue-800 font-bold border-b-red border-b-4
     }
 
     .Whitebtn {

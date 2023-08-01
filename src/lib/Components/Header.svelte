@@ -14,9 +14,6 @@
 
 	import { menu } from '../../utils/navLink';
 
-	/**
-	 * @type {boolean}
-	 */
 	let menuTab = false;
 	
 	/**
@@ -28,28 +25,13 @@
 		menuTab = !menuTab;
 	};
 
-	// let visible = false
-
-	// function show() {
-	// 	window.addEventListener("scroll", () => {
-	// 	  if (window.scrollY > 400) {
-	// 		visible(true);
-	// 	  } else {
-	// 		visible(false);
-	// 	  }
-	// 	});
-
-	// }
-	// ${ visible ? "bg-black": "bg-red"}
-	// console.log(visible)
-
 	</script>
 
 
 <header class="bg-red p-5 flex md:static sticky gap-5 md:justify-between items-center">
-	<span class="text-xl md:hidden block cursor-pointer" class:open={menuTab}>
-		<Icon src={CgMenuRightAlt} on:click={handeler}/>
-	</span>
+	<button class="text-xl md:hidden block cursor-pointer text-white" class:open={menuTab} on:click={handeler}>
+		<Icon src={CgMenuRightAlt} color="white"/>
+	</button>
 
 	<a href="/" class="text-white">
 		<img src={logo} alt="لوجو وعي مصر" class="md:h-16 h-9" />
@@ -58,7 +40,7 @@
 	<div class="border-b-4 border-black md:flex hidden gap-4 items-center">
 		<input
 			type="text"
-			class="bg-transparent border-none placeholder:text-white focus:border-none p-2 px-3"
+			class="bg-transparent border-none placeholder:text-white focus:border-none p-0 py-3"
 			placeholder="بحث..."
 			bind:value={search}
 		/>
@@ -82,4 +64,4 @@
 	</nav>
 </header>
 
-<NavModal {menuTab} {handeler}/>
+<NavModal {menuTab} on:click={handeler}/>

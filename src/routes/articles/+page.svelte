@@ -27,7 +27,7 @@
 		<div class="grid gap-3 col-span-2">
 			{#each example as card (card.id)}
 				<div class="card flex gap-8 border-t-2 border-t-gray-300">
-					<img src={image} alt="وعي مصر" class="h-28 rounded-xl">
+					<img src={image} alt="وعي مصر" class="h-28">
 					<div class="grid gap-5 h-fit">
 						<h2>{card.title}</h2>
 						<p class="text-slate-500">{card.desc}</p>
