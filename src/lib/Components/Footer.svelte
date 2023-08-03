@@ -7,6 +7,7 @@
 	import RiLogoInstagramLine from 'svelte-icons-pack/ri/RiLogoInstagramLine';
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
+	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 </script>
 
 <footer class="grid gap-5 md:p-7 md:px-32 p-5 text-white bg-red">
@@ -35,14 +36,17 @@
 	</div>
 
 	<div class="flex gap-4 text-white text-3xl">
-		<a href="https://www.facebook.com/" aria-label="صفحة الفيسبوك"
+		<a href="https://web.facebook.com/W3i.EG" class="hover:text-black transition-all ease-in-out duration-300" aria-label="صفحة الفيسبوك"
 			><Icon src={RiLogoFacebookCircleFill} color="white" /></a
 		>
-		<a href="https://www.instagram.com/" aria-label="صفحة الانستجرام"
+		<a href="https://www.instagram.com/w3i.eg" class="hover:text-black transition-all ease-in-out duration-300" aria-label="صفحة الانستجرام"
 			><Icon src={RiLogoInstagramLine} color="white" /></a
 		>
-		<a href="https://www.twitter.com/" aria-label="صفحة الاكس"
+		<a href="https://www.twitter.com/W3iEgy" class="hover:text-black transition-all ease-in-out duration-300" aria-label="صفحة الاكس"
 			><Icon src={RiLogoTwitterFill} color="white" /></a
+		>
+		<a href="https://t.me/W3iEgy" class="hover:text-black transition-all ease-in-out duration-300" aria-label="صفحة الاكس"
+			><Icon src={RiLogoTelegramFill} color="white" /></a
 		>
 	</div>
 

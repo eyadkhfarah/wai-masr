@@ -17,7 +17,7 @@
 		class:open={menuTab}
 		class={`md:hidden flex flex-col gap-10 bg-primary text-white p-8 fixed top-0 h-full w-full z-[100] transition-all duration-300 ease-in-out`}
 	>
-		<button class=" cursor-pointer text-3xl w-fit h-fit" on:click>
+		<button class="cursor-pointer text-3xl w-fit h-fit" on:click>
 			<Icon src={RiSystemCloseLine} color="black" />
 		</button>
 
@@ -28,13 +28,20 @@
 				placeholder="بحث..."
 				bind:value={search}
 			/>
-			<a href={`/search-result?search=` + search} class=""><Icon src={FiSearch} color="black" /></a>
+			<a href={`/search-result?search=` + search} class="border-none"
+				><Icon src={FiSearch} color="black" /></a
+			>
 		</div>
 
-		<ul class="grid gap-9">
+		<ul class="grid gap-9 list-none m-0 p-0">
 			{#each menu as link (link.id)}
 				<li class="">
-					<a href={link.link} class="text-text font-black hover:text-red transition-all duration-300 ease-in-out flex items-center gap-4 group">
+					<a
+						href={link.link}
+						on:click
+						class="text-text font-black hover:text-red transition-all duration-300 ease-in-out flex items-center gap-4 group border-none"
+						data-sveltekit-prefetch
+					>
 						<div class="w-2 rounded-3xl group-hover:bg-red z-[120]" />
 						<span>{link.name}</span>
 					</a>

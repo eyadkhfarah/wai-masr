@@ -1,14 +1,29 @@
 <script>
-	import image from '../../../lib/images/no-image.png';
+	// @ts-nocheck
 
-	import { example } from '../../../utils/articles';
+	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+	import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 
 	let copied = false;
 	let copiedClass = false;
 
 	const toggleCopy = () => {
-		copiedClass = !copiedClass
-	}
+		copiedClass = !copiedClass;
+	};
+
+	export let data;
+
+	let article = data.article;
+	// let card = data.card;
+
+	const options = {
+		renderMark: {
+			[MARKS.BOLD]: (text) => `<custom-bold>${text}<custom-bold>`
+		},
+		renderNode: {
+			[BLOCKS.PARAGRAPH]: (node, next) => `<p>${next(node.content)}</p>`
+		}
+	};
 
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
@@ -18,23 +33,101 @@
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 
 	import RiSystemCheckLine from 'svelte-icons-pack/ri/RiSystemCheckLine';
+
+	// const options = {
+	// 	renderNode: {
+	// 		[BLOCKS.QUOTE]: (node, children) => <q>{children}</q>,
+	// 		[BLOCKS.HYPERLINK]: (node, children) => (
+	// 			<a className="text-primary" href={node.data.uri}>
+	// 				{children}
+	// 			</a>
+	// 		),
+	// 		[BLOCKS.PARAGRAPH]: (node, children) => <p className="mb-7">{children}</p>
+	// 	}
+	// };
 </script>
+
+<svelte:head>
+	<title>{article.fields.title} :: وعي مصر</title>
+	<meta name="description" content={article.fields.subtitle} />
+
+	<meta property="og:title" content={article.fields.title} />
+	<meta property="og:description" content={article.fields.subtitle} />
+	<meta property="og:image" content={article.fields.thumbnail.fields.file.url} />
+	<meta property="article:published_time" content={article.sys.createdAt} />
+	<meta property="article:modified_time" content={article.sys.updatedAt} />
+	<!-- Twitter -->
+	<meta property="twitter:title" content={article.fields.title} />
+	<meta property="og:description" content={article.fields.subtitle} />
+	<meta property="og:image:alt" content={article.fields.subtitle} />
+	<meta property="article:section" content={article.fields.category} />
+	<meta property="og:image" content={article.fields.thumbnail.fields.file.url} />
+	<meta name="twitter:creator" content="@" />
+	<meta property="og:type" content="article" />
+	<meta name="twitter:creator" content="@nickbilton" />
+
+	{#each article.fields.tags as tag (tag)}
+		<meta property="article:tag" content={tag} />
+	{/each}
+
+	<script
+		type="application/ld+json"
+		key="structured-data"
+		dangerouslySetInnerHTML={{
+			__html: `
+          {
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://wai-masr.vercel.app/post/${article.fields.slug}"
+            },
+            "headline": "${article.fields.title}",
+            "description": "${article.fields.subtitle}",
+            "image": "${article.fields.thumbnail.fields.file.url}",
+            "author": [
+              {
+                "@type": "Person",
+                "name": "${article.fields.author.fields.name}",
+                "url": "https://wai-masr.vercel.app/author/${article.fields.author.fields.slug}"
+              }
+            ],
+            "publisher": {
+              "@type": "Organization",
+              "name": "وعي مصر"
+            },
+            "datePublished": "${article.sys.createdAt}",
+            "dateModified": "${article.sys.updatedAt}"
+          }
+        `
+		}}
+	></script>
+</svelte:head>
 
 <section class="grid md:grid-cols-3 gap-10">
 	<article class="col-span-2 grid h-fit gap-9">
 		<div class="grid gap-4">
-			<div class="flex gap-3 h-fit">
+			<a href="/" class="flex gap-3 border-none text-text h-fit">
 				<div class="w-2 bg-red rounded-3xl" />
-				التصنيف
-			</div>
-			<h1 class="m-0">عنوان المقالة الطويل الجدا التابع لمنصة وعي مصر التابعة للقومية المصرية</h1>
+				{article.fields.category}
+			</a>
+			<h1 class="m-0">{article.fields.title}</h1>
 		</div>
 
-		<div class="flex justify-between">
-			<div class="flex gap-5">
-				<p>الكتاب | <span class="font-black text-blue-600">إياد خالد</span></p>
+		<div class="md:flex grid gap-4 justify-between">
+			<div class="flex gap-5 md:text-base">
+				<p class="m-0">
+					الكتاب | <span class="font-black text-blue-600">{article.fields.author.fields.name}</span>
+				</p>
 				<span>—</span>
-				<p>تاريخ | 20 ابيب 6264</p>
+				<p class="m-0">
+					تاريخ | {new Date(article.sys.createdAt).toLocaleDateString('ar-EG', {
+						weekday: 'long',
+						year: 'numeric',
+						month: 'short',
+						day: 'numeric'
+					})}
+				</p>
 			</div>
 			<div class="flex gap-5 text-xl font-black relative">
 				<span class="text-sm">شارك المقالة</span>
@@ -60,25 +153,53 @@
 				{/if}
 			</div>
 		</div>
-		<img src={image} alt="وعي مصر" class="w-full" />
+		<img src={article.fields.thumbnail.fields.file.url} alt={article.fields.title} class="w-full" />
 
-		<div>المحتوي الخاص بالموقع الجامد ده</div>
+		<h2 class="font-black italic text-lg">{article.fields.subtitle}</h2>
+		<div>{@html documentToHtmlString(article.fields.post)}</div>
+
+		<div class="flex gap-3 h-fit">
+			<div class="w-2 bg-red rounded-3xl" />
+			<h2 class="text-2xl">التاجات</h2>
+		</div>
+
+		<div class="flex gap-5 flex-wrap">
+			{#each article.fields.tags as tag (tag)}
+				<span class="p-2 whitespace-nowrap bg-red font-black text-white">
+					{tag}
+				</span>
+			{/each}
+		</div>
 	</article>
-	<aside>
+	<aside class="sticky top-28">
 		<div class="flex gap-3 h-fit mb-5">
 			<div class="w-2 bg-red rounded-3xl" />
 			<h3 class="m-0">مقالات ممكن تعجبك</h3>
 		</div>
 
 		<div class="grid col-span-1">
-			{#each example as card (card.id)}
-				<div class="card border-b-gray-500 flex gap-8">
-					<div class="grid gap-5 h-fit">
-						<h2 class="text-2xl">{card.title}</h2>
-						<p class="text-slate-500 text-base">{card.desc}</p>
+			<!-- {#each card as card, index (card.sys.id)}
+				{#if index < 5}
+					<div class="card border-t-gray-300 border-t-2 flex gap-8">
+						<div class="grid gap-5 h-fit">
+							<h2 class="text-xl">{card.fields.title}</h2>
+							<div class="flex gap-5 text-gray-400 text-sm">
+								<a href="/" class="flex gap-3 border-none text-text h-fit">
+									<div class="w-2 bg-red rounded-3xl" />
+									{card.fields.category}
+								</a>
+								<span>—</span>
+								<p>تاريخ | {new Date(article.sys.createdAt).toLocaleDateString('ar-EG', {
+									weekday: 'long',
+									year: 'numeric',
+									month: 'short',
+									day: 'numeric'
+								})}</p>
+							</div>
+						</div>
 					</div>
-				</div>
-			{/each}
+				{/if}
+			{/each} -->
 		</div>
 	</aside>
 </section>

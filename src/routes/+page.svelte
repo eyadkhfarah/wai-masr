@@ -7,8 +7,6 @@
 
 	let article = data.articles;
 
-	console.log(article); 
-
 	import { example } from '../utils/articles';
 
 	import image from '../lib/images/no-image.png';
@@ -57,7 +55,7 @@
 				<div class="bg-primary md:flex grid md:w-fit">
 					{#each example as card, index (card.id)}
 						{#if index < 3}
-							<a href={`/post/${card.id}`}>
+							<a href={`/post/${card.id}`} data-sveltekit-perfetch>
 								<div class="card px-5 flex justify-center border-y border-gray-300 gap-4">
 									<img src={square} alt="وعي مصر" class="w-20 h-20" />
 									<div class="grid gap-3 h-fit w-full">
@@ -87,7 +85,7 @@
 		<div class="grid gap-14 w-full">
 			{#each article as card, index (card.sys.id)}
 				{#if index < 3}
-					<a href={`/post/${card.fields.slug}`}>
+					<a class="border-none" href={`/post/${card.fields.slug}`} data-sveltekit-perfetch>
 						<div class="card p-0 grid gap-4">
 							<div class="flex text-text gap-3 h-fit">
 								<div class="w-2 bg-red rounded-3xl" />
@@ -103,16 +101,17 @@
 			{/each}
 			<div class="border-t-gray-300 border-t-2 border-primary w-full">
 				<a
-					class="text-text font-black flex justify-between items-center py-5"
+					class="text-text font-black flex justify-between items-center py-5 border-none"
 					href="/articles"
 					rel="noopener noreferrer"
+					data-sveltekit-perfetch
 					>اقرا اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 				>
 			</div>
 		</div>
 
 		<div class="relative w-full h-full col-span-2">
-			<a href="/post/1">
+			<a href={"/post/" + article[0].fields.slug} data-sveltekit-perfetch class="border-none">
 				<div class="absolute bottom-16 grid place-items-center gap-4 text-center w-full px-7">
 					<div class="flex font-black text-text gap-3 h-fit">
 						<div class="w-2 bg-red rounded-3xl" />
@@ -125,7 +124,7 @@
 						منذ ديقيتين | <span class="text-blue-600 font-black">{article[0].fields.author.fields.name}</span>
 					</p>
 				</div>
-				<img src={article[0].fields.thumbnail.fields.file.url} alt="وعي مصر" class="w-fit opacity-25" />
+				<img src={article[0].fields.thumbnail.fields.file.url} alt={article[0].fields.title} class="w-fit opacity-25" />
 			</a>
 		</div>
 
@@ -139,14 +138,14 @@
 			</div>
 			{#each article as card, index (card.sys.id)}
 				{#if index < 5}
-					<a href={`/post/${card.fields.slug}`}>
+					<a href={`/post/${card.fields.slug}`} data-sveltekit-perfetch class="border-none">
 						<div class="card p-0 flex gap-4">
 							<img src={square} alt="وعي مصر" class="w-20 h-20" />
 							<div class="grid h-fit gap-3">
 								<h2 class="text-black text-base">{card.fields.title}</h2>
 								<p class="text-gray-400">
 									منذ ديقيتين | <span class="text-blue-600 font-black"
-										><a href="/">{card.fields.category}</a></span
+										><a href="/" class="border-none">{card.fields.category}</a></span
 									>
 								</p>
 							</div>
@@ -164,13 +163,17 @@
 		<h2>مقالات مختارة</h2>
 	</div>
 	<div class="grid gap-6 md:grid-cols-3">
-		{#each example as card, index (card.id)}
+		{#each article as card, index (card.sys.id)}
 			{#if index < 3}
-				<a href={`/post/${card.id}`}>
+				<a href={`/post/${card.fields.slug}`} data-sveltekit-perfetch class="border-none">
 					<div class="card grid gap-4">
-						<img src={image} alt="وعي مصر" class="w-full" />
-						<h2 class="text-black">{card.title}</h2>
-						<p class="text-slate-500 font-normal">{card.desc}</p>
+						<img src={card.fields.thumbnail.fields.file.url} alt={card.fields.title} class="w-full" />
+						<h2 class="text-black text-xl">{card.fields.title}</h2>
+						<p class="text-gray-400">
+							منذ ديقيتين | <span class="text-blue-600 font-black"
+								><a href="/" class="border-none">{card.fields.category}</a></span
+							>
+						</p>
 					</div>
 				</a>
 			{/if}

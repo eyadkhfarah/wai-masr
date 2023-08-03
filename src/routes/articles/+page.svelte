@@ -1,9 +1,15 @@
 <script>
-	import Email from '../../lib/Components/Email.svelte';
-	import image from "../../lib/images/no-image-square.png"
+// @ts-nocheck
 
-	import { categories } from "../../utils/categories";
-	import { example } from "../../utils/articles";
+	import Email from '../../lib/Components/Email.svelte';
+	import image from '../../lib/images/no-image-square.png';
+
+	import { categories } from '../../utils/categories';
+	import { example } from '../../utils/articles';
+
+	export let data;
+
+	let article = data.articles;
 </script>
 
 <svelte:head>
@@ -12,27 +18,37 @@
 </svelte:head>
 
 <section>
-	<div class="flex gap-3 h-fit my-10">
+	<div class="flex gap-3 h-fit">
 		<div class="w-2 bg-red rounded-3xl" />
 		<h1 class="m-0">مقالات</h1>
 	</div>
 
-	<div class="flex gap-4 my-4 overflow-x-auto">
+	<div class="flex mt-4 overflow-x-auto">
 		{#each categories as category}
-			<a class="Blackbtn" href={`/articles/${category.link}`}>{category.title}</a>
+			<a class="Blackbtn p-2 border-b-gray-300 hover:border-b-red border-b-2" href={`/articles/${category.link}`}
+				>{category.title}</a
+			>
 		{/each}
 	</div>
 
 	<div class="grid gap-7 md:grid-cols-3">
 		<div class="grid gap-3 col-span-2">
-			{#each example as card (card.id)}
-				<div class="card flex gap-8 border-t-2 border-t-gray-300">
-					<img src={image} alt="وعي مصر" class="h-28">
-					<div class="grid gap-5 h-fit">
-						<h2>{card.title}</h2>
-						<p class="text-slate-500">{card.desc}</p>
+			{#each article as card (card.sys.id)}
+				<a href={'/post/' + card.fields.slug} data-sveltekit-prefetch class="border-none">
+					<div class="card flex gap-8 border-t-2 border-t-gray-300">
+						<img src={card.fields.thumbnail.fields.file.url} alt={card.fields.title} class="h-28" />
+						<div class="grid gap-5 h-fit">
+							<h2 class="group-hover:text-red text-text transition-all duration-300 ease-in-out">
+								{card.fields.title}
+							</h2>
+							<p class="text-gray-400">
+								منذ ديقيتين | <span class="text-blue-600 font-black"
+									><a href="/" class="border-none">{card.fields.category}</a></span
+								>
+							</p>
+						</div>
 					</div>
-				</div>
+				</a>
 			{/each}
 		</div>
 		<Email />

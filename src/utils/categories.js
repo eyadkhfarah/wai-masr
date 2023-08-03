@@ -1,27 +1,72 @@
 export let categories = [
     {
-        title: "سياسة",
-        link: "politics",
+        title: "اخبار تشرف",
+        link: "honuor",
         id: 1
     },
     {
-        title: "قومية",
-        link: "nationalsit",
-        id: 1
+        title: "اخبار وعي",
+        link: "news",
+        id: 2
     },
     {
-        title: "أراء",
-        link: "opinions",
-        id: 1
+        title: "القومية",
+        link: "nationalist",
+        id: 3
     },
     {
-        title: "فن",
+        title: "الهوية",
+        link: "idenitiy",
+        id: 4
+    },
+    {
+        title: "المركزية الافريقية",
+        link: "afrocenterism",
+        id: 5
+    },
+    {
+        title: "الحضارة",
+        link: "civilization",
+        id: 6
+    },
+    {
+        title: "اللغة",
+        link: "lang",
+        id: 7
+    },
+    {
+        title: "المرأة",
+        link: "women",
+        id: 8
+    },
+    {
+        title: "التراث",
+        link: "heritage",
+        id: 9
+    },
+    {
+        title: "الشخصيات",
+        link: "influencers",
+        id: 10
+    },
+    {
+        title: "الفن",
         link: "art",
-        id: 1
+        id: 11
+    },
+    {
+        title: "المعمار",
+        link: "architecture",
+        id: 12
+    },
+    {
+        title: "اللاجئين والمهاجرين",
+        link: "refugees",
+        id: 13
     },
     {
         title: "مقالات الجمهور",
         link: "fan-articles",
-        id: 1
+        id: 14
     },
 ]
