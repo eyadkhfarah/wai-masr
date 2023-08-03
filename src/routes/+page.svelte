@@ -20,6 +20,9 @@
 <svelte:head>
 	<title>وعي مصر</title>
 	<meta name="description" content="نبض التيار القومي المصري." />
+	<meta property="og:image" content="/main.png" />
+	<meta property="og:title" content="وعي مصر" />
+	<meta property="og:description" content="نبض التيار القومي المصري." />
 </svelte:head>
 
 <section class="bg-red m-0">
@@ -56,14 +59,22 @@
 					{#each article as card, index (card.sys.id)}
 						{#if index < 3}
 							<a href={`/post/${card.fields.slug}`}>
-								<div class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4">
-									<img src={card.fields.thumbnail.fields.file.url} alt="وعي مصر" class="w-20 h-20" />
+								<div
+									class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
+								>
+									<img
+										src={card.fields.thumbnail.fields.file.url}
+										alt="وعي مصر"
+										class="w-20 h-20"
+									/>
 									<div class="grid gap-3 h-fit w-full">
-										<span class="text-gray-400 text-xs">{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
-											year: 'numeric',
-											month: 'short',
-											day: 'numeric'
-										})}</span>
+										<span class="text-gray-400 text-xs"
+											>{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
+												year: 'numeric',
+												month: 'short',
+												day: 'numeric'
+											})}</span
+										>
 										<h3 class="text-black text-sm m-0">{card.fields.title}</h3>
 									</div>
 								</div>
@@ -112,14 +123,13 @@
 					class="text-text font-black flex justify-between items-center py-5 border-none"
 					href="/articles"
 					rel="noopener noreferrer"
-				
 					>اقرا اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 				>
 			</div>
 		</div>
 
 		<div class="relative w-full h-full col-span-2">
-			<a href={"/post/" + article[0].fields.slug} class="border-none">
+			<a href={'/post/' + article[0].fields.slug} class="border-none">
 				<div class="absolute bottom-16 grid place-items-center gap-4 text-center w-full px-7">
 					<div class="flex font-black text-text gap-3 h-fit">
 						<div class="w-2 bg-red rounded-3xl" />
@@ -133,10 +143,15 @@
 							year: 'numeric',
 							month: 'short',
 							day: 'numeric'
-						})} | <span class="text-blue-600 font-black">{article[0].fields.author.fields.name}</span>
+						})} |
+						<span class="text-blue-600 font-black">{article[0].fields.author.fields.name}</span>
 					</p>
 				</div>
-				<img src={article[0].fields.thumbnail.fields.file.url} alt={article[0].fields.title} class="w-fit opacity-25" />
+				<img
+					src={article[0].fields.thumbnail.fields.file.url}
+					alt={article[0].fields.title}
+					class="w-fit opacity-25"
+				/>
 			</a>
 		</div>
 
@@ -152,7 +167,11 @@
 				{#if index < 5}
 					<a href={`/post/${card.fields.slug}`} class="border-none">
 						<div class="card p-0 flex gap-4">
-							<img src={card.fields.thumbnail.fields.file.url} alt={card.fields.title} class="w-20 h-20" />
+							<img
+								src={card.fields.thumbnail.fields.file.url}
+								alt={card.fields.title}
+								class="w-20 h-20"
+							/>
 							<div class="grid h-fit gap-3">
 								<h2 class="text-black text-base">{card.fields.title}</h2>
 								<p class="text-gray-400">
@@ -160,7 +179,8 @@
 										year: 'numeric',
 										month: 'short',
 										day: 'numeric'
-									})} | <span class="text-blue-600 font-black"
+									})} |
+									<span class="text-blue-600 font-black"
 										><a href="/" class="border-none">{card.fields.category}</a></span
 									>
 								</p>
@@ -183,7 +203,11 @@
 			{#if index < 3}
 				<a href={`/post/${card.fields.slug}`} class="border-none">
 					<div class="card grid gap-4">
-						<img src={card.fields.thumbnail.fields.file.url} alt={card.fields.title} class="w-full" />
+						<img
+							src={card.fields.thumbnail.fields.file.url}
+							alt={card.fields.title}
+							class="w-full"
+						/>
 						<h2 class="text-black text-xl">{card.fields.title}</h2>
 						<p class="text-gray-400">
 							منذ ديقيتين | <span class="text-blue-600 font-black"

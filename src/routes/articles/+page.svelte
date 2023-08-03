@@ -14,7 +14,10 @@
 
 <svelte:head>
 	<title>وعي مصر :: مقالات</title>
-	<meta name="description" content="نبض التيار القومي المصري." />
+	<meta name="description" content="اهم المقالات والمصار والاراء القومية" />
+	<meta property="og:image" content="/main.png" />
+	<meta property="og:title" content="وعي مصر :: مقالات" />
+	<meta property="og:description" content="اهم المقالات والمصار والاراء القومية" />
 </svelte:head>
 
 <section>

@@ -61,7 +61,6 @@
 	<meta property="og:description" content={article.fields.subtitle} />
 	<meta property="og:image:alt" content={article.fields.subtitle} />
 	<meta property="article:section" content={article.fields.category} />
-	<meta property="og:image" content={article.fields.thumbnail.fields.file.url} />
 	<meta name="twitter:creator" content="@" />
 	<meta property="og:type" content="article" />
 	<meta name="twitter:creator" content="@nickbilton" />
