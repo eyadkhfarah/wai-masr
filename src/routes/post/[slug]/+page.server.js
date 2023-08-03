@@ -12,12 +12,12 @@ export async function load({ params }) {
 		'fields.slug': params.slug
 	});
 	
-	const res = await client.getEntries({ content_type: 'news' });
+	// const res = await client.getEntries({ content_type: 'news' });
 
 	if (items) {
 		return {
 			article: items[0],
-			cards: res.items
+			// cards: res.items
 		};
 	}
 }

@@ -52,11 +52,11 @@
 		<div class="mt-6 row-span-2">
 			<h2 class="bg-rose-950 p-4 text-base w-fit text-white">اخر المقالات</h2>
 			<div class="md:flex grid gap-5">
-				<div class="bg-primary md:flex grid md:w-fit">
+				<div class="bg-primary md:grid-cols-3 grid md:w-fit">
 					{#each article as card, index (card.sys.id)}
 						{#if index < 3}
 							<a href={`/post/${card.fields.slug}`}>
-								<div class="card px-5 flex justify-center border-y border-gray-300 gap-4">
+								<div class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4">
 									<img src={card.fields.thumbnail.fields.file.url} alt="وعي مصر" class="w-20 h-20" />
 									<div class="grid gap-3 h-fit w-full">
 										<span class="text-gray-400 text-xs">{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
@@ -64,7 +64,7 @@
 											month: 'short',
 											day: 'numeric'
 										})}</span>
-										<h3 class="text-black text-base m-0">{card.fields.title}</h3>
+										<h3 class="text-black text-sm m-0">{card.fields.title}</h3>
 									</div>
 								</div>
 							</a>
