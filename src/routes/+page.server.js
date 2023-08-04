@@ -8,8 +8,10 @@ const client = contentful.createClient({
 });
 
 const res = await client.getEntries({ content_type: "news" })
+const res1 = await client.getEntries({ content_type: "events" })
 
   return {
       articles: res.items,
+      events: res1.items,
   }
 }

@@ -40,7 +40,7 @@ body {
     }
     
     section {
-        @apply my-9 md:p-7 md:px-32 p-5
+        @apply my-9 md:p-7 md:px-32 p-10
     }
 
     .loading {

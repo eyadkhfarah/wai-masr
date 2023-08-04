@@ -13,9 +13,7 @@
 	{#if $Delayed}
 		<Loading />
 	{:else}
-		<main>
-			<slot />
-		</main>
+		<slot />
 	{/if}
 
 	<Footer />

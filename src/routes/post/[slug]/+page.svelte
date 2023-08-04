@@ -34,6 +34,7 @@
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 
 	import RiSystemCheckLine from 'svelte-icons-pack/ri/RiSystemCheckLine';
+	import { browser } from '$app/environment';
 
 	// const options = {
 	// 	renderNode: {
@@ -46,6 +47,20 @@
 	// 		[BLOCKS.PARAGRAPH]: (node, children) => <p className="mb-7">{children}</p>
 	// 	}
 	// };
+	if (browser) {
+		function Copy() {
+			// Get the text field
+			var copyText = article.fields.slug;
+
+			// Select the text field
+			copyText.select();
+			copyText.setSelectionRange(0, 99999); // For mobile devices
+
+			// Copy the text inside the text field
+			navigator.clipboard.writeText(copyText.value);
+
+		}
+	}
 </script>
 
 <svelte:head>
@@ -64,11 +79,11 @@
 	<meta property="article:section" content={article.fields.category} />
 	<meta name="twitter:creator" content="@" />
 	<meta property="og:type" content="article" />
-	<meta name="twitter:creator" content="@nickbilton" />
+	<meta name="twitter:creator" content="@" />
 
-	{#each article.fields.tags as tag (tag)}
+	<!-- {#each article.fields.tags as tag (tag)}
 		<meta property="article:tag" content={tag} />
-	{/each}
+	{/each} -->
 
 	<script
 		type="application/ld+json"
@@ -116,10 +131,11 @@
 		</div>
 
 		<div class="grid gap-4 justify-between">
-			<div class="flex gap-5 md:text-base">
+			<div class="flex gap-5 md:text-base text-sm">
 				<p class="m-0">
 					الكتاب | <span class="font-black text-blue-600"
-						><a href={`/author/${article.fields.author.fields.slug}`} class="border-none">{article.fields.author.fields.name}</a
+						><a href={`/author/`} class="border-none"
+							>{article.fields.author.fields.name}</a
 						></span
 					>
 				</p>

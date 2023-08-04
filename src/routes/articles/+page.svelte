@@ -38,14 +38,18 @@
 		<div class="grid gap-3 col-span-2">
 			{#each article as card (card.sys.id)}
 				<a href={'/post/' + card.fields.slug} data-sveltekit-prefetch class="border-none">
-					<div class="card flex gap-8 border-t-2 border-t-gray-300">
-						<img src={card.fields.thumbnail.fields.file.url} alt={card.fields.title} class="h-28" />
+					<div class="card md:flex grid gap-8 border-t-2 border-t-gray-300">
+						<img src={card.fields.thumbnail.fields.file.url} alt={card.fields.title} class="md:h-28 w-full " />
 						<div class="grid gap-5 h-fit">
 							<h2 class="group-hover:text-red text-text transition-all duration-300 ease-in-out">
 								{card.fields.title}
 							</h2>
 							<p class="text-gray-400">
-								منذ ديقيتين | <span class="text-blue-600 font-black"
+								{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
+									year: 'numeric',
+									month: 'short',
+									day: 'numeric'
+								})} | <span class="text-blue-600 font-black"
 									><a href="/" class="border-none">{card.fields.category}</a></span
 								>
 							</p>
