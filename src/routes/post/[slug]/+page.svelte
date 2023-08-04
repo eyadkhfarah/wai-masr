@@ -105,7 +105,7 @@
 </svelte:head>
 
 <section class="grid md:grid-cols-4 gap-10">
-<Email />
+	<Email />
 	<article class="col-span-2 grid h-fit gap-9">
 		<div class="grid gap-4">
 			<a href="/" class="flex gap-3 border-none text-text h-fit">
@@ -118,7 +118,10 @@
 		<div class="grid gap-4 justify-between">
 			<div class="flex gap-5 md:text-base">
 				<p class="m-0">
-					الكتاب | <span class="font-black text-blue-600">{article.fields.author.fields.name}</span>
+					الكتاب | <span class="font-black text-blue-600"
+						><a href={`/author/${article.fields.author.fields.slug}`} class="border-none">{article.fields.author.fields.name}</a
+						></span
+					>
 				</p>
 				<span>—</span>
 				<p class="m-0">
