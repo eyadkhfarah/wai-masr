@@ -9,8 +9,8 @@
 
 	import { example } from '../utils/articles';
 
-	import image from '../lib/images/no-image.png';
-	import square from '../lib/images/no-image-square.png';
+	import og from '../lib/images/main.png';
+	import qoute from '../lib/images/quote.svg';
 
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
@@ -20,7 +20,7 @@
 <svelte:head>
 	<title>وعي مصر</title>
 	<meta name="description" content="نبض التيار القومي المصري." />
-	<meta property="og:image" content="/main.png" />
+	<meta property="og:image" content={og} />
 	<meta property="og:title" content="وعي مصر" />
 	<meta property="og:description" content="نبض التيار القومي المصري." />
 </svelte:head>
@@ -163,7 +163,7 @@
 					>اخر المقالات</span
 				>
 				<span class="border cursor-pointer py-4">الاكثر قراءة</span>
-				<span class="border cursor-pointer py-4">اخبار تضرف</span>
+				<span class="border cursor-pointer py-4">اخبار تشرف</span>
 			</div>
 			{#each article as card, index (card.sys.id)}
 				{#if index < 5}
@@ -196,9 +196,15 @@
 </section>
 
 <section>
-	<div class="border-4 border-red w-full p-10 relative text-center">
-		<span class="text-2xl font-black text-center absolute left-[45%] -top-9 bg-primary p-4">مقولة</span>
-		<span class="text-2xl font-black text-center z-10">مقولة طويلة جدا جدا تابعة للمكتبة القومية مكتبة بتكتب عن شخصيات</span>
+	<div class="border-4 border-red w-full p-16 relative text-center">
+		<span class="text-2xl font-black text-center absolute left-[39%] md:left-[45%] -top-9 bg-primary p-4">مقولة</span>
+		<div class="grid gap-4">
+			<p class="text-2xl font-black text-center m-0 italic z-10">الجاهل الذي لا يصغي لا يصل إلى شيء، فهو يساوي بين المعرفة والجهل، وبين المفيد والضار. ويفعل الشائبات فيستاء الناس منه يوميًا</p>
+
+			<p class="m-0">بتاح حتب</p>
+
+		</div>
+		<img src={qoute} alt="مقولة تابعة للمكتبة القومية" class="opacity-10 absolute md:left-[43%] left-[30%] top-[30%] w-44">
 	</div>
 
 	<a class="Blackbtn" href="https://maktabaqawmya.vercel.app" rel="noopener noreferrer"
@@ -247,6 +253,8 @@
 		<h2>عايز تعرف اخر الاخفار والمناسبات؟</h2>
 		<p>سجل بالبريد الالكتروني علشان توصلك كل المقالات واحدث المناسبات وابرز الاسئلة</p>
 	</div>
+
+	<img src="" alt="">
 </section>
 
 <section class="grid">
