@@ -6,6 +6,7 @@
 	// console.log(data)
 
 	let article = data.articles;
+	let events = data.events;
 
 	import { example } from '../utils/articles';
 
@@ -91,12 +92,12 @@
 	</div>
 </section>
 
-<section class="grid">
+<section>
 	<!-- <div class="flex gap-3 h-fit my-10">
 		<div class="w-2 bg-black rounded-3xl" />
 		<h2>أجدد المقالات</h2>
 	</div> -->
-	<div class="grid md:grid-cols-4 md:grid-rows-1 gap-10 h-fit">
+	<div class="md:grid md:grid-cols-4 gap-10 h-fit">
 		<div class="grid gap-14 w-full">
 			{#each article as card, index (card.sys.id)}
 				{#if index < 3}
@@ -128,7 +129,7 @@
 			</div>
 		</div>
 
-		<div class="relative w-full h-fit col-span-2">
+		<div class="relative w-full h-fit md:m-0 mb-4 col-span-2">
 			<a href={'/post/' + article[0].fields.slug} class="border-none">
 				<div
 					class="absolute bottom-0 grid bg-gradient-to-t from-black place-items-center gap-4 text-center w-full px-7"
@@ -197,14 +198,23 @@
 
 <section>
 	<div class="border-4 border-red w-full p-16 relative text-center">
-		<span class="text-2xl font-black text-center absolute left-[39%] md:left-[45%] -top-9 bg-primary p-4">مقولة</span>
+		<span
+			class="text-2xl font-black text-center absolute left-[39%] md:left-[45%] -top-9 bg-primary p-4"
+			>مقولة</span
+		>
 		<div class="grid gap-4">
-			<p class="text-2xl font-black text-center m-0 italic z-10">الجاهل الذي لا يصغي لا يصل إلى شيء، فهو يساوي بين المعرفة والجهل، وبين المفيد والضار. ويفعل الشائبات فيستاء الناس منه يوميًا</p>
+			<p class="text-2xl font-black text-center m-0 italic z-10">
+				الجاهل الذي لا يصغي لا يصل إلى شيء، فهو يساوي بين المعرفة والجهل، وبين المفيد والضار. ويفعل
+				الشائبات فيستاء الناس منه يوميًا
+			</p>
 
 			<p class="m-0">بتاح حتب</p>
-
 		</div>
-		<img src={qoute} alt="مقولة تابعة للمكتبة القومية" class="opacity-10 absolute md:left-[43%] left-[30%] top-[30%] w-44">
+		<img
+			src={qoute}
+			alt="مقولة تابعة للمكتبة القومية"
+			class="opacity-10 absolute md:left-[43%] left-[30%] top-[30%] w-44"
+		/>
 	</div>
 
 	<a class="Blackbtn" href="https://maktabaqawmya.vercel.app" rel="noopener noreferrer"
@@ -254,7 +264,7 @@
 		<p>سجل بالبريد الالكتروني علشان توصلك كل المقالات واحدث المناسبات وابرز الاسئلة</p>
 	</div>
 
-	<img src="" alt="">
+	<img src="" alt="" />
 </section>
 
 <section class="grid">
@@ -262,38 +272,24 @@
 		<div class="w-2 bg-black rounded-3xl" />
 		<h2>ابرز المناسبات</h2>
 	</div>
-	<div class="flex gap-6">
-		<div class="h-80 w-full p-10 col-span-2 bg-rose-950 text-white relative">
-			<div class="grid gap-5 absolute bottom-6">
-				<div>
-					<h2>حفل حد معين</h2>
-					<p class="opacity-25">الميعاد: 13 مايو 2023</p>
+	<div class="md:flex grid gap-6">
+		{#each events as event (event.sys.id)}
+			<div class="grid gap-7 md:grid-cols-3">
+				<div class="h-80 w-full col-span-2 bg-rose-950 text-white relative">
+					<img src={event.fields.image.fields.file.url} alt={event.fields.title} class="object-cover h-80 w-full" />
+					<div class="grid gap-5 absolute bottom-0 md:p-10 p-5 bg-gradient-to-t from-black w-full">
+						<h2>{event.fields.name}</h2>
+						<p class="opacity-75">
+							الميعاد: {new Date(event.fields.date).toLocaleDateString('ar-EG', {
+								year: 'numeric',
+								month: 'short',
+								day: 'numeric'
+							})}
+						</p>
+					</div>
 				</div>
 			</div>
-		</div>
-		<div class="h-80 w-full p-10 col-span-2 bg-rose-950 text-white relative">
-			<div class="grid gap-5 absolute bottom-6">
-				<div>
-					<h2>حفل حد معين</h2>
-					<p class="opacity-25">الميعاد: 13 مايو 2023</p>
-				</div>
-			</div>
-		</div>
-		<div class="h-80 w-full p-10 col-span-2 bg-rose-950 text-white relative">
-			<div class="grid gap-5 absolute bottom-6">
-				<div>
-					<h2>حفل حد معين</h2>
-					<p class="opacity-25">الميعاد: 13 مايو 2023</p>
-				</div>
-			</div>
-		</div>
-		<!-- {#each example as card (card.id)}
-			<div class="card grid gap-4">
-				<img src={image} alt="وعي مصر" class="w-full rounded-xl" />
-				<h2>{card.title}</h2>
-				<p class="text-slate-500">{card.desc}</p>
-			</div>
-		{/each} -->
+		{/each}
 	</div>
 	<a class="Blackbtn" href="/events" rel="noopener noreferrer"
 		>شوف مناسبات اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
