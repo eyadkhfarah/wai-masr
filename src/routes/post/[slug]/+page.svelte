@@ -2,8 +2,10 @@
 	// @ts-nocheck
 
 	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-	import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+	// import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 	import Email from '../../../lib/Components/Email.svelte';
+
+	import news from "../../../lib/images/google-news.svg"
 
 	let copied = false;
 	let copiedClass = false;
@@ -17,15 +19,6 @@
 	let article = data.article;
 	// let card = data.card;
 
-	const options = {
-		renderMark: {
-			[MARKS.BOLD]: (text) => `<custom-bold>${text}<custom-bold>`
-		},
-		renderNode: {
-			[BLOCKS.PARAGRAPH]: (node, next) => `<p>${next(node.content)}</p>`
-		}
-	};
-
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import RiBusinessLinksLine from 'svelte-icons-pack/ri/RiBusinessLinksLine';
@@ -36,31 +29,7 @@
 	import RiSystemCheckLine from 'svelte-icons-pack/ri/RiSystemCheckLine';
 	import { browser } from '$app/environment';
 
-	// const options = {
-	// 	renderNode: {
-	// 		[BLOCKS.QUOTE]: (node, children) => <q>{children}</q>,
-	// 		[BLOCKS.HYPERLINK]: (node, children) => (
-	// 			<a className="text-primary" href={node.data.uri}>
-	// 				{children}
-	// 			</a>
-	// 		),
-	// 		[BLOCKS.PARAGRAPH]: (node, children) => <p className="mb-7">{children}</p>
-	// 	}
-	// };
-	if (browser) {
-		function Copy() {
-			// Get the text field
-			var copyText = article.fields.slug;
 
-			// Select the text field
-			copyText.select();
-			copyText.setSelectionRange(0, 99999); // For mobile devices
-
-			// Copy the text inside the text field
-			navigator.clipboard.writeText(copyText.value);
-
-		}
-	}
 </script>
 
 <svelte:head>
@@ -134,12 +103,12 @@
 			<div class="flex gap-5 md:text-base text-sm">
 				<p class="m-0">
 					الكتاب | <span class="font-black text-blue-600"
-						><a href={`/author/`} class="border-none"
+						><a href={`/author/${article.fields.author.fields.slug}`} class="border-none"
 							>{article.fields.author.fields.name}</a
 						></span
 					>
 				</p>
-				<span>—</span>
+				<span class="md:block hidden">—</span>
 				<p class="m-0">
 					تاريخ | {new Date(article.sys.createdAt).toLocaleDateString('ar-EG', {
 						weekday: 'long',
@@ -190,11 +159,14 @@
 				</span>
 			{/each}
 		</div>
+		
 	</article>
+
+
 	<aside class="sticky top-28">
-		<div class="flex gap-3 h-fit mb-5">
+		<div class="flex gap-3 h-fit w-full mb-5">
 			<div class="w-2 bg-red rounded-3xl" />
-			<h3 class="m-0">مقالات ممكن تعجبك</h3>
+			<h3 class="m-0 whitespace-nowrap">مقالات ممكن تعجبك</h3>
 		</div>
 
 		<div class="grid col-span-1">
@@ -222,4 +194,11 @@
 			{/each} -->
 		</div>
 	</aside>
+</section>
+
+<section>
+	<div class="p-6 md:px-28 flex justify-between items-center bg-red">
+		<h3 class="m-0 text-white">تابعنا في Google News</h3>
+		<img src={news} class="h-20 w-20" alt="">
+	</div>
 </section>

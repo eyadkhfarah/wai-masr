@@ -44,7 +44,7 @@
 							<h2 class="group-hover:text-red text-text transition-all duration-300 ease-in-out">
 								{card.fields.title}
 							</h2>
-							<p class="text-gray-400">
+							<p class="text-gray-400 m-0">
 								{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
 									year: 'numeric',
 									month: 'short',

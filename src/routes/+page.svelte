@@ -26,66 +26,70 @@
 	<meta property="og:description" content="نبض التيار القومي المصري." />
 </svelte:head>
 
-<section class="bg-red m-0">
-	<div class="grid md:grid-cols-3 gap-9">
-		<div class="h-80 p-10 col-span-2 bg-rose-950 text-white relative">
-			<div class="grid gap-5 absolute bottom-6">
-				<div>
-					<h2>حفل حد معين</h2>
-					<p class="opacity-25">الميعاد: 13 مايو 2023</p>
+<section class="bg-black m-0 p-0">
+	<div class="relative h-fit w-fit">
+		<img
+			src={events[0].fields.image.fields.file.url}
+			alt={events[0].fields.name}
+			class="md:object-fill object-none md:h-full h-[75em] opacity-40"
+		/>
+
+		<div class="md:px-28 bg-gradient-to-t from-black absolute bottom-0 grid gap-20 h-full md:p-0 p-10">
+
+			<div class="grid gap-9 z-10">
+				<div class="py-10 text-white">
+					<div class="grid gap-5">
+						<div>
+							<h1>{events[0].fields.name}</h1>
+							<p class="opacity-25">
+								الميعاد: {new Date(events[0].fields.date).toLocaleDateString('ar-EG', {
+									year: 'numeric',
+									month: 'short',
+									day: 'numeric'
+								})}
+							</p>
+						</div>
+						<a class="Whitebtn flex items-center gap-6" href="/events" rel="noopener noreferrer"
+							>اقرا التفاصيل<span><Icon color="white" src={RiSystemArrowLeftLine} /></span></a
+						>
+					</div>
 				</div>
-				<a class="Whitebtn flex items-center gap-6" href="/events" rel="noopener noreferrer"
-					>اقرا التفاصيل<span><Icon color="white" src={RiSystemArrowLeftLine} /></span></a
-				>
 			</div>
-		</div>
 
-		<div class="grid gap-4 h-fit">
-			<div class="flex gap-3 h-fit">
-				<div class="w-2 bg-black rounded-3xl" />
-				<span>خبر صغير بس طويل سيكا</span>
-			</div>
-			<div class="flex gap-3 h-fit">
-				<div class="w-2 bg-black rounded-3xl" />
-				<span>خبر صغير بس طويل سيكا</span>
-			</div>
-		</div>
-	</div>
-
-	<div class="">
-		<div class="mt-6 row-span-2">
-			<h2 class="bg-rose-950 p-4 text-base w-fit text-white">اخر المقالات</h2>
-			<div class="md:flex grid gap-5">
-				<div class="bg-primary md:grid-cols-3 grid md:w-fit">
-					{#each article as card, index (card.sys.id)}
-						{#if index < 3}
-							<a href={`/post/${card.fields.slug}`}>
-								<div
-									class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
-								>
-									<img
-										src={card.fields.thumbnail.fields.file.url}
-										alt="وعي مصر"
-										class="w-20 h-20"
-									/>
-									<div class="grid gap-3 h-fit w-full">
-										<span class="text-gray-400 text-xs"
-											>{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
-												year: 'numeric',
-												month: 'short',
-												day: 'numeric'
-											})}</span
-										>
-										<h3 class="text-black text-sm m-0">{card.fields.title}</h3>
+			<div class="">
+				<h2 class="bg-rose-950 p-4 text-base w-fit text-white">اخر المقالات</h2>
+				<div class="md:flex grid gap-5">
+					<div class="bg-primary md:grid-cols-3 grid md:w-fit">
+						{#each article as card, index (card.sys.id)}
+							{#if index < 3}
+								<a href={`/post/${card.fields.slug}`} class="md:border-red border-none">
+									<div
+										class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
+									>
+										<img
+											src={card.fields.thumbnail.fields.file.url}
+											alt={card.fields.title}
+											class="w-20 h-20"
+										/>
+										<div class="grid gap-3 h-fit w-full">
+											<span class="text-gray-400 text-xs"
+												>{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
+													year: 'numeric',
+													month: 'short',
+													day: 'numeric'
+												})}</span
+											>
+											<h3 class="text-black text-sm m-0">{card.fields.title}</h3>
+										</div>
 									</div>
-								</div>
-							</a>
-						{/if}
-					{/each}
-				</div>
-				<div class="row-span-1 text-white">
-					<h3>عايز تكتب مقالات؟</h3>
-					<p>ابعت مقالتك لينا واحنا هننشرها لك</p>
+								</a>
+							{/if}
+						{/each}
+					</div>
+					<div class="row-span-1 text-white">
+						<h3>عايز تكتب مقالات؟</h3>
+						<p>ابعت مقالتك لينا واحنا هننشرها لك</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -93,12 +97,8 @@
 </section>
 
 <section>
-	<!-- <div class="flex gap-3 h-fit my-10">
-		<div class="w-2 bg-black rounded-3xl" />
-		<h2>أجدد المقالات</h2>
-	</div> -->
 	<div class="md:grid md:grid-cols-4 gap-10 h-fit">
-		<div class="grid gap-14 w-full">
+		<div class="grid gap-9 w-full h-fit">
 			{#each article as card, index (card.sys.id)}
 				{#if index < 3}
 					<a class="border-none" href={`/post/${card.fields.slug}`}>
@@ -158,7 +158,7 @@
 			</a>
 		</div>
 
-		<div class="grid gap-5 h-full w-full">
+		<div class="grid gap-5 h-fit w-full">
 			<div class="flex justify-between border-b-2 text-gray-400 border-b-gray-300">
 				<span class="border-b-4 border-b-red text-text font-black cursor-pointer py-4"
 					>اخر المقالات</span
@@ -167,7 +167,7 @@
 				<span class="border cursor-pointer py-4">اخبار تشرف</span>
 			</div>
 			{#each article as card, index (card.sys.id)}
-				{#if index < 5}
+				{#if index < 4}
 					<a href={`/post/${card.fields.slug}`} class="border-none">
 						<div class="card p-0 flex gap-4">
 							<img
@@ -276,7 +276,11 @@
 		{#each events as event (event.sys.id)}
 			<div class="grid gap-7 md:grid-cols-3">
 				<div class="h-80 w-full col-span-2 bg-rose-950 text-white relative">
-					<img src={event.fields.image.fields.file.url} alt={event.fields.title} class="object-cover h-80 w-full" />
+					<img
+						src={event.fields.image.fields.file.url}
+						alt={event.fields.name}
+						class="object-cover h-80 w-full"
+					/>
 					<div class="grid gap-5 absolute bottom-0 md:p-10 p-5 bg-gradient-to-t from-black w-full">
 						<h2>{event.fields.name}</h2>
 						<p class="opacity-75">
