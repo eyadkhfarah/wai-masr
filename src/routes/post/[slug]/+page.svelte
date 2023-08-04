@@ -3,6 +3,7 @@
 
 	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
 	import { BLOCKS, MARKS } from '@contentful/rich-text-types';
+	import Email from '../../../lib/Components/Email.svelte';
 
 	let copied = false;
 	let copiedClass = false;
@@ -103,7 +104,8 @@
 	></script>
 </svelte:head>
 
-<section class="grid md:grid-cols-3 gap-10">
+<section class="grid md:grid-cols-4 gap-10">
+<Email />
 	<article class="col-span-2 grid h-fit gap-9">
 		<div class="grid gap-4">
 			<a href="/" class="flex gap-3 border-none text-text h-fit">
@@ -113,7 +115,7 @@
 			<h1 class="m-0">{article.fields.title}</h1>
 		</div>
 
-		<div class="md:flex grid gap-4 justify-between">
+		<div class="grid gap-4 justify-between">
 			<div class="flex gap-5 md:text-base">
 				<p class="m-0">
 					الكتاب | <span class="font-black text-blue-600">{article.fields.author.fields.name}</span>

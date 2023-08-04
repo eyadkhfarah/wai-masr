@@ -79,6 +79,10 @@ body {
         @apply mb-7 text-red italic text-2xl
     }
 
+    blockquote {
+        @apply mb-7 text-red italic text-2xl font-black
+    }
+
     h4 {
         @apply text-xl my-4 font-black
     }

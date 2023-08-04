@@ -112,7 +112,7 @@
 									year: 'numeric',
 									month: 'short',
 									day: 'numeric'
-								})} | <span class="text-blue-600 font-black">إياد فرح</span>
+								})} | <span class="text-blue-600 font-black">{card.fields.author.fields.name}</span>
 							</p>
 						</div>
 					</a>
@@ -128,9 +128,9 @@
 			</div>
 		</div>
 
-		<div class="relative w-full h-full col-span-2">
+		<div class="relative w-full h-fit col-span-2">
 			<a href={'/post/' + article[0].fields.slug} class="border-none">
-				<div class="absolute bottom-16 grid place-items-center gap-4 text-center w-full px-7">
+				<div class="absolute bottom-0 grid bg-gradient-to-t from-black place-items-center gap-4 text-center w-full px-7">
 					<div class="flex font-black text-text gap-3 h-fit">
 						<div class="w-2 bg-red rounded-3xl" />
 						{article[0].fields.category}
@@ -148,9 +148,9 @@
 					</p>
 				</div>
 				<img
-					src={article[0].fields.thumbnail.fields.file.url}
+					src={article[0].fields.square.fields.file.url}
 					alt={article[0].fields.title}
-					class="w-fit opacity-25"
+					class="w-fit opacity-"
 				/>
 			</a>
 		</div>
@@ -210,7 +210,11 @@
 						/>
 						<h2 class="text-black text-xl">{card.fields.title}</h2>
 						<p class="text-gray-400">
-							منذ ديقيتين | <span class="text-blue-600 font-black"
+							{new Date(article[0].sys.createdAt).toLocaleDateString('ar-EG', {
+								year: 'numeric',
+								month: 'short',
+								day: 'numeric'
+							})} | <span class="text-blue-600 font-black"
 								><a href="/" class="border-none">{card.fields.category}</a></span
 							>
 						</p>
