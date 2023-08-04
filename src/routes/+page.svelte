@@ -130,8 +130,10 @@
 
 		<div class="relative w-full h-fit col-span-2">
 			<a href={'/post/' + article[0].fields.slug} class="border-none">
-				<div class="absolute bottom-0 grid bg-gradient-to-t from-black place-items-center gap-4 text-center w-full px-7">
-					<div class="flex font-black text-text gap-3 h-fit">
+				<div
+					class="absolute bottom-0 grid bg-gradient-to-t from-black place-items-center gap-4 text-center w-full px-7"
+				>
+					<div class="flex font-black text-white gap-3 h-fit">
 						<div class="w-2 bg-red rounded-3xl" />
 						{article[0].fields.category}
 					</div>
@@ -174,7 +176,7 @@
 							/>
 							<div class="grid h-fit gap-3">
 								<h2 class="text-black text-base">{card.fields.title}</h2>
-								<p class="text-gray-400">
+								<p class="text-gray-400 text-sm">
 									{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
 										year: 'numeric',
 										month: 'short',
@@ -191,6 +193,17 @@
 			{/each}
 		</div>
 	</div>
+</section>
+
+<section>
+	<div class="border-4 border-red w-full p-10 relative text-center">
+		<span class="text-2xl font-black text-center absolute left-[45%] -top-9 bg-primary p-4">مقولة</span>
+		<span class="text-2xl font-black text-center z-10">مقولة طويلة جدا جدا تابعة للمكتبة القومية مكتبة بتكتب عن شخصيات</span>
+	</div>
+
+	<a class="Blackbtn" href="https://maktabaqawmya.vercel.app" rel="noopener noreferrer"
+		>ادخل المكتبة القومية <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
+	>
 </section>
 
 <section class="grid">
@@ -214,7 +227,8 @@
 								year: 'numeric',
 								month: 'short',
 								day: 'numeric'
-							})} | <span class="text-blue-600 font-black"
+							})} |
+							<span class="text-blue-600 font-black"
 								><a href="/" class="border-none">{card.fields.category}</a></span
 							>
 						</p>

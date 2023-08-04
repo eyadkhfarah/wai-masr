@@ -9,11 +9,11 @@ export const menu = [
         link: '/articles',
         id: 2
     },
-    {
-        name: 'المنتدي',
-        link: '/forum',
-        id: 3
-    },
+    // {
+    //     name: 'المنتدي',
+    //     link: '/forum',
+    //     id: 3
+    // },
     {
         name: 'مناسبات',
         link: '/events',
