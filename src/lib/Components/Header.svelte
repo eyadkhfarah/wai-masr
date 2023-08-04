@@ -40,7 +40,7 @@
 	// document.addEventListener('scroll', reading);
 </script>
 
-<header class:bg-black={change} class="bg-black p-5 flex md:static sticky top-0 transition-all ease-in-out duration-300 gap-5 md:justify-between items-center">
+<header class:bg-black={change} class="bg-black p-5 z-[100] flex md:static sticky top-0 transition-all ease-in-out duration-300 gap-5 md:justify-between items-center">
 	<button
 		class="text-xl md:hidden block cursor-pointer text-white"
 		class:open={menuTab}
