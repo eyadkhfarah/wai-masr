@@ -33,25 +33,27 @@ export async function GET() {
   }
 
 	return new Response(
-		`<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+		`<?xml version="1.0" encoding="utf-8"?>
+    <rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
       <channel>
         <title>وعي مصر</title>
         <link>${website}</link>
         <description>نبض التيار القومي المصري</description>
         <copyright>كل الحقوق محفوظة لدي وعي مصر</copyright>
+        <atom:link href="${website}/rss.xml" rel="self" type="application/rss+xml"/>
         <language>
           <![CDATA[ ar ]]>
         </language>
         ${article.map(
 					(post) =>
-						`
-            <item>
+						`<item>
               <title>${post.fields.title}</title>
               <description>${post.fields.subtitle}</description>
               <link>${website}/posts/${post.fields.slug}/</link>
               <guid isPermaLink="true">${website}/posts/${post.fields.slug}</guid>
               <dc:creator>${post.fields.author.fields.name}</dc:creator>
               <pubDate>${buildRFC822Date(post.sys.createdAt)}</pubDate>
+              <category>${post.fields.category}</category>
               <enclosure url="https:${post.fields.thumbnail.fields.file.url}" length="0" type="image/jpeg"/>
             </item>
             `
