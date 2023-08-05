@@ -7,7 +7,7 @@
 
 	import news from '../../../lib/images/google-news.svg';
 
-	let copied = false;
+	let copied = true;
 	let copiedClass = false;
 
 	const toggleCopy = () => {
@@ -97,8 +97,8 @@
 			<h1 class="m-0">{article.fields.title}</h1>
 		</div>
 
-		<div class="grid gap-4 justify-between">
-			<div class="flex gap-5 md:text-base text-sm">
+		<div class="grid gap-4 justify-between w-full">
+			<div class="md:flex grid gap-5 md:text-base text-sm">
 				<p class="m-0">
 					الكتاب | <span class="font-black text-blue-600">{article.fields.author.fields.name}</span>
 				</p>
@@ -112,28 +112,31 @@
 					})}
 				</p>
 			</div>
-			<div class="flex gap-5 text-xl font-black relative">
+			<div class="flex justify-between gap-5 w-full text-xl font-black">
 				<span class="text-sm">شارك المقالة</span>
-				<a href="https://www.facebook.com/" class="border-none" aria-label="صفحة الفيسبوك"
-					><Icon src={RiLogoFacebookCircleFill} /></a
-				>
-				<a href="https://www.instagram.com/" class="border-none" aria-label="صفحة الانستجرام"
-					><Icon src={RiLogoInstagramLine} /></a
-				>
-				<a href="https://www.twitter.com/" class="border-none" aria-label="صفحة الاكس"
-					><Icon src={RiLogoTwitterFill} /></a
-				>
-				<span class="cursor-pointer">
-					<Icon src={RiBusinessLinksLine} />
-				</span>
-
-				{#if copied}
-					<button
-						class:copied={copiedClass}
-						class="text-base bg-red text-white p-2 absolute left-0 bottom-9 flex gap-2 items-center"
-						>تم النسخ<span><Icon src={RiSystemCheckLine} color="white" /></span></button
+				<div class="flex gap-4 relative">
+					
+					<a href="https://www.facebook.com/" class="border-none" aria-label="صفحة الفيسبوك"
+						><Icon src={RiLogoFacebookCircleFill} /></a
 					>
-				{/if}
+					<a href="https://www.instagram.com/" class="border-none" aria-label="صفحة الانستجرام"
+						><Icon src={RiLogoInstagramLine} /></a
+					>
+					<a href="https://www.twitter.com/" class="border-none" aria-label="صفحة الاكس"
+						><Icon src={RiLogoTwitterFill} /></a
+					>
+					<span class="cursor-pointer">
+						<Icon src={RiBusinessLinksLine} />
+					</span>
+					{#if copied}
+						<span
+							class:copied={copiedClass}
+							class="text-base bg-red text-white p-2 absolute left-0 bottom-9 flex gap-2 items-center"
+							>تم النسخ<span><Icon src={RiSystemCheckLine} color="white" /></span></span
+						>
+					{/if}
+				</div>
+
 			</div>
 		</div>
 		<img src={article.fields.thumbnail.fields.file.url} alt={article.fields.title} class="w-full" />

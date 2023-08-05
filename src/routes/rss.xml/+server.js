@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { client } from '../../lib/contentful-fetch';
 
 const website = 'https://wai-masr.vercel.app';
@@ -13,12 +14,15 @@ export async function GET() {
         <title>وعي مصر</title>
         <link>${website}</link>
         <description>نبض التيار القومي المصري</description>
-        
-
+        <copyright>
+كل الحقوق محفوظة لدي وعي مصر
+</copyright>
+<language>
+<![CDATA[ ar ]]>
+</language>
         ${article.map(
 					(post) =>
 						`
-            
             <item>
               <title>${post.fields.title}</title>
               <description>${post.fields.subtitle}</description>
@@ -33,6 +37,7 @@ export async function GET() {
                   </strong>  
                 </div>
               </content:encoded>
+              <enclosure url="${post.fields.thumbnail.fields.file.url}" length="0" type="image/jpeg"/>
             </item>
             `
 				)}
