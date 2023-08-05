@@ -88,7 +88,7 @@
 	></script>
 </svelte:head>
 
-<section class="grid md:grid-cols-4 gap-10">
+<section class="grid md:grid-cols-4 gap-10 m-0">
 	<Email />
 	<article class="col-span-2 grid h-fit gap-9">
 		<div class="grid gap-4">
