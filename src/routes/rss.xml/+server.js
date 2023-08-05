@@ -9,7 +9,7 @@ export async function GET() {
 	const article = res.items;
 
 	return new Response(
-		`<rss xmlns:dc="https://purl.org/dc/elements/1.1/" xmlns:content="https://purl.org/rss/1.0/modules/content/" xmlns:atom="https://www.w3.org/2005/Atom" version="2.0">
+		`<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
       <channel>
         <title>وعي مصر</title>
         <link>${website}</link>
@@ -27,18 +27,9 @@ export async function GET() {
               <title>${post.fields.title}</title>
               <description>${post.fields.subtitle}</description>
               <link>${website}/posts/${post.fields.slug}/</link>
-              <guid isPermaLink="true"${website}/posts/${post.fields.slug}</guid>
+              <guid isPermaLink="true">${website}/posts/${post.fields.slug}</guid>
               <dc:creator>${post.fields.author.fields.name}</dc:creator>
               <pubDate>${new Date(post.sys.createdAt)}</pubDate>
-              <content:encoded>${post.fields.subtitle} 
-                <div style="margin-top: 50px; font-style: italic;">
-                  <strong>
-                    <a href="${website}/posts/${post.fields.slug}">
-                      اقرا اكثر
-                    </a>
-                  </strong>  
-                </div>
-              </content:encoded>
               <enclosure url="${
 								post.fields.thumbnail.fields.file.url
 							}" length="0" type="image/jpeg"/>
