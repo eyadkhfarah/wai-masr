@@ -5,7 +5,7 @@
 	// import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 	import Email from '../../../lib/Components/Email.svelte';
 
-	import news from "../../../lib/images/google-news.svg"
+	import news from '../../../lib/images/google-news.svg';
 
 	let copied = false;
 	let copiedClass = false;
@@ -28,8 +28,6 @@
 
 	import RiSystemCheckLine from 'svelte-icons-pack/ri/RiSystemCheckLine';
 	import { browser } from '$app/environment';
-
-
 </script>
 
 <svelte:head>
@@ -102,11 +100,7 @@
 		<div class="grid gap-4 justify-between">
 			<div class="flex gap-5 md:text-base text-sm">
 				<p class="m-0">
-					الكتاب | <span class="font-black text-blue-600"
-						><a href={`/author/${article.fields.author.fields.slug}`} class="border-none"
-							>{article.fields.author.fields.name}</a
-						></span
-					>
+					الكتاب | <span class="font-black text-blue-600">{article.fields.author.fields.name}</span>
 				</p>
 				<span class="md:block hidden">—</span>
 				<p class="m-0">
@@ -159,9 +153,7 @@
 				</span>
 			{/each}
 		</div>
-		
 	</article>
-
 
 	<aside class="sticky top-28">
 		<div class="flex gap-3 h-fit w-full mb-5">
@@ -199,6 +191,6 @@
 <section>
 	<div class="p-6 md:px-28 flex justify-between items-center bg-red">
 		<h3 class="m-0 text-white">تابعنا في Google News</h3>
-		<img src={news} class="h-20 w-20" alt="">
+		<img src={news} class="h-20 w-20" alt="" />
 	</div>
 </section>
