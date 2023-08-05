@@ -8,18 +8,40 @@ export async function GET() {
 
 	const article = res.items;
 
+  function addLeadingZero(num) {
+    num = num.toString();
+    while (num.length < 2) num = "0" + num;
+    return num;
+  }
+  
+  function buildRFC822Date(dateString) {
+    const dayStrings = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const monthStrings = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  
+    const timeStamp = Date.parse(dateString);
+    const date = new Date(timeStamp);
+  
+    const day = dayStrings[date.getDay()];
+    const dayNumber = addLeadingZero(date.getDate());
+    const month = monthStrings[date.getMonth()];
+    const year = date.getFullYear();
+    const time = `${addLeadingZero(date.getHours())}:${addLeadingZero(date.getMinutes())}:00`;
+    const timezone = date.getTimezoneOffset() === 0 ? "GMT" : "BST";
+  
+    //Wed, 02 Oct 2002 13:00:00 GMT
+    return `${day}, ${dayNumber} ${month} ${year} ${time} ${timezone}`;
+  }
+
 	return new Response(
 		`<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
       <channel>
         <title>وعي مصر</title>
         <link>${website}</link>
         <description>نبض التيار القومي المصري</description>
-        <copyright>
-كل الحقوق محفوظة لدي وعي مصر
-</copyright>
-<language>
-<![CDATA[ ar ]]>
-</language>
+        <copyright>كل الحقوق محفوظة لدي وعي مصر</copyright>
+        <language>
+          <![CDATA[ ar ]]>
+        </language>
         ${article.map(
 					(post) =>
 						`
@@ -29,14 +51,11 @@ export async function GET() {
               <link>${website}/posts/${post.fields.slug}/</link>
               <guid isPermaLink="true">${website}/posts/${post.fields.slug}</guid>
               <dc:creator>${post.fields.author.fields.name}</dc:creator>
-              <pubDate>${new Date(post.sys.createdAt)}</pubDate>
-              <enclosure url="${
-								post.fields.thumbnail.fields.file.url
-							}" length="0" type="image/jpeg"/>
+              <pubDate>${buildRFC822Date(post.sys.createdAt)}</pubDate>
+              <enclosure url="https:${post.fields.thumbnail.fields.file.url}" length="0" type="image/jpeg"/>
             </item>
             `
-				)}
-      
+				).join('')}
       </channel>
     </rss>`
 	);
