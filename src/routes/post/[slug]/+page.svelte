@@ -48,11 +48,11 @@
 	<meta property="article:section" content={article.fields.category} />
 	<meta name="twitter:creator" content="@" />
 	<meta property="og:type" content="article" />
-	<meta name="twitter:creator" content="@" />
+	<meta name="twitter:creator" content={article.fields.author.fields.twitterUrl} />
 
-	<!-- {#each article.fields.tags as tag (tag)}
+	{#each article.fields.tags as tag (tag)}
 		<meta property="article:tag" content={tag} />
-	{/each} -->
+	{/each}
 
 	<script
 		type="application/ld+json"
