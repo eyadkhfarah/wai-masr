@@ -92,7 +92,7 @@
 	<Email />
 	<article class="col-span-2 grid h-fit gap-9">
 		<div class="grid gap-4">
-			<a href="/" class="flex gap-3 border-none text-text h-fit">
+			<a href="/article/" class="flex gap-3 border-none text-text h-fit">
 				<div class="w-2 bg-red rounded-3xl" />
 				{article.fields.category}
 			</a>
