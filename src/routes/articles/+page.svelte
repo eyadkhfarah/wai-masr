@@ -2,10 +2,11 @@
 // @ts-nocheck
 
 	import Email from '../../lib/Components/Email.svelte';
-	import image from '../../lib/images/no-image-square.png';
 
 	import { categories } from '../../utils/categories';
-	import { example } from '../../utils/articles';
+
+	import og from '../lib/images/main.png';
+
 
 	export let data;
 
@@ -15,7 +16,7 @@
 <svelte:head>
 	<title>وعي مصر :: مقالات</title>
 	<meta name="description" content="اهم المقالات والمصار والاراء القومية" />
-	<meta property="og:image" content="/main.png" />
+	<meta property="og:image" content={og} />
 	<meta property="og:title" content="وعي مصر :: مقالات" />
 	<meta property="og:description" content="اهم المقالات والمصار والاراء القومية" />
 </svelte:head>

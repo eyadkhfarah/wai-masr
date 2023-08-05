@@ -34,8 +34,9 @@
 			class="md:object-fill object-none md:h-full h-[75em] opacity-40"
 		/>
 
-		<div class="md:px-28 bg-gradient-to-t from-black absolute bottom-0 grid gap-20 h-full md:p-0 p-10">
-
+		<div
+			class="md:px-28 bg-gradient-to-t from-black absolute bottom-0 grid gap-20 h-full md:p-0 p-10"
+		>
 			<div class="grid gap-9 z-10">
 				<div class="py-10 text-white">
 					<div class="grid gap-5">
@@ -274,25 +275,29 @@
 	</div>
 	<div class="md:flex grid gap-6">
 		{#each events as event (event.sys.id)}
-			<div class="grid gap-7 md:grid-cols-3">
-				<div class="h-80 w-full col-span-2 bg-rose-950 text-white relative">
-					<img
-						src={event.fields.image.fields.file.url}
-						alt={event.fields.name}
-						class="object-cover h-80 w-full"
-					/>
-					<div class="grid gap-5 absolute bottom-0 md:p-10 p-5 bg-gradient-to-t from-black w-full">
-						<h2>{event.fields.name}</h2>
-						<p class="opacity-75">
-							الميعاد: {new Date(event.fields.date).toLocaleDateString('ar-EG', {
-								year: 'numeric',
-								month: 'short',
-								day: 'numeric'
-							})}
-						</p>
+			<a href={`/events/${event.fields.slug}`}>
+				<div class="grid gap-7 md:grid-cols-3">
+					<div class="h-80 w-full col-span-2 bg-rose-950 text-white relative">
+						<img
+							src={event.fields.image.fields.file.url}
+							alt={event.fields.name}
+							class="object-cover h-80 w-full"
+						/>
+						<div
+							class="grid gap-5 absolute bottom-0 md:p-10 p-5 bg-gradient-to-t from-black w-full"
+						>
+							<h2>{event.fields.name}</h2>
+							<p class="opacity-75">
+								الميعاد: {new Date(event.fields.date).toLocaleDateString('ar-EG', {
+									year: 'numeric',
+									month: 'short',
+									day: 'numeric'
+								})}
+							</p>
+						</div>
 					</div>
 				</div>
-			</div>
+			</a>
 		{/each}
 	</div>
 	<a class="Blackbtn" href="/events" rel="noopener noreferrer"
