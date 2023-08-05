@@ -5,7 +5,7 @@
 
 	import { categories } from '../../utils/categories';
 
-	import og from '../lib/images/main.png';
+	import og from '../../lib/images/main.png';
 
 
 	export let data;
