@@ -2,12 +2,11 @@
 	// @ts-nocheck
 
 	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-	// import { BLOCKS, MARKS } from '@contentful/rich-text-types';
 	import Email from '../../../lib/Components/Email.svelte';
 
 	import news from '../../../lib/images/google-news.svg';
 
-	let copied = true;
+	let copied = false;
 	let copiedClass = false;
 
 	const toggleCopy = () => {
@@ -36,7 +35,7 @@
 
 	<meta property="og:title" content={article.fields.title} />
 	<meta property="og:description" content={article.fields.subtitle} />
-	<meta property="og:image" content={article.fields.thumbnail.fields.file.url} />
+	<meta property="og:image" content={`https:${article.fields.thumbnail.fields.file.url}`} />
 	<meta property="article:published_time" content={article.sys.createdAt} />
 	<meta property="article:modified_time" content={article.sys.updatedAt} />
 	<!-- Twitter -->
@@ -139,7 +138,7 @@
 
 			</div>
 		</div>
-		<img src={article.fields.thumbnail.fields.file.url} alt={article.fields.title} class="w-full" />
+		<img src={`https:${article.fields.thumbnail.fields.file.url}`} alt={article.fields.title} class="w-full" />
 
 		<h2 class="font-black italic text-lg">{article.fields.subtitle}</h2>
 		<div>{@html documentToHtmlString(article.fields.post)}</div>

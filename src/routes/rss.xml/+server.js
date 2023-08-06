@@ -59,6 +59,11 @@ export async function GET() {
             `
 				).join('')}
       </channel>
-    </rss>`
+    </rss>`.trim(),
+    {
+			headers: {
+				'Content-Type': 'application/xml'
+			}
+		}
 	);
 }

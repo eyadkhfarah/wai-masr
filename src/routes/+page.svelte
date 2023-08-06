@@ -29,7 +29,7 @@
 <section class="bg-black m-0 p-0">
 	<div class="relative h-fit w-fit">
 		<img
-			src={events[0].fields.image.fields.file.url}
+			src={`https:${events[0].fields.image.fields.file.url}`}
 			alt={events[0].fields.name}
 			class="md:object-fill object-none md:h-full h-[75em] opacity-40"
 		/>
@@ -68,7 +68,7 @@
 										class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
 									>
 										<img
-											src={card.fields.thumbnail.fields.file.url}
+											src={`https:${card.fields.thumbnail.fields.file.url}`}
 											alt={card.fields.title}
 											class="w-20 h-20"
 										/>
@@ -152,7 +152,7 @@
 					</p>
 				</div>
 				<img
-					src={article[0].fields.square.fields.file.url}
+					src={`https:${article[0].fields.square.fields.file.url}`}
 					alt={article[0].fields.title}
 					class="w-fit opacity-"
 				/>
@@ -172,7 +172,7 @@
 					<a href={`/post/${card.fields.slug}`} class="border-none">
 						<div class="card p-0 flex gap-4">
 							<img
-								src={card.fields.thumbnail.fields.file.url}
+								src={`https:${card.fields.thumbnail.fields.file.url}`}
 								alt={card.fields.title}
 								class="w-20 h-20"
 							/>
@@ -234,7 +234,7 @@
 				<a href={`/post/${card.fields.slug}`} class="border-none">
 					<div class="card grid gap-4">
 						<img
-							src={card.fields.thumbnail.fields.file.url}
+							src={`https:${card.fields.thumbnail.fields.file.url}`}
 							alt={card.fields.title}
 							class="w-full"
 						/>
@@ -279,7 +279,7 @@
 				<div class="grid gap-7 md:grid-cols-3">
 					<div class="h-80 w-full col-span-2 bg-rose-950 text-white relative">
 						<img
-							src={event.fields.image.fields.file.url}
+							src={`https:${event.fields.image.fields.file.url}`}
 							alt={event.fields.name}
 							class="object-cover h-80 w-full"
 						/>

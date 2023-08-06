@@ -40,7 +40,7 @@
 			{#each article as card (card.sys.id)}
 				<a href={'/post/' + card.fields.slug} data-sveltekit-prefetch class="border-none">
 					<div class="card md:flex grid gap-8 border-t-2 border-t-gray-300">
-						<img src={card.fields.thumbnail.fields.file.url} alt={card.fields.title} class="md:h-28 md:w-fit w-full " />
+						<img src={`https:${card.fields.thumbnail.fields.file.url}`} alt={card.fields.title} class="md:h-28 md:w-fit w-full " />
 						<div class="grid gap-5 h-fit">
 							<h2 class="group-hover:text-red text-text transition-all duration-300 ease-in-out">
 								{card.fields.title}

@@ -5,7 +5,14 @@
 	import Header from '../lib/Components/Header.svelte';
 	import './styles.css';
 	import { Delayed } from '../lib/store';
+	import { partytownSnippet } from '@builder.io/partytown/integration';
 </script>
+
+<svelte:head>
+	<!-- Config options -->
+
+	{@html '<script>' + partytownSnippet() + '</script>'}
+</svelte:head>
 
 <div class="app">
 	<Header />
