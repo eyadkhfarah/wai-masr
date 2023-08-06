@@ -29,9 +29,9 @@
 	</div>
 
 	<div class="flex mt-4 overflow-x-auto">
-		{#each categories as category}
-			<a class="Blackbtn p-2 border-b-gray-300 hover:border-b-red border-b-2" href={`/articles/${category.link}`}
-				>{category.title}</a
+		{#each categories as categorys}
+			<a class:border-b-red={categorys.title === category.title} class:text-red={categorys.title === category.title} class="Blackbtn p-2 border-b-gray-300 hover:border-b-red border-b-2" href={`/articles/${categorys.link}`}
+				>{categorys.title}</a
 			>
 		{/each}
 	</div>

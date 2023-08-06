@@ -16,7 +16,7 @@
 		<p>وخليك متابع اخر مقالاتنا والمناسبات</p>
 
 		<div class="border-b-8 border-black mb-14">
-			<form action="" class="flex items-center">
+			<form action="" class="flex items-center md:text-base text-sm">
 				<input
 					type="email"
 					name=""
