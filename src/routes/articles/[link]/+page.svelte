@@ -1,20 +1,29 @@
 <script>
+// @ts-nocheck
+
 	import Email from '../../../lib/Components/Email.svelte';
 	import image from '../../../lib/images/no-image-square.png';
 	import { example } from '../../../utils/articles';
 
 	import { categories } from '../../../utils/categories';
+
+	export let data
+
+	let category = data.menu
+	// let articles = data.
+
+	console.log(articles)
 </script>
 
 <svelte:head>
-	<title>وعي مصر :: قسم</title>
-	<meta name="description" content={`قسم {} المقالات`} />
+	<title>وعي مصر :: {category.title}</title>
+	<meta name="description" content={`قسم ${category.title} المقالات`} />
 </svelte:head>
 
 <section>
 	<div class="flex gap-3 h-fit">
 		<div class="w-2 bg-red rounded-3xl" />
-		<h1 class="m-0">القسم</h1>
+		<h1 class="m-0">{category.title}</h1>
 	</div>
 
 	<div class="flex mt-4 overflow-x-auto">
@@ -27,19 +36,27 @@
 
 	<div class="grid gap-7 md:grid-cols-3">
 		<div class="grid gap-3 col-span-2">
-			{#each example as card (card.id)}
-				<a href={'/post/' + card.id} class="border-none">
-					<div class="card flex gap-8 border-t-2 border-t-gray-300 group">
-						<img src={image} alt="وعي مصر" class="h-28" />
+			<!-- {#each articles as card (card.sys.id)}
+				<a href={'/post/' + card.fields.slug} data-sveltekit-prefetch class="border-none">
+					<div class="card md:flex grid gap-8 border-t-2 border-t-gray-300">
+						<img src={`https:${card.fields.thumbnail.fields.file.url}`} alt={card.fields.title} class="md:h-28 md:w-fit w-full " />
 						<div class="grid gap-5 h-fit">
 							<h2 class="group-hover:text-red text-text transition-all duration-300 ease-in-out">
-								{card.title}
+								{card.fields.title}
 							</h2>
-							<p class="text-slate-500">{card.desc}</p>
+							<p class="text-gray-400 m-0">
+								{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
+									year: 'numeric',
+									month: 'short',
+									day: 'numeric'
+								})} | <span class="text-blue-600 font-black"
+									><a href="/" class="border-none">{card.fields.category}</a></span
+								>
+							</p>
 						</div>
 					</div>
 				</a>
-			{/each}
+			{/each} -->
 		</div>
 		<Email />
 	</div>
