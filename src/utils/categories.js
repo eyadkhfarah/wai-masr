@@ -1,4 +1,4 @@
-export let categories = [
+export const categories = [
     {
         title: "اخبار تشرف",
         link: "honuor",

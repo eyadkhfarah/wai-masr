@@ -6,18 +6,20 @@
 	import { example } from '../../../utils/articles';
 
 	import { categories } from '../../../utils/categories';
+	import og from '../../../lib/images/main.png';
 
 	export let data
 
 	let category = data.menu
 	// let articles = data.
-
-	console.log(articles)
 </script>
 
 <svelte:head>
 	<title>وعي مصر :: {category.title}</title>
 	<meta name="description" content={`قسم ${category.title} المقالات`} />
+	<meta property="og:image" content={og} />
+	<meta property="og:title" content={`وعي مصر :: ${category.title}`} />
+	<meta property="og:description" content={`قسم ${category.title} المقالات`} />
 </svelte:head>
 
 <section>
