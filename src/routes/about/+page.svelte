@@ -1,6 +1,6 @@
 <script>
 	import og from '../../lib/images/main.png';
-	let title = 'وعي مصر :: المناسبات';
+	let title = 'وعي مصر :: احنا مين';
 	let desc = `أهلًا بيكم علي صفحة وعي - مصر إحنا هنا فى "وعي" نقدر نقدم نفسنا بإننا جزء من مشروع أكبر ألا وهو مشروع الوعي القومي المصري.`;
 
 	import zeyad from '../../lib/images/zeyad.png';
