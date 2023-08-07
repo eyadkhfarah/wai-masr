@@ -30,7 +30,7 @@ export const menu = [
         id: 6
     },
     {
-        name: 'اتواصل معانا',
+        name: 'اتواصل معنا',
         link: '/contact',
         id: 7
     },

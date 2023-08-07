@@ -23,7 +23,7 @@
 
 		<div class="flex gap-3 h-fit w-full border-b-4 border-red items-center">
 			<input
-				type="text"
+				type="search"
 				class="bg-transparent border-none w-full placeholder:text-black focus:border-none p-2 px-3"
 				placeholder="بحث..."
 				bind:value={search}

@@ -12,6 +12,7 @@
 	import RiLogoInstagramLine from 'svelte-icons-pack/ri/RiLogoInstagramLine';
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
+	import H1 from '../../lib/Components/Text/H1.svelte';
 </script>
 
 <svelte:head>
@@ -63,10 +64,7 @@
 
 <section>
 	<article>
-		<div class="flex gap-3 h-fit mb-6">
-			<div class="w-2 bg-red rounded-3xl" />
-			<h1 class="m-0">احنا مين؟</h1>
-		</div>
+		<H1>احنا مين؟</H1>
 
 		<p class="text-lg">{desc}</p>
 

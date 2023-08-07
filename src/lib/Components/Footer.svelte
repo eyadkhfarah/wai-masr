@@ -32,23 +32,71 @@
 		</div>
 	</div>
 	<div class="flex items-center justify-center">
-		<a href="/" class="space-y-20 py-26 "><img src={logo} alt="لوجو وعي مصر" class="h-24" /></a>
+		<a href="/" class="space-y-20 py-26"><img src={logo} alt="لوجو وعي مصر" class="h-24" /></a>
 	</div>
 
-	<div class="flex gap-4 text-white text-3xl">
-		<a href="https://web.facebook.com/W3i.EG" class="hover:text-black transition-all ease-in-out duration-300" aria-label="صفحة الفيسبوك"
-			><Icon src={RiLogoFacebookCircleFill} color="white" /></a
-		>
-		<a href="https://www.instagram.com/w3i.eg" class="hover:text-black transition-all ease-in-out duration-300" aria-label="صفحة الانستجرام"
-			><Icon src={RiLogoInstagramLine} color="white" /></a
-		>
-		<a href="https://www.twitter.com/W3iEgy" class="hover:text-black transition-all ease-in-out duration-300" aria-label="صفحة الاكس"
-			><Icon src={RiLogoTwitterFill} color="white" /></a
-		>
-		<a href="https://t.me/W3iEgy" class="hover:text-black transition-all ease-in-out duration-300" aria-label="صفحة الاكس"
-			><Icon src={RiLogoTelegramFill} color="white" /></a
-		>
-	</div>
+	<div class="grid gap-6 text-center place-items-center">
+		<div class="flex gap-4 text-white text-3xl">
+			<a
+				href="https://web.facebook.com/W3i.EG"
+				class="hover:text-black transition-all ease-in-out duration-300"
+				aria-label="صفحة الفيسبوك"><Icon src={RiLogoFacebookCircleFill} color="white" /></a
+			>
+			<a
+				href="https://www.instagram.com/w3i.eg"
+				class="hover:text-black transition-all ease-in-out duration-300"
+				aria-label="صفحة الانستجرام"><Icon src={RiLogoInstagramLine} color="white" /></a
+			>
+			<a
+				href="https://www.twitter.com/W3iEgy"
+				class="hover:text-black transition-all ease-in-out duration-300"
+				aria-label="صفحة الاكس"><Icon src={RiLogoTwitterFill} color="white" /></a
+			>
+			<a
+				href="https://t.me/W3iEgy"
+				class="hover:text-black transition-all ease-in-out duration-300"
+				aria-label="صفحة الاكس"><Icon src={RiLogoTelegramFill} color="white" /></a
+			>
+		</div>
 
-	<p>© {new Date().getFullYear()} وعي مصر - جميع الحقوق محفوظة</p>
+		<div class="md:flex grid gap-6 md:w-full justify-between">
+			<ul class="md:hidden gap-5 p-0 m-0 list-none text-white font-black flex">
+				<li>
+					<a
+						href="/privacy-policy"
+						class="text-white hover:border-b-white transition-all ease-in-out duration-300"
+						>سياسة الخصوصية</a
+					>
+				</li>
+				<li>—</li>
+				<li>
+					<a
+						href="/terms"
+						class="text-white hover:border-b-white transition-all ease-in-out duration-300"
+						>الشروط والاحكام</a
+					>
+				</li>
+			</ul>
+
+			<p class="m-0">© {new Date().getFullYear()} وعي مصر - جميع الحقوق محفوظة</p>
+
+			<ul class="md:flex gap-5 p-0 m-0 list-none text-white font-black hidden">
+				<li>
+					<a
+						href="/privacy-policy"
+						class="text-white hover:border-b-white transition-all ease-in-out duration-300"
+						>سياسة الخصوصية</a
+					>
+				</li>
+				<li>—</li>
+				<li>
+					<a
+						href="/terms"
+						class="text-white hover:border-b-white transition-all ease-in-out duration-300"
+						>الشروط والاحكام</a
+					>
+				</li>
+			</ul>
+		</div>
+	</div>
 </footer>

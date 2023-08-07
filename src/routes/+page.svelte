@@ -3,12 +3,8 @@
 
 	export let data;
 
-	// console.log(data)
-
 	let article = data.articles;
 	let events = data.events;
-
-	import { example } from '../utils/articles';
 
 	import og from '../lib/images/main.png';
 	import qoute from '../lib/images/quote.svg';

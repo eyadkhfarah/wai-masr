@@ -47,12 +47,12 @@ body {
         @apply absolute top-8 w-3 h-3 rounded-full bg-black
     }
     
-    /* article {
-        @apply my-9 md:p-7 md:px-32 p-5
-    } */
+    .input {
+        @apply w-full bg-transparent border-b-4 border-0 border-b-red px-0
+    }
 
     ul {
-        @apply list-disc ml-4 px-6
+        @apply list-disc ml-4 px-6 my-5
     }
 
     ol {
@@ -96,10 +96,10 @@ body {
     }
 
     .Whitebtn {
-        @apply p-3 border-b-white border-b-4 text-white w-fit font-bold transition-all ease-in-out duration-300 whitespace-nowrap
+        @apply py-3 border-b-white border-b-4 text-white w-fit font-bold transition-all ease-in-out duration-300 whitespace-nowrap
     }
 
     .Blackbtn {
-        @apply p-3 border border-b-black border-b-4 text-black w-fit font-bold py-5 transition-all ease-in-out duration-300 whitespace-nowrap flex justify-between items-center gap-10
+        @apply py-3 border border-b-black border-b-4 text-black w-fit font-bold transition-all ease-in-out duration-300 whitespace-nowrap flex justify-between items-center gap-10
     }
 }

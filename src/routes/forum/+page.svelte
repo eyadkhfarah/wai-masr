@@ -1,4 +1,7 @@
-<script></script>
+<script>
+	import H1 from "../../lib/Components/Text/H1.svelte";
+
+</script>
 
 <svelte:head>
 	<title>وعي مصر :: المنتدي</title>
@@ -6,5 +9,5 @@
 </svelte:head>
 
 <section>
-    <h1>اهلا بيك في المنتدي</h1>
+    <H1>اهلا بيك في المنتدي</H1>
 </section>

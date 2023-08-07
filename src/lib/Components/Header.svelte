@@ -55,7 +55,7 @@
 
 	<div class="border-b-4 border-red md:flex hidden gap-4 items-center">
 		<input
-			type="text"
+			type="search"
 			class="bg-transparent border-none placeholder:text-white focus:border-none p-0 py-3"
 			placeholder="بحث..."
 			bind:value={search}

@@ -1,5 +1,6 @@
 <script>
 	// @ts-nocheck
+	import H1 from '../../lib/Components/Text/H1.svelte';
 	import og from '../../lib/images/main.png';
 
 	export let data;
@@ -18,12 +19,8 @@
 	<meta property="og:description" content={desc} />
 </svelte:head>
 
-<!-- <Loading /> -->
 <section>
-	<div class="flex gap-3 h-fit my-10">
-		<div class="w-2 bg-red rounded-3xl" />
-		<h1 class="m-0">مناسبات</h1>
-	</div>
+	<H1>مناسبات</H1>
 	{#each events as event (event.sys.id)}
 		<a href={`/events/${event.fields.slug}`} class="border-none">
 			<div class="grid gap-7 md:grid-cols-3">

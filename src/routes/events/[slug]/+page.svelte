@@ -1,6 +1,7 @@
 <script>
 	// @ts-nocheck
 
+	import H1 from '../../../lib/Components/Text/H1.svelte';
 	import Email from '../../../lib/Components/Email.svelte';
 
 	export let data;
@@ -42,10 +43,7 @@
 
 <section class="grid gap-5 md:grid-cols-3">
 	<div class="col-span-2 grid gap-5">
-		<div class="flex gap-3 h-fit">
-			<div class="w-2 bg-red rounded-3xl" />
-			<h1 class="m-0">{events.fields.name}</h1>
-		</div>
+		<H1>{events.fields.name}</H1>
 
 		<p class="font-black text-xl">
 			<span class="text-red">الموعد</span> | {new Date(events.fields.date).toLocaleDateString(

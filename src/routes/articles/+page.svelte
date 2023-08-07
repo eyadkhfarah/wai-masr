@@ -6,6 +6,7 @@
 	import { categories } from '../../utils/categories';
 
 	import og from '../../lib/images/main.png';
+	import H1 from '../../lib/Components/Text/H1.svelte';
 
 
 	export let data;
@@ -22,10 +23,7 @@
 </svelte:head>
 
 <section>
-	<div class="flex gap-3 h-fit">
-		<div class="w-2 bg-red rounded-3xl" />
-		<h1 class="m-0">مقالات</h1>
-	</div>
+	<H1>مقالات</H1>
 
 	<div class="flex mt-4 overflow-x-auto">
 		{#each categories as category}
