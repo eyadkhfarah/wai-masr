@@ -13,12 +13,12 @@
 			type="email"
 			name="email"
 			id="email"
-			class="input placeholder:text-white text-white border-b-white"
+			class="input placeholder:text-white text-white border-b-black"
 			placeholder="بريدك الالكتروني"
 		/>
-		<button type="button" class="Whitebtn w-full font-black">
+		<button type="button" class="Whitebtn w-full font-black border-b-black">
 			اشترك
-			<span><Icon color="white" src={RiSystemArrowLeftLine} /></span>
+			<span><Icon color="black" src={RiSystemArrowLeftLine} /></span>
 		</button>
 	</form>
 </div>

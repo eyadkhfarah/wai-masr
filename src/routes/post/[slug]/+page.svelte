@@ -96,8 +96,8 @@
 			<h1 class="m-0">{article.fields.title}</h1>
 		</div>
 
-		<div class="grid gap-4 justify-between w-full">
-			<div class="md:flex grid gap-5 md:text-base text-sm">
+		<div class="grid gap-4 w-full">
+			<div class="md:flex grid gap-5 md:text-base text-sm w-full">
 				<p class="m-0">
 					الكتاب | <span class="font-black text-blue-600">{article.fields.author.fields.name}</span>
 				</p>
@@ -111,7 +111,7 @@
 					})}
 				</p>
 			</div>
-			<div class="flex justify-between gap-5 w-full text-xl font-black">
+			<div class="flex md:justify-end justify-between gap-5 w-full text-xl font-black">
 				<span class="text-sm">شارك المقالة</span>
 				<div class="flex gap-4 relative">
 					

@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 
 	import Email from '../../../lib/Components/Email.svelte';
 	import image from '../../../lib/images/no-image-square.png';
@@ -8,10 +8,10 @@
 	import { categories } from '../../../utils/categories';
 	import og from '../../../lib/images/main.png';
 
-	export let data
+	export let data;
 
-	let category = data.menu
-	// let articles = data.
+	let category = data.menu;
+	let articles = data.articles;
 </script>
 
 <svelte:head>
@@ -30,16 +30,20 @@
 
 	<div class="flex mt-4 overflow-x-auto">
 		{#each categories as categorys}
-			<a class:border-b-red={categorys.title === category.title} class:text-red={categorys.title === category.title} class="Blackbtn p-2 border-b-gray-300 hover:border-b-red border-b-2" href={`/articles/${categorys.link}`}
-				>{categorys.title}</a
+			<a
+				class:border-b-red={categorys.title === category.title}
+				class:text-red={categorys.title === category.title}
+				class="Blackbtn p-2 border-b-gray-300 hover:border-b-red border-b-2"
+				href={`/articles/${categorys.link}`}>{categorys.title}</a
 			>
 		{/each}
 	</div>
 
 	<div class="grid gap-7 md:grid-cols-3">
 		<div class="grid gap-3 col-span-2">
-			<!-- {#each articles as card (card.sys.id)}
-				<a href={'/post/' + card.fields.slug} data-sveltekit-prefetch class="border-none">
+			{#each articles as card (card.sys.id)}
+				{#if card.fields.category === category.title}
+				<a href={'/post/' + card.fields.slug} data-sveltekit-prefetch class="border-none group">
 					<div class="card md:flex grid gap-8 border-t-2 border-t-gray-300">
 						<img src={`https:${card.fields.thumbnail.fields.file.url}`} alt={card.fields.title} class="md:h-28 md:w-fit w-full " />
 						<div class="grid gap-5 h-fit">
@@ -58,7 +62,8 @@
 						</div>
 					</div>
 				</a>
-			{/each} -->
+				{/if}
+			{/each}
 		</div>
 		<Email />
 	</div>

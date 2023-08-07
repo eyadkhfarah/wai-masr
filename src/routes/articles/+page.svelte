@@ -36,7 +36,7 @@
 	<div class="grid gap-7 md:grid-cols-3">
 		<div class="grid gap-3 col-span-2">
 			{#each article as card (card.sys.id)}
-				<a href={'/post/' + card.fields.slug} data-sveltekit-prefetch class="border-none">
+				<a href={'/post/' + card.fields.slug} data-sveltekit-prefetch class="border-none group">
 					<div class="card md:flex grid gap-8 border-t-2 border-t-gray-300">
 						<img src={`https:${card.fields.thumbnail.fields.file.url}`} alt={card.fields.title} class="md:h-28 md:w-fit w-full " />
 						<div class="grid gap-5 h-fit">
