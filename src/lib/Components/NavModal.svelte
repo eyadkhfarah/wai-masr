@@ -6,6 +6,7 @@
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import RiSystemCloseLine from 'svelte-icons-pack/ri/RiSystemCloseLine';
 	import FiSearch from 'svelte-icons-pack/fi/FiSearch';
+	import { page } from '$app/stores';
 
 	export let menuTab = false;
 
@@ -41,6 +42,7 @@
 						on:click
 						class="text-text font-black hover:text-red transition-all duration-300 ease-in-out flex items-center gap-4 group border-none"
 						data-sveltekit-prefetch
+						class:text-red={link.link === $page.url.pathname }
 					>
 						<div class="w-2 rounded-3xl group-hover:bg-red z-[120]" />
 						<span>{link.name}</span>

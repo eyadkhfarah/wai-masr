@@ -66,7 +66,7 @@
 										<img
 											src={`https:${card.fields.thumbnail.fields.file.url}`}
 											alt={card.fields.title}
-											class="w-20 h-20"
+											class="object-cover w-20 h-20"
 										/>
 										<div class="grid gap-3 h-fit w-full">
 											<span class="text-gray-400 text-xs"
@@ -170,7 +170,7 @@
 							<img
 								src={`https:${card.fields.thumbnail.fields.file.url}`}
 								alt={card.fields.title}
-								class="w-20 h-20"
+								class="object-cover w-20 h-20"
 							/>
 							<div class="grid h-fit gap-3">
 								<h2 class="text-black text-base">{card.fields.title}</h2>

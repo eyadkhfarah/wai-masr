@@ -86,9 +86,9 @@
 		/>
 		<input
 			type="tel"
-			name="number"
-			id="number"
-			placeholder="رقم الهاتف (يستحسن يكون عليه واتس)"
+			name="phone"
+			id="phone"
+			placeholder="رقم الهاتف"
 			class="input"
 		/>
 		<input type="text" name="governate" id="governate" placeholder="محافظتك" class="input" />

@@ -1,12 +1,11 @@
-import {categories} from "../../../utils/categories"
+import { categories } from '../../../utils/categories';
 
-export async function load({ params}) {
-    
-    const res = categories.find((item) => {
-        return item.link.toString() === params.link;
-    })
+export async function load({ params }) {
+	const res = categories.find((item) => {
+		return item.link.toString() === params.link;
+	});
 
-    return {
-        menu: res
-    };
-};
+	return {
+		menu: res
+	};
+}

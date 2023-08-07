@@ -1,7 +1,5 @@
 <script>
 	// @ts-nocheck
-
-	import { page } from '$app/stores';
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import FiSearch from 'svelte-icons-pack/fi/FiSearch';
 	import CgMenuRightAlt from 'svelte-icons-pack/cg/CgMenuRightAlt';
@@ -10,6 +8,7 @@
 	import NavModal from './NavModal.svelte';
 
 	import { menu } from '../../utils/navLink';
+	import { page } from '$app/stores';
 
 	let menuTab = false;
 
@@ -70,7 +69,7 @@
 		<ul class="flex gap-5 list-none m-0 p-0">
 			{#each menu as link (link.id)}
 				<li>
-					<a href={link.link} class="text-white border-b-2 border-b-black hover:border-b-white"
+					<a href={link.link} class:border-b-red={link.link === $page.url.pathname } class="text-white border-b-2 border-b-black hover:border-b-white"
 						>{link.name}</a
 					>
 				</li>
@@ -79,8 +78,6 @@
 
 		<span class="flex items-center gap-5 opacity-25">
 			{new Intl.DateTimeFormat('ar-u-nu-en', { dateStyle: 'full' }).format(new Date())}
-			<!-- <span>—</span>
-			{new Intl.DateTimeFormat('ar-u-nu-en', { dateStyle: 'full' }).format(new Date())} -->
 		</span>
 	</nav>
 </header>
