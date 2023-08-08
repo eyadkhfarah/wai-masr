@@ -27,6 +27,10 @@
 
 	import RiSystemCheckLine from 'svelte-icons-pack/ri/RiSystemCheckLine';
 	import { browser } from '$app/environment';
+
+	import { copy } from 'svelte-copy';
+
+	import { categories } from '../../../utils/categories';
 </script>
 
 <svelte:head>
@@ -89,10 +93,16 @@
 	<Email />
 	<article class="col-span-2 grid h-fit gap-9">
 		<div class="grid gap-4">
-			<a href="/article/" class="flex gap-3 border-none text-text h-fit">
-				<div class="w-2 bg-red rounded-3xl" />
-				{article.fields.category}
-			</a>
+			{#each categories as categor}
+				{#if categor.title.includes(article.fields.category)}
+					<a href={'/articles/' + categor.link} class="flex gap-3 border-none text-text h-fit">
+						<div class="w-2 bg-red rounded-3xl" />
+						{article.fields.category}
+					</a>
+				{/if}
+			{/each}
+
+			<!--  -->
 			<h1 class="m-0">{article.fields.title}</h1>
 		</div>
 
@@ -114,7 +124,6 @@
 			<div class="flex md:justify-end justify-between gap-5 w-full text-xl font-black">
 				<span class="text-sm">شارك المقالة</span>
 				<div class="flex gap-4 relative">
-					
 					<a href="https://www.facebook.com/" class="border-none" aria-label="صفحة الفيسبوك"
 						><Icon src={RiLogoFacebookCircleFill} /></a
 					>
@@ -124,7 +133,11 @@
 					<a href="https://www.twitter.com/" class="border-none" aria-label="صفحة الاكس"
 						><Icon src={RiLogoTwitterFill} /></a
 					>
-					<span class="cursor-pointer">
+					<span
+						class="cursor-pointer"
+						use:copy={`https://wai-masr.vercel.app/post/${article.fields.slug}`}
+						on:svelte-copy={() => (copied = !copied)}
+					>
 						<Icon src={RiBusinessLinksLine} />
 					</span>
 					{#if copied}
@@ -135,10 +148,13 @@
 						>
 					{/if}
 				</div>
-
 			</div>
 		</div>
-		<img src={`https:${article.fields.thumbnail.fields.file.url}`} alt={article.fields.title} class="w-full" />
+		<img
+			src={`https:${article.fields.thumbnail.fields.file.url}`}
+			alt={article.fields.title}
+			class="w-full"
+		/>
 
 		<h2 class="font-black italic text-lg">{article.fields.subtitle}</h2>
 		<div>{@html documentToHtmlString(article.fields.post)}</div>
