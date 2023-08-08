@@ -16,11 +16,24 @@
 {#if menuTab}
 	<nav
 		class:open={menuTab}
-		class={`md:hidden flex flex-col gap-10 bg-primary text-white p-8 fixed top-0 h-full w-full z-[100] transition-all duration-300 ease-in-out`}
+		class={`md:hidden flex flex-col gap-10 bg-primary text-white p-8 fixed top-0 h-full w-full z-[100] transition-all duration-300 ease-in-out overflow-y-auto`}
 	>
+	<div class="flex justify-between items-center">
+
 		<button class="cursor-pointer text-3xl w-fit h-fit" on:click>
 			<Icon src={RiSystemCloseLine} color="black" />
 		</button>
+
+		<span class="flex items-center gap-5 text-gray-500 font-black text-sm">
+			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', weekday: "long"})}
+			-
+			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', day: "numeric"})}
+			/
+			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', month: "long"})}
+			/
+			{parseFloat(new Date().toLocaleDateString('ar-arab', { calendar:'coptic', year: "numeric"})) + Number(4525)}
+		</span>
+	</div>
 
 		<div class="flex gap-3 h-fit w-full border-b-4 border-red items-center">
 			<input

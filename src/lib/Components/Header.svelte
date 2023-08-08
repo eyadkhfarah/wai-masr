@@ -25,6 +25,8 @@
 
 	let change = true;
 
+	let year = new Date().toLocaleDateString('ar-arab', { calendar:'coptic', year: "numeric"})
+
 	// const reading = () => {
 	// 	const { scrollTop, scrollHeight } = document.documentElement;
 	// 	scrollPrecent = `${(scrollTop / (scrollHeight - window.innerHeight)) * 100}%`;
@@ -78,11 +80,13 @@
 
 	
 		<span class="flex items-center gap-5 opacity-25">
-			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', day: "2-digit"}).replace('ERA1','')}
+			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', weekday: "long"})}
+			-
+			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', day: "numeric"})}
 			/
-			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', month: "long"}).replace('ERA1','')}
+			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', month: "long"})}
 			/
-			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', year: "numeric"}).replace('ERA1','')}
+			{parseFloat(year) + Number(4525)}
 		</span>
 	</nav>
 </header>
