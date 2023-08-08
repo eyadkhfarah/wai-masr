@@ -28,6 +28,8 @@
 			src={`https:${events[0].fields.image.fields.file.url}`}
 			alt={events[0].fields.name}
 			class="md:object-fill object-none md:h-full h-[75em] opacity-40"
+			width="640"
+			height="360"
 		/>
 
 		<div
@@ -150,7 +152,9 @@
 				<img
 					src={`https:${article[0].fields.square.fields.file.url}`}
 					alt={article[0].fields.title}
-					class="w-fit opacity-"
+					class="w-fit"
+					width="500"
+					height="500"
 				/>
 			</a>
 		</div>

@@ -22,7 +22,7 @@
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import RiBusinessLinksLine from 'svelte-icons-pack/ri/RiBusinessLinksLine';
 	import RiLogoFacebookCircleFill from 'svelte-icons-pack/ri/RiLogoFacebookCircleFill';
-	import RiLogoInstagramLine from 'svelte-icons-pack/ri/RiLogoInstagramLine';
+	import RiLogoWhatsappLine from 'svelte-icons-pack/ri/RiLogoWhatsappLine';
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 
 	import RiSystemCheckLine from 'svelte-icons-pack/ri/RiSystemCheckLine';
@@ -124,14 +124,14 @@
 			<div class="flex md:justify-end justify-between gap-5 w-full text-xl font-black">
 				<span class="text-sm">شارك المقالة</span>
 				<div class="flex gap-4 relative">
-					<a href="https://www.facebook.com/" class="border-none" aria-label="صفحة الفيسبوك"
+					<a href={`https://www.facebook.com/sharer/sharer.php?u=${`https://wai-masr.vercel.app/post/${article.fields.slug}`}&t=${article.fields.subtitle}`} target="_blank" class="border-none" aria-label="شارك عبر الفيسبوك"
 						><Icon src={RiLogoFacebookCircleFill} /></a
 					>
-					<a href="https://www.instagram.com/" class="border-none" aria-label="صفحة الانستجرام"
-						><Icon src={RiLogoInstagramLine} /></a
-					>
-					<a href="https://www.twitter.com/" class="border-none" aria-label="صفحة الاكس"
+					<a href={`https://www.twitter.com/intent/tweet?text=${article.fields.subtitle}&url=${`https://wai-masr.vercel.app/post/${article.fields.slug}`}&hastags=وعي_مصر`} target="_blank" class="border-none" aria-label="شارك عبر الاكس"
 						><Icon src={RiLogoTwitterFill} /></a
+					>
+					<a href={`https://wa.me/?text=${`https://wai-masr.vercel.app/post/${article.fields.slug}`}&hastags=وعي_مصر`} target="_blank" class="border-none" aria-label="شارك عبر الواتس"
+						><Icon src={RiLogoWhatsappLine} /></a
 					>
 					<span
 						class="cursor-pointer"
