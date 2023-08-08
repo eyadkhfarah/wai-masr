@@ -24,14 +24,14 @@ export async function GET() {
             xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
             xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
         >
-        ${menu.filter((link) => link.link.indexOf("https://maktabaqawmya.vercel.app")).map((page) => 
+        ${menu.filter((link) => link.link.indexOf("https://")).map((page) => 
 					`<url>
             <loc>${site}${page.link}</loc>
             <changefreq>daily</changefreq>
             <priority>0.7</priority>
           </url>`
 				).join('')}
-        ${categories.filter((link) => link.link.indexOf("https://maktabaqawmya.vercel.app")).map((page) => 
+        ${categories.map((page) => 
 					`<url>
             <loc>${site}/article/${page.link}</loc>
             <changefreq>daily</changefreq>

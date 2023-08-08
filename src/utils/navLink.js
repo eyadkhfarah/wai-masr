@@ -25,13 +25,18 @@ export const menu = [
         id: 5
     },
     {
+        name: 'اتعلم هيروغليفية',
+        link: 'https://www.bibalex.org/learnhieroglyphs/Home/Index_Ar.aspx',
+        id: 6
+    },
+    {
         name: 'احنا مين؟',
         link: '/about',
-        id: 6
+        id: 7
     },
     {
         name: 'اتواصل معنا',
         link: '/contact',
-        id: 7
+        id: 8
     },
 ];
