@@ -39,4 +39,14 @@ export const menu = [
         link: '/contact',
         id: 8
     },
+    {
+        name: 'إدعمنا',
+        link: '/support',
+        id: 9
+    },
+    {
+        name: 'تعالي معانا',
+        link: '/join',
+        id: 10
+    },
 ];

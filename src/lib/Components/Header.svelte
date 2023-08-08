@@ -76,10 +76,17 @@
 			{/each}
 		</ul>
 
+	
 		<span class="flex items-center gap-5 opacity-25">
-			{new Intl.DateTimeFormat('ar-u-nu-en', { dateStyle: 'full' }).format(new Date())}
+			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', day: "2-digit"}).replace('ERA1','')}
+			/
+			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', month: "long"}).replace('ERA1','')}
+			/
+			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', year: "numeric"}).replace('ERA1','')}
 		</span>
 	</nav>
 </header>
 
 <NavModal {menuTab} on:click={handeler} />
+
+<!-- 4525 -->

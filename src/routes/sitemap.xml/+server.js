@@ -31,6 +31,16 @@ export async function GET() {
             <priority>0.7</priority>
           </url>`
 				).join('')}
+        <url>
+            <loc>${site}/privacy-policy</loc>
+            <changefreq>daily</changefreq>
+            <priority>0.7</priority>
+          </url>
+        <url>
+            <loc>${site}/terms</loc>
+            <changefreq>daily</changefreq>
+            <priority>0.7</priority>
+          </url>
         ${categories.map((page) => 
 					`<url>
             <loc>${site}/article/${page.link}</loc>
