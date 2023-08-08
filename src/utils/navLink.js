@@ -25,7 +25,7 @@ export const menu = [
         id: 5
     },
     {
-        name: 'اتعلم هيروغليفية',
+        name: 'اتعلم اللغة المصرية',
         link: 'https://www.bibalex.org/learnhieroglyphs/Home/Index_Ar.aspx',
         id: 6
     },
