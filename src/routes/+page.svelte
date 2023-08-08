@@ -28,12 +28,11 @@
 			src={`https:${events[0].fields.image.fields.file.url}`}
 			alt={events[0].fields.name}
 			class="md:object-fill object-none md:h-full h-[75em] opacity-40"
-			width="640"
-			height="360"
+			width="1920"
 		/>
 
 		<div
-			class="md:px-28 bg-gradient-to-t from-black absolute bottom-0 grid gap-20 h-full md:p-0 p-10"
+			class="md:px-28 bg-gradient-to-t from-black absolute bottom-0 grid h-full md:p-0 p-5"
 		>
 			<div class="grid gap-9 z-10">
 				<div class="py-10 text-white">
@@ -48,15 +47,15 @@
 								})}
 							</p>
 						</div>
-						<a class="Whitebtn flex items-center gap-6" href="/events" rel="noopener noreferrer"
-							>اقرا التفاصيل<span><Icon color="white" src={RiSystemArrowLeftLine} /></span></a
+						<a class="Whitebtn flex items-center gap-6 border-b-red" href="/events" rel="noopener noreferrer"
+							>اقرا التفاصيل<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 						>
 					</div>
 				</div>
 			</div>
 
 			<div class="">
-				<h2 class="bg-rose-950 p-4 text-base w-fit text-white">اخر المقالات</h2>
+				<h2 class="bg-red p-4 text-base w-fit m-0 text-white">اخر المقالات</h2>
 				<div class="md:flex grid gap-5">
 					<div class="bg-primary md:grid-cols-3 grid md:w-fit">
 						{#each article as card, index (card.sys.id)}
@@ -153,8 +152,8 @@
 					src={`https:${article[0].fields.square.fields.file.url}`}
 					alt={article[0].fields.title}
 					class="w-fit"
-					width="500"
-					height="500"
+					width="1080"
+					height="1080"
 				/>
 			</a>
 		</div>

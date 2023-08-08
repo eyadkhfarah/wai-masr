@@ -124,14 +124,27 @@
 			<div class="flex md:justify-end justify-between gap-5 w-full text-xl font-black">
 				<span class="text-sm">شارك المقالة</span>
 				<div class="flex gap-4 relative">
-					<a href={`https://www.facebook.com/sharer/sharer.php?u=${`https://wai-masr.vercel.app/post/${article.fields.slug}`}&t=${article.fields.subtitle}`} target="_blank" class="border-none" aria-label="شارك عبر الفيسبوك"
-						><Icon src={RiLogoFacebookCircleFill} /></a
+					<a
+						href={`https://www.facebook.com/sharer/sharer.php?u=${`https://wai-masr.vercel.app/post/${article.fields.slug}`}&t=${
+							article.fields.subtitle
+						}`}
+						target="_blank"
+						class="border-none"
+						aria-label="شارك عبر الفيسبوك"><Icon src={RiLogoFacebookCircleFill} /></a
 					>
-					<a href={`https://www.twitter.com/intent/tweet?text=${article.fields.subtitle}&url=${`https://wai-masr.vercel.app/post/${article.fields.slug}`}&hastags=وعي_مصر`} target="_blank" class="border-none" aria-label="شارك عبر الاكس"
-						><Icon src={RiLogoTwitterFill} /></a
+					<a
+						href={`https://www.twitter.com/intent/tweet?text=${
+							article.fields.subtitle
+						}&url=${`https://wai-masr.vercel.app/post/${article.fields.slug}`}&hastags=وعي_مصر`}
+						target="_blank"
+						class="border-none"
+						aria-label="شارك عبر الاكس"><Icon src={RiLogoTwitterFill} /></a
 					>
-					<a href={`https://wa.me/?text=${`https://wai-masr.vercel.app/post/${article.fields.slug}`}&hastags=وعي_مصر`} target="_blank" class="border-none" aria-label="شارك عبر الواتس"
-						><Icon src={RiLogoWhatsappLine} /></a
+					<a
+						href={`https://wa.me/?text=${`https://wai-masr.vercel.app/post/${article.fields.slug}`}&hastags=وعي_مصر`}
+						target="_blank"
+						class="border-none"
+						aria-label="شارك عبر الواتس"><Icon src={RiLogoWhatsappLine} /></a
 					>
 					<span
 						class="cursor-pointer"
