@@ -27,12 +27,12 @@
 		<img
 			src={`https:${events[0].fields.image.fields.file.url}`}
 			alt={events[0].fields.name}
-			class="md:object-fill object-none md:h-full h-[75em] opacity-40"
+			class="lg:object-fill object-none lg:h-full h-[75em] opacity-40"
 			width="1920"
 		/>
 
 		<div
-			class="md:px-28 bg-gradient-to-t from-black absolute bottom-0 grid h-full md:p-0 p-5"
+			class="md:px-28 bg-gradient-to-t w-full from-black absolute bottom-0 grid h-full md:p-0 p-5"
 		>
 			<div class="grid gap-9 z-10">
 				<div class="py-10 text-white">
@@ -54,10 +54,10 @@
 				</div>
 			</div>
 
-			<div class="">
+			<div class="m-0 w-full">
 				<h2 class="bg-red p-4 text-base w-fit m-0 text-white">اخر المقالات</h2>
-				<div class="md:flex grid gap-5">
-					<div class="bg-primary md:grid-cols-3 grid md:w-fit">
+				<div class="lg:flex sm:grid gap-5">
+					<div class="bg-primary lg:grid-cols-3 grid md:w-full">
 						{#each article as card, index (card.sys.id)}
 							{#if index < 3}
 								<a href={`/post/${card.fields.slug}`} class="md:border-red border-none">
@@ -95,7 +95,7 @@
 </section>
 
 <section>
-	<div class="md:grid md:grid-cols-4 gap-10 h-fit">
+	<div class="lg:grid lg:grid-cols-4 gap-10 h-fit">
 		<div class="grid gap-9 w-full h-fit">
 			{#each article as card, index (card.sys.id)}
 				{#if index < 3}
@@ -227,7 +227,7 @@
 		<div class="w-2 bg-black rounded-3xl" />
 		<h2>مقالات مختارة</h2>
 	</div>
-	<div class="grid gap-6 md:grid-cols-3">
+	<div class="grid gap-6 lg:grid-cols-3">
 		{#each article as card, index (card.sys.id)}
 			{#if index < 3}
 				<a href={`/post/${card.fields.slug}`} class="border-none">
@@ -272,10 +272,10 @@
 		<div class="w-2 bg-black rounded-3xl" />
 		<h2>ابرز المناسبات</h2>
 	</div>
-	<div class="md:flex grid gap-6">
+	<div class="lg:flex md:grid gap-6">
 		{#each events as event (event.sys.id)}
-			<a href={`/events/${event.fields.slug}`}>
-				<div class="grid gap-7 md:grid-cols-3">
+			<a href={`/events/${event.fields.slug}`} class="w-fit">
+				<div class="grid gap-7 lg:grid-cols-3 w-fit">
 					<div class="h-80 w-full col-span-2 bg-rose-950 text-white relative">
 						<img
 							src={`https:${event.fields.image.fields.file.url}`}

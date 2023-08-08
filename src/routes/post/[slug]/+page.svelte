@@ -89,8 +89,11 @@
 	></script>
 </svelte:head>
 
-<section class="grid md:grid-cols-4 gap-10 m-0">
-	<Email />
+<section class="grid lg:grid-cols-4 gap-10 m-0">
+	<span class="lg:block hidden">
+
+		<Email />
+	</span>
 	<article class="col-span-2 grid h-fit gap-9">
 		<div class="grid gap-4">
 			{#each categories as categor}
@@ -121,7 +124,7 @@
 					})}
 				</p>
 			</div>
-			<div class="flex md:justify-end justify-between gap-5 w-full text-xl font-black">
+			<div class="flex lg:justify-end justify-between gap-5 w-full text-xl font-black">
 				<span class="text-sm">شارك المقالة</span>
 				<div class="flex gap-4 relative">
 					<a

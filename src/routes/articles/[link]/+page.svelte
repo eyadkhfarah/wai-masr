@@ -39,7 +39,7 @@
 		{/each}
 	</div>
 
-	<div class="grid gap-7 md:grid-cols-3">
+	<div class="grid gap-7 lg:grid-cols-3">
 		<div class="grid gap-3 col-span-2">
 			{#each articles as card (card.sys.id)}
 				{#if card.fields.category === category.title}

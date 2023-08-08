@@ -39,9 +39,9 @@
 	// document.addEventListener('scroll', reading);
 </script>
 
-<header class:bg-black={change} class="bg-black p-5 z-[100] flex md:static sticky top-0 transition-all ease-in-out duration-300 gap-5 md:justify-between items-center">
+<header class:bg-black={change} class="bg-black p-5 z-[100] flex lg:static sticky top-0 transition-all ease-in-out duration-300 gap-5 lg:justify-between items-center">
 	<button
-		class="text-xl md:hidden block cursor-pointer text-white"
+		class="text-xl lg:hidden block cursor-pointer text-white"
 		class:open={menuTab}
 		on:click={handeler}
 	>
@@ -49,10 +49,10 @@
 	</button>
 
 	<a href="/" class="text-white border-none">
-		<img src={logo} alt="لوجو وعي مصر" class="md:h-16 h-9" />
+		<img src={logo} alt="لوجو وعي مصر" class="lg:h-16 h-9" />
 	</a>
 
-	<div class="border-b-4 border-red md:flex hidden gap-4 items-center">
+	<div class="border-b-4 border-red lg:flex hidden gap-4 items-center">
 		<input
 			type="search"
 			class="bg-transparent border-none placeholder:text-white text-white focus:border-none p-0 py-3"
@@ -65,7 +65,7 @@
 	</div>
 </header>
 <header class:bg-black={change} class={`sticky top-0 bg-black z-40 text-white transition-all ease-in-out duration-300`}>
-	<nav class="border-t border-gray-900 p-3 md:flex justify-between items-center hidden">
+	<nav class="border-t border-gray-900 p-3 lg:flex justify-between items-center hidden">
 		<ul class="flex gap-5 list-none m-0 p-0">
 			{#each menu as link (link.id)}
 				<li>
