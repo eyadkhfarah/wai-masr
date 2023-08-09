@@ -13,7 +13,7 @@
 
 	let search = $page.url.searchParams.get('search');
 
-	let title = `وعي مصر :: بحث ${search}`;
+	let title = `وعي - مصر :: بحث ${search}`;
 	let desc = 'تواصل مع فريق وعي مصر';
 </script>
 
