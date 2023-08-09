@@ -10,8 +10,8 @@
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 	import H1 from '../../lib/Components/Text/H1.svelte';
 
-	let title = 'وعي مصر :: تواصل معنا';
-	let desc = 'تواصل مع فريق وعي مصر';
+	let title = 'وعي مصر :: اتواصل معانا';
+	let desc = 'تواصل مع فريق وعي - مصر';
 </script>
 
 <svelte:head>
@@ -24,9 +24,9 @@
 
 <section class="grid gap-5 md:grid-cols-2">
 	<div class="grid gap-6 h-fit">
-		<H1>تواصل معنا</H1>
+		<H1>اتواصل معنا</H1>
 
-		<p class="m-0">تقدر تتواصل مع فريق وعي مصر عن طريق انك تملا الفورم اللي قدامك ده.</p>
+		<p class="m-0">تقدر تتواصل معانا بعد ملئ بياناتك من خلال الفورم ده.</p>
 
 		<h2 class="m-0 text-xl">أو كلمنا علي حساباتنا في مواقع التواصل الاجتماعي</h2>
 
@@ -73,7 +73,7 @@
 			name="Last Name"
 			required
 			id="lastName"
-			placeholder="اسمك العائلة*"
+			placeholder="اسم العائلة*"
 			class="input"
 		/>
 		<input
@@ -88,7 +88,7 @@
 			type="tel"
 			name="phone"
 			id="phone"
-			placeholder="رقم الهاتف"
+			placeholder="رقم الموبايل"
 			class="input"
 		/>
 		<input type="text" name="governate" id="governate" placeholder="محافظتك" class="input" />
@@ -97,7 +97,7 @@
 			class="input"
 			name="message"
 			id="message"
-			placeholder="عبر عن اللي نفسك فيه*"
+			placeholder="ابعتلنا رسالتك*"
 			required
 		/>
 
