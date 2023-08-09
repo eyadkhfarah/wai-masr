@@ -6,6 +6,8 @@
     let title = 'وعي مصر :: انضم لينا';
 	let desc = 'انضم مع فريق وعي مصر';
 
+	
+	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import FiSearch from 'svelte-icons-pack/fi/FiSearch';
 

@@ -45,11 +45,7 @@ export const menu = [
         id: 9
     },
     {
-<<<<<<< HEAD
-        name: 'انضم لينا',
-=======
         name: 'إنضم لينا',
->>>>>>> 56e24fe188d29387e438501222a741c5a6c248ff
         link: '/join',
         id: 10
     },
