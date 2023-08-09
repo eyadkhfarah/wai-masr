@@ -1,6 +1,6 @@
 export const menu = [
     {
-        name: 'الصفحة الرئيسية',
+        name: 'الرئيسية',
         link: '/',
         id: 1
     },
