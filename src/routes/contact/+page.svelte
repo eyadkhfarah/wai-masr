@@ -8,16 +8,12 @@
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 	import H1 from '../../lib/Components/Text/H1.svelte';
-<<<<<<< HEAD
+  
 	
 	import og from '../../lib/images/main.png';
 	let title = 'وعي مصر :: اتواصل معانا';
 	let desc = 'تواصل مع فريق وعي مصر';
-=======
 
-	let title = 'وعي - مصر :: اتواصل معانا';
-	let desc = 'تواصل مع فريق وعي - مصر';
->>>>>>> 56e24fe188d29387e438501222a741c5a6c248ff
 </script>
 
 <svelte:head>
@@ -30,11 +26,11 @@
 
 <section class="grid gap-5 md:grid-cols-2">
 	<div class="grid gap-6 h-fit">
-<<<<<<< HEAD
+  
 		<H1>اتواصل معانا</H1>
-=======
+   
 		<H1>اتواصل معنا</H1>
->>>>>>> 56e24fe188d29387e438501222a741c5a6c248ff
+   
 
 		<p class="m-0">تقدر تتواصل معانا بعد ملئ بياناتك من خلال الفورم ده.</p>
 
