@@ -15,10 +15,10 @@
 </script>
 
 <svelte:head>
-	<title>وعي مصر</title>
+	<title>وعي - مصر</title>
 	<meta name="description" content="نبض التيار القومي المصري." />
 	<meta property="og:image" content={og} />
-	<meta property="og:title" content="وعي مصر" />
+	<meta property="og:title" content="وعي - مصر" />
 	<meta property="og:description" content="نبض التيار القومي المصري." />
 </svelte:head>
 
