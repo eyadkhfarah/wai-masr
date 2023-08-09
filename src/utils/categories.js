@@ -1,21 +1,21 @@
 export const categories = [
     {
-        title: "اخبار تشرف",
+        title: "أخبار تشرف",
         link: "honuor",
         id: 1
     },
     {
-        title: "اخبار وعي",
+        title: "أخبار وعي",
         link: "news",
         id: 2
     },
     {
-        title: "القومية",
+        title: "القومية المصرية",
         link: "nationalist",
         id: 3
     },
     {
-        title: "الهوية",
+        title: "الهوية المصرية",
         link: "idenitiy",
         id: 4
     },
@@ -25,37 +25,37 @@ export const categories = [
         id: 5
     },
     {
-        title: "الحضارة",
+        title: "الحضارة المصرية",
         link: "civilization",
         id: 6
     },
     {
-        title: "اللغة",
+        title: "اللغة المصرية",
         link: "lang",
         id: 7
     },
     {
-        title: "المرأة",
+        title: "المرأة المصرية",
         link: "women",
         id: 8
     },
     {
-        title: "التراث",
+        title: "التراث المصري",
         link: "heritage",
         id: 9
     },
     {
-        title: "الشخصيات",
+        title: "شخصيات مصرية",
         link: "influencers",
         id: 10
     },
     {
-        title: "الفن",
+        title: "الفن المصري",
         link: "art",
         id: 11
     },
     {
-        title: "المعمار",
+        title: "المعمار لبمصري",
         link: "architecture",
         id: 12
     },
