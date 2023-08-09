@@ -3,6 +3,8 @@
 	import Loading from '../lib/Components/Loading.svelte';
 	import Footer from '../lib/Components/Footer.svelte';
 	import Header from '../lib/Components/Header.svelte';
+	import ToTop from '../lib/Components/ToTop.svelte';
+
 	import './styles.css';
 	import { Delayed } from '../lib/store';
 	import { partytownSnippet } from '@builder.io/partytown/integration';
@@ -21,6 +23,7 @@
 		<Loading />
 	{:else}
 		<slot />
+		<ToTop />
 	{/if}
 
 	<Footer />

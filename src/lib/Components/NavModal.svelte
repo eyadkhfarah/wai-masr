@@ -15,8 +15,8 @@
 
 {#if menuTab}
 	<nav
-		class:open={menuTab}
-		class={`md:hidden flex flex-col gap-10 bg-primary text-white p-8 fixed top-0 h-full w-full z-[100] transition-all duration-300 ease-in-out overflow-y-auto`}
+		class:left-0={menuTab}
+		class="md:hidden flex flex-col gap-10 bg-primary text-white p-8 fixed top-0 h-full w-full z-[100] transition-all duration-300 ease-in-out overflow-y-auto"
 	>
 	<div class="flex justify-between items-center">
 
@@ -65,14 +65,3 @@
 		</ul>
 	</nav>
 {/if}
-
-<style>
-	nav.open {
-		right: 0px;
-		transition: all 300ms ease-in-out;
-	}
-	nav {
-		right: 3000px;
-		transition: all 300ms ease-in-out;
-	}
-</style>

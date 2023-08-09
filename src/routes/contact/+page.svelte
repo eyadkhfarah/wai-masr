@@ -1,6 +1,5 @@
 <script>
-	import og from '../../lib/images/main.png';
-
+	
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
@@ -9,8 +8,9 @@
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 	import H1 from '../../lib/Components/Text/H1.svelte';
-
-	let title = 'وعي مصر :: تواصل معنا';
+	
+	import og from '../../lib/images/main.png';
+	let title = 'وعي مصر :: اتواصل معانا';
 	let desc = 'تواصل مع فريق وعي مصر';
 </script>
 
@@ -24,7 +24,7 @@
 
 <section class="grid gap-5 md:grid-cols-2">
 	<div class="grid gap-6 h-fit">
-		<H1>تواصل معنا</H1>
+		<H1>اتواصل معانا</H1>
 
 		<p class="m-0">تقدر تتواصل مع فريق وعي مصر عن طريق انك تملا الفورم اللي قدامك ده.</p>
 

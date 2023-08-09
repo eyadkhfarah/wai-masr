@@ -87,6 +87,9 @@
 					<div class="row-span-1 text-white">
 						<h3>عايز تكتب مقالات؟</h3>
 						<p>ابعت مقالتك لينا واحنا هننشرها لك</p>
+						<a class="Whitebtn flex w-full items-center gap-6 border-b-red" href="/contact" rel="noopener noreferrer"
+							>أنشر مقالتك<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
+						>
 					</div>
 				</div>
 			</div>

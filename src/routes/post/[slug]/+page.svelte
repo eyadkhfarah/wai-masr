@@ -91,7 +91,6 @@
 
 <section class="grid lg:grid-cols-4 gap-10 m-0">
 	<span class="lg:block hidden">
-
 		<Email />
 	</span>
 	<article class="col-span-2 grid h-fit gap-9">
@@ -116,12 +115,24 @@
 				</p>
 				<span class="md:block hidden">—</span>
 				<p class="m-0">
-					تاريخ | {new Date(article.sys.createdAt).toLocaleDateString('ar-EG', {
-						weekday: 'long',
-						year: 'numeric',
-						month: 'short',
-						day: 'numeric'
-					})}
+					تاريخ | <span>
+						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+							calendar:'coptic',
+							weekday: 'long'
+						})} -
+						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+							calendar:'coptic',
+							day: 'numeric'
+						})} | 
+						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+							calendar:'coptic',
+							month: 'short'
+						})} | 
+						{parseFloat(new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+							calendar:'coptic',
+							year: 'numeric'
+						})) + Number(4525)}
+					</span>
 				</p>
 			</div>
 			<div class="flex lg:justify-end justify-between gap-5 w-full text-xl font-black">

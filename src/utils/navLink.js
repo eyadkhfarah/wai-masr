@@ -35,7 +35,7 @@ export const menu = [
         id: 7
     },
     {
-        name: 'اتواصل معنا',
+        name: 'اتواصل معانا',
         link: '/contact',
         id: 8
     },
@@ -45,7 +45,7 @@ export const menu = [
         id: 9
     },
     {
-        name: 'تعالي معانا',
+        name: 'انضم لينا',
         link: '/join',
         id: 10
     },

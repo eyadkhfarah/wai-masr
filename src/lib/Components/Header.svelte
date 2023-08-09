@@ -80,11 +80,11 @@
 
 	
 		<span class="flex items-center gap-5 opacity-25">
-			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', weekday: "long"})}
+			{new Date().toLocaleDateString('ar-arab', { calendar:'coptic', weekday: "long"})}
 			-
-			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', day: "numeric"})}
+			{new Date().toLocaleDateString('ar-arab', { calendar:'coptic', day: "numeric"})}
 			/
-			{new Date().toLocaleDateString('ar-u-nu-arab', { calendar:'coptic', month: "long"})}
+			{new Date().toLocaleDateString('ar-arab', { calendar:'coptic', month: "long"})}
 			/
 			{parseFloat(year) + Number(4525)}
 		</span>
