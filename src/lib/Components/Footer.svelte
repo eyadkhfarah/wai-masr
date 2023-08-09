@@ -10,10 +10,10 @@
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 </script>
 
-<footer class="grid gap-5 md:p-7 md:px-32 p-5 text-white">
+<footer class="grid gap-5 md:p-7 md:px-32 p-5 text-white bg-red">
 	<div class="grid gap-5 text-center">
 		<h2 class="text-4xl">سجل في نشرتـــنا الاخبــــارية</h2>
-		<p>وخليك متابع اخر المثالات والفعاليات</p>
+		<p>وخليك متابع اخر المقالات والفعاليات</p>
 
 		<div class="border-b-8 border-black mb-14">
 			<form action="" class="flex items-center md:text-base text-sm">
