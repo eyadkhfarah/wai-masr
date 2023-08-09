@@ -15,7 +15,7 @@ export const menu = [
     //     id: 3
     // },
     {
-        name: 'مناسبات',
+        name: 'فعاليات',
         link: '/events',
         id: 4
     },
@@ -26,7 +26,7 @@ export const menu = [
     },
     {
         name: 'اتعلم اللغة المصرية',
-        link: 'https://www.bibalex.org/learnhieroglyphs/Home/Index_Ar.aspx',
+        link: 'https://www.bibalex.org/learnhieroglyphs/Lesson/Introduction_Ar.aspx',
         id: 6
     },
     {
@@ -35,7 +35,7 @@ export const menu = [
         id: 7
     },
     {
-        name: 'اتواصل معنا',
+        name: 'اتواصل معانا',
         link: '/contact',
         id: 8
     },
@@ -45,7 +45,7 @@ export const menu = [
         id: 9
     },
     {
-        name: 'تعالي معانا',
+        name: 'إنضم لينا',
         link: '/join',
         id: 10
     },
