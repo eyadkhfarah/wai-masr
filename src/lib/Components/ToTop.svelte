@@ -29,10 +29,10 @@
 
 <svelte:window on:scroll={handleOnScroll} />
 
-<div
+<button
 	class="cursor-pointer flex gap-4 items-center hover:bg-red opacity-100 transition-all ease-in-out duration-300 fixed right-5 bottom-5 text-white bg-black p-3"
 	on:click={goTop}
 	class:opacity-0={hidden}
 >
 	اطلع لفوق<span><Icon src={RiSystemArrowUpLine} color="white"/></span>
-</div>
+</button>
