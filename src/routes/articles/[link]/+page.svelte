@@ -51,11 +51,18 @@
 								{card.fields.title}
 							</h2>
 							<p class="text-gray-400 m-0">
-								{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
-									year: 'numeric',
-									month: 'short',
+								{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+									calendar:'coptic',
 									day: 'numeric'
-								})} | <span class="text-blue-600 font-black"
+								})}
+								{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+									calendar:'coptic',
+									month: 'short'
+								})} 
+								{parseFloat(new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+									calendar:'coptic',
+									year: 'numeric'
+								})) + Number(4525)}  | <span class="text-blue-600 font-black"
 									><a href="/" class="border-none">{card.fields.category}</a></span
 								>
 							</p>

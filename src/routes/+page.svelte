@@ -57,7 +57,7 @@
 			<div class="m-0 w-full">
 				<h2 class="bg-red p-4 text-base w-fit m-0 text-white">اخر المقالات</h2>
 				<div class="lg:flex sm:grid gap-5">
-					<div class="bg-primary lg:grid-cols-3 grid md:w-full">
+					<div class="bg-primary lg:grid-cols-3 h-fit grid md:w-full">
 						{#each article as card, index (card.sys.id)}
 							{#if index < 3}
 								<a href={`/post/${card.fields.slug}`} class="md:border-red border-none">
@@ -71,11 +71,19 @@
 										/>
 										<div class="grid gap-3 h-fit w-full">
 											<span class="text-gray-400 text-xs"
-												>{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-													year: 'numeric',
-													month: 'short',
+												>
+												{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+													calendar:'coptic',
 													day: 'numeric'
-												})}</span
+												})}
+												{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+													calendar:'coptic',
+													month: 'short'
+												})} 
+												{parseFloat(new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+													calendar:'coptic',
+													year: 'numeric'
+												})) + Number(4525)}</span
 											>
 											<h3 class="text-black text-sm m-0">{card.fields.title}</h3>
 										</div>
@@ -110,11 +118,18 @@
 							</div>
 							<h2 class="text-black text-xl">{card.fields.title}</h2>
 							<p class="text-gray-400">
-								{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
-									year: 'numeric',
-									month: 'short',
+								{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+									calendar:'coptic',
 									day: 'numeric'
-								})} | <span class="text-blue-600 font-black">{card.fields.author.fields.name}</span>
+								})}
+								{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+									calendar:'coptic',
+									month: 'short'
+								})} 
+								{parseFloat(new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+									calendar:'coptic',
+									year: 'numeric'
+								})) + Number(4525)} | <span class="text-blue-600 font-black">{card.fields.author.fields.name}</span>
 							</p>
 						</div>
 					</a>
@@ -143,11 +158,18 @@
 						{article[0].fields.title}
 					</h2>
 					<p class="text-gray-400">
-						{new Date(article[0].sys.createdAt).toLocaleDateString('ar-EG', {
-							year: 'numeric',
-							month: 'short',
+						{new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
+							calendar:'coptic',
 							day: 'numeric'
-						})} |
+						})}
+						{new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
+							calendar:'coptic',
+							month: 'short'
+						})} 
+						{parseFloat(new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
+							calendar:'coptic',
+							year: 'numeric'
+						})) + Number(4525)} |
 						<span class="text-blue-600 font-black">{article[0].fields.author.fields.name}</span>
 					</p>
 				</div>
@@ -181,11 +203,18 @@
 							<div class="grid h-fit gap-3">
 								<h2 class="text-black text-base">{card.fields.title}</h2>
 								<p class="text-gray-400 text-sm">
-									{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
-										year: 'numeric',
-										month: 'short',
+									{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+										calendar:'coptic',
 										day: 'numeric'
-									})} |
+									})}
+									{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+										calendar:'coptic',
+										month: 'short'
+									})} 
+									{parseFloat(new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+										calendar:'coptic',
+										year: 'numeric'
+									})) + Number(4525)} |
 									<span class="text-blue-600 font-black"
 										><a href="/" class="border-none">{card.fields.category}</a></span
 									>
@@ -242,11 +271,18 @@
 						/>
 						<h2 class="text-black text-xl">{card.fields.title}</h2>
 						<p class="text-gray-400">
-							{new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
-								year: 'numeric',
-								month: 'short',
+							{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+								calendar:'coptic',
 								day: 'numeric'
-							})} |
+							})}
+							{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+								calendar:'coptic',
+								month: 'short'
+							})} 
+							{parseFloat(new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+								calendar:'coptic',
+								year: 'numeric'
+							})) + Number(4525)} |
 							<span class="text-blue-600 font-black"
 								><a href="/" class="border-none">{card.fields.category}</a></span
 							>

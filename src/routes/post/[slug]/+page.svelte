@@ -119,15 +119,15 @@
 						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
 							calendar:'coptic',
 							weekday: 'long'
-						})} -
+						})}
 						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
 							calendar:'coptic',
 							day: 'numeric'
-						})} | 
+						})}
 						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
 							calendar:'coptic',
 							month: 'short'
-						})} | 
+						})} 
 						{parseFloat(new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
 							calendar:'coptic',
 							year: 'numeric'
