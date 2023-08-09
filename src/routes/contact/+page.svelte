@@ -10,7 +10,7 @@
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 	import H1 from '../../lib/Components/Text/H1.svelte';
 
-	let title = 'وعي مصر :: اتواصل معانا';
+	let title = 'وعي - مصر :: اتواصل معانا';
 	let desc = 'تواصل مع فريق وعي - مصر';
 </script>
 
