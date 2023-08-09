@@ -7,7 +7,7 @@
 
 	let events = data.events;
 
-	let title = 'وعي مصر :: المناسبات';
+	let title = 'وعي - مصر :: المناسبات';
 	let desc = 'أهم المناسبات والاعياد المصرية';
 </script>
 
