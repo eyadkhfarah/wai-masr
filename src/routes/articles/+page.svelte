@@ -18,7 +18,7 @@
 	<title>وعي مصر :: مقالات</title>
 	<meta name="description" content="اهم المقالات والمصار والاراء القومية" />
 	<meta property="og:image" content={og} />
-	<meta property="og:title" content="وعي مصر :: مقالات" />
+	<meta property="og:title" content="وعي - مصر :: مقالات" />
 	<meta property="og:description" content="اهم المقالات والمصادر والاراء القومية" />
 </svelte:head>
 
