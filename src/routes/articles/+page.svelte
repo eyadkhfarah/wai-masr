@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<title>وعي مصر :: مقالات</title>
+	<title>وعي - مصر :: مقالات</title>
 	<meta name="description" content="اهم المقالات والمصار والاراء القومية" />
 	<meta property="og:image" content={og} />
 	<meta property="og:title" content="وعي - مصر :: مقالات" />
