@@ -15,7 +15,7 @@ export const categories = [
         id: 3
     },
     {
-        title: "الهوية المصرية",
+        title: "هوية",
         link: "idenitiy",
         id: 4
     },
@@ -25,7 +25,7 @@ export const categories = [
         id: 5
     },
     {
-        title: "الحضارة المصرية",
+        title: "حضارة وتاريخ",
         link: "civilization",
         id: 6
     },
@@ -35,12 +35,12 @@ export const categories = [
         id: 7
     },
     {
-        title: "المرأة المصرية",
+        title: "المرأة",
         link: "women",
         id: 8
     },
     {
-        title: "التراث المصري",
+        title: "اتراث",
         link: "heritage",
         id: 9
     },
@@ -50,12 +50,12 @@ export const categories = [
         id: 10
     },
     {
-        title: "الفن المصري",
+        title: "افن",
         link: "art",
         id: 11
     },
     {
-        title: "المعمار لبمصري",
+        title: "معمار",
         link: "architecture",
         id: 12
     },
