@@ -65,7 +65,7 @@
             "@type": "Article",
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": "https://wai-masr.vercel.app/post/${article.fields.slug}"
+              "@id": "https://waimasr.vercel.app/post/${article.fields.slug}"
             },
             "headline": "${article.fields.title}",
             "description": "${article.fields.subtitle}",
@@ -74,7 +74,7 @@
               {
                 "@type": "Person",
                 "name": "${article.fields.author.fields.name}",
-                "url": "https://wai-masr.vercel.app/author/${article.fields.author.fields.slug}"
+                "url": "https://waimasr.vercel.app/author/${article.fields.author.fields.slug}"
               }
             ],
             "publisher": {
@@ -139,7 +139,7 @@
 				<span class="text-sm">شارك المقالة</span>
 				<div class="flex gap-4 relative">
 					<a
-						href={`https://www.facebook.com/sharer/sharer.php?u=${`https://wai-masr.vercel.app/post/${article.fields.slug}`}&t=${
+						href={`https://www.facebook.com/sharer/sharer.php?u=${`https://waimasr.vercel.app/post/${article.fields.slug}`}&t=${
 							article.fields.subtitle
 						}`}
 						target="_blank"
@@ -149,20 +149,20 @@
 					<a
 						href={`https://www.twitter.com/intent/tweet?text=${
 							article.fields.subtitle
-						}&url=${`https://wai-masr.vercel.app/post/${article.fields.slug}`}&hastags=وعي_مصر`}
+						}&url=${`https://waimasr.vercel.app/post/${article.fields.slug}`}&hastags=وعي_مصر`}
 						target="_blank"
 						class="border-none"
 						aria-label="شارك عبر الاكس"><Icon src={RiLogoTwitterFill} /></a
 					>
 					<a
-						href={`https://wa.me/?text=${`https://wai-masr.vercel.app/post/${article.fields.slug}`}&hastags=وعي_مصر`}
+						href={`https://wa.me/?text=${`https://waimasr.vercel.app/post/${article.fields.slug}`}&hastags=وعي_مصر`}
 						target="_blank"
 						class="border-none"
 						aria-label="شارك عبر الواتس"><Icon src={RiLogoWhatsappLine} /></a
 					>
 					<span
 						class="cursor-pointer"
-						use:copy={`https://wai-masr.vercel.app/post/${article.fields.slug}`}
+						use:copy={`https://waimasr.vercel.app/post/${article.fields.slug}`}
 						on:svelte-copy={() => (copied = !copied)}
 					>
 						<Icon src={RiBusinessLinksLine} />
