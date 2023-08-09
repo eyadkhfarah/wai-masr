@@ -34,7 +34,7 @@
 </script>
 
 <svelte:head>
-	<title>{article.fields.title} :: وعي مصر</title>
+	<title>{article.fields.title} :: وعي - مصر</title>
 	<meta name="description" content={article.fields.subtitle} />
 
 	<meta property="og:title" content={article.fields.title} />
@@ -79,7 +79,7 @@
             ],
             "publisher": {
               "@type": "Organization",
-              "name": "وعي مصر"
+              "name": "وعي - مصر"
             },
             "datePublished": "${article.sys.createdAt}",
             "dateModified": "${article.sys.updatedAt}"
