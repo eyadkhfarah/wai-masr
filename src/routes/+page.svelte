@@ -71,7 +71,7 @@
 										/>
 										<div class="grid gap-3 h-fit w-full">
 											<span class="text-gray-400 text-xs"
-												>{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
+												>{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
 													year: 'numeric',
 													month: 'short',
 													day: 'numeric'
@@ -242,7 +242,7 @@
 						/>
 						<h2 class="text-black text-xl">{card.fields.title}</h2>
 						<p class="text-gray-400">
-							{new Date(article[0].sys.createdAt).toLocaleDateString('ar-EG', {
+							{new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
 								year: 'numeric',
 								month: 'short',
 								day: 'numeric'

@@ -11,6 +11,7 @@ body {
     scroll-behavior: smooth;
     background: #ede5de;
     color: #1c1a1b;
+    scroll-behavior: smooth;
 }
 
 @layer base {
