@@ -15,10 +15,10 @@
 </script>
 
 <svelte:head>
-	<title>وعي مصر</title>
+	<title>وعي - مصر</title>
 	<meta name="description" content="نبض التيار القومي المصري." />
 	<meta property="og:image" content={og} />
-	<meta property="og:title" content="وعي مصر" />
+	<meta property="og:title" content="وعي - مصر" />
 	<meta property="og:description" content="نبض التيار القومي المصري." />
 </svelte:head>
 
@@ -39,7 +39,7 @@
 					<div class="grid gap-5">
 						<div>
 							<h1>{events[0].fields.name}</h1>
-							<p class="opacity-25">
+							<p class="opacity-40">
 								الميعاد: {new Date(events[0].fields.date).toLocaleDateString('ar-EG', {
 									year: 'numeric',
 									month: 'short',

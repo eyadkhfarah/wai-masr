@@ -4,7 +4,7 @@
 </script>
 
 <svelte:head>
-	<title>وعي مصر :: المنتدي</title>
+	<title>وعي - مصر :: المنتدي</title>
 	<meta name="description" content="نبض التيار القومي المصري." />
 </svelte:head>
 

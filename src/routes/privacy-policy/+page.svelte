@@ -2,8 +2,8 @@
 	import H1 from '../../lib/Components/Text/H1.svelte';
 
 	import og from '../../lib/images/main.png';
-	let title = 'وعي مصر :: سياسة الخصوصية ';
-	let desc = `صفحة خاصة لسياسة الخصوصية الخاصة بموقع وعي مصر.`;
+	let title = 'وعي - مصر :: سياسة الخصوصية ';
+	let desc = `صفحة خاصة لسياسة الخصوصية الخاصة بموقع وعي - مصر.`;
 </script>
 
 <svelte:head>

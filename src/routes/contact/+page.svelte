@@ -8,10 +8,16 @@
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 	import H1 from '../../lib/Components/Text/H1.svelte';
+<<<<<<< HEAD
 	
 	import og from '../../lib/images/main.png';
 	let title = 'وعي مصر :: اتواصل معانا';
 	let desc = 'تواصل مع فريق وعي مصر';
+=======
+
+	let title = 'وعي - مصر :: اتواصل معانا';
+	let desc = 'تواصل مع فريق وعي - مصر';
+>>>>>>> 56e24fe188d29387e438501222a741c5a6c248ff
 </script>
 
 <svelte:head>
@@ -24,9 +30,13 @@
 
 <section class="grid gap-5 md:grid-cols-2">
 	<div class="grid gap-6 h-fit">
+<<<<<<< HEAD
 		<H1>اتواصل معانا</H1>
+=======
+		<H1>اتواصل معنا</H1>
+>>>>>>> 56e24fe188d29387e438501222a741c5a6c248ff
 
-		<p class="m-0">تقدر تتواصل مع فريق وعي مصر عن طريق انك تملا الفورم اللي قدامك ده.</p>
+		<p class="m-0">تقدر تتواصل معانا بعد ملئ بياناتك من خلال الفورم ده.</p>
 
 		<h2 class="m-0 text-xl">أو كلمنا علي حساباتنا في مواقع التواصل الاجتماعي</h2>
 
@@ -73,7 +83,7 @@
 			name="Last Name"
 			required
 			id="lastName"
-			placeholder="اسمك العائلة*"
+			placeholder="اسم العائلة*"
 			class="input"
 		/>
 		<input
@@ -88,7 +98,7 @@
 			type="tel"
 			name="phone"
 			id="phone"
-			placeholder="رقم الهاتف"
+			placeholder="رقم الموبايل"
 			class="input"
 		/>
 		<input type="text" name="governate" id="governate" placeholder="محافظتك" class="input" />
@@ -97,12 +107,12 @@
 			class="input"
 			name="message"
 			id="message"
-			placeholder="عبر عن اللي نفسك فيه*"
+			placeholder="ابعتلنا رسالتك*"
 			required
 		/>
 
 		<button type="button" class="Blackbtn w-full font-black" >
-			<span>ابعت رسالتك</span>
+			<span>ابعت</span>
 			<span><Icon color="red" src={RiSystemArrowLeftLine} /></span>
 		</button>
 	</form>
