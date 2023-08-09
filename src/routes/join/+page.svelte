@@ -29,6 +29,21 @@
 	<meta property="og:description" content={desc} />
 </svelte:head>
 
-<section>
-    <H1>انضم لينا</H1>
+<section class="flex justify-between gap-7">
+	<div class="grid h-fit">
+		<H1>شارك معانا في مهمتنا</H1>
+		<p>لو حابب تكون جزء من فريقنا وتساهم في الفريق وتسهم انك تزود الوعي القومي المصري</p>
+	</div>
+
+	<img src={team} alt="team" class="h-96 w-fit" srcset="">
+</section>
+
+<section class="bg-red m-0 md:px-32 p-5">
+	<div class="flex w-full justify-between">
+		<img src={designer} alt="graphic designer" class="w-28 h-28" srcset="">
+		<img src={cms} alt="graphic designer" class="w-28 h-28" srcset="">
+		<img src={writer} alt="graphic designer" class="w-28 h-28" srcset="">
+		<img src={reporter} alt="graphic designer" class="w-28 h-28" srcset="">
+		<img src={editing} alt="graphic designer" class="w-28 h-28" srcset="">
+	</div>
 </section>
