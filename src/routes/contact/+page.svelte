@@ -102,7 +102,7 @@
 		/>
 
 		<button type="button" class="Blackbtn w-full font-black" >
-			<span>ابعت رسالتك</span>
+			<span>ابعت</span>
 			<span><Icon color="red" src={RiSystemArrowLeftLine} /></span>
 		</button>
 	</form>
