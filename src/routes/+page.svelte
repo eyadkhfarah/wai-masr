@@ -47,13 +47,16 @@
 								})}
 							</p>
 						</div>
-						<a class="Whitebtn flex items-center gap-6 border-b-red" href="/events" rel="noopener noreferrer"
+						<a
+							class="Whitebtn flex items-center gap-6 border-b-red"
+							href="/events"
+							rel="noopener noreferrer"
 							>اقرا التفاصيل<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 						>
 					</div>
 				</div>
 			</div>
- 
+
 			<div class="m-0 w-full">
 				<h2 class="bg-red p-4 text-base w-fit m-0 text-white">اخر المقالات</h2>
 				<div class="lg:flex sm:grid gap-5">
@@ -70,20 +73,21 @@
 											class="object-cover w-20 h-20"
 										/>
 										<div class="grid gap-3 h-fit w-full">
-											<span class="text-gray-400 text-xs"
-												>
+											<span class="text-gray-400 text-xs">
 												{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-													calendar:'coptic',
+													calendar: 'coptic',
 													day: 'numeric'
 												})}
 												{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-													calendar:'coptic',
+													calendar: 'coptic',
 													month: 'short'
-												})} 
-												{parseFloat(new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-													calendar:'coptic',
-													year: 'numeric'
-												})) + Number(4525)}</span
+												})}
+												{parseFloat(
+													new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+														calendar: 'coptic',
+														year: 'numeric'
+													})
+												) + Number(4525)}</span
 											>
 											<h3 class="text-black text-sm m-0">{card.fields.title}</h3>
 										</div>
@@ -95,7 +99,10 @@
 					<div class="text-white grid gap-3">
 						<h3 class="m-0 w-full whitespace-nowrap">عايز تكتب مقالات؟</h3>
 						<p class="m-0 text-sm w-full">ابعت مقالتك لينا واحنا هننشرها لك</p>
-						<a class="Whitebtn flex w-full items-center gap-6 border-b-red" href="/contact" rel="noopener noreferrer"
+						<a
+							class="Whitebtn flex w-full items-center gap-6 border-b-red"
+							href="/contact"
+							rel="noopener noreferrer"
 							>أنشر مقالتك<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 						>
 					</div>
@@ -119,17 +126,20 @@
 							<h2 class="text-black text-xl">{card.fields.title}</h2>
 							<p class="text-gray-400">
 								{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-									calendar:'coptic',
+									calendar: 'coptic',
 									day: 'numeric'
 								})}
 								{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-									calendar:'coptic',
+									calendar: 'coptic',
 									month: 'short'
-								})} 
-								{parseFloat(new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-									calendar:'coptic',
-									year: 'numeric'
-								})) + Number(4525)} | <span class="text-blue-600 font-black">{card.fields.author.fields.name}</span>
+								})}
+								{parseFloat(
+									new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+										calendar: 'coptic',
+										year: 'numeric'
+									})
+								) + Number(4525)} |
+								<span class="text-blue-600 font-black">{card.fields.author.fields.name}</span>
 							</p>
 						</div>
 					</a>
@@ -159,17 +169,19 @@
 					</h2>
 					<p class="text-gray-400">
 						{new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
-							calendar:'coptic',
+							calendar: 'coptic',
 							day: 'numeric'
 						})}
 						{new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
-							calendar:'coptic',
+							calendar: 'coptic',
 							month: 'short'
-						})} 
-						{parseFloat(new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
-							calendar:'coptic',
-							year: 'numeric'
-						})) + Number(4525)} |
+						})}
+						{parseFloat(
+							new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
+								calendar: 'coptic',
+								year: 'numeric'
+							})
+						) + Number(4525)} |
 						<span class="text-blue-600 font-black">{article[0].fields.author.fields.name}</span>
 					</p>
 				</div>
@@ -204,17 +216,19 @@
 								<h2 class="text-black text-base">{card.fields.title}</h2>
 								<p class="text-gray-400 text-sm">
 									{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-										calendar:'coptic',
+										calendar: 'coptic',
 										day: 'numeric'
 									})}
 									{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-										calendar:'coptic',
+										calendar: 'coptic',
 										month: 'short'
-									})} 
-									{parseFloat(new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-										calendar:'coptic',
-										year: 'numeric'
-									})) + Number(4525)} |
+									})}
+									{parseFloat(
+										new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+											calendar: 'coptic',
+											year: 'numeric'
+										})
+									) + Number(4525)} |
 									<span class="text-blue-600 font-black"
 										><a href="/" class="border-none">{card.fields.category}</a></span
 									>
@@ -272,17 +286,19 @@
 						<h2 class="text-black text-xl">{card.fields.title}</h2>
 						<p class="text-gray-400">
 							{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-								calendar:'coptic',
+								calendar: 'coptic',
 								day: 'numeric'
 							})}
 							{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-								calendar:'coptic',
+								calendar: 'coptic',
 								month: 'short'
-							})} 
-							{parseFloat(new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-								calendar:'coptic',
-								year: 'numeric'
-							})) + Number(4525)} |
+							})}
+							{parseFloat(
+								new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+									calendar: 'coptic',
+									year: 'numeric'
+								})
+							) + Number(4525)} |
 							<span class="text-blue-600 font-black"
 								><a href="/" class="border-none">{card.fields.category}</a></span
 							>
