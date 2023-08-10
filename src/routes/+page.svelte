@@ -53,7 +53,7 @@
 					</div>
 				</div>
 			</div>
-
+ 
 			<div class="m-0 w-full">
 				<h2 class="bg-red p-4 text-base w-fit m-0 text-white">اخر المقالات</h2>
 				<div class="lg:flex sm:grid gap-5">
