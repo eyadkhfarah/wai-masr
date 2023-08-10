@@ -1,11 +1,11 @@
 import { categories } from '../../utils/categories';
 import { menu } from '../../utils/navLink';
-let site = 'https://wai-masr.vercel.app';
 
 import {client} from '../../lib/contentful-fetch'
 
 
 export async function GET() {
+  const site = process.env.NEXT_PUBLIC_DOMAIN_URL;
 
     const res = await client.getEntries({ content_type: 'news' });
     const res1 = await client.getEntries({ content_type: 'events' });
