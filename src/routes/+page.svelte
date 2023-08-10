@@ -92,9 +92,9 @@
 							{/if}
 						{/each}
 					</div>
-					<div class="row-span-1 text-white">
-						<h3>عايز تكتب مقالات؟</h3>
-						<p>ابعت مقالتك لينا واحنا هننشرها لك</p>
+					<div class="text-white grid gap-3">
+						<h3 class="m-0 w-full whitespace-nowrap">عايز تكتب مقالات؟</h3>
+						<p class="m-0 text-sm w-full">ابعت مقالتك لينا واحنا هننشرها لك</p>
 						<a class="Whitebtn flex w-full items-center gap-6 border-b-red" href="/contact" rel="noopener noreferrer"
 							>أنشر مقالتك<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 						>
