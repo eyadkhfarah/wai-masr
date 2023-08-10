@@ -17,6 +17,7 @@
 <svelte:head>
 	<title>وعي - مصر :: مقالات</title>
 	<meta name="description" content="اهم المقالات والمصار والاراء القومية" />
+	<link rel="canonical" href="https://waimasr.vercel.app/articles" />
 	<meta property="og:image" content={og} />
 	<meta property="og:title" content="وعي - مصر :: مقالات" />
 	<meta property="og:description" content="اهم المقالات والمصادر والاراء القومية" />

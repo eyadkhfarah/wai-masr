@@ -36,6 +36,7 @@
 <svelte:head>
 	<title>{article.fields.title} :: وعي - مصر</title>
 	<meta name="description" content={article.fields.subtitle} />
+	<link rel="canonical" href={`https://waimasr.vercel.app/post/${article.fields.slug}`} />
 
 	<meta property="og:title" content={article.fields.title} />
 	<meta property="og:description" content={article.fields.subtitle} />

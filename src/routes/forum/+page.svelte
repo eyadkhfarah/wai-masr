@@ -6,6 +6,7 @@
 <svelte:head>
 	<title>وعي - مصر :: المنتدي</title>
 	<meta name="description" content="نبض التيار القومي المصري." />
+	<link rel="canonical" href="https://waimasr.vercel.app/forum" />
 </svelte:head>
 
 <section>

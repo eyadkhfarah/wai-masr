@@ -22,6 +22,8 @@
 	<meta property="og:image" content={og} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={desc} />
+	<link rel="canonical" href="https://waimasr.vercel.app/contact" />
+
 </svelte:head>
 
 <section class="grid gap-5 md:grid-cols-2">

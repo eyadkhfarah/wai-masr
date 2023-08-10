@@ -9,6 +9,21 @@
 </script>
 
 <svelte:head>
+  <title>{events.fields.title} :: وعي - مصر</title>
+	<meta name="description" content={events.fields.description} />
+  <link rel="canonical" href={`https://waimasr.vercel.app/events/${events.fields.slug}`}/>
+
+	<meta property="og:title" content={events.fields.title} />
+	<meta property="og:description" content={events.fields.description} />
+	<meta property="og:image" content={`https:${events.fields.image.fields.file.url}`} />
+	<!-- Twitter -->
+	<meta property="twitter:title" content={events.fields.title} />
+	<meta property="og:description" content={events.fields.description} />
+	<meta property="og:image:alt" content={events.fields.description} />
+	<meta name="twitter:creator" content="@w3i.masr" />
+	<meta property="og:type" content="" />
+
+
 	<script type="application/ld+json">
         {
           "@context": "https://schema.org",

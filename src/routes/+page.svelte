@@ -20,6 +20,7 @@
 	<meta property="og:image" content={og} />
 	<meta property="og:title" content="وعي - مصر" />
 	<meta property="og:description" content="نبض التيار القومي المصري." />
+	<link rel="canonical" href="https://waimasr.vercel.app/" />
 </svelte:head>
 
 <section class="bg-black m-0 p-0">
