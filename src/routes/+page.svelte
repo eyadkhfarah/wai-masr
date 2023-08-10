@@ -62,7 +62,7 @@
 				<div class="lg:flex sm:grid gap-5">
 					<div class="bg-primary lg:grid-cols-3 h-fit grid md:w-full">
 						{#each article as card, index (card.sys.id)}
-							{#if index < 3}
+							{#if index < 3 }
 								<a href={`/post/${card.fields.slug}`} class="md:border-red border-none">
 									<div
 										class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
