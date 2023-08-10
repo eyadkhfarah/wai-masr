@@ -41,6 +41,7 @@
 	"dependencies": {
 		"@builder.io/partytown": "^0.8.0",
 		"@contentful/rich-text-html-renderer": "^16.1.0",
+		"@paypal/paypal-js": "^6.0.1",
 		"contentful": "^10.3.6",
 		"svelte-icons-pack": "^2.1.0"
 	}

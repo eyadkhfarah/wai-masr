@@ -4,9 +4,13 @@
     import og from '../../lib/images/main.png';
     let title = 'وعي مصر :: أدعمنا';
 	let desc = 'ادعم فريق وعي مصر ماديا';
+
+	
+	// @ts-ignore
 </script>
 
 <svelte:head>
+	<script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
 	<title>{title}</title>
 	<meta name="description" content={desc} />
 	<meta property="og:image" content={og} />
@@ -19,4 +23,5 @@
     <H1>أدعمنا</H1>
 </section>
 
-<section></section>
+<section>
+</section>
