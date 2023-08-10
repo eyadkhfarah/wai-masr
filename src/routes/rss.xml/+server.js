@@ -3,9 +3,9 @@ import { client } from '../../lib/contentful-fetch';
 
 import { categories } from '../../utils/categories';
 
+const website = 'https://waimasr.vercel.app';
 
 export async function GET() {
-	const website = process.env.NEXT_PUBLIC_DOMAIN_URL;
 	const res = await client.getEntries({ content_type: 'news' });
 
 	const article = res.items;
