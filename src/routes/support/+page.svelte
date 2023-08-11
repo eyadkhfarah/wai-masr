@@ -71,7 +71,7 @@
 <section class="md:grid lg:grid-cols-2 gap-7">
 	<div class="grid gap-3 h-fit">
 		<H1>أدعمنا</H1>
-		<p>حابب اننا نكبر ونكبر معاك؟ تقجر تتبرع لنا دلوقتي</p>
+		<p>حابب اننا نكبر ونكبر معاك؟ تقدر تتبرع لنا دلوقتي</p>
 	</div>
 
 	<div class="bg-red grid gap-4 text-sm p-4 md:m-0 mt-5 border-2">
