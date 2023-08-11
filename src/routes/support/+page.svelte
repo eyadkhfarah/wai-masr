@@ -110,6 +110,6 @@
 				100 جنيه
 			</button>
 		</div>
-		<div id="paypal-button-container" />
+		<div id="paypal-button-container" Class="z-10"/>
 	</div>
 </section>
