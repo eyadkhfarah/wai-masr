@@ -9,47 +9,42 @@
 	let title = 'وعي مصر :: أدعمنا';
 	let desc = 'ادعم فريق وعي مصر ماديا';
 
-	// import { PAYPAL_CLIENT_API } from '$env/static/private';
-
 	let amount = 50;
 
 	import { loadScript } from '@paypal/paypal-js';
 
 	const CLIENT_ID = import.meta.env.PAYPAL_CLIENT_API;
 
-	loadScript({ 'client-id': CLIENT_ID }).then((paypal) => {
-		paypal.Buttons({
-			style: {
-				color: 'blue',
-				shape: 'pill'
-			},
-			createOrder: function (data, actions) {
-				// Set up the transaction
-				return actions.order.create({
-					purchase_units: [
-						{
-							amount: {
-								value: amount
-							}
-						}
-					]
-				});
-			},
-			onApprove: async function (data, actions) {
-				// Capture order after payment approved
-				const details = await actions.order.capture();
-				alert('Payment successful!');
-			},
-			onError: function (err) {
-				// Log error if something goes wrong during approval
-				alert('Something went wrong');
-				console.log('Something went wrong', err);
-			}
-		}).render("#paypal-button-container");
-
-		//
-		//   .render();
-	});
+	// loadScript({ 'client-id': CLIENT_ID }).then((paypal) => {
+	// 	paypal.Buttons({
+	// 		style: {
+	// 			color: 'blue',
+	// 			shape: 'pill'
+	// 		},
+	// 		createOrder: function (data, actions) {
+	// 			// Set up the transaction
+	// 			return actions.order.create({
+	// 				purchase_units: [
+	// 					{
+	// 						amount: {
+	// 							value: amount
+	// 						}
+	// 					}
+	// 				]
+	// 			});
+	// 		},
+	// 		onApprove: async function (data, actions) {
+	// 			// Capture order after payment approved
+	// 			const details = await actions.order.capture();
+	// 			alert('Payment successful!');
+	// 		},
+	// 		onError: function (err) {
+	// 			// Log error if something goes wrong during approval
+	// 			alert('Something went wrong');
+	// 			console.log('Something went wrong', err);
+	// 		}
+	// 	}).render("#paypal-button-container");
+	// });
 
 	// @ts-ignore
 </script>
