@@ -40,11 +40,11 @@
 					onApprove: async function (data, actions) {
 						// Capture order after payment approved
 						const details = await actions.order.capture();
-						alert('Payment successful!');
+						alert('تم التبرع بنجاح، شكرا ليك علي دعم وعي - مصر!');
 					},
 					onError: function (err) {
 						// Log error if something goes wrong during approval
-						alert('Something went wrong');
+						alert('بنتعذر علي الخطأ');
 						console.log('Something went wrong', err);
 					}
 				})
