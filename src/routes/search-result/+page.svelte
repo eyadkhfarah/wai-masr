@@ -13,6 +13,19 @@
 
 	let search = $page.url.searchParams.get('search');
 
+	function getFilteredCountries(article, search) {
+		if (search) {
+			return article.filter((art) => {
+				return (
+					art.fields.title.toLowerCase().includes(search.toLowerCase()) ||
+					art.fields.subtitle.toLowerCase().includes(search.toLowerCase())
+				);
+			});
+		} else {
+			return article;
+		}
+	}
+
 	let title = `وعي - مصر :: بحث ${search}`;
 	let desc = 'تواصل مع فريق وعي مصر';
 </script>
@@ -27,32 +40,30 @@
 
 <section>
 	<H1>نتائج البحث {search}</H1>
-	{#each article as card (card.sys.id)}
-		{#if card.fields.title === search, card.fields.category === search}
-			<a href={'/post/' + card.fields.slug} data-sveltekit-prefetch class="border-none group">
-				<div class="card md:flex grid gap-8 border-t-2 border-t-gray-300">
-					<img
-						src={`https:${card.fields.thumbnail.fields.file.url}`}
-						alt={card.fields.title}
-						class="md:h-28 md:w-fit w-full"
-					/>
-					<div class="grid gap-5 h-fit">
-						<h2 class="group-hover:text-red text-text transition-all duration-300 ease-in-out">
-							{card.fields.title}
-						</h2>
-						<p class="text-gray-400 m-0">
-							{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
-								year: 'numeric',
-								month: 'short',
-								day: 'numeric'
-							})} |
-							<span class="text-blue-600 font-black"
-								><a href="/" class="border-none">{card.fields.category}</a></span
-							>
-						</p>
-					</div>
+	{#each getFilteredCountries(article, search) as card (card.sys.id)}
+		<a href={'/post/' + card.fields.slug} data-sveltekit-prefetch class="border-none group">
+			<div class="card lg:flex md:grid gap-8 border-t-2 border-t-gray-300">
+				<img
+					src={`https:${card.fields.thumbnail.fields.file.url}`}
+					alt={card.fields.title}
+					class="lg:h-28 lg:w-fit md:h-full md:w-full"
+				/>
+				<div class="grid gap-5 h-fit">
+					<h2 class="group-hover:text-red lg:m-0 text-text transition-all duration-300 ease-in-out">
+						{card.fields.title}
+					</h2>
+					<p class="text-gray-400 m-0">
+						{new Date(card.sys.createdAt).toLocaleDateString('ar-EG', {
+							year: 'numeric',
+							month: 'short',
+							day: 'numeric'
+						})} |
+						<span class="text-blue-600 font-black"
+							><a href="/" class="border-none">{card.fields.category}</a></span
+						>
+					</p>
 				</div>
-			</a>
-		{/if}
+			</div>
+		</a>
 	{/each}
 </section>

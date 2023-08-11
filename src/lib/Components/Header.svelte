@@ -51,7 +51,7 @@
 			placeholder="بحث..."
 			bind:value={search}
 		/>
-		<a href={`/search-result?search=` + search} class="text-white border-none"
+		<a href={`/search-result?search=` + search} data-sveltekit-reload class="text-white border-none"
 			><Icon src={FiSearch} /></a
 		>
 	</div>
