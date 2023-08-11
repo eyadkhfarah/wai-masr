@@ -9,13 +9,13 @@
 	let title = 'وعي مصر :: أدعمنا';
 	let desc = 'ادعم فريق وعي مصر ماديا';
 
-	import { PAYPAL_CLIENT_API } from '$env/static/private';
+	// import { PAYPAL_CLIENT_API } from '$env/static/private';
 
 	let amount = 50;
 
 	import { loadScript } from '@paypal/paypal-js';
 
-	const CLIENT_ID = PAYPAL_CLIENT_API;
+	const CLIENT_ID = import.meta.env.PAYPAL_CLIENT_API;
 
 	loadScript({ 'client-id': CLIENT_ID }).then((paypal) => {
 		paypal.Buttons({
