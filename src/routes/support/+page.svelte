@@ -14,11 +14,8 @@
 
 	let amount = 1.62;
 
-	console.log(amount);
-
 	import { loadScript } from '@paypal/paypal-js';
 
-	console.log(env)
 
 	loadScript({ clientId: env })
 		.then((paypal) => {
