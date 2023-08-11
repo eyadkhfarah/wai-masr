@@ -16,19 +16,31 @@
 		<p>وخليك متابع اخر المقالات والفعاليات</p>
 
 		<div class="border-b-8 border-black mb-14">
-			<form action="" class="flex items-center md:text-base text-sm">
+			<form
+				action="https://app.us13.list-manage.com/subscribe/post?u=12828e0dccc7b63c7af44ec09&amp;id=64ffd839d7&amp;f_id=001890e2f0"
+				method="post"
+				id="mc-embedded-subscribe-form"
+				name="mc-embedded-subscribe-form"
+				target="_self"
+				class="flex items-center md:text-base text-sm validate"
+			>
 				<input
 					type="email"
-					name=""
+					id="mce-EMAIL"
+					required
+					value=""
+					name="email"
 					class="bg-transparent border-none py-6 px-0 text-white placeholder:text-white w-full"
 					placeholder="بريدك الالكتروني"
-					id=""
 				/>
+				
 				<span class="cursor-pointer flex gap-2 items-center">
-					<input type="button" value="اشترك دلوقتي" class="w-36" />
+					<input type="submit" name="subscribe" id="mc-embedded-subscribe" value="اشترك دلوقتي" class="w-36" />
 					<Icon src={RiSystemArrowLeftLine} />
 				</span>
 			</form>
+
+			
 		</div>
 	</div>
 	<div class="flex items-center justify-center">
