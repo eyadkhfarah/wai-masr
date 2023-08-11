@@ -1,5 +1,4 @@
 <script>
-	
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
@@ -8,12 +7,10 @@
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 	import H1 from '../../lib/Components/Text/H1.svelte';
-  
-	
+
 	import og from '../../lib/images/main.png';
 	let title = 'وعي مصر :: اتواصل معانا';
 	let desc = 'تواصل مع فريق وعي مصر';
-
 </script>
 
 <svelte:head>
@@ -23,16 +20,11 @@
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={desc} />
 	<link rel="canonical" href="https://waimasr.vercel.app/contact" />
-
 </svelte:head>
 
 <section class="grid gap-5 md:grid-cols-2">
 	<div class="grid gap-6 h-fit">
-  
-		<H1>اتواصل معانا</H1>
-   
 		<H1>اتواصل معنا</H1>
-   
 
 		<p class="m-0">تقدر تتواصل معانا بعد ملئ بياناتك من خلال الفورم ده.</p>
 
@@ -63,8 +55,9 @@
 
 		<h2 class="m-0 text-xl">أو كلمنا علي البريد الالكتروني بتاعنا</h2>
 
-		<a href="mailto:nationalism.awareness@gmail.com" class="w-fit">nationalism.awareness@gmail.com</a>
-
+		<a href="mailto:nationalism.awareness@gmail.com" class="w-fit"
+			>nationalism.awareness@gmail.com</a
+		>
 	</div>
 
 	<form class="w-full grid gap-5" action="">
@@ -92,25 +85,13 @@
 			placeholder="بريدك الإلكتروني*"
 			class="input"
 		/>
-		<input
-			type="tel"
-			name="phone"
-			id="phone"
-			placeholder="رقم الموبايل"
-			class="input"
-		/>
+		<input type="tel" name="phone" id="phone" placeholder="رقم الموبايل" class="input" />
 		<input type="text" name="governate" id="governate" placeholder="محافظتك" class="input" />
 
-		<textarea
-			class="input"
-			name="message"
-			id="message"
-			placeholder="ابعتلنا رسالتك*"
-			required
-		/>
+		<textarea class="input" name="message" id="message" placeholder="ابعتلنا رسالتك*" required />
 
-		<button type="button" class="Blackbtn w-full font-black" >
-			<span>ابعت</span>
+		<button type="button" class="Blackbtn w-full font-black">
+			ابعــــت
 			<span><Icon color="red" src={RiSystemArrowLeftLine} /></span>
 		</button>
 	</form>

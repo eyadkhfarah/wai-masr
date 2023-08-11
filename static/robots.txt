@@ -1,3 +1,14 @@
 # https://www.robotstxt.org/robotstxt.html
 User-agent: *
-Disallow:
+Disallow: /404
+
+# *
+user-agent: *
+Allow: /
+
+# Host
+Host: https://waimasr.vercel.app
+
+# Sitemaps
+Sitemap: https://waimasr.vercel.app/sitemap.xml
+Sitemap: https://waimasr.vercel.app/rss.xml

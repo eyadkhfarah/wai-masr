@@ -10,7 +10,7 @@
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 </script>
 
-<footer class="grid gap-5 md:p-7 md:px-32 p-5 text-white bg-red">
+<footer class="grid gap-5 md:p-7 md:px-32 p-5 pb-24 text-white bg-red">
 	<div class="grid gap-5 text-center">
 		<h2 class="text-4xl">سجل في نشرتـــنا الاخبــــارية</h2>
 		<p>وخليك متابع اخر المقالات والفعاليات</p>
@@ -59,8 +59,8 @@
 			>
 		</div>
 
-		<div class="md:flex grid gap-6 md:w-full justify-between">
-			<ul class="md:hidden gap-5 p-0 m-0 list-none text-white font-black flex">
+		<div class="md:flex grid place-items-center gap-6 md:w-full justify-between">
+			<ul class="md:hidden gap-5 p-0 m-0 list-none text-white font-black text-xs flex">
 				<li>
 					<a
 						href="/privacy-policy"
@@ -74,6 +74,14 @@
 						href="/terms"
 						class="text-white hover:border-b-white transition-all ease-in-out duration-300"
 						>الشروط والاحكام</a
+					>
+				</li>
+				<li>—</li>
+				<li>
+					<a
+						href="/rss"
+						class="text-white hover:border-b-white transition-all ease-in-out duration-300"
+						>خدمة الـ RSS</a
 					>
 				</li>
 			</ul>
@@ -94,6 +102,14 @@
 						href="/terms"
 						class="text-white hover:border-b-white transition-all ease-in-out duration-300"
 						>الشروط والاحكام</a
+					>
+				</li>
+				<li>—</li>
+				<li>
+					<a
+						href="/rss"
+						class="text-white hover:border-b-white transition-all ease-in-out duration-300"
+						>خدمة الـ RSS</a
 					>
 				</li>
 			</ul>

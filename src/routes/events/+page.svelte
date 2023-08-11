@@ -7,8 +7,8 @@
 
 	let events = data.events;
 
-	let title = 'وعي - مصر :: المناسبات';
-	let desc = 'أهم المناسبات والاعياد المصرية';
+	let title = 'وعي - مصر :: فعاليات';
+	let desc = 'أهم فعاليات والاعياد المصرية';
 </script>
 
 <svelte:head>
@@ -22,7 +22,7 @@
 </svelte:head>
 
 <section>
-	<H1>مناسبات</H1>
+	<H1>فعاليات</H1>
 	{#each events as event (event.sys.id)}
 		<a href={`/events/${event.fields.slug}`} class="border-none">
 			<div class="grid gap-7 md:grid-cols-3">

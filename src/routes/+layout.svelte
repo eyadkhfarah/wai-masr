@@ -1,5 +1,5 @@
 <script>
-	import { navigating } from '$app/stores';
+	import { navigating, page } from '$app/stores';
 	import Loading from '../lib/Components/Loading.svelte';
 	import Footer from '../lib/Components/Footer.svelte';
 	import Header from '../lib/Components/Header.svelte';
@@ -7,20 +7,23 @@
 
 	import './styles.css';
 	import { Delayed } from '../lib/store';
+	
 </script>
+<svelte:head>
+	<link rel="canonical" href={`https://waimasr.vercel.app${$page.url.pathname}`}/>
 
-<div class="app">
-	<Header />
+</svelte:head>
 
-	{#if $Delayed}
-		<Loading />
-	{:else}
-		<slot />
-		<ToTop />
-	{/if}
+<Header />
 
-	<Footer />
-</div>
+{#if $Delayed}
+	<Loading />
+{:else}
+	<slot />
+	<ToTop />
+{/if}
+
+<Footer />
 
 <style>
 </style>

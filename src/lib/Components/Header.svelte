@@ -25,23 +25,13 @@
 
 	let change = true;
 
-	let year = new Date().toLocaleDateString('ar-arab', { calendar:'coptic', year: "numeric"})
-
-	// const reading = () => {
-	// 	const { scrollTop, scrollHeight } = document.documentElement;
-	// 	scrollPrecent = `${(scrollTop / (scrollHeight - window.innerHeight)) * 100}%`;
-
-	// 	if (scrollPrecent >= "0%") {
-	// 		change = true;
-	// 	} else if (scrollPrecent <= "100%") {
-	// 		change = false;
-	// 	}
-	// };
-
-	// document.addEventListener('scroll', reading);
+	let year = new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', year: 'numeric' });
 </script>
 
-<header class:bg-black={change} class="bg-black p-5 z-[100] flex lg:static sticky top-0 transition-all ease-in-out duration-300 gap-5 lg:justify-between items-center">
+<header
+	class:bg-black={change}
+	class="bg-black p-5 z-[100] flex lg:static sticky top-0 transition-all ease-in-out duration-300 gap-5 lg:justify-between items-center"
+>
 	<button
 		class="text-xl lg:hidden block cursor-pointer text-white"
 		class:open={menuTab}
@@ -66,25 +56,26 @@
 		>
 	</div>
 </header>
-<header class:bg-black={change} class={`sticky top-0 bg-black z-40 text-white transition-all ease-in-out duration-300`}>
+<header class={`sticky top-0 bg-black z-40 text-white transition-all ease-in-out duration-300`}>
 	<nav class="border-t border-gray-900 p-3 lg:flex justify-between items-center hidden">
 		<ul class="flex gap-5 list-none m-0 p-0">
 			{#each menu as link (link.id)}
 				<li>
-					<a href={link.link} class:border-b-red={link.link === $page.url.pathname } class="text-white border-b-2 border-b-black hover:border-b-white"
-						>{link.name}</a
+					<a
+						href={link.link}
+						class:border-b-red={link.link === $page.url.pathname}
+						class="text-white border-b-4 transition-all ease-in-out duration-300 border-b-black hover:border-b-white">{link.name}</a
 					>
 				</li>
 			{/each}
 		</ul>
 
-	
 		<span class="flex items-center gap-5 opacity-25">
-			{new Date().toLocaleDateString('ar-arab', { calendar:'coptic', weekday: "long"})}
+			{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', weekday: 'long' })}
 			-
-			{new Date().toLocaleDateString('ar-arab', { calendar:'coptic', day: "numeric"})}
+			{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', day: 'numeric' })}
 			/
-			{new Date().toLocaleDateString('ar-arab', { calendar:'coptic', month: "long"})}
+			{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', month: 'long' })}
 			/
 			{parseFloat(year) + Number(4525)}
 		</span>
@@ -92,5 +83,3 @@
 </header>
 
 <NavModal {menuTab} on:click={handeler} />
-
-<!-- 4525 -->

@@ -16,7 +16,7 @@
 {#if menuTab}
 	<nav
 		class:left-0={menuTab}
-		class="md:hidden flex flex-col gap-10 bg-primary text-white p-8 fixed top-0 h-full w-full z-[100] transition-all duration-300 ease-in-out overflow-y-auto"
+		class="lg:hidden md:flex flex-col gap-10 bg-primary text-white p-8 fixed top-0 h-full w-full z-[100] transition-all duration-300 ease-in-out overflow-y-auto"
 	>
 	<div class="flex justify-between items-center">
 
@@ -35,7 +35,7 @@
 		</span>
 	</div>
 
-		<div class="flex gap-3 h-fit w-full border-b-4 border-red items-center">
+		<div class="flex gap-3 h-fit w-full border-b-4 border-red items-center my-7">
 			<input
 				type="search"
 				class="bg-transparent border-none w-full placeholder:text-black focus:border-none p-2 px-3"
