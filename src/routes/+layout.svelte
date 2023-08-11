@@ -11,7 +11,17 @@
 </script>
 <svelte:head>
 	<link rel="canonical" href={`https://waimasr.vercel.app${$page.url.pathname}`}/>
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2125888694918985"
+	crossorigin="anonymous"></script>
 
+
+   <script src="https://www.googletagmanager.com/gtag/js?id=G-ZX7H2KPXNZ"></script>
+   <script>
+	   window.dataLayer = window.dataLayer || [];
+	   function gtag() { dataLayer.push(arguments); }
+	   gtag('js', new Date());
+	   gtag('config', 'G-ZX7H2KPXNZ');
+   </script>
 </svelte:head>
 
 <Header />

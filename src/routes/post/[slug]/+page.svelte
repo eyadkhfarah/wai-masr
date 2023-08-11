@@ -16,10 +16,25 @@
 	export let data;
 
 	let article = data.article;
+
+
+	let reading;
+
+	// let time = 0;
+
+	// onMount(() => {
+	// 	let text = toString(reading);
+	// 	let wpm = 225;
+	// 	let words = text.trim().split(/\s+/).length;
+	// 	time = Math.ceil(words / wpm);
+	// }),
+	// 	console.log(reading);
+
 	// let card = data.card;
 
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
+	import { onMount } from 'svelte';
 	import RiBusinessLinksLine from 'svelte-icons-pack/ri/RiBusinessLinksLine';
 	import RiLogoFacebookCircleFill from 'svelte-icons-pack/ri/RiLogoFacebookCircleFill';
 	import RiLogoWhatsappLine from 'svelte-icons-pack/ri/RiLogoWhatsappLine';
@@ -36,7 +51,6 @@
 <svelte:head>
 	<title>{article.fields.title} :: وعي - مصر</title>
 	<meta name="description" content={article.fields.subtitle} />
-	<link rel="canonical" href={`https://waimasr.vercel.app/post/${article.fields.slug}`} />
 
 	<meta property="og:title" content={article.fields.title} />
 	<meta property="og:description" content={article.fields.subtitle} />
@@ -94,7 +108,7 @@
 	<span class="lg:block hidden">
 		<Email />
 	</span>
-	<article class="col-span-2 grid h-fit gap-9">
+	<article class="col-span-2 grid h-fit gap-9" id="article">
 		<div class="grid gap-4">
 			{#each categories as categor}
 				{#if categor.title.includes(article.fields.category)}
@@ -118,63 +132,68 @@
 				<p class="m-0">
 					تاريخ | <span>
 						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
-							calendar:'coptic',
+							calendar: 'coptic',
 							weekday: 'long'
 						})}
 						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
-							calendar:'coptic',
+							calendar: 'coptic',
 							day: 'numeric'
 						})}
 						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
-							calendar:'coptic',
+							calendar: 'coptic',
 							month: 'short'
-						})} 
-						{parseFloat(new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
-							calendar:'coptic',
-							year: 'numeric'
-						})) + Number(4525)}
+						})}
+						{parseFloat(
+							new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+								calendar: 'coptic',
+								year: 'numeric'
+							})
+						) + Number(4525)}
 					</span>
 				</p>
 			</div>
-			<div class="flex lg:justify-end justify-between gap-5 w-full text-xl font-black">
-				<span class="text-sm">شارك المقالة</span>
-				<div class="flex gap-4 relative">
-					<a
-						href={`https://www.facebook.com/sharer/sharer.php?u=${`https://waimasr.vercel.app/post/${article.fields.slug}`}&t=${
-							article.fields.subtitle
-						}`}
-						target="_blank"
-						class="border-none"
-						aria-label="شارك عبر الفيسبوك"><Icon src={RiLogoFacebookCircleFill} /></a
-					>
-					<a
-						href={`https://www.twitter.com/intent/tweet?text=${
-							article.fields.subtitle
-						}&url=${`https://waimasr.vercel.app/post/${article.fields.slug}`}&hastags=وعي_مصر`}
-						target="_blank"
-						class="border-none"
-						aria-label="شارك عبر الاكس"><Icon src={RiLogoTwitterFill} /></a
-					>
-					<a
-						href={`https://wa.me/?text=${`https://waimasr.vercel.app/post/${article.fields.slug}`}&hastags=وعي_مصر`}
-						target="_blank"
-						class="border-none"
-						aria-label="شارك عبر الواتس"><Icon src={RiLogoWhatsappLine} /></a
-					>
-					<span
-						class="cursor-pointer"
-						use:copy={`https://waimasr.vercel.app/post/${article.fields.slug}`}
-						on:svelte-copy={() => (copied = !copied)}
-					>
-						<Icon src={RiBusinessLinksLine} />
-					</span>
-					{#if copied}
-						<span
-							class:copied={copiedClass}
-							class="text-base bg-red text-white p-2 absolute left-0 bottom-9 flex gap-2 items-center"
-							>تم النسخ<span><Icon src={RiSystemCheckLine} color="white" /></span></span
+			<div class="flex lg:justify-end justify-between gap-5 md:text-base w-full text-xl font-black">
+				<!-- <span>وقت القراءة | دقائق</span> -->
+				<div class="flex gap-5">
+					<span class="text-sm">شارك المقالة</span>
+					<div class="flex gap-4 relative">
+						<a
+							href={`https://www.facebook.com/sharer/sharer.php?u=${`https://waimasr.vercel.app/post/${article.fields.slug}`}&t=${
+								article.fields.subtitle
+							}`}
+							target="_blank"
+							class="border-none"
+							aria-label="شارك عبر الفيسبوك"><Icon src={RiLogoFacebookCircleFill} /></a
 						>
-					{/if}
+						<a
+							href={`https://www.twitter.com/intent/tweet?text=${
+								article.fields.subtitle
+							}&url=${`https://waimasr.vercel.app/post/${article.fields.slug}`}&hastags=وعي_مصر`}
+							target="_blank"
+							class="border-none"
+							aria-label="شارك عبر الاكس"><Icon src={RiLogoTwitterFill} /></a
+						>
+						<a
+							href={`https://wa.me/?text=${`https://waimasr.vercel.app/post/${article.fields.slug}`}&hastags=وعي_مصر`}
+							target="_blank"
+							class="border-none"
+							aria-label="شارك عبر الواتس"><Icon src={RiLogoWhatsappLine} /></a
+						>
+						<span
+							class="cursor-pointer"
+							use:copy={`https://waimasr.vercel.app/post/${article.fields.slug}`}
+							on:svelte-copy={() => (copied = !copied)}
+						>
+							<Icon src={RiBusinessLinksLine} />
+						</span>
+						{#if copied}
+							<span
+								class:copied={copiedClass}
+								class="text-base bg-red text-white p-2 absolute left-0 bottom-9 flex gap-2 items-center"
+								>تم النسخ<span><Icon src={RiSystemCheckLine} color="white" /></span></span
+							>
+						{/if}
+					</div>
 				</div>
 			</div>
 		</div>
@@ -185,7 +204,7 @@
 		/>
 
 		<h2 class="font-black italic text-lg">{article.fields.subtitle}</h2>
-		<div>{@html documentToHtmlString(article.fields.post)}</div>
+		<div bind:this={reading}>{@html documentToHtmlString(article.fields.post)}</div>
 
 		<div class="flex gap-3 h-fit">
 			<div class="w-2 bg-red rounded-3xl" />

@@ -11,7 +11,7 @@
 <svelte:head>
   <title>{events.fields.title} :: وعي - مصر</title>
 	<meta name="description" content={events.fields.description} />
-  <link rel="canonical" href={`https://waimasr.vercel.app/events/${events.fields.slug}`}/>
+
 
 	<meta property="og:title" content={events.fields.title} />
 	<meta property="og:description" content={events.fields.description} />
