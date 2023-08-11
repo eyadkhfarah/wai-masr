@@ -7,6 +7,7 @@
 
 	import './styles.css';
 	import { Delayed } from '../lib/store';
+	import GoogleAnalytics from '../lib/Components/GoogleAnalytics.svelte';
 	
 </script>
 <svelte:head>
@@ -15,13 +16,7 @@
 	crossorigin="anonymous"></script>
 
 
-   <script src="https://www.googletagmanager.com/gtag/js?id=G-ZX7H2KPXNZ"></script>
-   <script>
-	   window.dataLayer = window.dataLayer || [];
-	   function gtag() { dataLayer.push(arguments); }
-	   gtag('js', new Date());
-	   gtag('config', 'G-ZX7H2KPXNZ');
-   </script>
+	<GoogleAnalytics />
 </svelte:head>
 
 <Header />
