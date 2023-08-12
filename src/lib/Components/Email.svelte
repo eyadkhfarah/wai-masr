@@ -4,7 +4,7 @@
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
 </script>
 
-<div class="md:grid gap-4 text-white bg-red border p-4 h-fit hidden md:sticky top-28">
+<div class="md:grid gap-4 text-white w-full bg-red border p-4 h-fit hidden md:sticky top-28">
 	<h2 class="m-0">حبيت مقالاتنا؟</h2>
 	<p>اشترك في نشراتنا البريدية دلوقتي</p>
 
@@ -25,13 +25,13 @@
 			placeholder="بريدك الالكتروني"
 		/>
 
-		<span class="cursor-pointer flex gap-2 items-center">
+		<span class="cursor-pointer flex gap-2 items-center hover:border-b-white border-b-black">
 			<input
 				type="submit"
 				name="subscribe"
 				id="mc-embedded-subscribe"
 				value="اشترك"
-				class="Whitebtn w-full font-black border-b-black"
+				class="Whitebtn w-full font-black border-b-black hover:border-b-white cursor-pointer"
 			/>
 
 			<span><Icon color="black" src={RiSystemArrowLeftLine} /></span>

@@ -103,4 +103,18 @@ body {
     .Blackbtn {
         @apply py-3 border-b-black hover:border-b-red border-b-4 text-black w-fit font-bold transition-all ease-in-out duration-300 whitespace-nowrap flex justify-between items-center gap-10
     }
+
+    /* pagnation */
+
+    .pagination-nav {
+        @apply w-full h-fit flex justify-between items-center bg-red p-2 my-3 text-lg text-white
+    }
+
+    .option {
+        @apply cursor-pointer
+    }
+    
+    .option.active {
+        @apply bg-white text-black px-2
+    }
 }
