@@ -2,73 +2,83 @@ import { categories } from '../../utils/categories';
 import { menu } from '../../utils/navLink';
 let site = 'https://waimasr.vercel.app';
 
-import {client} from '../../lib/contentful-fetch'
-
+import { client } from '../../lib/contentful-fetch';
 
 export async function GET() {
+	const res = await client.getEntries({ content_type: 'news' });
+	const res1 = await client.getEntries({ content_type: 'events' });
 
-    const res = await client.getEntries({ content_type: 'news' });
-    const res1 = await client.getEntries({ content_type: 'events' });
+	const article = res.items;
+	const events = res1.items;
 
-    const article = res.items
-    const events = res1.items
-    
-    return new Response(
+	return new Response(
 		`
         <?xml version="1.0" encoding="UTF-8" ?>
         <urlset
             xmlns="https://www.sitemaps.org/schemas/sitemap/0.9"
-            xmlns:xhtml="https://www.w3.org/1999/xhtml"
-            xmlns:mobile="https://www.google.com/schemas/sitemap-mobile/1.0"
-            xmlns:news="https://www.google.com/schemas/sitemap-news/0.9"
-            xmlns:image="https://www.google.com/schemas/sitemap-image/1.1"
-            xmlns:video="https://www.google.com/schemas/sitemap-video/1.1"
         >
-        ${menu.filter((link) => link.link.indexOf("https://")).map((page) => 
-					`<url>
-            <loc>${site}${page.link}</loc>
+        ${menu
+					.filter((link) => link.link.indexOf('https://'))
+					.map(
+						(page) =>
+							`<url>
+            <loc>${site}${page.link}/</loc>
+            <lastmod>2023-08-14</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.7</priority>
           </url>`
-				).join('')}
+					)
+					.join('')}
         <url>
-            <loc>${site}/privacy-policy</loc>
+            <loc>${site}/privacy-policy/</loc>
+            <lastmod>2023-08-14</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.7</priority>
           </url>
         <url>
-            <loc>${site}/terms</loc>
+            <loc>${site}/terms/</loc>
+            <lastmod>2023-08-14</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.7</priority>
           </url>
-        ${categories.map((page) => 
-					`<url>
-            <loc>${site}/article/${page.link}</loc>
+        ${categories
+					.map(
+						(page) =>
+							`<url>
+            <loc>${site}/article/${page.link}/</loc>
+            <lastmod>2023-08-14</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.7</priority>
           </url>`
-				).join('')}
-        ${article.map((page) => 
-					`<url>
-            <loc>${site}/post/${page.fields.slug}</loc>
+					)
+					.join('')}
+        ${article
+					.map(
+						(page) =>
+							`<url>
+            <loc>${site}/post/${page.fields.slug}/</loc>
+            <lastmod>${new Date(page.sys.updatedAt).toISOString().slice(0, 10)}</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.7</priority>
           </url>`
-				).join('')}
-        ${events.map((page) => 
-					`<url>
-            <loc>${site}/events/${page.fields.slug}</loc>
+					)
+					.join('')}
+        ${events
+					.map(
+						(page) =>
+							`<url>
+            <loc>${site}/events/${page.fields.slug}/</loc>
+            <lastmod>${new Date(page.sys.updatedAt).toISOString().slice(0, 10)}</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.7</priority>
           </url>`
-				).join('')}
+					)
+					.join('')}
         </urlset>`.trim(),
 		{
 			headers: {
 				'Content-Type': 'application/xml'
 			}
 		}
-
-        
 	);
 }
