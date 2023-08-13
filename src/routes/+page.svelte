@@ -6,7 +6,7 @@
 	let article = data.articles;
 	let events = data.events;
 
-	console.log(article)
+	console.log(article);
 
 	let tabs = ['اخر المقالات', 'مختارات وعي', 'اخبار تشرف'];
 	let activeTab = 'اخر المقالات';
@@ -38,7 +38,7 @@
 		<img
 			src={`https:${events[0].fields.image.fields.file.url}`}
 			alt={events[0].fields.name}
-			class="lg:object-fill object-none lg:h-full h-[75em] opacity-40"
+			class="lg:object-cover object-none lg:h-[35rem] h-[75em] opacity-40"
 			width="1920"
 		/>
 
@@ -219,7 +219,6 @@
 									class="object-cover w-20 h-20"
 								/>
 								<div class="grid h-fit gap-3">
-									
 									<h2 class="text-black text-base m-0">{card.fields.title}</h2>
 									<p class="text-gray-400 text-sm">
 										{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
@@ -281,7 +280,6 @@
 						</a>
 					{/if}
 				{/each}
-
 			{:else if activeTab === 'اخبار تشرف'}
 				{#each article as card, index (card.sys.id)}
 					{#if index < 4 && card.fields.category === 'اخبار تشرف'}
@@ -407,33 +405,35 @@
 <section class="grid">
 	<div class="flex gap-3 h-fit my-10">
 		<div class="w-2 bg-black rounded-3xl" />
-		<h2>ابرز المناسبات</h2>
+		<h2>ابرز الفعاليات</h2>
 	</div>
-	<div class="lg:flex md:grid gap-6">
-		{#each events as event (event.sys.id)}
-			<a href={`/events/${event.fields.slug}`} class="w-fit">
-				<div class="grid gap-7 lg:grid-cols-3 w-fit">
-					<div class="h-80 w-full col-span-2 bg-rose-950 text-white relative">
-						<img
-							src={`https:${event.fields.image.fields.file.url}`}
-							alt={event.fields.name}
-							class="object-cover h-80 w-full"
-						/>
-						<div
-							class="grid gap-5 absolute bottom-0 md:p-10 p-5 bg-gradient-to-t from-black w-full"
-						>
-							<h2>{event.fields.name}</h2>
-							<p class="opacity-75">
-								الميعاد: {new Date(event.fields.date).toLocaleDateString('ar-EG', {
-									year: 'numeric',
-									month: 'short',
-									day: 'numeric'
-								})}
-							</p>
+	<div class="grid lg:grid-cols-2 gap-6">
+		{#each events as event, index (event.sys.id)}
+			{#if index < 4}
+				<a href={`/events/${event.fields.slug}`} class="w-full">
+					<div class="grid gap-7">
+						<div class="h-80 w-full col-span-2 bg-rose-950 text-white relative">
+							<img
+								src={`https:${event.fields.image.fields.file.url}`}
+								alt={event.fields.name}
+								class="object-cover h-80 w-full"
+							/>
+							<div
+								class="grid gap-5 absolute bottom-0 md:p-10 p-5 bg-gradient-to-t from-black w-full"
+							>
+								<h2>{event.fields.name}</h2>
+								<p class="opacity-75">
+									الميعاد: {new Date(event.fields.date).toLocaleDateString('ar-EG', {
+										year: 'numeric',
+										month: 'short',
+										day: 'numeric'
+									})}
+								</p>
+							</div>
 						</div>
 					</div>
-				</div>
-			</a>
+				</a>
+			{/if}
 		{/each}
 	</div>
 	<a class="Blackbtn" href="/events" rel="noopener noreferrer"
