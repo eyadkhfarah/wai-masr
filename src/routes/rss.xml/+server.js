@@ -1,7 +1,7 @@
 // @ts-nocheck
-import { client } from '../../lib/contentful-fetch';
+import { client } from '$lib/contentful-fetch';
 
-import { categories } from '../../utils/categories';
+import { categories } from '$utils/categories';
 
 const website = 'https://waimasr.vercel.app';
 

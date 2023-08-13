@@ -1,7 +1,8 @@
 <script>
 	// @ts-nocheck
-	import H1 from '../../lib/Components/Text/H1.svelte';
-	import og from '../../lib/images/main.png';
+	import Events from '$lib/Components/Cards/Events.svelte';
+	import H1 from '$lib/Components/Text/H1.svelte';
+	import og from '$lib/images/main.png';
 
 	export let data;
 
@@ -21,31 +22,12 @@
 
 <section>
 	<H1>فعاليات</H1>
-	<div class="grid gap-4">
+	<div class="grid lg:grid-cols-4 gap-4">
 		{#each events as event (event.sys.id)}
-			<a href={`/events/${event.fields.slug}`} class="border-none">
-				<div class="grid gap-7 md:grid-cols-3">
-					<div class="h-80 w-full col-span-2 bg-rose-950 text-white relative">
-						<img
-							src={event.fields.image.fields.file.url}
-							alt={event.fields.name}
-							class="object-cover h-80 w-full"
-						/>
-						<div
-							class="grid gap-5 absolute bottom-0 md:p-10 p-5 bg-gradient-to-t from-black w-full"
-						>
-							<h2>{event.fields.name}</h2>
-							<p class="opacity-75">
-								الميعاد: {new Date(event.fields.date).toLocaleDateString('ar-EG', {
-									year: 'numeric',
-									month: 'short',
-									day: 'numeric'
-								})}
-							</p>
-						</div>
-					</div>
-				</div>
-			</a>
+		<div class="col-span-3">
+
+			<Events {event} />
+		</div>
 		{/each}
 	</div>
 </section>

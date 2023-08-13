@@ -5,8 +5,8 @@
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
 	import RiDeviceRssLine from 'svelte-icons-pack/ri/RiDeviceRssLine';
 
-	import H1 from '../../lib/Components/Text/H1.svelte';
-	import og from '../../lib/images/main.png';
+	import H1 from '$lib/Components/Text/H1.svelte';
+	import og from '$lib/images/main.png';
 	let title = 'وعي - مصر :: خدمة الـ RSS ';
 	let desc = `صفحة خاصة لخدمة الـ RSS الخاصة بموقع وعي - مصر.`;
 </script>

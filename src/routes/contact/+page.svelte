@@ -6,9 +6,9 @@
 	import RiLogoInstagramLine from 'svelte-icons-pack/ri/RiLogoInstagramLine';
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
-	import H1 from '../../lib/Components/Text/H1.svelte';
+	import H1 from '$lib/Components/Text/H1.svelte';
 
-	import og from '../../lib/images/main.png';
+	import og from '$lib/images/main.png';
 	let title = 'وعي مصر :: اتواصل معانا';
 	let desc = 'تواصل مع فريق وعي مصر';
 </script>

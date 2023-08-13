@@ -6,10 +6,10 @@
 	let article = data.articles;
 	let events = data.events;
 
-	import H1 from '../../lib/Components/Text/H1.svelte';
+	import H1 from '$lib/Components/Text/H1.svelte';
 	import { page } from '$app/stores';
 
-	import og from '../../lib/images/main.png';
+	import og from '$lib/images/main.png';
 
 	let search = $page.url.searchParams.get('search');
 

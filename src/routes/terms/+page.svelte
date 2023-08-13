@@ -1,7 +1,7 @@
 <script>
-	import H1 from '../../lib/Components/Text/H1.svelte';
+	import H1 from '$lib/Components/Text/H1.svelte';
 
-	import og from '../../lib/images/main.png';
+	import og from '$lib/images/main.png';
 	let title = 'وعي - مصر :: الشروط والاحكام ';
 	let desc = `صفحة خاصة للشروط والاحكام الخاصة بموقع وعي - مصر.`;
 </script>

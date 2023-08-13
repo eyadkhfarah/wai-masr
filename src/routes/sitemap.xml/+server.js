@@ -1,8 +1,8 @@
-import { categories } from '../../utils/categories';
-import { menu } from '../../utils/navLink';
+import { categories } from '$utils/categories';
+import { menu } from '$utils/navLink';
 let site = 'https://waimasr.vercel.app';
 
-import {client} from '../../lib/contentful-fetch'
+import {client} from '$lib/contentful-fetch'
 
 
 export async function GET() {

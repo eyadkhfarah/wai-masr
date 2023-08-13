@@ -2,9 +2,9 @@
 	// @ts-nocheck
 
 	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
-	import Email from '../../../lib/Components/Email.svelte';
+	import Email from '$lib/Components/Email.svelte';
 
-	import news from '../../../lib/images/google-news.svg';
+	import news from '$lib/images/google-news.svg';
 
 	let copied = false;
 	let copiedClass = false;

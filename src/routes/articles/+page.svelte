@@ -1,12 +1,12 @@
 <script>
 	// @ts-nocheck
 
-	import Email from '../../lib/Components/Email.svelte';
+	import Email from '$lib/Components/Email.svelte';
 
 	import { categories } from '../../utils/categories';
 
-	import og from '../../lib/images/main.png';
-	import H1 from '../../lib/Components/Text/H1.svelte';
+	import og from '$lib/images/main.png';
+	import H1 from '$lib/Components/Text/H1.svelte';
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import RiSystemArrowRightSLine from 'svelte-icons-pack/ri/RiSystemArrowRightSLine';
 	import RiSystemArrowLeftSLine from 'svelte-icons-pack/ri/RiSystemArrowLeftSLine';

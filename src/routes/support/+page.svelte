@@ -5,9 +5,9 @@
 
 	let env = data.env
 
-	import H1 from '../../lib/Components/Text/H1.svelte';
+	import H1 from '$lib/Components/Text/H1.svelte';
 
-	import og from '../../lib/images/main.png';
+	import og from '$lib/images/main.png';
 
 	let title = 'وعي مصر :: أدعمنا';
 	let desc = 'ادعم فريق وعي مصر ماديا';

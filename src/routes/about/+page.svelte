@@ -1,10 +1,10 @@
 <script>
-	import og from '../../lib/images/main.png';
+	import og from '$lib/images/main.png';
 	let title = 'وعي - مصر :: احنا مين';
 	let desc = `أهلًا بيكم علي صفحة وعي - مصر إحنا هنا فى "وعي" نقدر نقدم نفسنا بإننا جزء من مشروع أكبر ألا وهو مشروع الوعي القومي المصري.`;
 
-	import zeyad from '../../lib/images/zeyad.png';
-	import elmorshedy from '../../lib/images/elmorshedy.png';
+	import zeyad from '$lib/images/zeyad.png';
+	import elmorshedy from '$lib/images/elmorshedy.png';
 
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
@@ -12,7 +12,7 @@
 	import RiLogoInstagramLine from 'svelte-icons-pack/ri/RiLogoInstagramLine';
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
-	import H1 from '../../lib/Components/Text/H1.svelte';
+	import H1 from '$lib/Components/Text/H1.svelte';
 </script>
 
 <svelte:head>

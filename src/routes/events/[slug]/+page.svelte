@@ -1,17 +1,16 @@
 <script>
 	// @ts-nocheck
 
-	import H1 from '../../../lib/Components/Text/H1.svelte';
-	import Email from '../../../lib/Components/Email.svelte';
+	import H1 from '$lib/Components/Text/H1.svelte';
+	import Email from '$lib/Components/Email.svelte';
 
 	export let data;
 	let events = data.event;
 </script>
 
 <svelte:head>
-  <title>{events.fields.name} :: وعي - مصر</title>
+	<title>{events.fields.name} :: وعي - مصر</title>
 	<meta name="description" content={events.fields.description} />
-
 
 	<meta property="og:title" content={events.fields.name} />
 	<meta property="og:description" content={events.fields.description} />
@@ -22,7 +21,6 @@
 	<meta property="og:image:alt" content={events.fields.description} />
 	<meta name="twitter:creator" content="@w3i.masr" />
 	<meta property="og:type" content="" />
-
 
 	<script type="application/ld+json">
         {
@@ -67,7 +65,16 @@
 					month: 'short',
 					day: 'numeric'
 				}
-			)}
+			)} -
+
+			{new Date(events.sys.createdAt).toLocaleDateString('ar-arab', {
+				calendar: 'coptic',
+				day: 'numeric'
+			})}
+			{new Date(events.sys.createdAt).toLocaleDateString('ar-arab', {
+				calendar: 'coptic',
+				month: 'short'
+			})}
 		</p>
 		<img
 			src={events.fields.image.fields.file.url}

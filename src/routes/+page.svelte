@@ -6,8 +6,6 @@
 	let article = data.articles;
 	let events = data.events;
 
-	console.log(article);
-
 	let tabs = ['اخر المقالات', 'مختارات وعي', 'اخبار تشرف'];
 	let activeTab = 'اخر المقالات';
 
@@ -18,11 +16,12 @@
 	import og from '$lib/images/main.png';
 	import qoute from '$lib/images/quote.svg';
 
-	import Tabs from '../lib/Components/Tabs.svelte';
+	import Tabs from '$lib/Components/Tabs.svelte';
 
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
+	import Events from '$lib/Components/Cards/Events.svelte';
 </script>
 
 <svelte:head>
@@ -38,7 +37,7 @@
 		<img
 			src={`https:${events[0].fields.image.fields.file.url}`}
 			alt={events[0].fields.name}
-			class="lg:object-cover object-none lg:h-[35rem] h-[75em] opacity-40"
+			class="object-cover lg:h-[35rem] h-[75em] opacity-40"
 			width="1920"
 		/>
 
@@ -68,55 +67,57 @@
 				</div>
 			</div>
 
-			<div class="m-0 w-full">
-				<h2 class="bg-red p-4 text-base w-fit m-0 text-white">اخر المقالات</h2>
-				<div class="lg:flex sm:grid gap-5">
-					<div class="bg-primary lg:grid-cols-3 h-fit grid md:w-full">
-						{#each article as card, index (card.sys.id)}
-							{#if index < 3}
-								<a href={`/post/${card.fields.slug}`} class="md:border-red border-none">
-									<div
-										class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
-									>
-										<img
-											src={`https:${card.fields.thumbnail.fields.file.url}`}
-											alt={card.fields.title}
-											class="object-cover w-20 h-20"
-										/>
-										<div class="grid gap-3 h-fit w-full">
-											<span class="text-gray-400 text-xs">
-												{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-													calendar: 'coptic',
-													day: 'numeric'
-												})}
-												{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-													calendar: 'coptic',
-													month: 'short'
-												})}
-												{parseFloat(
-													new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+			<div class="m-0 w-full lg:flex items-end lg:mb-8 md:grid gap-10">
+				<div class="md:mb-5">
+					<h2 class="bg-red p-4 text-base w-fit m-0 text-white">اخر المقالات</h2>
+					<div class="lg:flex md:grid gap-5">
+						<div class="bg-primary lg:grid-cols-3 h-fit grid md:w-full">
+							{#each article as card, index (card.sys.id)}
+								{#if index < 3}
+									<a href={`/post/${card.fields.slug}`} class="md:border-red border-none">
+										<div
+											class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
+										>
+											<img
+												src={`https:${card.fields.thumbnail.fields.file.url}`}
+												alt={card.fields.title}
+												class="object-cover w-20 h-20"
+											/>
+											<div class="grid gap-3 h-fit w-full">
+												<span class="text-gray-400 text-xs">
+													{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
 														calendar: 'coptic',
-														year: 'numeric'
-													})
-												) + Number(4525)}</span
-											>
-											<h3 class="text-black text-sm m-0">{card.fields.title}</h3>
+														day: 'numeric'
+													})}
+													{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+														calendar: 'coptic',
+														month: 'short'
+													})}
+													{parseFloat(
+														new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+															calendar: 'coptic',
+															year: 'numeric'
+														})
+													) + Number(4525)}</span
+												>
+												<h3 class="text-black text-sm m-0">{card.fields.title}</h3>
+											</div>
 										</div>
-									</div>
-								</a>
-							{/if}
-						{/each}
+									</a>
+								{/if}
+							{/each}
+						</div>
 					</div>
-					<div class="text-white grid gap-3">
-						<h3 class="m-0 w-full whitespace-nowrap">عايز تكتب مقالات؟</h3>
-						<p class="m-0 text-sm w-full">ابعت مقالتك لينا واحنا هننشرها لك</p>
-						<a
-							class="Whitebtn flex w-full items-center gap-6 border-b-red"
-							href="/contact"
-							rel="noopener noreferrer"
-							>أنشر مقالتك<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
-						>
-					</div>
+				</div>
+				<div class="text-white grid gap-3 h-fit lg:mt-0 mt-10">
+					<h3 class="m-0 w-full whitespace-nowrap">عايز تكتب مقالات؟</h3>
+					<p class="m-0 text-sm w-full">ابعت مقالتك لينا واحنا هننشرها لك</p>
+					<a
+						class="Whitebtn flex w-full items-center gap-6 border-b-red"
+						href="/contact"
+						rel="noopener noreferrer"
+						>أنشر مقالتك<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
+					>
 				</div>
 			</div>
 		</div>
@@ -410,29 +411,7 @@
 	<div class="grid lg:grid-cols-2 gap-6">
 		{#each events as event, index (event.sys.id)}
 			{#if index < 4}
-				<a href={`/events/${event.fields.slug}`} class="w-full">
-					<div class="grid gap-7">
-						<div class="h-80 w-full col-span-2 bg-rose-950 text-white relative">
-							<img
-								src={`https:${event.fields.image.fields.file.url}`}
-								alt={event.fields.name}
-								class="object-cover h-80 w-full"
-							/>
-							<div
-								class="grid gap-5 absolute bottom-0 md:p-10 p-5 bg-gradient-to-t from-black w-full"
-							>
-								<h2>{event.fields.name}</h2>
-								<p class="opacity-75">
-									الميعاد: {new Date(event.fields.date).toLocaleDateString('ar-EG', {
-										year: 'numeric',
-										month: 'short',
-										day: 'numeric'
-									})}
-								</p>
-							</div>
-						</div>
-					</div>
-				</a>
+				<Events {event}/>
 			{/if}
 		{/each}
 	</div>
