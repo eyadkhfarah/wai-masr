@@ -9,15 +9,15 @@
 </script>
 
 <svelte:head>
-  <title>{events.fields.title} :: وعي - مصر</title>
+  <title>{events.fields.name} :: وعي - مصر</title>
 	<meta name="description" content={events.fields.description} />
 
 
-	<meta property="og:title" content={events.fields.title} />
+	<meta property="og:title" content={events.fields.name} />
 	<meta property="og:description" content={events.fields.description} />
 	<meta property="og:image" content={`https:${events.fields.image.fields.file.url}`} />
 	<!-- Twitter -->
-	<meta property="twitter:title" content={events.fields.title} />
+	<meta property="twitter:title" content={events.fields.name} />
 	<meta property="og:description" content={events.fields.description} />
 	<meta property="og:image:alt" content={events.fields.description} />
 	<meta name="twitter:creator" content="@w3i.masr" />
