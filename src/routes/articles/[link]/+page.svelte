@@ -2,10 +2,8 @@
 	// @ts-nocheck
 
 	import Email from '$lib/Components/Email.svelte';
-	import image from '$lib/images/no-image-square.png';
-	import { example } from '$utils/articles';
 
-	import { categories } from '$utils/categories';
+	import { categories } from '../../../utils/categories';
 	import og from '$lib/images/main.png';
 
 	export let data;
