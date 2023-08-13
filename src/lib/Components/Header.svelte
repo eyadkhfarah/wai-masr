@@ -40,9 +40,13 @@
 		<Icon src={CgMenuRightAlt} color="white" />
 	</button>
 
-	<a href="/" class="text-white border-none">
-		<img src={logo} alt="لوجو وعي مصر" class="lg:h-16 h-9" />
-	</a>
+	<div class="flex gap-6 items-center">
+		<a href="/" class="text-white border-none">
+			<img src={logo} alt="لوجو وعي مصر" class="lg:h-16 h-9" />
+		</a>
+
+		<span class="text-white font-black text-lg">قلب مشروع الوعي القومي المصري </span>
+	</div>
 
 	<div class="border-b-4 border-red lg:flex hidden gap-4 items-center">
 		<input
@@ -64,7 +68,8 @@
 					<a
 						href={link.link}
 						class:border-b-red={link.link === $page.url.pathname}
-						class="text-white border-b-4 transition-all ease-in-out duration-300 border-b-black hover:border-b-white">{link.name}</a
+						class="text-white border-b-4 transition-all ease-in-out duration-300 border-b-black hover:border-b-white"
+						>{link.name}</a
 					>
 				</li>
 			{/each}

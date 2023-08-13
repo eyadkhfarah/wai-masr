@@ -6,8 +6,19 @@
 	let article = data.articles;
 	let events = data.events;
 
-	import og from '../lib/images/main.png';
-	import qoute from '../lib/images/quote.svg';
+	console.log(article)
+
+	let tabs = ['اخر المقالات', 'مختارات وعي', 'اخبار تشرف'];
+	let activeTab = 'اخر المقالات';
+
+	function tabChange(e) {
+		activeTab = e.detail;
+	}
+
+	import og from '$lib/images/main.png';
+	import qoute from '$lib/images/quote.svg';
+
+	import Tabs from '../lib/Components/Tabs.svelte';
 
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
@@ -62,7 +73,7 @@
 				<div class="lg:flex sm:grid gap-5">
 					<div class="bg-primary lg:grid-cols-3 h-fit grid md:w-full">
 						{#each article as card, index (card.sys.id)}
-							{#if index < 3 }
+							{#if index < 3}
 								<a href={`/post/${card.fields.slug}`} class="md:border-red border-none">
 									<div
 										class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
@@ -196,48 +207,119 @@
 		</div>
 
 		<div class="grid gap-5 h-fit w-full">
-			<div class="flex justify-between border-b-2 text-gray-400 border-b-gray-300">
-				<span class="border-b-4 border-b-red text-text font-black cursor-pointer py-4"
-					>اخر المقالات</span
-				>
-				<span class="border cursor-pointer py-4">الاكثر قراءة</span>
-				<span class="border cursor-pointer py-4">اخبار تشرف</span>
-			</div>
-			{#each article as card, index (card.sys.id)}
-				{#if index < 4}
-					<a href={`/post/${card.fields.slug}`} class="border-none">
-						<div class="card p-0 flex gap-4">
-							<img
-								src={`https:${card.fields.thumbnail.fields.file.url}`}
-								alt={card.fields.title}
-								class="object-cover w-20 h-20"
-							/>
-							<div class="grid h-fit gap-3">
-								<h2 class="text-black text-base m-0">{card.fields.title}</h2>
-								<p class="text-gray-400 text-sm">
-									{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-										calendar: 'coptic',
-										day: 'numeric'
-									})}
-									{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-										calendar: 'coptic',
-										month: 'short'
-									})}
-									{parseFloat(
-										new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+			<Tabs {tabs} {activeTab} on:tabChange={tabChange} />
+			{#if activeTab === 'اخر المقالات'}
+				{#each article as card, index (card.sys.id)}
+					{#if index < 4}
+						<a href={`/post/${card.fields.slug}`} class="border-none">
+							<div class="card p-0 flex gap-4">
+								<img
+									src={`https:${card.fields.thumbnail.fields.file.url}`}
+									alt={card.fields.title}
+									class="object-cover w-20 h-20"
+								/>
+								<div class="grid h-fit gap-3">
+									
+									<h2 class="text-black text-base m-0">{card.fields.title}</h2>
+									<p class="text-gray-400 text-sm">
+										{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
 											calendar: 'coptic',
-											year: 'numeric'
-										})
-									) + Number(4525)} |
-									<span class="text-blue-600 font-black"
-										><a href="/" class="border-none">{card.fields.category}</a></span
-									>
-								</p>
+											day: 'numeric'
+										})}
+										{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+											calendar: 'coptic',
+											month: 'short'
+										})}
+										{parseFloat(
+											new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+												calendar: 'coptic',
+												year: 'numeric'
+											})
+										) + Number(4525)} |
+										<span class="text-blue-600 font-black"
+											><a href="/" class="border-none">{card.fields.category}</a></span
+										>
+									</p>
+								</div>
 							</div>
-						</div>
-					</a>
-				{/if}
-			{/each}
+						</a>
+					{/if}
+				{/each}
+			{:else if activeTab === 'مختارات وعي'}
+				{#each article as card, index (card.sys.id)}
+					{#if index < 4 && card.fields.feature == false}
+						<a href={`/post/${card.fields.slug}`} class="border-none">
+							<div class="card p-0 flex gap-4">
+								<img
+									src={`https:${card.fields.thumbnail.fields.file.url}`}
+									alt={card.fields.title}
+									class="object-cover w-20 h-20"
+								/>
+								<div class="grid h-fit gap-3">
+									<h2 class="text-black text-base m-0">{card.fields.title}</h2>
+									<p class="text-gray-400 text-sm">
+										{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+											calendar: 'coptic',
+											day: 'numeric'
+										})}
+										{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+											calendar: 'coptic',
+											month: 'short'
+										})}
+										{parseFloat(
+											new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+												calendar: 'coptic',
+												year: 'numeric'
+											})
+										) + Number(4525)} |
+										<span class="text-blue-600 font-black"
+											><a href="/" class="border-none">{card.fields.category}</a></span
+										>
+									</p>
+								</div>
+							</div>
+						</a>
+					{/if}
+				{/each}
+
+			{:else if activeTab === 'اخبار تشرف'}
+				{#each article as card, index (card.sys.id)}
+					{#if index < 4 && card.fields.category === 'اخبار تشرف'}
+						<a href={`/post/${card.fields.slug}`} class="border-none">
+							<div class="card p-0 flex gap-4">
+								<img
+									src={`https:${card.fields.thumbnail.fields.file.url}`}
+									alt={card.fields.title}
+									class="object-cover w-20 h-20"
+								/>
+								<div class="grid h-fit gap-3">
+									<h2 class="text-black text-base m-0">{card.fields.title}</h2>
+									<p class="text-gray-400 text-sm">
+										{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+											calendar: 'coptic',
+											day: 'numeric'
+										})}
+										{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+											calendar: 'coptic',
+											month: 'short'
+										})}
+										{parseFloat(
+											new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+												calendar: 'coptic',
+												year: 'numeric'
+											})
+										) + Number(4525)} |
+										<span class="text-blue-600 font-black"
+											><a href="/" class="border-none">{card.fields.category}</a></span
+										>
+									</p>
+								</div>
+							</div>
+						</a>
+					{/if}
+				{/each}
+			{/if}
+			<!-- '', '' -->
 		</div>
 	</div>
 </section>

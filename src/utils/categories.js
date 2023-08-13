@@ -1,11 +1,11 @@
 export const categories = [
     {
-        title: "أخبار تشرف",
+        title: "اخبار تشرف",
         link: "honuor",
         id: 1
     },
     {
-        title: "أخبار وعي",
+        title: "اخبار وعي",
         link: "news",
         id: 2
     },
@@ -15,7 +15,7 @@ export const categories = [
         id: 3
     },
     {
-        title: "هوية",
+        title: "الهوية",
         link: "idenitiy",
         id: 4
     },
@@ -30,7 +30,7 @@ export const categories = [
         id: 6
     },
     {
-        title: "اللغة المصرية",
+        title: "اللغة",
         link: "lang",
         id: 7
     },
@@ -40,22 +40,22 @@ export const categories = [
         id: 8
     },
     {
-        title: "اتراث",
+        title: "التراث",
         link: "heritage",
         id: 9
     },
     {
-        title: "شخصيات مصرية",
+        title: "شخصيات",
         link: "influencers",
         id: 10
     },
     {
-        title: "افن",
+        title: "الفن",
         link: "art",
         id: 11
     },
     {
-        title: "معمار",
+        title: "المعمار",
         link: "architecture",
         id: 12
     },
