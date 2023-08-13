@@ -67,7 +67,7 @@ export async function GET() {
 							`<item>
               <title>${post.fields.title}</title>
               <description>${post.fields.subtitle}</description>
-              <link>${website}/posts/${post.fields.slug}/</link>
+              <link>${website}/post/${post.fields.slug}/</link>
               <guid isPermaLink="true">${website}/posts/${post.fields.slug}</guid>
               <dc:creator>${post.fields.author.fields.name}</dc:creator>
               <pubDate>${buildRFC822Date(post.sys.createdAt)}</pubDate>
