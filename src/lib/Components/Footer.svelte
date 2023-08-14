@@ -71,7 +71,7 @@
 			>
 		</div>
 
-		<div class="md:flex grid place-items-center gap-6 md:w-full justify-between">
+		<div class="md:flex grid md:m-0 mt-16 place-items-center gap-6 md:w-full justify-between">
 			<ul class="md:hidden gap-5 p-0 m-0 list-none text-white font-black text-xs flex">
 				<li>
 					<a
@@ -80,7 +80,6 @@
 						>سياسة الخصوصية</a
 					>
 				</li>
-				<li>—</li>
 				<li>
 					<a
 						href="/terms"
@@ -88,7 +87,6 @@
 						>الشروط والاحكام</a
 					>
 				</li>
-				<li>—</li>
 				<li>
 					<a
 						href="/rss"
