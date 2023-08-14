@@ -231,12 +231,24 @@
 									</div>
 									<span>—</span>
 									<p>
-										{new Date(article.sys.createdAt).toLocaleDateString('ar-EG', {
-											weekday: 'long',
-											year: 'numeric',
-											month: 'short',
+										{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+											calendar: 'coptic',
+											weekday: 'long'
+										})}
+										{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+											calendar: 'coptic',
 											day: 'numeric'
 										})}
+										{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+											calendar: 'coptic',
+											month: 'short'
+										})}
+										{parseFloat(
+											new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+												calendar: 'coptic',
+												year: 'numeric'
+											})
+										) + Number(4525)}
 									</p>
 								</div>
 							</div>
