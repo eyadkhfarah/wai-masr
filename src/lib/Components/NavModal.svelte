@@ -20,7 +20,7 @@
 	>
 	<div class="flex justify-between items-center">
 
-		<button class="cursor-pointer text-3xl w-fit h-fit" on:click>
+		<button class="cursor-pointer text-3xl w-fit h-fit" aria-label="cloase" on:click>
 			<Icon src={RiSystemCloseLine} color="black" />
 		</button>
 

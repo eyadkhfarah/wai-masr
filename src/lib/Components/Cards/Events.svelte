@@ -8,7 +8,7 @@
 	<div class="grid gap-7">
 		<div class="h-80 w-full col-span-2 bg-rose-950 text-white relative">
 			<img
-				src={event.fields.image.fields.file.url}
+				src={`https:${event.fields.image.fields.file.url}`}
 				alt={event.fields.name}
 				class="object-cover h-80 w-full"
 			/>

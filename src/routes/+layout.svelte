@@ -8,6 +8,8 @@
 	import './styles.css';
 	import { Delayed } from '$lib/store';
 	import GoogleAnalytics from '$lib/Components/GoogleAnalytics.svelte';
+
+	import { partytownSnippet } from '@builder.io/partytown/integration'
 	
 </script>
 <svelte:head>
@@ -15,8 +17,15 @@
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2125888694918985"
 	crossorigin="anonymous"></script>
 
+	<script>
+		partytown = {
+			forward: ['dataLayer.push']
+		};
+	</script>
 
 	<GoogleAnalytics />
+	
+  {@html '<script>' + partytownSnippet() + '</script>'}
 </svelte:head>
 
 <Header />

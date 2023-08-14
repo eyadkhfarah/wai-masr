@@ -1,5 +1,8 @@
 import adapter from '@sveltejs/adapter-auto';
+import { partytownVite } from '@builder.io/partytown/utils';
 import { vitePreprocess } from '@sveltejs/kit/vite';
+import { join } from 'path'
+import { sveltekit } from '@sveltejs/kit/vite'
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -9,6 +12,12 @@ const config = {
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter()
 	},
+	plugins: [
+		sveltekit(),
+		partytownVite({
+			dest: join(process.cwd(), '.svelte-kit/output/client/~partytown')
+		})
+	],
 
 	preprocess: vitePreprocess()
 };

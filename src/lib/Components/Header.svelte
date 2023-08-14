@@ -36,6 +36,7 @@
 		class="text-xl lg:hidden block cursor-pointer text-white"
 		class:open={menuTab}
 		on:click={handeler}
+		aria-label="menu"
 	>
 		<Icon src={CgMenuRightAlt} color="white" />
 	</button>
@@ -55,7 +56,7 @@
 			placeholder="بحث..."
 			bind:value={search}
 		/>
-		<a href={`/search-result?search=` + search} data-sveltekit-reload class="text-white border-none"
+		<a href={`/search-result?search=` + search} aria-label="بحث" data-sveltekit-reload class="text-white border-none"
 			><Icon src={FiSearch} /></a
 		>
 	</div>

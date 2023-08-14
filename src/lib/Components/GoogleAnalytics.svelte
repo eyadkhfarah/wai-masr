@@ -51,8 +51,8 @@
 
 <svelte:head>
 	<!-- Google tag (gtag.js) -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=MEASUREMENT_ID"></script>
-	<script>
+	<script async type="text/partytown" src="https://www.googletagmanager.com/gtag/js?id=MEASUREMENT_ID"></script>
+	<script type="text/partytown" >
 		try {
 			if (typeof window !== 'undefined' && window) {
 				window.dataLayer = window.dataLayer || [];
