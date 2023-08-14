@@ -29,6 +29,7 @@
 	<div class="flex mt-4 overflow-x-auto">
 		{#each categories as categorys}
 			<a
+				data-sveltekit-prefetch
 				aria-label={category.title}
 				class:border-b-red={categorys.title === category.title}
 				class:text-red={categorys.title === category.title}
