@@ -41,11 +41,11 @@
 	</button>
 
 	<div class="flex gap-6 items-center">
-		<a href="/" class="text-white border-none">
-			<img src={logo} alt="لوجو وعي مصر" class="lg:h-16 h-9" />
+		<a href="/" aria-label="وعي مصر" class="text-white border-none">
+			<img src={logo} alt="لوجو وعي مصر" class="lg:h-16 h-12" />
 		</a>
 
-		<span class="text-white font-black text-lg">قلب مشروع الوعي القومي المصري </span>
+		<span class="text-white font-black text-sm">قلب مشروع الوعي القومي المصري </span>
 	</div>
 
 	<div class="border-b-4 border-red lg:flex hidden gap-4 items-center">
@@ -67,6 +67,7 @@
 				<li>
 					<a
 						href={link.link}
+						aria-label={link.name}
 						class:border-b-red={link.link === $page.url.pathname}
 						class="text-white border-b-4 transition-all ease-in-out duration-300 border-b-black hover:border-b-white"
 						>{link.name}</a

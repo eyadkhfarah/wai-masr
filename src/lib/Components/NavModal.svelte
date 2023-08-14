@@ -42,7 +42,7 @@
 				placeholder="بحث..."
 				bind:value={search}
 			/>
-			<a href={`/search-result?search=` + search} data-sveltekit-reload class="border-none"
+			<a href={`/search-result?search=` + search} aria-label={search} data-sveltekit-reload class="border-none"
 				><Icon src={FiSearch} color="black" /></a
 			>
 		</div>
@@ -52,6 +52,7 @@
 				<li class="">
 					<a
 						href={link.link}
+						aria-label={link.name}
 						on:click
 						class="text-text font-black hover:text-red transition-all duration-300 ease-in-out flex items-center gap-4 group border-none"
 						data-sveltekit-prefetch

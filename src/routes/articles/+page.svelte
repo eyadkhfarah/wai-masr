@@ -17,7 +17,7 @@
 	let article = data.articles;
 	let items = article;
 	let currentPage = 1;
-	let pageSize = 4;
+	let pageSize = 6;
 	$: paginatedItems = paginate({ items, pageSize, currentPage });
 </script>
 
@@ -35,6 +35,7 @@
 	<div class="flex mt-4 overflow-x-auto">
 		{#each categories as category}
 			<a
+			aria-label={category.title}
 				class="Blackbtn p-2 border-b-gray-300 hover:border-b-red border-b-2"
 				href={`/articles/${category.link}`}>{category.title}</a
 			>
@@ -44,7 +45,7 @@
 	<div class="grid gap-7 lg:grid-cols-3">
 		<div class="grid gap-3 col-span-2">
 			{#each paginatedItems as card (card.sys.id)}
-				<a href={'/post/' + card.fields.slug} data-sveltekit-prefetch class="border-none group">
+				<a href={'/post/' + card.fields.slug} aria-label={card.fields.title} data-sveltekit-prefetch class="border-none group">
 					<div class="card md:flex grid gap-8 border-t-2 border-t-gray-300">
 						<img
 							src={`https:${card.fields.thumbnail.fields.file.url}`}

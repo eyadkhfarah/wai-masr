@@ -16,21 +16,9 @@
 	export let data;
 
 	let article = data.article;
-
+	let cards = data.cards;
 
 	let reading;
-
-	// let time = 0;
-
-	// onMount(() => {
-	// 	let text = toString(reading);
-	// 	let wpm = 225;
-	// 	let words = text.trim().split(/\s+/).length;
-	// 	time = Math.ceil(words / wpm);
-	// }),
-	// 	console.log(reading);
-
-	// let card = data.card;
 
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
@@ -153,8 +141,7 @@
 				</p>
 			</div>
 			<div class="flex lg:justify-end justify-between gap-5 md:text-base w-full text-xl font-black">
-				<!-- <span>وقت القراءة | دقائق</span> -->
-				<div class="flex gap-5">
+				<div class="flex lg:justify-end justify-between w-full gap-5">
 					<span class="text-sm">شارك المقالة</span>
 					<div class="flex gap-4 relative">
 						<a
@@ -220,36 +207,42 @@
 		</div>
 	</article>
 
-	<aside class="sticky top-28">
+	<aside class="md:sticky top-28 w-full">
 		<div class="flex gap-3 h-fit w-full mb-5">
 			<div class="w-2 bg-red rounded-3xl" />
 			<h3 class="m-0 whitespace-nowrap">مقالات ممكن تعجبك</h3>
 		</div>
 
-		<div class="grid col-span-1">
-			<!-- {#each card as card, index (card.sys.id)}
-				{#if index < 5}
+		{#each cards as card, index (card.sys.id)}
+			{#if index < 5}
+				<a href={`/post/${card.fields.slug}`} aria-label={card.fields.title} class="border-none group">
 					<div class="card border-t-gray-300 border-t-2 flex gap-8">
 						<div class="grid gap-5 h-fit">
-							<h2 class="text-xl">{card.fields.title}</h2>
+							<h4
+								class="text-xl text-text group-hover:text-red transition-all ease-in-out duration-300"
+							>
+								{card.fields.title}
+							</h4>
 							<div class="flex gap-5 text-gray-400 text-sm">
-								<a href="/" class="flex gap-3 border-none text-text h-fit">
+								<div class="flex gap-3 border-none text-text h-fit">
 									<div class="w-2 bg-red rounded-3xl" />
 									{card.fields.category}
-								</a>
+								</div>
 								<span>—</span>
-								<p>تاريخ | {new Date(article.sys.createdAt).toLocaleDateString('ar-EG', {
-									weekday: 'long',
-									year: 'numeric',
-									month: 'short',
-									day: 'numeric'
-								})}</p>
+								<p>
+									{new Date(article.sys.createdAt).toLocaleDateString('ar-EG', {
+										weekday: 'long',
+										year: 'numeric',
+										month: 'short',
+										day: 'numeric'
+									})}
+								</p>
 							</div>
 						</div>
 					</div>
-				{/if}
-			{/each} -->
-		</div>
+				</a>
+			{/if}
+		{/each}
 	</aside>
 </section>
 

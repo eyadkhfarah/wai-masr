@@ -59,6 +59,7 @@
 						</div>
 						<a
 							class="Whitebtn flex items-center gap-6 border-b-red"
+							aria-label={events[0].fields.name}
 							href="/events"
 							rel="noopener noreferrer"
 							>اقرا التفاصيل<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
@@ -74,7 +75,11 @@
 						<div class="bg-primary lg:grid-cols-3 h-fit grid md:w-full">
 							{#each article as card, index (card.sys.id)}
 								{#if index < 3}
-									<a href={`/post/${card.fields.slug}`} class="md:border-red border-none">
+									<a
+										aria-label={card.fields.title}
+										href={`/post/${card.fields.slug}`}
+										class="md:border-red border-none"
+									>
 										<div
 											class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
 										>
@@ -129,7 +134,7 @@
 		<div class="grid gap-9 w-full h-fit">
 			{#each article as card, index (card.sys.id)}
 				{#if index < 3}
-					<a class="border-none" href={`/post/${card.fields.slug}`}>
+					<a class="border-none" aria-label={card.fields.title} href={`/post/${card.fields.slug}`}>
 						<div class="card p-0 grid gap-4">
 							<div class="flex text-text gap-3 h-fit">
 								<div class="w-2 bg-red rounded-3xl" />
@@ -168,7 +173,11 @@
 		</div>
 
 		<div class="relative w-full h-fit md:m-0 mb-4 col-span-2">
-			<a href={'/post/' + article[0].fields.slug} class="border-none">
+			<a
+				href={'/post/' + article[0].fields.slug}
+				aria-label={article[0].fields.title}
+				class="border-none"
+			>
 				<div
 					class="absolute bottom-0 grid bg-gradient-to-t from-black place-items-center gap-4 text-center w-full px-7"
 				>
@@ -176,7 +185,7 @@
 						<div class="w-2 bg-red rounded-3xl" />
 						{article[0].fields.category}
 					</div>
-					<h2 class="text-white">
+					<h2 class="text-white md:text-lg">
 						{article[0].fields.title}
 					</h2>
 					<p class="text-gray-400">
@@ -212,7 +221,11 @@
 			{#if activeTab === 'اخر المقالات'}
 				{#each article as card, index (card.sys.id)}
 					{#if index < 4}
-						<a href={`/post/${card.fields.slug}`} class="border-none">
+						<a
+							href={`/post/${card.fields.slug}`}
+							aria-label={card.fields.title}
+							class="border-none"
+						>
 							<div class="card p-0 flex gap-4">
 								<img
 									src={`https:${card.fields.thumbnail.fields.file.url}`}
@@ -248,7 +261,11 @@
 			{:else if activeTab === 'مختارات وعي'}
 				{#each article as card, index (card.sys.id)}
 					{#if index < 4 && card.fields.feature == false}
-						<a href={`/post/${card.fields.slug}`} class="border-none">
+						<a
+							href={`/post/${card.fields.slug}`}
+							aria-label={card.fields.title}
+							class="border-none"
+						>
 							<div class="card p-0 flex gap-4">
 								<img
 									src={`https:${card.fields.thumbnail.fields.file.url}`}
@@ -284,7 +301,11 @@
 			{:else if activeTab === 'اخبار تشرف'}
 				{#each article as card, index (card.sys.id)}
 					{#if index < 4 && card.fields.category === 'اخبار تشرف'}
-						<a href={`/post/${card.fields.slug}`} class="border-none">
+						<a
+							href={`/post/${card.fields.slug}`}
+							aria-label={card.fields.title}
+							class="border-none"
+						>
 							<div class="card p-0 flex gap-4">
 								<img
 									src={`https:${card.fields.thumbnail.fields.file.url}`}
@@ -344,7 +365,11 @@
 		/>
 	</div>
 
-	<a class="Blackbtn" href="https://maktabaqawmya.vercel.app" rel="noopener noreferrer"
+	<a
+		class="Blackbtn"
+		aria-label="المكتبة القومية"
+		href="https://maktabaqawmya.vercel.app"
+		rel="noopener noreferrer"
 		>ادخل المكتبة القومية <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 	>
 </section>
@@ -357,7 +382,7 @@
 	<div class="grid gap-6 lg:grid-cols-3">
 		{#each article as card, index (card.sys.id)}
 			{#if index < 3}
-				<a href={`/post/${card.fields.slug}`} class="border-none">
+				<a aria-label={card.fields.title} href={`/post/${card.fields.slug}`} class="border-none">
 					<div class="card grid gap-4">
 						<img
 							src={`https:${card.fields.thumbnail.fields.file.url}`}
@@ -381,7 +406,9 @@
 								})
 							) + Number(4525)} |
 							<span class="text-blue-600 font-black"
-								><a href="/" class="border-none">{card.fields.category}</a></span
+								><a aria-label={card.fields.title} href="/" class="border-none"
+									>{card.fields.category}</a
+								></span
 							>
 						</p>
 					</div>
@@ -389,7 +416,7 @@
 			{/if}
 		{/each}
 	</div>
-	<a class="Blackbtn" href="/articles" rel="noopener noreferrer"
+	<a class="Blackbtn" aria-label="المزيد من المقالات" href="/articles" rel="noopener noreferrer"
 		>اقرا اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 	>
 </section>
@@ -411,11 +438,11 @@
 	<div class="grid lg:grid-cols-2 gap-6">
 		{#each events as event, index (event.sys.id)}
 			{#if index < 4}
-				<Events {event}/>
+				<Events {event} />
 			{/if}
 		{/each}
 	</div>
-	<a class="Blackbtn" href="/events" rel="noopener noreferrer"
-		>شوف مناسبات اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
+	<a class="Blackbtn" aria-label="المزيد من الفعاليات" href="/events" rel="noopener noreferrer"
+		>شوف فعاليات اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 	>
 </section>

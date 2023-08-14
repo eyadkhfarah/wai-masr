@@ -29,6 +29,7 @@
 	<div class="flex mt-4 overflow-x-auto">
 		{#each categories as categorys}
 			<a
+				aria-label={category.title}
 				class:border-b-red={categorys.title === category.title}
 				class:text-red={categorys.title === category.title}
 				class="Blackbtn p-2 border-b-gray-300 hover:border-b-red border-b-2"
@@ -41,7 +42,12 @@
 		<div class="grid gap-3 col-span-2">
 			{#each articles as card (card.sys.id)}
 				{#if card.fields.category === category.title}
-					<a href={'/post/' + card.fields.slug} data-sveltekit-prefetch class="border-none group">
+					<a
+						href={'/post/' + card.fields.slug}
+						aria-label={card.fields.title}
+						data-sveltekit-prefetch
+						class="border-none group"
+					>
 						<div class="card md:flex grid gap-8 border-t-2 border-t-gray-300">
 							<img
 								src={`https:${card.fields.thumbnail.fields.file.url}`}

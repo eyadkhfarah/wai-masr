@@ -4,7 +4,7 @@
 	export let event;
 </script>
 
-<a href={`/events/${event.fields.slug}`} class="w-full">
+<a href={`/events/${event.fields.slug}`} aria-label={event.fields.title} class="w-full">
 	<div class="grid gap-7">
 		<div class="h-80 w-full col-span-2 bg-rose-950 text-white relative">
 			<img

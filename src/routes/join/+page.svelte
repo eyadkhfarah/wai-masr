@@ -1,6 +1,6 @@
 <script>
 	//
-	import H1 from '$lib/Components/Text/H1.svelte';
+	import H1 from '../../lib/Components/Text/H1.svelte';
 
 	import og from '$lib/images/main.png';
 
@@ -93,7 +93,7 @@
 
 <section class="grid place-items-center">
 	<h2 class="text-center">مستني ايه تعالي انضم معانا دلوقتي</h2>
-	<a class="Blackbtn" href="https://forms.gle/weNzsctgZPJKHSb5A" rel="noopener noreferrer"
+	<a class="Blackbtn" href="https://forms.gle/weNzsctgZPJKHSb5A" aria-label="ادخل للانضمام" rel="noopener noreferrer"
 		>قدم دلوقتي<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 	>
 </section>
