@@ -216,7 +216,7 @@
 	
 			{#each cards as card, index (card.sys.id)}
 				{#if index < 5 && card.fields.title != article.fields.title}
-					<a href={`/post/${card.fields.slug}`} data-sveltekit-prefetch aria-label={card.fields.title} class="border-none group">
+					<a href={`/post/${card.fields.slug}`} data-sveltekit-reload data-sveltekit-prefetch aria-label={card.fields.title} class="border-none group">
 						<div class="card border-t-gray-300 border-t-2 flex gap-8">
 							<div class="grid gap-5 h-fit">
 								<h4
