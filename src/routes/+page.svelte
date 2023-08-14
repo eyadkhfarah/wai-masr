@@ -77,8 +77,8 @@
 							{#each article as card, index (card.sys.id)}
 								{#if index < 3}
 									<a
-									data-sveltekit-prefetch	
-									aria-label={card.fields.title}
+										data-sveltekit-prefetch
+										aria-label={card.fields.title}
 										href={`/post/${card.fields.slug}`}
 										class="md:border-red border-none"
 									>
@@ -136,14 +136,18 @@
 		<div class="grid gap-9 w-full h-fit">
 			{#each article as card, index (card.sys.id)}
 				{#if index < 3}
-					data-sveltekit-prefetch<a class="border-none" 
-					aria-label={card.fields.title} href={`/post/${card.fields.slug}`}>
+					<a
+						class="border-none"
+						data-sveltekit-prefetch
+						aria-label={card.fields.title}
+						href={`/post/${card.fields.slug}`}
+					>
 						<div class="card p-0 grid gap-4">
 							<div class="flex text-text gap-3 h-fit">
 								<div class="w-2 bg-red rounded-3xl" />
 								{card.fields.category}
 							</div>
-							<h2 class="text-black text-xl">{card.fields.title}</h2>
+							<h2 class="text-black md:text-xl text-sm">{card.fields.title}</h2>
 							<p class="text-gray-400">
 								{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
 									calendar: 'coptic',
@@ -183,16 +187,16 @@
 				class="border-none"
 			>
 				<div
-					class="absolute bottom-0 grid bg-gradient-to-t from-black place-items-center gap-4 text-center w-full px-7"
+					class="absolute bottom-0 grid bg-gradient-to-t from-black place-items-center lg:gap-4 gap-2 text-center w-full px-7"
 				>
 					<div class="flex font-black text-white gap-3 h-fit">
 						<div class="w-2 bg-red rounded-3xl" />
 						{article[0].fields.category}
 					</div>
-					<h2 class="text-white md:text-lg">
+					<h2 class="text-white md:text-3xl text-lg">
 						{article[0].fields.title}
 					</h2>
-					<p class="text-gray-400">
+					<p class="text-gray-400 lg:text-base text-sm">
 						{new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
 							calendar: 'coptic',
 							day: 'numeric'
@@ -213,9 +217,7 @@
 				<img
 					src={`https:${article[0].fields.square.fields.file.url}`}
 					alt={article[0].fields.title}
-					class="w-fit"
-					width="1080"
-					height="1080"
+					class="object-cover h-full w-full"
 				/>
 			</a>
 		</div>
@@ -390,8 +392,12 @@
 	<div class="grid gap-6 lg:grid-cols-3">
 		{#each article as card, index (card.sys.id)}
 			{#if index < 3}
-				data-sveltekit-prefetch<a 
-				aria-label={card.fields.title} href={`/post/${card.fields.slug}`} class="border-none">
+				<a
+					data-sveltekit-prefetch
+					aria-label={card.fields.title}
+					href={`/post/${card.fields.slug}`}
+					class="border-none"
+				>
 					<div class="card grid gap-4">
 						<img
 							src={`https:${card.fields.thumbnail.fields.file.url}`}
@@ -414,9 +420,8 @@
 									year: 'numeric'
 								})
 							) + Number(4525)} |
-							<span class="text-blue-600 font-black"
-								data-sveltekit-prefetch><a 
-								aria-label={card.fields.title} href="/" class="border-none"
+							<span class="text-blue-600 font-black" data-sveltekit-prefetch
+								><a aria-label={card.fields.title} href="/" class="border-none"
 									>{card.fields.category}</a
 								></span
 							>
@@ -426,8 +431,12 @@
 			{/if}
 		{/each}
 	</div>
-	data-sveltekit-prefetch<a class="Blackbtn" 
-	aria-label="المزيد من المقالات" href="/articles" rel="noopener noreferrer"
+	<a
+		data-sveltekit-prefetch
+		class="Blackbtn"
+		aria-label="المزيد من المقالات"
+		href="/articles"
+		rel="noopener noreferrer"
 		>اقرا اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 	>
 </section>
@@ -437,8 +446,6 @@
 		<h2>عايز تعرف اخر الاخبار والمناسبات؟</h2>
 		<p>سجل بالبريد الالكتروني علشان توصلك كل المقالات واحدث المناسبات وابرز الاسئلة</p>
 	</div>
-
-	<img src="" alt="" />
 </section>
 
 <section class="grid">
@@ -453,8 +460,12 @@
 			{/if}
 		{/each}
 	</div>
-	data-sveltekit-prefetch<a class="Blackbtn" 
-	aria-label="المزيد من الفعاليات" href="/events" rel="noopener noreferrer"
+	<a
+		data-sveltekit-prefetch
+		class="Blackbtn"
+		aria-label="المزيد من الفعاليات"
+		href="/events"
+		rel="noopener noreferrer"
 		>شوف فعاليات اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 	>
 </section>
