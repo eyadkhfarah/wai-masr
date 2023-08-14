@@ -59,6 +59,7 @@
 						</div>
 						<a
 							class="Whitebtn flex items-center gap-6 border-b-red"
+							data-sveltekit-prefetch
 							aria-label={events[0].fields.name}
 							href="/events"
 							rel="noopener noreferrer"
@@ -76,7 +77,8 @@
 							{#each article as card, index (card.sys.id)}
 								{#if index < 3}
 									<a
-										aria-label={card.fields.title}
+									data-sveltekit-prefetch	
+									aria-label={card.fields.title}
 										href={`/post/${card.fields.slug}`}
 										class="md:border-red border-none"
 									>
@@ -134,7 +136,8 @@
 		<div class="grid gap-9 w-full h-fit">
 			{#each article as card, index (card.sys.id)}
 				{#if index < 3}
-					<a class="border-none" aria-label={card.fields.title} href={`/post/${card.fields.slug}`}>
+					data-sveltekit-prefetch<a class="border-none" 
+					aria-label={card.fields.title} href={`/post/${card.fields.slug}`}>
 						<div class="card p-0 grid gap-4">
 							<div class="flex text-text gap-3 h-fit">
 								<div class="w-2 bg-red rounded-3xl" />
@@ -175,6 +178,7 @@
 		<div class="relative w-full h-fit md:m-0 mb-4 col-span-2">
 			<a
 				href={'/post/' + article[0].fields.slug}
+				data-sveltekit-prefetch
 				aria-label={article[0].fields.title}
 				class="border-none"
 			>
@@ -223,6 +227,7 @@
 					{#if index < 4}
 						<a
 							href={`/post/${card.fields.slug}`}
+							data-sveltekit-prefetch
 							aria-label={card.fields.title}
 							class="border-none"
 						>
@@ -263,6 +268,7 @@
 					{#if index < 4 && card.fields.feature == false}
 						<a
 							href={`/post/${card.fields.slug}`}
+							data-sveltekit-prefetch
 							aria-label={card.fields.title}
 							class="border-none"
 						>
@@ -303,6 +309,7 @@
 					{#if index < 4 && card.fields.category === 'اخبار تشرف'}
 						<a
 							href={`/post/${card.fields.slug}`}
+							data-sveltekit-prefetch
 							aria-label={card.fields.title}
 							class="border-none"
 						>
@@ -367,6 +374,7 @@
 
 	<a
 		class="Blackbtn"
+		data-sveltekit-prefetch
 		aria-label="المكتبة القومية"
 		href="https://maktabaqawmya.vercel.app"
 		rel="noopener noreferrer"
@@ -382,7 +390,8 @@
 	<div class="grid gap-6 lg:grid-cols-3">
 		{#each article as card, index (card.sys.id)}
 			{#if index < 3}
-				<a aria-label={card.fields.title} href={`/post/${card.fields.slug}`} class="border-none">
+				data-sveltekit-prefetch<a 
+				aria-label={card.fields.title} href={`/post/${card.fields.slug}`} class="border-none">
 					<div class="card grid gap-4">
 						<img
 							src={`https:${card.fields.thumbnail.fields.file.url}`}
@@ -406,7 +415,8 @@
 								})
 							) + Number(4525)} |
 							<span class="text-blue-600 font-black"
-								><a aria-label={card.fields.title} href="/" class="border-none"
+								data-sveltekit-prefetch><a 
+								aria-label={card.fields.title} href="/" class="border-none"
 									>{card.fields.category}</a
 								></span
 							>
@@ -416,7 +426,8 @@
 			{/if}
 		{/each}
 	</div>
-	<a class="Blackbtn" aria-label="المزيد من المقالات" href="/articles" rel="noopener noreferrer"
+	data-sveltekit-prefetch<a class="Blackbtn" 
+	aria-label="المزيد من المقالات" href="/articles" rel="noopener noreferrer"
 		>اقرا اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 	>
 </section>
@@ -442,7 +453,8 @@
 			{/if}
 		{/each}
 	</div>
-	<a class="Blackbtn" aria-label="المزيد من الفعاليات" href="/events" rel="noopener noreferrer"
+	data-sveltekit-prefetch<a class="Blackbtn" 
+	aria-label="المزيد من الفعاليات" href="/events" rel="noopener noreferrer"
 		>شوف فعاليات اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 	>
 </section>

@@ -92,7 +92,7 @@
 	></script>
 </svelte:head>
 
-<section class="grid lg:grid-cols-4 gap-10 m-0">
+<section class="lg:grid lg:grid-cols-4 gap-10 m-0">
 	<span class="lg:block hidden">
 		<Email />
 	</span>
@@ -195,7 +195,7 @@
 
 		<div class="flex gap-3 h-fit">
 			<div class="w-2 bg-red rounded-3xl" />
-			<h2 class="text-2xl">التاجات</h2>
+			<h2 class="text-2xl m-0">التاجات</h2>
 		</div>
 
 		<div class="flex gap-5 flex-wrap">
@@ -207,43 +207,45 @@
 		</div>
 	</article>
 
-	<aside class="md:sticky top-28 w-full">
-		<div class="flex gap-3 h-fit w-full mb-5">
-			<div class="w-2 bg-red rounded-3xl" />
-			<h3 class="m-0 whitespace-nowrap">مقالات ممكن تعجبك</h3>
-		</div>
-
-		{#each cards as card, index (card.sys.id)}
-			{#if index < 5}
-				<a href={`/post/${card.fields.slug}`} aria-label={card.fields.title} class="border-none group">
-					<div class="card border-t-gray-300 border-t-2 flex gap-8">
-						<div class="grid gap-5 h-fit">
-							<h4
-								class="text-xl text-text group-hover:text-red transition-all ease-in-out duration-300"
-							>
-								{card.fields.title}
-							</h4>
-							<div class="flex gap-5 text-gray-400 text-sm">
-								<div class="flex gap-3 border-none text-text h-fit">
-									<div class="w-2 bg-red rounded-3xl" />
-									{card.fields.category}
+	<span>
+		<aside class="md:sticky top-16 md:m-0 mt-14 w-full">
+			<div class="flex gap-3 h-fit w-full mb-5">
+				<div class="w-2 bg-red rounded-3xl" />
+				<h3 class="m-0 whitespace-nowrap">مقالات ممكن تعجبك</h3>
+			</div>
+	
+			{#each cards as card, index (card.sys.id)}
+				{#if index < 5 && card.fields.title != article.fields.title}
+					<a href={`/post/${card.fields.slug}`} data-sveltekit-prefetch aria-label={card.fields.title} class="border-none group">
+						<div class="card border-t-gray-300 border-t-2 flex gap-8">
+							<div class="grid gap-5 h-fit">
+								<h4
+									class="text-xl text-text group-hover:text-red transition-all ease-in-out duration-300"
+								>
+									{card.fields.title}
+								</h4>
+								<div class="flex gap-5 text-gray-400 text-sm">
+									<div class="flex gap-3 border-none text-text h-fit">
+										<div class="w-2 bg-red rounded-3xl" />
+										{card.fields.category}
+									</div>
+									<span>—</span>
+									<p>
+										{new Date(article.sys.createdAt).toLocaleDateString('ar-EG', {
+											weekday: 'long',
+											year: 'numeric',
+											month: 'short',
+											day: 'numeric'
+										})}
+									</p>
 								</div>
-								<span>—</span>
-								<p>
-									{new Date(article.sys.createdAt).toLocaleDateString('ar-EG', {
-										weekday: 'long',
-										year: 'numeric',
-										month: 'short',
-										day: 'numeric'
-									})}
-								</p>
 							</div>
 						</div>
-					</div>
-				</a>
-			{/if}
-		{/each}
-	</aside>
+					</a>
+				{/if}
+			{/each}
+		</aside>
+	</span>
 </section>
 
 <section>
