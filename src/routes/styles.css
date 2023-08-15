@@ -93,7 +93,7 @@ body {
     }
 
     a {
-        @apply text-blue-800 font-bold border-b-red border-b-4
+        @apply text-blue-800 font-bold border-b-red border-b-4 leading-7
     }
 
     .Whitebtn {

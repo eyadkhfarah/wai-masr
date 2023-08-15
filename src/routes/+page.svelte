@@ -26,10 +26,10 @@
 
 <svelte:head>
 	<title>وعي - مصر</title>
-	<meta name="description" content="نبض التيار القومي المصري." />
+	<meta name="description" content="إبدأ تجربتك الأولى في القومية المصرية من وعي - مصر" />
 	<meta property="og:image" content={og} />
 	<meta property="og:title" content="وعي - مصر" />
-	<meta property="og:description" content="نبض التيار القومي المصري." />
+	<meta property="og:description" content="إبدأ تجربتك الأولى في القومية المصرية من وعي - مصر" />
 </svelte:head>
 
 <section class="bg-black m-0 p-0">
@@ -118,7 +118,7 @@
 				</div>
 				<div class="text-white grid gap-3 h-fit lg:mt-0 mt-10">
 					<h3 class="m-0 w-full whitespace-nowrap">عايز تكتب مقالات؟</h3>
-					<p class="m-0 text-sm w-full">ابعت مقالتك لينا واحنا هننشرها لك</p>
+					<p class="m-0 text-xs w-full">ابعت مقالتك لينا واحنا هننشرها لك</p>
 					<a
 						class="Whitebtn flex w-full items-center gap-6 border-b-red"
 						href="/contact"
