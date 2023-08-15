@@ -254,7 +254,10 @@
 												calendar: 'coptic',
 												year: 'numeric'
 											})
-										) + Number(4525)}
+										) + Number(4525)}<span>—</span>
+										{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+											dateStyle: 'full'
+										})}
 									</p>
 								</div>
 							</div>
