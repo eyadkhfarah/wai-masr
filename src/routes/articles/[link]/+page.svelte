@@ -63,19 +63,8 @@
 								</h2>
 								<p class="text-gray-400 m-0">
 									{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-										calendar: 'coptic',
-										day: 'numeric'
-									})}
-									{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-										calendar: 'coptic',
-										month: 'short'
-									})}
-									{parseFloat(
-										new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-											calendar: 'coptic',
-											year: 'numeric'
-										})
-									) + Number(4525)} |
+										dateStyle: 'full'
+									})} |
 									<span class="text-blue-600 font-black"
 										><a href="/" class="border-none">{card.fields.category}</a></span
 									>

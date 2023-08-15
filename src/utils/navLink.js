@@ -9,16 +9,6 @@ export const menu = [
         link: '/articles',
         id: 2
     },
-    // {
-    //     name: 'المنتدي',
-    //     link: '/forum',
-    //     id: 3
-    // },
-    {
-        name: 'فعاليات',
-        link: '/events',
-        id: 4
-    },
     {
         name: 'المكتبة القومية',
         link: 'https://maktabaqawmya.vercel.app',
@@ -28,6 +18,11 @@ export const menu = [
         name: 'اتعلم اللغة المصرية',
         link: 'https://www.bibalex.org/learnhieroglyphs/Lesson/Introduction_Ar.aspx',
         id: 6
+    },
+    {
+        name: 'مناسبات وفعاليات',
+        link: '/events',
+        id: 4
     },
     {
         name: 'احنا مين؟',
@@ -40,13 +35,13 @@ export const menu = [
         id: 8
     },
     {
-        name: 'إدعمنا',
-        link: '/support',
-        id: 9
-    },
-    {
         name: 'إنضم لينا',
         link: '/join',
         id: 10
+    },
+    {
+        name: 'إدعمنا',
+        link: '/support',
+        id: 9
     },
 ];

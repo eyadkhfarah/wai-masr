@@ -213,10 +213,16 @@
 				<div class="w-2 bg-red rounded-3xl" />
 				<h3 class="m-0 whitespace-nowrap">مقالات ممكن تعجبك</h3>
 			</div>
-	
+
 			{#each cards as card, index (card.sys.id)}
 				{#if index < 5 && card.fields.title != article.fields.title}
-					<a href={`/post/${card.fields.slug}`} data-sveltekit-reload data-sveltekit-prefetch aria-label={card.fields.title} class="border-none group">
+					<a
+						href={`/post/${card.fields.slug}`}
+						data-sveltekit-reload
+						data-sveltekit-prefetch
+						aria-label={card.fields.title}
+						class="border-none group"
+					>
 						<div class="card border-t-gray-300 border-t-2 flex gap-8">
 							<div class="grid gap-5 h-fit">
 								<h4
@@ -225,12 +231,12 @@
 									{card.fields.title}
 								</h4>
 								<div class="flex gap-5 text-gray-400 text-sm">
-									<div class="flex gap-3 border-none text-text h-fit">
+									<span class="flex gap-3 border-none text-text whitespace-nowrap h-fit">
 										<div class="w-2 bg-red rounded-3xl" />
 										{card.fields.category}
-									</div>
+									</span>
 									<span>—</span>
-									<p>
+									<p class="whitespace-nowrap">
 										{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
 											calendar: 'coptic',
 											weekday: 'long'
@@ -248,7 +254,10 @@
 												calendar: 'coptic',
 												year: 'numeric'
 											})
-										) + Number(4525)}
+										) + Number(4525)}<span>—</span>
+										{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+											dateStyle: 'full'
+										})}
 									</p>
 								</div>
 							</div>
