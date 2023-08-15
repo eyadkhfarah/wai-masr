@@ -21,6 +21,27 @@
 		menuTab = !menuTab;
 	}
 
+	let time = new Date();
+	let h = time.getHours(); // 0 - 23
+	let m = time.getMinutes(); // 0 - 59
+	let s = time.getSeconds(); // 0 - 59
+	let session = 'صياحاً';
+
+	if (h == 0) {
+		h = 12;
+	}
+
+	if (h > 12) {
+		h = h - 12;
+		session = 'مساءاً';
+	}
+
+	h = h < 10 ? '0' + h : h;
+	m = m < 10 ? '0' + m : m;
+	s = s < 10 ? '0' + s : s;
+
+	time = h + ':' + m + ' ' + session;
+
 	let scrollPrecent = '0';
 
 	let change = true;
@@ -46,7 +67,7 @@
 			<img src={logo} alt="لوجو وعي مصر" class="lg:h-16 h-12" />
 		</a>
 
-		<span class="text-white font-black text-sm">قلب مشروع الوعي القومي المصري </span>
+		<span class="text-white font-black lg:text-2xl text-sm">قلب مشروع الوعي القومي المصري </span>
 	</div>
 
 	<div class="border-b-4 border-red lg:flex hidden gap-4 items-center">
@@ -56,8 +77,11 @@
 			placeholder="بحث..."
 			bind:value={search}
 		/>
-		<a href={`/search-result?search=` + search} aria-label="بحث" data-sveltekit-reload class="text-white border-none"
-			><Icon src={FiSearch} /></a
+		<a
+			href={`/search-result?search=` + search}
+			aria-label="بحث"
+			data-sveltekit-reload
+			class="text-white border-none"><Icon src={FiSearch} /></a
 		>
 	</div>
 </header>
@@ -77,15 +101,23 @@
 			{/each}
 		</ul>
 
-		<span class="flex items-center gap-5 opacity-25">
-			{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', weekday: 'long' })}
-			-
-			{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', day: 'numeric' })}
-			/
-			{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', month: 'long' })}
-			/
-			{parseFloat(year) + Number(4525)}
-		</span>
+		<div class="flex gap-5 opacity-50">
+			<span>{time}</span>
+
+			<span class="flex items-center gap-5">
+				{new Date().toLocaleDateString('ar-arab', { dateStyle: 'full' })}
+			</span>
+
+			<span class="flex items-center gap-5">
+				{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', weekday: 'long' })}
+				-
+				{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', day: 'numeric' })}
+				/
+				{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', month: 'long' })}
+				/
+				{parseFloat(year) + Number(4525)}
+			</span>
+		</div>
 	</nav>
 </header>
 
