@@ -138,7 +138,7 @@
 							})
 						) + Number(4525)}
 						<span>—</span>
-						{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
 							dateStyle: 'full'
 						})}
 					</span>

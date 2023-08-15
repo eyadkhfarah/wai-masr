@@ -86,7 +86,7 @@
 	</div>
 </header>
 <header class={`sticky top-0 bg-black z-40 text-white transition-all ease-in-out duration-300`}>
-	<nav class="border-t border-gray-900 p-3 lg:flex justify-between items-center hidden">
+	<nav class="border-t border-gray-900 p-1 text-sm lg:flex justify-between items-center hidden">
 		<ul class="flex gap-5 list-none m-0 p-0">
 			{#each menu as link (link.id)}
 				<li>
