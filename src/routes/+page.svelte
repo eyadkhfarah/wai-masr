@@ -187,14 +187,6 @@
 					</h2>
 					<p class="text-gray-400 lg:text-base text-sm">
 						{new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
-							calendar: 'coptic',
-							day: 'numeric'
-						})}
-						{new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
-							calendar: 'coptic',
-							month: 'short'
-						})}
-						{new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
 							dateStyle: 'full'
 						})} |
 						<span class="text-blue-600 font-black">{article[0].fields.author.fields.name}</span>
