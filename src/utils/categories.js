@@ -48,7 +48,7 @@ export const categories = [
 		title: 'مقالات وعي',
 		link: 'wai-articles',
 		id: 14
-	}
+	},
 	{
 		title: 'مقالات الجمهور',
 		link: 'fan-articles',
