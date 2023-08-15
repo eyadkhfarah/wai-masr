@@ -25,7 +25,7 @@
 	let h = time.getHours(); // 0 - 23
 	let m = time.getMinutes(); // 0 - 59
 	let s = time.getSeconds(); // 0 - 59
-	let session = 'صياحاً';
+	let session = 'صباحاً';
 
 	if (h == 0) {
 		h = 12;
