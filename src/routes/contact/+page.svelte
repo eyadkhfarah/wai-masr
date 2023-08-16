@@ -1,7 +1,6 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 
-	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
 	import RiLogoFacebookCircleFill from 'svelte-icons-pack/ri/RiLogoFacebookCircleFill';
@@ -28,9 +27,9 @@
 		<H1>اتواصل معنا</H1>
 
 		<p class="m-0">
-			تقدروا تتواصلوا معانا أي وقت وتقولونا آراءكم واقتراحاتكم في كل المواضيع اللي شوفتوها أو تحبوا تشوفوها في
-			المستقبل. متتردوش إنكم تمشاركوا أفكاركم ومواضيعكم المفضلة. هنكون مبسوطين جدًا بالتفاعل معاكم
-			وتلبية مقترحاتكم وطلباتكم في أقرب فرصة متاحة.
+			تقدروا تتواصلوا معانا أي وقت وتقولونا آراءكم واقتراحاتكم في كل المواضيع اللي شوفتوها أو تحبوا
+			تشوفوها في المستقبل. متتردوش إنكم تمشاركوا أفكاركم ومواضيعكم المفضلة. هنكون مبسوطين جدًا
+			بالتفاعل معاكم وتلبية مقترحاتكم وطلباتكم في أقرب فرصة متاحة.
 		</p>
 
 		<h2 class="m-0 text-xl">أو تقدروا توصلولنا من علي حساباتنا في مواقع التواصل الاجتماعي</h2>
@@ -58,7 +57,7 @@
 			>
 		</div>
 
-		<h2 class="m-0 text-xl">أو علي بريدنا الالكتروني </h2>
+		<h2 class="m-0 text-xl">أو علي بريدنا الالكتروني</h2>
 
 		<a href="mailto:nationalism.awareness@gmail.com" class="w-fit"
 			>nationalism.awareness@gmail.com</a
@@ -94,6 +93,14 @@
 		<input type="text" name="governate" id="governate" placeholder="محافظتك" class="input" />
 
 		<textarea class="input" name="message" id="message" placeholder="ابعتلنا رسالتك*" required />
+
+		<input accept="application/pdf" type="file" id="actual-btn" hidden />
+
+		<label
+			for="actual-btn"
+			class="input text-center p-4 font-black hover:border-b-black transition-all ease-in-out duration-300 cursor-pointer"
+			>أرفع مقالتك بملف PDF <span /></label
+		>
 
 		<button type="button" class="Blackbtn w-full font-black">
 			ابعــــت

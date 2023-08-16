@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 	import { navigating, page } from '$app/stores';
 	import Loading from '$lib/Components/Loading.svelte';
 	import Footer from '$lib/Components/Footer.svelte';

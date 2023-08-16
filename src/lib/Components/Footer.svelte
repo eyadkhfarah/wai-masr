@@ -30,7 +30,7 @@
 					required
 					value=""
 					name="email"
-					class="bg-transparent border-none py-6 px-0 text-white placeholder:text-white w-full"
+					class="bg-transparent focus:ring-0 border-none py-6 px-0 text-white placeholder:text-white w-full"
 					placeholder="بريدك الالكتروني"
 				/>
 				
