@@ -9,8 +9,8 @@
 	import H1 from '$lib/Components/Text/H1.svelte';
 
 	import og from '$lib/images/main.png';
-	let title = 'وعي مصر :: اتواصل معانا';
-	let desc = 'تواصل مع فريق وعي مصر';
+	let title = 'وعي - مصر :: اتواصل معانا';
+	let desc = 'تواصل مع فريق وعي - مصر';
 </script>
 
 <svelte:head>
@@ -19,16 +19,19 @@
 	<meta property="og:image" content={og} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={desc} />
-	
 </svelte:head>
 
 <section class="grid gap-5 md:grid-cols-2">
 	<div class="grid gap-6 h-fit">
 		<H1>اتواصل معنا</H1>
 
-		<p class="m-0">تقدر تتواصل معانا بعد ملئ بياناتك من خلال الفورم ده.</p>
+		<p class="m-0">
+			تقدروا تتواصلوا معانا أي وقت وتقولونا آراءكم واقتراحاتكم في كل المواضيع اللي شوفتوها أو تحبوا تشوفوها في
+			المستقبل. متتردوش إنكم تمشاركوا أفكاركم ومواضيعكم المفضلة. سنكون مبسوطين جدًا بالتفاعل معاكم
+			وتلبية مقترحاتكم وطلباتكم في أقرب فرصة متاحة.
+		</p>
 
-		<h2 class="m-0 text-xl">أو كلمنا علي حساباتنا في مواقع التواصل الاجتماعي</h2>
+		<h2 class="m-0 text-xl">أو تقدروا توصلولنا من علي حساباتنا في مواقع التواصل الاجتماعي</h2>
 
 		<div class="flex items-center gap-5 text-3xl mb-5">
 			<a
@@ -53,7 +56,7 @@
 			>
 		</div>
 
-		<h2 class="m-0 text-xl">أو كلمنا علي البريد الالكتروني بتاعنا</h2>
+		<h2 class="m-0 text-xl">أو علي بريدنا الالكتروني </h2>
 
 		<a href="mailto:nationalism.awareness@gmail.com" class="w-fit"
 			>nationalism.awareness@gmail.com</a

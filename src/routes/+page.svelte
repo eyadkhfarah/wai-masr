@@ -6,8 +6,8 @@
 	let article = data.articles;
 	let events = data.events;
 
-	let tabs = ['اخر المقالات', 'مختارات وعي', 'اخبار تشرف'];
-	let activeTab = 'اخر المقالات';
+	let tabs = ['أخبار وعي', 'مختارات وعي', 'أخبار وعي'];
+	let activeTab = 'آخر المقالات';
 
 	function tabChange(e) {
 		activeTab = e.detail;
@@ -71,7 +71,7 @@
 
 			<div class="m-0 w-full lg:flex items-end lg:mb-8 md:grid gap-10">
 				<div class="md:mb-5">
-					<h2 class="bg-red p-4 text-base w-fit m-0 text-white">اخر المقالات</h2>
+					<h2 class="bg-red p-4 text-base w-fit m-0 text-white">آخر المقالات</h2>
 					<div class="lg:flex md:grid gap-5">
 						<div class="bg-primary lg:grid-cols-3 h-fit grid md:w-full">
 							{#each article as card, index (card.sys.id)}
@@ -202,7 +202,7 @@
 
 		<div class="grid gap-5 h-fit w-full">
 			<Tabs {tabs} {activeTab} on:tabChange={tabChange} />
-			{#if activeTab === 'اخر المقالات'}
+			{#if activeTab === 'آخر المقالات'}
 				{#each article as card, index (card.sys.id)}
 					{#if index < 4}
 						<a
@@ -262,9 +262,9 @@
 						</a>
 					{/if}
 				{/each}
-			{:else if activeTab === 'اخبار تشرف'}
+			{:else if activeTab === 'أخبار وعي'}
 				{#each article as card, index (card.sys.id)}
-					{#if index < 4 && card.fields.category === 'اخبار تشرف'}
+					{#if index < 4 && card.fields.category === 'أخبار وعي'}
 						<a
 							href={`/post/${card.fields.slug}`}
 							data-sveltekit-prefetch
@@ -305,12 +305,12 @@
 			>مقولة</span
 		>
 		<div class="grid gap-4">
-			<p class="text-2xl font-black text-center m-0 italic z-10">
-				الجاهل الذي لا يصغي لا يصل إلى شيء، فهو يساوي بين المعرفة والجهل، وبين المفيد والضار. ويفعل
-				الشائبات فيستاء الناس منه يوميًا
+			<p class="text-2xl font-black text-center m-0 z-10">
+				لا تتم وطنية المرء إلا إذا عرف أمته قديمها وحديثها، فإن من جهل قديمها فهو مدَّع في حبها، لأن
+				من جهل شيئًا عاداه
 			</p>
 
-			<p class="m-0">بتاح حتب</p>
+			<p class="m-0">رائد الفكر القومي المصري - أحمد لطفي السيد</p>
 		</div>
 		<img
 			src={qoute}

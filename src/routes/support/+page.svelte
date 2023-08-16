@@ -1,21 +1,20 @@
 <script>
 	// @ts-nocheck
 
-	export let data
+	export let data;
 
-	let env = data.env
+	let env = data.env;
 
 	import H1 from '$lib/Components/Text/H1.svelte';
 
 	import og from '$lib/images/main.png';
 
-	let title = 'وعي مصر :: أدعمنا';
-	let desc = 'ادعم فريق وعي مصر ماديا';
+	let title = 'وعي - مصر :: أدعمنا';
+	let desc = 'ادعم فريق وعي - مصر ماديا';
 
 	let amount = 1.62;
 
 	import { loadScript } from '@paypal/paypal-js';
-
 
 	loadScript({ clientId: env })
 		.then((paypal) => {
@@ -71,7 +70,12 @@
 <section class="md:grid lg:grid-cols-2 gap-7">
 	<div class="grid gap-3 h-fit">
 		<H1>أدعمنا</H1>
-		<p>حابب اننا نكبر ونكبر معاك؟ تقدر تتبرع لنا دلوقتي</p>
+		<p>
+			حابين إننا نعبر ليكم عن شكرنا وتقديرنا الكبير ليكم جميعًا ولدعمكم المتواصل لصفحتنا. مجهودنا
+			اللي بنبذله لتقديم محتوى مميز وقيم بيستمد قوته من وجودكم المستمر ومشاركتكم الفاعلة. ، ودلوقتي
+			تقدروا تسهاهموا معانا بتطوير المحتوى ونشره أكتر وبشكل أوسع من خلال دعم مالي ولو بسيط لينا علي
+			أحد وسائل الدعم الآتية
+		</p>
 	</div>
 
 	<div class="bg-red grid gap-4 text-sm p-4 md:m-0 mt-5 border-2">
@@ -81,7 +85,7 @@
 				class={`p-4 h-fit w-fit font-black text-lg cursor-pointer ${
 					amount === 0.32 ? 'bg-primary' : ''
 				} `}
-				on:click={() => amount = 0.32}
+				on:click={() => (amount = 0.32)}
 			>
 				10 جنيه
 			</button>
@@ -93,7 +97,7 @@
 				class={`p-4 h-fit w-fit font-black text-lg cursor-pointer ${
 					amount === 1.62 ? 'bg-primary' : ''
 				} `}
-				on:click={() => amount = 1.62}
+				on:click={() => (amount = 1.62)}
 			>
 				50 جنيه
 			</button>
@@ -105,11 +109,11 @@
 				class={`p-4 h-fit w-fit font-black text-lg cursor-pointer ${
 					amount === 3.24 ? 'bg-primary' : ''
 				} `}
-				on:click={() => amount = 3.24}
+				on:click={() => (amount = 3.24)}
 			>
 				100 جنيه
 			</button>
 		</div>
-		<div id="paypal-button-container" Class="z-10"/>
+		<div id="paypal-button-container" Class="z-10" />
 	</div>
 </section>

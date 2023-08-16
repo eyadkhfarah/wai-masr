@@ -11,8 +11,8 @@
 	import editing from '$lib/images/Jobs/video-editing.svg';
 	import writer from '$lib/images/Jobs/writer.svg';
 
-	let title = 'وعي مصر :: انضم لينا';
-	let desc = 'انضم مع فريق وعي مصر';
+	let title = 'وعي - مصر :: انضم لينا';
+	let desc = 'انضم مع فريق وعي - مصر';
 
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
@@ -26,13 +26,17 @@
 	<meta property="og:image" content={og} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={desc} />
-
 </svelte:head>
 
 <section class="lg:flex md:grid md:place-items-center justify-between gap-7">
 	<div class="grid h-fit">
 		<H1>شارك معانا في مهمتنا</H1>
-		<p>لو حابب تكون جزء من فريقنا وتساهم في الفريق وتسهم انك تزود الوعي القومي المصري</p>
+		<p>
+			لو حابب تكون جزء من فريقنا وعندك شغف كبير بمواضيع القومية المصرية والتاريخ المصري وحابب تكتسب
+			مهارات وخبرات جديدة ومميزة في فريق شبابي متنوع ومميز في المهارات وبتحب بيئة إبداعية تمارس فيها
+			شغفك ومواهبك وكمان تكون سبب مباشر في زيادة الوعي عند كتير من الناس يبقى ده المكان المناسب ليك،
+			قدم معانا
+		</p>
 	</div>
 
 	<img src={team} alt="team" class="h-96 w-fit" />
@@ -55,7 +59,10 @@
 			<img src={cms} alt="cms" class="w-fit lg:h-28 h-16" />
 			<div class="grid">
 				<h2 class="m-0 text-red lg:text-center">إدارة الموقع</h2>
-				<p class="my-3 text-xs lg:text-center">لو إنت في كارير السوشيال ميديا ولسه بتبدأ فعندك فرصة عظيمة لتطوير مهاراتك وإمكانياتك في منصات وعي - مصر بالكامل.</p>
+				<p class="my-3 text-xs lg:text-center">
+					لو إنت في كارير السوشيال ميديا ولسه بتبدأ فعندك فرصة عظيمة لتطوير مهاراتك وإمكانياتك في
+					منصات وصفحات وموقع وعي - مصر.
+				</p>
 			</div>
 		</div>
 		<div class="lg:grid flex gap-9 mb-3 lg:place-items-center bg-white p-4 w-full">
@@ -63,8 +70,8 @@
 			<div class="grid">
 				<h2 class="m-0 text-red lg:text-center">كتابة محتوي</h2>
 				<p class="my-3 text-xs lg:text-center">
-					حابب تمارس حبك وهوايتك لكتابة المحتوى وتاخد خبرة إضافية في أحد أبرز المنصات الصاعدة علي
-					السوشيال ميديا وكمان تكسب مهارات جديدة لجذب اهتمام المتابعين؟ يبقى الفريق ده ليك.
+					عندك مهارات كتابة المحتوى وحابب تاخد خبرة إضافية في أحد أبرز المنصات الصاعدة علي السوشيال
+					ميديا وكمان تكسب مهارات جديدة؟
 				</p>
 			</div>
 		</div>
@@ -74,7 +81,7 @@
 				<h2 class="m-0 text-red lg:text-center">مونتاج</h2>
 				<p class="my-3 text-xs lg:text-center">
 					عندك مهارات وموهبة المونتاج للفيديوهات وحابب يكون مكان بيتيحلك حرية الإبداع في التنفيذ
-					وكمان فرصة لنجاح عظيم في صناعة المحتوى؟ قدم في الفريق وابدأ.
+					وكمان فرصة لنجاح عظيم في صناعة المحتوى؟
 				</p>
 			</div>
 		</div>
@@ -84,7 +91,7 @@
 				<h2 class="m-0 text-red lg:text-center">تقديم</h2>
 				<p class="my-3 text-xs lg:text-center">
 					عندك مهارات الالقاء والكاريزما والقبول؟ ومحتاج فرصة عظيمة تنمي فيها موهبتك وتاخد إمكانية
-					حقيقية للظهور لجمهور عظيم؟ قدم دلوقتي.
+					حقيقية للظهور لجمهور عظيم؟
 				</p>
 			</div>
 		</div>
@@ -92,8 +99,12 @@
 </section>
 
 <section class="grid place-items-center">
-	<h2 class="text-center">مستني ايه تعالي انضم معانا دلوقتي</h2>
-	<a class="Blackbtn" href="https://forms.gle/weNzsctgZPJKHSb5A" aria-label="ادخل للانضمام" rel="noopener noreferrer"
+	<h2 class="text-center">خليك جزء في أحد اهم المنصات الصاعدة علي السوشيال ميديا</h2>
+	<a
+		class="Blackbtn"
+		href="https://forms.gle/weNzsctgZPJKHSb5A"
+		aria-label="ادخل للانضمام"
+		rel="noopener noreferrer"
 		>قدم دلوقتي<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 	>
 </section>

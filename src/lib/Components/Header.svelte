@@ -63,8 +63,8 @@
 	</button>
 
 	<div class="flex gap-6 items-center">
-		<a href="/" aria-label="وعي مصر" class="text-white border-none">
-			<img src={logo} alt="لوجو وعي مصر" class="lg:h-16 h-12" />
+		<a href="/" aria-label="وعي - مصر" class="text-white border-none">
+			<img src={logo} alt="لوجو وعي - مصر" class="lg:h-16 h-12" />
 		</a>
 
 		<span class="text-white font-black lg:text-2xl text-sm">قلب مشروع الوعي القومي المصري </span>

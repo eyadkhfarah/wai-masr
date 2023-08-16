@@ -16,7 +16,7 @@
 	<title>وعي مصر :: {category.title}</title>
 	<meta name="description" content={`قسم ${category.title} المقالات`} />
 	<meta property="og:image" content={og} />
-	<meta property="og:title" content={`وعي مصر :: ${category.title}`} />
+	<meta property="og:title" content={`وعي - مصر :: ${category.title}`} />
 	<meta property="og:description" content={`قسم ${category.title} المقالات`} />
 </svelte:head>
 
