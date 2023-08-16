@@ -13,7 +13,7 @@
 <footer class="grid gap-5 md:p-7 md:px-32 p-5 pb-24 text-white bg-red">
 	<div class="grid gap-5 text-center">
 		<h2 class="text-4xl">سجل في نشرتـــنا الاخبــــارية</h2>
-		<p>وخليك متابع اخر المقالات والفعاليات</p>
+		<p>عشان يوصلك كل جديد</p>
 
 		<div class="border-b-8 border-black mb-14">
 			<form
@@ -44,7 +44,7 @@
 		</div>
 	</div>
 	<div class="flex items-center justify-center">
-		<a href="/" class="space-y-20 py-26"><img src={logo} alt="لوجو وعي مصر" class="h-24" /></a>
+		<a href="/" class="space-y-20 py-26"><img src={logo} alt="لوجو وعي - مصر" class="h-24" /></a>
 	</div>
 
 	<div class="grid gap-6 text-center place-items-center">
