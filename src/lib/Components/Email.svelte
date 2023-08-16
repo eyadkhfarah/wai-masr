@@ -6,35 +6,12 @@
 
 <div class="md:grid gap-4 text-white w-full bg-red border p-4 h-fit hidden md:sticky top-28">
 	<h2 class="m-0">حبيت مقالاتنا؟</h2>
-	<p>اشترك في نشراتنا البريدية دلوقتي</p>
+	<p class="m-0 w-full">اكتب وابعت مقالتك لينا واحنا هننشرها لك</p>
 
-	<form
-		action="https://app.us13.list-manage.com/subscribe/post?u=12828e0dccc7b63c7af44ec09&amp;id=64ffd839d7&amp;f_id=001890e2f0"
-		method="post"
-		id="mc-embedded-subscribe-form"
-		name="mc-embedded-subscribe-form"
-		target="_self"
-	>
-		<input
-			type="email"
-			name="email"
-			id="mce-EMAIL"
-			required
-			value=""
-			class="input placeholder:text-white text-white border-b-black"
-			placeholder="بريدك الالكتروني"
-		/>
-
-		<span class="cursor-pointer flex gap-2 items-center hover:border-b-white border-b-black">
-			<input
-				type="submit"
-				name="subscribe"
-				id="mc-embedded-subscribe"
-				value="اشترك"
-				class="Whitebtn w-full font-black border-b-black hover:border-b-white cursor-pointer"
-			/>
-
-			<span><Icon color="black" src={RiSystemArrowLeftLine} /></span>
-		</span>
-	</form>
+	<a
+	class="Whitebtn leading-none flex w-full items-center gap-6 border-b-black hover:border-b-white"
+	href="/contact"
+	rel="noopener noreferrer"
+	>أنشر مقالتك<span><Icon color="black" src={RiSystemArrowLeftLine} /></span></a
+>
 </div>

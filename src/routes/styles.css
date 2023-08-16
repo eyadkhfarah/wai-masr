@@ -49,7 +49,7 @@ body {
     }
     
     .input {
-        @apply w-full bg-transparent border-b-4 border-0 border-b-red px-0
+        @apply w-full bg-transparent border-b-4 border-0 border-b-red px-0 focus:ring-0 
     }
 
     ul {
@@ -93,7 +93,7 @@ body {
     }
 
     a {
-        @apply text-blue-800 font-bold border-b-red border-b-4 leading-9
+        @apply text-red font-black
     }
 
     .Whitebtn {

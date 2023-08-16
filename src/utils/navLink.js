@@ -2,51 +2,61 @@ export const menu = [
     {
         name: 'الرئيسية',
         link: '/',
-        id: 1
+        newTab: true,
+        id: 1,
     },
     {
         name: 'مقالات',
         link: '/articles',
-        id: 2
+        newTab: true,
+        id: 2,
     },
     {
         name: 'ألبومات',
         link: '/images',
-        id: 3
+        newTab: true,
+        id: 3,
     },
     {
         name: 'المكتبة القومية',
         link: 'https://maktabaqawmya.vercel.app',
-        id: 5
+        newTab: false,
+        id: 5,
     },
     {
         name: 'اتعلم اللغة المصرية',
         link: 'https://www.bibalex.org/learnhieroglyphs/Lesson/Introduction_Ar.aspx',
-        id: 6
+        newTab: false,
+        id: 6,
     },
     {
         name: 'مناسبات وفعاليات',
         link: '/events',
-        id: 4
+        newTab: true,
+        id: 4,
     },
     {
         name: 'احنا مين؟',
         link: '/about',
-        id: 7
+        newTab: true,
+        id: 7,
     },
     {
         name: 'اتواصل معانا',
         link: '/contact',
-        id: 8
+        newTab: true,
+        id: 8,
     },
     {
         name: 'إنضم لينا',
         link: '/join',
-        id: 10
+        newTab: true,
+        id: 10,
     },
     {
         name: 'إدعمنا',
         link: '/support',
-        id: 9
+        newTab: true,
+        id: 9,
     },
 ];

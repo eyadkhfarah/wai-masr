@@ -12,6 +12,23 @@
 
 	let menuTab = false;
 
+	let hidden = true;
+
+	function handleOnScroll() {
+		if (window.scrollY > 160) {
+			hidden = true;
+		} else {
+			hidden = false;
+		}
+	}
+
+	const scrollToTop = () => {
+		window.scrollTo({
+			top: 0,
+			behavior: 'smooth'
+		});
+	};
+
 	/**
 	 * @type {string}
 	 */
@@ -49,9 +66,11 @@
 	let year = new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', year: 'numeric' });
 </script>
 
+<svelte:window on:scroll={handleOnScroll} />
+
 <header
 	class:bg-black={change}
-	class="bg-black p-5 z-[100] flex lg:static sticky top-0 transition-all ease-in-out duration-300 gap-5 lg:justify-between items-center"
+	class="bg-black p-5 z-[100] lg:grid flex grid-cols-3 lg:static sticky top-0 transition-all ease-in-out duration-300 gap-5 lg:justify-between items-center"
 >
 	<button
 		class="text-xl lg:hidden block cursor-pointer text-white"
@@ -82,7 +101,7 @@
 		</div>
 	</div>
 
-	<div class="lg:grid flex place-items-center gap-6 items-center">
+	<div class="lg:grid flex w-full place-items-center gap-6 items-center">
 		<a href="/" aria-label="وعي مصر" class="text-white border-none">
 			<img src={logo} alt="لوجو وعي مصر" class="lg:h-16 h-12" />
 		</a>
@@ -90,10 +109,10 @@
 		<span class="text-white font-black lg:text-2xl text-sm">قلب مشروع الوعي القومي المصري </span>
 	</div>
 
-	<div class="border-b-4 border-red lg:flex hidden gap-4 items-center">
+	<div class="border-b-4 justify-self-end border-red w-fit lg:flex hidden gap-4 items-center">
 		<input
 			type="search"
-			class="bg-transparent border-none placeholder:text-white text-white focus:border-none p-0 py-3"
+			class="bg-transparent border-none placeholder:text-white text-white p-0 py-3 focus:ring-0"
 			placeholder="بحث..."
 			bind:value={search}
 		/>
@@ -106,7 +125,7 @@
 	</div>
 </header>
 <header class={`sticky top-0 bg-black z-40 text-white transition-all ease-in-out duration-300`}>
-	<nav class="border-t border-gray-900 p-1 text-sm lg:flex justify-between items-center hidden">
+	<nav class="border-t border-gray-900 p-3 text-sm lg:flex justify-between items-center hidden">
 		<ul class="flex gap-5 list-none m-0 p-0">
 			{#each menu as link (link.id)}
 				<li>
@@ -114,6 +133,7 @@
 						href={link.link}
 						aria-label={link.name}
 						class:border-b-red={link.link === $page.url.pathname}
+						target={`${link.newTab === false ? "_blank" : "_self"}`}
 						class="text-white border-b-4 transition-all ease-in-out duration-300 border-b-black hover:border-b-white"
 						>{link.name}</a
 					>
@@ -121,7 +141,7 @@
 			{/each}
 		</ul>
 
-		<div class="flex gap-5 opacity-50">
+		<div class={`${hidden ? "opacity-50" : "opacity-0"} flex gap-5 transition-all ease-in-out duration-200`}>
 			<span>{time}</span>
 
 			<span class="flex items-center gap-5">

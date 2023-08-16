@@ -8,6 +8,7 @@
 	import H1 from '$lib/Components/Text/H1.svelte';
 
 	import og from '$lib/images/main.png';
+	import cash from '$lib/images/qr-code.png';
 
 	let title = 'وعي - مصر :: أدعمنا';
 	let desc = 'ادعم فريق وعي - مصر ماديا';
@@ -15,6 +16,7 @@
 	let amount = 1.62;
 
 	import { loadScript } from '@paypal/paypal-js';
+	import H2 from '$lib/Components/Text/H2.svelte';
 
 	loadScript({ clientId: env })
 		.then((paypal) => {
@@ -71,14 +73,21 @@
 	<div class="grid gap-3 h-fit">
 		<H1>أدعمنا</H1>
 		<p>
-			حابين إننا نعبر ليكم عن شكرنا وتقديرنا الكبير ليكم جميعًا ولدعمكم المتواصل لصفحتنا. مجهودنا
+			حابين إننا نعبر ليكم عن شكرنا وتقديرنا الكبير ليكم جميعًا ولدعمكم المتواصل لمنصتنا. مجهودنا
 			اللي بنبذله لتقديم محتوى مميز وقيم بيستمد قوته من وجودكم المستمر ومشاركتكم الفاعلة. ، ودلوقتي
 			تقدروا تسهاهموا معانا بتطوير المحتوى ونشره أكتر وبشكل أوسع من خلال دعم مالي ولو بسيط لينا علي
 			أحد وسائل الدعم الآتية
 		</p>
+
+		<div class="grid lg:place-items-start place-items-center">
+			<H2>اتبرع لنا عن طريق فودافون كاش أو فوري</H2>
+			<img src={cash} width="140" height="140" alt="">
+
+		</div>
 	</div>
 
-	<div class="bg-red grid gap-4 text-sm p-4 md:m-0 mt-5 border-2">
+	<div class="bg-red grid gap-4 h-hit text-sm p-4 lg:m-0 mt-5 border-2">
+		<h2 class="text-white lg:3xl text-xl">لو من برا مصر تقدر تتبرع هنا</h2>
 		<div class="flex gap-4 justify-around">
 			<button
 				class:text-black={amount === 0.32}
@@ -114,6 +123,6 @@
 				100 جنيه
 			</button>
 		</div>
-		<div id="paypal-button-container" Class="z-10" />
+		<div id="paypal-button-container" Class="z-0 h-fit" />
 	</div>
 </section>

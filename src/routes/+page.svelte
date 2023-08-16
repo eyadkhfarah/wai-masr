@@ -6,7 +6,7 @@
 	let article = data.articles;
 	let events = data.events;
 
-	let tabs = ['اخر المقالات', 'مختارات وعي', 'اخبار تشرف'];
+	let tabs = ['اخر المقالات', 'مختارات وعي', 'الأكثر قراءة'];
 	let activeTab = 'اخر المقالات';
 
 	function tabChange(e) {
@@ -22,6 +22,8 @@
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
 	import Events from '$lib/Components/Cards/Events.svelte';
+	import H2 from '$lib/Components/Text/H2.svelte';
+	import Category from '$lib/Components/Text/Category.svelte';
 </script>
 
 <svelte:head>
@@ -85,9 +87,11 @@
 										class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
 									>
 										<img
-											src={`https:${card.fields.thumbnail.fields.file.url}`}
+											src={`https:${card.fields.square.fields.file.url}`}
 											alt={card.fields.title}
 											class="object-cover w-20 h-20"
+											width="80"
+											height="80"
 										/>
 										<div class="grid gap-3 h-fit w-full">
 											<span class="text-gray-400 text-xs">
@@ -130,22 +134,19 @@
 </section>
 
 <section>
-	<div class="lg:grid lg:grid-cols-4 gap-10 h-fit">
-		<div class="grid gap-9 w-full h-fit">
+	<div class="lg:grid lg:grid-cols-4 gap-5 h-fit">
+		<div class="grid gap-2 w-full h-fit">
 			{#each article as card, index (card.sys.id)}
 				{#if index < 3}
 					<a
-						class="border-none"
+						class="border-none "
 						data-sveltekit-prefetch
 						aria-label={card.fields.title}
 						href={`/post/${card.fields.slug}`}
 					>
-						<div class="card p-0 grid gap-4">
-							<div class="flex text-text gap-3 h-fit">
-								<div class="w-2 bg-red rounded-3xl" />
-								{card.fields.category}
-							</div>
-							<h2 class="text-black md:text-xl text-sm">{card.fields.title}</h2>
+						<div class="card p-0 grid gap-4 border-b-gray-300 border-b-2">
+							<Category>{card.fields.category}</Category>
+							<h2 class="text-black m-0 md:text-xl text-sm">{card.fields.title}</h2>
 							<p class="text-gray-400">
 								{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
 									dateStyle: 'full'
@@ -156,14 +157,12 @@
 					</a>
 				{/if}
 			{/each}
-			<div class="border-t-gray-300 border-t-2 border-primary w-full">
 				<a
-					class="text-text font-black flex justify-between items-center py-5 border-none"
+					class="text-text w-full font-black flex justify-between items-center py-5 border-none"
 					href="/articles"
 					rel="noopener noreferrer"
 					>اقرا اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 				>
-			</div>
 		</div>
 
 		<div class="relative w-full h-fit md:m-0 mb-4 col-span-2">
@@ -211,9 +210,11 @@
 						>
 							<div class="card p-0 flex gap-4">
 								<img
-									src={`https:${card.fields.thumbnail.fields.file.url}`}
+									src={`https:${card.fields.square.fields.file.url}`}
 									alt={card.fields.title}
 									class="object-cover w-20 h-20"
+									width="80"
+									height="80"
 								/>
 								<div class="grid h-fit gap-3">
 									<h2 class="text-black text-base m-0">{card.fields.title}</h2>
@@ -241,9 +242,11 @@
 						>
 							<div class="card p-0 flex gap-4">
 								<img
-									src={`https:${card.fields.thumbnail.fields.file.url}`}
+									src={`https:${card.fields.square.fields.file.url}`}
 									alt={card.fields.title}
 									class="object-cover w-20 h-20"
+									width="80"
+									height="80"
 								/>
 								<div class="grid h-fit gap-3">
 									<h2 class="text-black text-base m-0">{card.fields.title}</h2>
@@ -260,7 +263,7 @@
 						</a>
 					{/if}
 				{/each}
-			{:else if activeTab === 'اخبار تشرف'}
+			{:else if activeTab === 'الأكثر قراءة'}
 				{#each article as card, index (card.sys.id)}
 					{#if index < 4 && card.fields.category === 'اخبار تشرف'}
 						<a
@@ -274,6 +277,8 @@
 									src={`https:${card.fields.thumbnail.fields.file.url}`}
 									alt={card.fields.title}
 									class="object-cover w-20 h-20"
+									width="80"
+									height="80"
 								/>
 								<div class="grid h-fit gap-3">
 									<h2 class="text-black text-base m-0">{card.fields.title}</h2>
@@ -328,10 +333,7 @@
 </section>
 
 <section class="grid">
-	<div class="flex gap-3 h-fit my-10">
-		<div class="w-2 bg-black rounded-3xl" />
-		<h2>مقالات مختارة</h2>
-	</div>
+	<H2>مقالات مختارة</H2>
 	<div class="grid gap-6 lg:grid-cols-3">
 		{#each article as card, index (card.sys.id)}
 			{#if index < 3}
@@ -381,10 +383,7 @@
 </section>
 
 <section class="grid">
-	<div class="flex gap-3 h-fit my-10">
-		<div class="w-2 bg-black rounded-3xl" />
-		<h2>ابرز الفعاليات</h2>
-	</div>
+	<H2>ابرز الفعاليات</H2>
 	<div class="grid lg:grid-cols-2 gap-6">
 		{#each events as event, index (event.sys.id)}
 			{#if index < 4}

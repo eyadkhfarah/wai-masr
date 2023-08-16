@@ -34,6 +34,7 @@
 	import { copy } from 'svelte-copy';
 
 	import { categories } from '../../../utils/categories';
+	import Category from '$lib/Components/Text/Category.svelte';
 </script>
 
 <svelte:head>
@@ -101,8 +102,9 @@
 			{#each categories as categor}
 				{#if categor.title.includes(article.fields.category)}
 					<a href={'/articles/' + categor.link} class="flex gap-3 border-none text-text h-fit">
-						<div class="w-2 bg-red rounded-3xl" />
-						{article.fields.category}
+						<Category>
+							{article.fields.category}
+						</Category>
 					</a>
 				{/if}
 			{/each}
@@ -213,8 +215,8 @@
 
 	<span>
 		<aside class="md:sticky top-16 md:m-0 mt-14 w-full">
-			<div class="flex gap-3 h-fit w-full mb-5">
-				<div class="w-2 bg-red rounded-3xl" />
+			<div class="flex gap-3 h-fit items-center w-full mb-5">
+				<div class="w-4 h-4 bg-red rounded-3xl" />
 				<h3 class="m-0 whitespace-nowrap">مقالات ممكن تعجبك</h3>
 			</div>
 
@@ -235,30 +237,15 @@
 									{card.fields.title}
 								</h4>
 								<div class="flex gap-5 text-gray-400 text-sm">
-									<span class="flex gap-3 border-none text-text whitespace-nowrap h-fit">
-										<div class="w-2 bg-red rounded-3xl" />
-										{card.fields.category}
-									</span>
+								<Category>
+									{card.fields.category}
+								</Category>
+									
 									<span>—</span>
-									<p class="whitespace-nowrap">
+									<p class="whitespace-nowrap font-medium">
 										{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
-											calendar: 'coptic',
-											weekday: 'long'
+											dateStyle: 'full'
 										})}
-										{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
-											calendar: 'coptic',
-											day: 'numeric'
-										})}
-										{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
-											calendar: 'coptic',
-											month: 'short'
-										})}
-										{parseFloat(
-											new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
-												calendar: 'coptic',
-												year: 'numeric'
-											})
-										) + Number(4525)}
 									</p>
 								</div>
 							</div>
