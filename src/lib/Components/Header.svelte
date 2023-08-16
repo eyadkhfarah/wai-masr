@@ -62,7 +62,27 @@
 		<Icon src={CgMenuRightAlt} color="white" />
 	</button>
 
-	<div class="flex gap-6 items-center">
+	<div class=" gap-5 text-white lg:grid hidden">
+		<span class="text-2xl font-black">{time}</span>
+
+		<div class="grid gap-2 text-xs opacity-50">
+			<span class="flex items-center gap-5">
+				{new Date().toLocaleDateString('ar-arab', { dateStyle: 'full' })}
+			</span>
+
+			<span class="flex items-center gap-5">
+				{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', weekday: 'long' })}
+				-
+				{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', day: 'numeric' })}
+				/
+				{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', month: 'long' })}
+				/
+				{parseFloat(year) + Number(4525)}
+			</span>
+		</div>
+	</div>
+
+	<div class="lg:grid flex place-items-center gap-6 items-center">
 		<a href="/" aria-label="وعي مصر" class="text-white border-none">
 			<img src={logo} alt="لوجو وعي مصر" class="lg:h-16 h-12" />
 		</a>

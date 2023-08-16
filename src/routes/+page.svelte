@@ -69,62 +69,60 @@
 				</div>
 			</div>
 
-			<div class="m-0 w-full lg:flex items-end lg:mb-8 md:grid gap-10">
-				<div class="md:mb-5">
-					<h2 class="bg-red p-4 text-base w-fit m-0 text-white">اخر المقالات</h2>
-					<div class="lg:flex md:grid gap-5">
-						<div class="bg-primary lg:grid-cols-3 h-fit grid md:w-full">
-							{#each article as card, index (card.sys.id)}
-								{#if index < 3}
-									<a
-										data-sveltekit-prefetch
-										aria-label={card.fields.title}
-										href={`/post/${card.fields.slug}`}
-										class="md:border-red border-none"
+			<div class="">
+				<h2 class="bg-red p-4 text-base w-fit m-0 text-white">اخر المقالات</h2>
+				<div class="md:mb-5 lg:flex grid gap-5">
+					<div class="bg-primary lg:grid-cols-3 h-full grid md:w-full">
+						{#each article as card, index (card.sys.id)}
+							{#if index < 3}
+								<a
+									data-sveltekit-prefetch
+									aria-label={card.fields.title}
+									href={`/post/${card.fields.slug}`}
+									class="md:border-red border-none"
+								>
+									<div
+										class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
 									>
-										<div
-											class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
-										>
-											<img
-												src={`https:${card.fields.thumbnail.fields.file.url}`}
-												alt={card.fields.title}
-												class="object-cover w-20 h-20"
-											/>
-											<div class="grid gap-3 h-fit w-full">
-												<span class="text-gray-400 text-xs">
-													{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+										<img
+											src={`https:${card.fields.thumbnail.fields.file.url}`}
+											alt={card.fields.title}
+											class="object-cover w-20 h-20"
+										/>
+										<div class="grid gap-3 h-fit w-full">
+											<span class="text-gray-400 text-xs">
+												{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+													calendar: 'coptic',
+													day: 'numeric'
+												})}
+												{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+													calendar: 'coptic',
+													month: 'short'
+												})}
+												{parseFloat(
+													new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
 														calendar: 'coptic',
-														day: 'numeric'
-													})}
-													{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-														calendar: 'coptic',
-														month: 'short'
-													})}
-													{parseFloat(
-														new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-															calendar: 'coptic',
-															year: 'numeric'
-														})
-													) + Number(4525)}</span
-												>
-												<h3 class="text-black text-sm m-0">{card.fields.title}</h3>
-											</div>
+														year: 'numeric'
+													})
+												) + Number(4525)}</span
+											>
+											<h3 class="text-black text-sm m-0">{card.fields.title}</h3>
 										</div>
-									</a>
-								{/if}
-							{/each}
-						</div>
+									</div>
+								</a>
+							{/if}
+						{/each}
 					</div>
-				</div>
-				<div class="text-white grid gap-3 h-fit lg:mt-0 mt-10">
-					<h3 class="m-0 w-full whitespace-nowrap">عايز تكتب مقالات؟</h3>
-					<p class="m-0 text-xs w-full">ابعت مقالتك لينا واحنا هننشرها لك</p>
-					<a
-						class="Whitebtn flex w-full items-center gap-6 border-b-red"
-						href="/contact"
-						rel="noopener noreferrer"
-						>أنشر مقالتك<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
-					>
+					<div class="text-white grid gap-3 h-fit lg:mt-0 mt-10">
+						<h3 class="m-0 w-full whitespace-nowrap">عايز تكتب مقالات؟</h3>
+						<p class="m-0 text-xs w-full">ابعت مقالتك لينا واحنا هننشرها لك</p>
+						<a
+							class="Whitebtn leading-none flex w-full items-center gap-6 border-b-red"
+							href="/contact"
+							rel="noopener noreferrer"
+							>أنشر مقالتك<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
+						>
+					</div>
 				</div>
 			</div>
 		</div>

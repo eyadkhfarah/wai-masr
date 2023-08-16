@@ -10,6 +10,11 @@ export const menu = [
         id: 2
     },
     {
+        name: 'ألبومات',
+        link: '/images',
+        id: 3
+    },
+    {
         name: 'المكتبة القومية',
         link: 'https://maktabaqawmya.vercel.app',
         id: 5
