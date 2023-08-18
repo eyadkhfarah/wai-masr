@@ -54,6 +54,7 @@
 						href={link.link}
 						aria-label={link.name}
 						on:click
+						target={`${link.newTab === false ? "_blank" : "_self"}`}
 						class="text-text font-black hover:text-red transition-all duration-300 ease-in-out flex items-center gap-4 group border-none"
 						data-sveltekit-prefetch
 						class:text-red={link.link === $page.url.pathname }

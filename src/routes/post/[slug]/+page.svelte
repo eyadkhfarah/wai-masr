@@ -29,9 +29,11 @@
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 
 	import RiSystemCheckLine from 'svelte-icons-pack/ri/RiSystemCheckLine';
+	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
+
 	import { browser } from '$app/environment';
 
-	import { slide } from 'svelte/transition'
+	import { slide } from 'svelte/transition';
 
 	import { copy } from 'svelte-copy';
 
@@ -93,6 +95,22 @@
         `
 		}}
 	></script>
+
+	<script type="application/ld+json">
+        {
+          "@context": "https://schema.org/",
+          "@type": "ImageObject",
+          "contentUrl": {`"https:${article.fields.thumbnail.fields.file.url}"`},
+          "license": "https://waimasr.vercel.app/terms",
+        //   "acquireLicensePage": "https://example.com/how-to-use-my-images",
+          "creditText": "Wai Masr",
+          "creator": {
+            "@type": "Person",
+            "name": {`"${article.fields.author.fields.name}"`}
+           },
+          "copyrightNotice": "Wai Masr"
+        }
+	</script>
 </svelte:head>
 
 <section class="lg:grid lg:grid-cols-4 gap-10 m-0">
@@ -103,26 +121,58 @@
 		<div class="grid gap-4">
 			{#each categories as categor}
 				{#if categor.title.includes(article.fields.category)}
-					<a transition:slide href={'/articles/' + categor.link} class="flex gap-3 border-none text-text h-fit">
+					<a
+						transition:slide
+						href={'/articles/' + categor.link}
+						class="flex gap-3 border-none text-text h-fit"
+					>
 						<Category>
 							{article.fields.category}
 						</Category>
 					</a>
 				{/if}
 			{/each}
-
-			<!--  -->
 			<h1 class="m-0" transition:slide>{article.fields.title}</h1>
 		</div>
 
 		<div class="grid gap-4 w-full">
 			<div class="md:flex grid gap-5 md:text-base text-sm w-full">
 				<p class="m-0">
-					الكتاب | <span class="font-black text-blue-600">{article.fields.author.fields.name}</span>
+					الكتاب | <span class="font-black text-red">{article.fields.author.fields.name}</span>
 				</p>
 				<span class="md:block hidden">—</span>
-				<p class="m-0">
-					تاريخ | <span>
+				<p class="m-0 md:hidden font-black flex gap-2">
+					<span>تاريخ |</span>
+					<span class="text-red grid">
+						<span>
+							{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+								calendar: 'coptic',
+								weekday: 'long'
+							})}
+							{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+								calendar: 'coptic',
+								day: 'numeric'
+							})}
+							{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+								calendar: 'coptic',
+								month: 'short'
+							})}
+							{parseFloat(
+								new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+									calendar: 'coptic',
+									year: 'numeric'
+								})
+							) + Number(4525)}
+						</span>
+						<span>
+							{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+								dateStyle: 'full'
+							})}
+						</span>
+					</span>
+				</p>
+				<p class="m-0 font-black md:block hidden">
+					تاريخ | <span class="text-red">
 						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
 							calendar: 'coptic',
 							weekday: 'long'
@@ -239,10 +289,10 @@
 									{card.fields.title}
 								</h4>
 								<div class="flex gap-5 text-gray-400 text-sm">
-								<Category>
-									{card.fields.category}
-								</Category>
-									
+									<Category>
+										{card.fields.category}
+									</Category>
+
 									<span>—</span>
 									<p class="whitespace-nowrap font-medium">
 										{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
@@ -261,7 +311,14 @@
 
 <section>
 	<div class="p-6 md:px-28 flex justify-between items-center bg-red">
-		<h3 class="m-0 text-white">تابعنا في Google News</h3>
+		<div class="grid">
+			<h3 class="m-0 text-white">تابعنا في Google News</h3>
+			<a
+				class="Blackbtn text-white hover:border-b-white"
+				href="https://news.google.com/publications/CAAqBwgKMKSi0wsw8r3qAw"
+				aria-label="Google news"
+			>تابعنا هنا<span><Icon color="black" src={RiSystemArrowLeftLine} /></span></a>
+		</div>
 		<img src={news} class="h-20 w-20" alt="" />
 	</div>
 </section>
