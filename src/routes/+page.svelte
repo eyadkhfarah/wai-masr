@@ -81,7 +81,7 @@
 									data-sveltekit-prefetch
 									aria-label={card.fields.title}
 									href={`/post/${card.fields.slug}`}
-									class="md:border-red border-none"
+									class="md:border-red border-none group"
 								>
 									<div
 										class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
@@ -110,7 +110,7 @@
 													})
 												) + Number(4525)}</span
 											>
-											<h3 class="text-black text-sm m-0">{card.fields.title}</h3>
+											<h3 class="text-black text-sm m-0 group-hover:text-red transition-all ease-in-out duration-300">{card.fields.title}</h3>
 										</div>
 									</div>
 								</a>
@@ -341,7 +341,7 @@
 					data-sveltekit-prefetch
 					aria-label={card.fields.title}
 					href={`/post/${card.fields.slug}`}
-					class="border-none"
+					class="group"
 				>
 					<div class="card grid gap-4">
 						<img
@@ -349,7 +349,7 @@
 							alt={card.fields.title}
 							class="w-full"
 						/>
-						<h2 class="text-black text-xl">{card.fields.title}</h2>
+						<h2 class="text-black text-xl group-hover:text-red transition-all ease-in-out duration-300">{card.fields.title}</h2>
 						<p class="text-gray-400">
 							{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
 								dateStyle: 'full'

@@ -34,10 +34,6 @@
 	import RiSystemCheckLine from 'svelte-icons-pack/ri/RiSystemCheckLine';
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
 
-	console.log(article.fields.post);
-
-	import { browser } from '$app/environment';
-
 	import { slide } from 'svelte/transition';
 
 	import { copy } from 'svelte-copy';
