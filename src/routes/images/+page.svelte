@@ -17,6 +17,21 @@
 	<meta property="og:image" content={og} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={desc} />
+	<script type="application/ld+json">
+		[{
+		  "@context": "https://schema.org/",
+		  "@type": "ImageObject",
+		  "contentUrl": "https://example.com/photos/1x1/black-labrador-puppy.jpg",
+		  "license": "https://example.com/license",
+		  "acquireLicensePage": "https://example.com/how-to-use-my-images",
+		  "creditText": "Labrador PhotoLab",
+		  "creator": {
+			"@type": "Person",
+			"name": "Brixton Brownstone"
+		   },
+		  "copyrightNotice": "Clara Kent"
+		},]
+		</script>
 </svelte:head>
 
 <section>
