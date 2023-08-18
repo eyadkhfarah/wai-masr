@@ -2,6 +2,9 @@
 	// @ts-nocheck
 
 	import { documentToHtmlString } from '@contentful/rich-text-html-renderer';
+	import { BLOCKS } from '@contentful/rich-text-types';
+	// EMBEDDED_ASSET
+
 	import Email from '$lib/Components/Email.svelte';
 
 	import news from '$lib/images/google-news.svg';
@@ -31,6 +34,8 @@
 	import RiSystemCheckLine from 'svelte-icons-pack/ri/RiSystemCheckLine';
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
 
+	console.log(article.fields.post);
+
 	import { browser } from '$app/environment';
 
 	import { slide } from 'svelte/transition';
@@ -39,6 +44,15 @@
 
 	import { categories } from '../../../utils/categories';
 	import Category from '$lib/Components/Text/Category.svelte';
+
+	const options = {
+		renderNode: {
+			[BLOCKS.EMBEDDED_ASSET]: (node) =>
+				`<img src="https:${node.data.target.fields.file.url}" alt="${node.data.target.fields.title}"/>
+				<p class="mt-5 text-gray-500 text-sm text-center italic">${node.data.target.fields.title}</p>
+				`
+		}
+	};
 </script>
 
 <svelte:head>
@@ -249,7 +263,7 @@
 		/>
 
 		<h2 class="font-black italic text-lg">{article.fields.subtitle}</h2>
-		<div bind:this={reading}>{@html documentToHtmlString(article.fields.post)}</div>
+		<div bind:this={reading}>{@html documentToHtmlString(article.fields.post, options)}</div>
 
 		<div class="flex gap-3 h-fit">
 			<div class="w-2 bg-red rounded-3xl" />
@@ -317,7 +331,8 @@
 				class="Blackbtn text-white hover:border-b-white"
 				href="https://news.google.com/publications/CAAqBwgKMKSi0wsw8r3qAw"
 				aria-label="Google news"
-			>تابعنا هنا<span><Icon color="black" src={RiSystemArrowLeftLine} /></span></a>
+				>تابعنا هنا<span><Icon color="black" src={RiSystemArrowLeftLine} /></span></a
+			>
 		</div>
 		<img src={news} class="h-20 w-20" alt="" />
 	</div>
