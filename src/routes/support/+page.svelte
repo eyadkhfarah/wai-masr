@@ -4,7 +4,8 @@
 	export let data;
 
 	let env = data.env;
-
+	import Icon, { src } from 'svelte-icons-pack/Icon.svelte';
+	import AiOutlineExclamationCircle from 'svelte-icons-pack/ai/AiOutlineExclamationCircle';
 	import H1 from '$lib/Components/Text/H1.svelte';
 
 	import og from '$lib/images/main.png';
@@ -81,13 +82,13 @@
 
 		<div class="grid lg:place-items-start place-items-center">
 			<H2>اتبرع لنا عن طريق فودافون كاش أو فوري</H2>
-			<img src={cash} width="140" height="140" alt="">
-
+			<img src={cash} width="140" height="140" alt="" />
 		</div>
 	</div>
 
 	<div class="bg-red grid gap-4 h-hit text-sm p-4 lg:m-0 mt-5 border-2">
 		<h2 class="text-white lg:3xl text-xl">لو من برا مصر تقدر تتبرع هنا</h2>
+
 		<div class="flex gap-4 justify-around">
 			<button
 				class:text-black={amount === 0.32}
@@ -124,5 +125,14 @@
 			</button>
 		</div>
 		<div id="paypal-button-container" Class="z-0 h-fit" />
+		<div class="flex gap-4 items-start h-fit bg-primary rounded-md p-3">
+			<Icon src={AiOutlineExclamationCircle} size="30"/>
+			<div class="grid gap-3">
+				<h3 class="m-0">ملحوظة</h3>
+				<p class="m-0">
+					احنا بنستخدم نظام الدفع لمنتج وتوصيله لان خدمة التبرع عن طريق paypal غير متاحة في مصر
+				</p>
+			</div>
+		</div>
 	</div>
 </section>

@@ -134,14 +134,14 @@
 						aria-label={link.name}
 						class:border-b-red={link.link === $page.url.pathname}
 						target={`${link.newTab === false ? "_blank" : "_self"}`}
-						class="text-white border-b-4 transition-all ease-in-out duration-300 border-b-black hover:border-b-white"
+						class="text-white whitespace-nowrap border-b-4 transition-all ease-in-out duration-300 border-b-black hover:border-b-white"
 						>{link.name}</a
 					>
 				</li>
 			{/each}
 		</ul>
 
-		<div class={`${hidden ? "opacity-50" : "opacity-0"} flex gap-5 transition-all ease-in-out duration-200`}>
+		<div class={`${hidden ? "opacity-50" : "opacity-0"} whitespace-nowrap md:hidden flex gap-5 transition-all ease-in-out duration-200`}>
 			<span>{time}</span>
 
 			<span class="flex items-center gap-5">
