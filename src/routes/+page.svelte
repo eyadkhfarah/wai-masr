@@ -251,6 +251,7 @@
 			{/if}
 		{/each}
 	</div>
+
 	<a
 		data-sveltekit-prefetch
 		class="Blackbtn"
@@ -263,14 +264,31 @@
 
 <section>
 	<H2>ألبوم الصور</H2>
+
+	<a
+		data-sveltekit-prefetch
+		class="Blackbtn"
+		aria-label="ألبوم الصور"
+		href="/images"
+		rel="noopener noreferrer"
+		>شوف ألبوم الصور<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
+	>
 </section>
 
 <section>
 	<H2>محطة وعي</H2>
 
-	<div class="w-full">
-
-		<iframe src="https://www.youtube.com/embed?listType=user_uploads&list=UCfXwpzIsWkdLMznMAUROkuA&index=4" title="محطة وعي" />
+	<div class="w-full h-full lg:flex grid place-items-center gap-4 mb-6">
+		<iframe class="w-full lg:h-60 h-56" src="https://www.youtube.com/embed/xIzWgdHdz8A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		<iframe class="w-full lg:h-60 h-56"  src="https://www.youtube.com/embed/SSW6Pfa-xRw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+		<iframe class="w-full lg:h-60 h-56"  src="https://www.youtube.com/embed/hqcNi-WH47A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 	</div>
-
+	<a
+		data-sveltekit-prefetch
+		class="Blackbtn"
+		aria-label="قناة اليوتيوب"
+		href="https://www.youtube.com/@w3istation"
+		rel="noopener noreferrer"
+		>أتفرج في محطة وعي<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
+	>
 </section>

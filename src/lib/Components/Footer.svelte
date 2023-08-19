@@ -8,6 +8,7 @@
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
+	import RiLogoYoutubeFill from 'svelte-icons-pack/ri/RiLogoYoutubeFill';
 </script>
 
 <footer class="grid gap-5 md:p-7 md:px-32 p-5 pb-24 text-white bg-red">
@@ -68,6 +69,11 @@
 				href="https://t.me/W3iEgy"
 				class="hover:text-black transition-all ease-in-out duration-300"
 				aria-label="صفحة الاكس"><Icon src={RiLogoTelegramFill} color="white" /></a
+			>
+			<a
+				href="https://www.youtube.com/@w3istation"
+				class="hover:text-black transition-all ease-in-out duration-300"
+				aria-label="قناة اليوتيوب"><Icon src={RiLogoYoutubeFill} color="white" /></a
 			>
 		</div>
 
