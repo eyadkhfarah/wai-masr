@@ -23,7 +23,12 @@
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
 	import Events from '$lib/Components/Cards/Events.svelte';
 	import H2 from '$lib/Components/Text/H2.svelte';
-	import Category from '$lib/Components/Text/Category.svelte';
+
+	// Article Cards
+	import ArtTab from '$lib/Components/Cards/ArtTab.svelte';
+	import ArtWide from '$lib/Components/Cards/ArtWide.svelte';
+	import ArtImage from '$lib/Components/Cards/ArtImage.svelte';
+	import ArtText from '$lib/Components/Cards/ArtText.svelte';
 </script>
 
 <svelte:head>
@@ -110,7 +115,11 @@
 													})
 												) + Number(4525)}</span
 											>
-											<h3 class="text-black text-sm m-0 group-hover:text-red transition-all ease-in-out duration-300">{card.fields.title}</h3>
+											<h3
+												class="text-black text-sm m-0 group-hover:text-red transition-all ease-in-out duration-300"
+											>
+												{card.fields.title}
+											</h3>
 										</div>
 									</div>
 								</a>
@@ -138,165 +147,40 @@
 		<div class="grid gap-2 w-full h-fit">
 			{#each article as card, index (card.sys.id)}
 				{#if index < 3}
-					<a
-						class="border-none "
-						data-sveltekit-prefetch
-						aria-label={card.fields.title}
-						href={`/post/${card.fields.slug}`}
-					>
-						<div class="card p-0 grid gap-4 border-b-gray-300 border-b-2">
-							<Category>{card.fields.category}</Category>
-							<h2 class="text-black m-0 md:text-xl text-sm">{card.fields.title}</h2>
-							<p class="text-gray-400">
-								{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-									dateStyle: 'full'
-								})} |
-								<span class="text-blue-600 font-black">{card.fields.author.fields.name}</span>
-							</p>
-						</div>
-					</a>
+					<ArtText {card} />
 				{/if}
 			{/each}
-				<a
-					class="text-text w-full font-black flex justify-between items-center py-5 border-none"
-					href="/articles"
-					rel="noopener noreferrer"
-					>اقرا اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
-				>
+			<a
+				class="text-text w-full font-black flex justify-between items-center py-5 border-none"
+				href="/articles"
+				rel="noopener noreferrer"
+				>اقرا اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
+			>
 		</div>
 
-		<div class="relative w-full h-fit md:m-0 mb-4 col-span-2">
-			<a
-				href={'/post/' + article[0].fields.slug}
-				data-sveltekit-prefetch
-				aria-label={article[0].fields.title}
-				class="border-none"
-			>
-				<div
-					class="absolute bottom-0 grid bg-gradient-to-t from-black place-items-center lg:gap-4 gap-2 text-center w-full px-7"
-				>
-					<div class="flex font-black text-white gap-3 h-fit">
-						<div class="w-2 bg-red rounded-3xl" />
-						{article[0].fields.category}
-					</div>
-					<h2 class="text-white md:text-3xl text-lg">
-						{article[0].fields.title}
-					</h2>
-					<p class="text-gray-400 lg:text-base text-sm">
-						{new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
-							dateStyle: 'full'
-						})} |
-						<span class="text-blue-600 font-black">{article[0].fields.author.fields.name}</span>
-					</p>
-				</div>
-				<img
-					src={`https:${article[0].fields.square.fields.file.url}`}
-					alt={article[0].fields.title}
-					class="object-cover h-full w-full"
-				/>
-			</a>
-		</div>
+		<ArtImage {article} />
 
 		<div class="grid gap-5 h-fit w-full">
 			<Tabs {tabs} {activeTab} on:tabChange={tabChange} />
 			{#if activeTab === 'اخر المقالات'}
 				{#each article as card, index (card.sys.id)}
 					{#if index < 4}
-						<a
-							href={`/post/${card.fields.slug}`}
-							data-sveltekit-prefetch
-							aria-label={card.fields.title}
-							class="border-none"
-						>
-							<div class="card p-0 flex gap-4">
-								<img
-									src={`https:${card.fields.square.fields.file.url}`}
-									alt={card.fields.title}
-									class="object-cover w-20 h-20"
-									width="80"
-									height="80"
-								/>
-								<div class="grid h-fit gap-3">
-									<h2 class="text-black text-base m-0">{card.fields.title}</h2>
-									<p class="text-gray-400 text-sm">
-										{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-											dateStyle: 'full'
-										})} |
-										<span class="text-blue-600 font-black"
-											><a href="/" class="border-none">{card.fields.category}</a></span
-										>
-									</p>
-								</div>
-							</div>
-						</a>
+						<ArtTab {card} />
 					{/if}
 				{/each}
 			{:else if activeTab === 'مختارات وعي'}
 				{#each article as card, index (card.sys.id)}
 					{#if index < 4 && card.fields.feature == false}
-						<a
-							href={`/post/${card.fields.slug}`}
-							data-sveltekit-prefetch
-							aria-label={card.fields.title}
-							class="border-none"
-						>
-							<div class="card p-0 flex gap-4">
-								<img
-									src={`https:${card.fields.square.fields.file.url}`}
-									alt={card.fields.title}
-									class="object-cover w-20 h-20"
-									width="80"
-									height="80"
-								/>
-								<div class="grid h-fit gap-3">
-									<h2 class="text-black text-base m-0">{card.fields.title}</h2>
-									<p class="text-gray-400 text-sm">
-										{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-											dateStyle: 'full'
-										})} |
-										<span class="text-blue-600 font-black"
-											><a href="/" class="border-none">{card.fields.category}</a></span
-										>
-									</p>
-								</div>
-							</div>
-						</a>
+						<ArtTab {card} />
 					{/if}
 				{/each}
 			{:else if activeTab === 'الأكثر قراءة'}
 				{#each article as card, index (card.sys.id)}
 					{#if index < 4 && card.fields.category === 'اخبار تشرف'}
-						<a
-							href={`/post/${card.fields.slug}`}
-							data-sveltekit-prefetch
-							aria-label={card.fields.title}
-							class="border-none"
-						>
-							<div class="card p-0 flex gap-4">
-								<img
-									src={`https:${card.fields.thumbnail.fields.file.url}`}
-									alt={card.fields.title}
-									class="object-cover w-20 h-20"
-									width="80"
-									height="80"
-								/>
-								<div class="grid h-fit gap-3">
-									<h2 class="text-black text-base m-0">{card.fields.title}</h2>
-									<p class="text-gray-400 text-sm">
-										{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-											dateStyle: 'full'
-										})} |
-										<span class="text-blue-600 font-black"
-											><a href="/" class="border-none">{card.fields.category}</a></span
-										>
-									</p>
-								</div>
-							</div>
-						</a>
+						<ArtTab {card} />
 					{/if}
 				{/each}
 			{/if}
-			<!-- '', '' -->
 		</div>
 	</div>
 </section>
@@ -309,11 +193,11 @@
 		>
 		<div class="grid gap-4">
 			<p class="text-2xl font-black text-center m-0 italic z-10">
-				الجاهل الذي لا يصغي لا يصل إلى شيء، فهو يساوي بين المعرفة والجهل، وبين المفيد والضار. ويفعل
-				الشائبات فيستاء الناس منه يوميًا
+				لا تتم وطنية المرء إلا إذا عرف أمته قديمها وحديثها، فإن من جهل قديمها فهو مدَّع في حبها، لأن
+				من جهل شيئًا عاداه
 			</p>
 
-			<p class="m-0">بتاح حتب</p>
+			<p class="m-0">رائد الفكر القومي المصري - أحمد لطفي السيد</p>
 		</div>
 		<img
 			src={qoute}
@@ -337,31 +221,7 @@
 	<div class="grid gap-6 lg:grid-cols-3">
 		{#each article as card, index (card.sys.id)}
 			{#if index < 3}
-				<a
-					data-sveltekit-prefetch
-					aria-label={card.fields.title}
-					href={`/post/${card.fields.slug}`}
-					class="group"
-				>
-					<div class="card grid gap-4">
-						<img
-							src={`https:${card.fields.thumbnail.fields.file.url}`}
-							alt={card.fields.title}
-							class="w-full"
-						/>
-						<h2 class="text-black text-xl group-hover:text-red transition-all ease-in-out duration-300">{card.fields.title}</h2>
-						<p class="text-gray-400">
-							{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-								dateStyle: 'full'
-							})} |
-							<span class="text-blue-600 font-black" data-sveltekit-prefetch
-								><a aria-label={card.fields.title} href="/" class="border-none"
-									>{card.fields.category}</a
-								></span
-							>
-						</p>
-					</div>
-				</a>
+				<ArtWide {card} />
 			{/if}
 		{/each}
 	</div>
@@ -399,4 +259,18 @@
 		rel="noopener noreferrer"
 		>شوف فعاليات اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
 	>
+</section>
+
+<section>
+	<H2>ألبوم الصور</H2>
+</section>
+
+<section>
+	<H2>محطة وعي</H2>
+
+	<div class="w-full">
+
+		<iframe src="https://www.youtube.com/embed?listType=user_uploads&list=UCfXwpzIsWkdLMznMAUROkuA&index=4" title="محطة وعي" />
+	</div>
+
 </section>

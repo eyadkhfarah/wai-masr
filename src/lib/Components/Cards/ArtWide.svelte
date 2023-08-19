@@ -1,0 +1,31 @@
+<script>
+// @ts-nocheck
+	export let card;
+</script>
+
+<a
+	data-sveltekit-prefetch
+	aria-label={card.fields.title}
+	href={`/post/${card.fields.slug}`}
+	class="group"
+>
+	<div class="card grid gap-4">
+		<img
+			src={`https:${card.fields.thumbnail.fields.file.url}`}
+			alt={card.fields.title}
+			class="w-full"
+		/>
+		<h2 class="text-black text-xl group-hover:text-red transition-all ease-in-out duration-300">
+			{card.fields.title}
+		</h2>
+		<p class="text-gray-400">
+			{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+				dateStyle: 'full'
+			})} |
+			<span class="text-blue-600 font-black" data-sveltekit-prefetch
+				><a aria-label={card.fields.title} href="/" class="border-none">{card.fields.category}</a
+				></span
+			>
+		</p>
+	</div>
+</a>

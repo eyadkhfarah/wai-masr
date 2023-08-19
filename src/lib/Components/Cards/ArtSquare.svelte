@@ -1,7 +1,6 @@
 <script>
-// @ts-nocheck
-export let card
-
+	// @ts-nocheck
+	export let card;
 </script>
 
 <a
@@ -14,7 +13,9 @@ export let card
 		<img
 			src={`https:${card.fields.thumbnail.fields.file.url}`}
 			alt={card.fields.title}
-			class="object-cover h-28 w-28"
+			class="object-cover lg:h-28 lg:w-28 h-20 w-20"
+			width="80"
+			height="80"
 		/>
 		<div class="grid gap-5 h-fit">
 			<h2

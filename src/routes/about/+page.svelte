@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 	import og from '$lib/images/main.png';
 	let title = 'وعي - مصر :: احنا مين';
 	let desc = `أهلًا بيكم في وعي - مصر إحنا هنا فى "وعي" بنقدم نفسنا إننا جزء من مشروع أكبر ألا وهو مشروع الوعي القومي المصري.`;
@@ -21,7 +23,6 @@
 	<meta property="og:image" content={og} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={desc} />
-	\
 
 	<script type="application/ld+json">
 		{
