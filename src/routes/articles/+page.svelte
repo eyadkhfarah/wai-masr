@@ -60,8 +60,8 @@
 				global(.option.active)
 				on:setPage={(e) => (currentPage = e.detail.page)}
 			>
-				<span slot="prev"><Icon src={RiSystemArrowRightSLine} color="white" /></span>
-				<span slot="next"><Icon src={RiSystemArrowLeftSLine} color="white" /></span>
+				<span slot="prev"><Icon src={RiSystemArrowRightSLine} color="black" /></span>
+				<span slot="next"><Icon src={RiSystemArrowLeftSLine} color="black" /></span>
 			</PaginationNav>
 		</div>
 		<Email />

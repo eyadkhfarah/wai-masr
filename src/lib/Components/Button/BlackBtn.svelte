@@ -9,7 +9,6 @@
 	 * @type {any}
 	 */
 
-	export let download = false;
 	export let link;
 
 	import Icon from 'svelte-icons-pack/Icon.svelte';
