@@ -12,9 +12,10 @@
 		"baseUrl": "./",
 		"paths": {
 			"$Components/*": ["Components/*"],
-			"$lib/*": ["lib/*"],
-			"$styles/*": ["styles/*"],
-			"$utils/*": ["utils/*"]
+			"$lib": ["./src/lib"],
+			"$lib/*": ["./src/lib/*"],
+			"$styles/*": ["./src/router/styles/*"],
+			"$utils/*": ["./src/utils/*"]
 		}
 	}
 	// Path aliases are handled by https://kit.svelte.dev/docs/configuration#alias and https://kit.svelte.dev/docs/configuration#files
