@@ -259,7 +259,7 @@
 		/>
 
 		<h2 class="font-black italic text-lg">{article.fields.subtitle}</h2>
-		<div bind:this={reading}>{@html documentToHtmlString(article.fields.post, options)}</div>
+		<div bind:this={reading} style="direction: auto;">{@html documentToHtmlString(article.fields.post, options)}</div>
 
 		<div class="flex gap-3 h-fit">
 			<div class="w-2 bg-red rounded-3xl" />

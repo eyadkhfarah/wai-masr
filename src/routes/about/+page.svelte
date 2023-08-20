@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 
 	import og from '$lib/images/main.png';
 	let title = 'وعي - مصر :: احنا مين';
@@ -232,5 +232,12 @@
 			<li>#القومية_المصرية</li>
 			<li>#الهوية_المصرية</li>
 		</ul>
+
+		<p>
+			كمان تقدر تحمل ملف رسالة القومية المصرية ورؤيتها <a
+				href="/Q&A.pdf"
+				download="القومية-المصرية-سؤال-و-جواب">من هنا</a
+			>
+		</p>
 	</article>
 </section>

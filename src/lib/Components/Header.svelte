@@ -15,19 +15,12 @@
 	let hidden = true;
 
 	function handleOnScroll() {
-		if (window.scrollY > 160) {
+		if (window.scrollY > 140) {
 			hidden = true;
 		} else {
 			hidden = false;
 		}
 	}
-
-	const scrollToTop = () => {
-		window.scrollTo({
-			top: 0,
-			behavior: 'smooth'
-		});
-	};
 
 	/**
 	 * @type {string}
@@ -59,18 +52,15 @@
 
 	time = h + ':' + m + ' ' + session;
 
-	let scrollPrecent = '0';
-
-	let change = true;
-
 	let year = new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', year: 'numeric' });
 </script>
 
 <svelte:window on:scroll={handleOnScroll} />
 
 <header
-	class:bg-black={change}
-	class="bg-black p-5 z-[100] lg:grid flex grid-cols-3 lg:static sticky top-0 transition-all ease-in-out duration-300 gap-5 lg:justify-between items-center"
+	class={`z-[100] ${
+		hidden || $page.url.pathname != '/' ? 'bg-black lg:static' : 'bg-transparent'
+	} w-full p-5 flex sticky top-0 transition-all ease-in-out duration-300 gap-5 lg:justify-between items-center`}
 >
 	<button
 		class="text-xl lg:hidden block cursor-pointer text-white"
@@ -81,27 +71,7 @@
 		<Icon src={CgMenuRightAlt} color="white" />
 	</button>
 
-	<div class=" gap-5 text-white lg:grid hidden">
-		<span class="text-2xl font-black">{time}</span>
-
-		<div class="grid gap-2 text-xs opacity-50">
-			<span class="flex items-center gap-5">
-				{new Date().toLocaleDateString('ar-arab', { dateStyle: 'full' })}
-			</span>
-
-			<span class="flex items-center gap-5">
-				{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', weekday: 'long' })}
-				-
-				{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', day: 'numeric' })}
-				/
-				{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', month: 'long' })}
-				/
-				{parseFloat(year) + Number(4525)}
-			</span>
-		</div>
-	</div>
-
-	<div class="lg:grid flex w-full place-items-center gap-4 items-center">
+	<div class="flex w-full place-items-center gap-4 items-center">
 		<a href="/" aria-label="وعي مصر" class="text-white border-none">
 			<img src={logo} alt="لوجو وعي مصر" class="lg:h-16 h-12" />
 		</a>
@@ -109,7 +79,7 @@
 		<span class="text-white font-black lg:text-xl text-sm">قلب مشروع الوعي القومي المصري </span>
 	</div>
 
-	<div class="border-b-4 justify-self-end border-red w-fit lg:flex hidden gap-4 items-center">
+	<div class="border-b-4 justify-self-end border-red w-fit md:flex hidden gap-4 items-center">
 		<input
 			type="search"
 			class="bg-transparent border-none placeholder:text-white text-white p-0 py-3 focus:ring-0"
@@ -124,41 +94,42 @@
 		>
 	</div>
 </header>
-<header class={`sticky top-0 bg-black z-40 text-white transition-all ease-in-out duration-300`}>
-	<nav class="border-t border-gray-900 p-3 text-sm lg:flex justify-between items-center hidden">
-		<ul class="flex gap-5 list-none m-0 p-0">
-			{#each menu as link (link.id)}
-				<li>
-					<a
-						href={link.link}
-						aria-label={link.name}
-						class:border-b-red={link.link === $page.url.pathname}
-						target={`${link.newTab === false ? "_blank" : "_self"}`}
-						class="text-white whitespace-nowrap border-b-4 transition-all ease-in-out duration-300 border-b-black hover:border-b-white"
-						>{link.name}</a
-					>
-				</li>
-			{/each}
-		</ul>
 
-		<div class={`${hidden ? "opacity-50" : "opacity-0"} whitespace-nowrap md:hidden flex gap-5 transition-all ease-in-out duration-200`}>
-			<span>{time}</span>
+<nav class={`sticky top-0 ${
+		hidden || $page.url.pathname != '/'
+			? 'bg-black border-gray-900'
+			: 'bg-transparent border-gray-400'
+	}  z-40 text-white w-full transition-all ease-in-out duration-300 border-t p-3 text-xs lg:flex justify-between items-center hidden`}>
+	<ul class="flex gap-5 list-none m-0 p-0">
+		{#each menu as link (link.id)}
+			<li>
+				<a
+					href={link.link}
+					aria-label={link.name}
+					target={`${link.newTab === false ? '_self' : '_blank'}`}
+					class={`${
+						link.link === $page.url.pathname ? 'text-red' : 'text-white'
+					}  whitespace-nowrap hover:text-red transition-all ease-in-out duration-300`}>{link.name}</a
+				>
+			</li>
+		{/each}
+	</ul>
 
-			<span class="flex items-center gap-5">
-				{new Date().toLocaleDateString('ar-arab', { dateStyle: 'full' })}
-			</span>
+	<div
+		class="opacity-50 whitespace-nowrap hidden md:flex gap-5 transition-all ease-in-out duration-200"
+	>
+		<span>{time}</span>
 
-			<span class="flex items-center gap-5">
-				{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', weekday: 'long' })}
-				-
-				{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', day: 'numeric' })}
-				/
-				{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', month: 'long' })}
-				/
-				{parseFloat(year) + Number(4525)}
-			</span>
-		</div>
-	</nav>
-</header>
+		<span class="flex items-center gap-5">
+			{new Date().toLocaleDateString('ar-arab', { dateStyle: 'full' })}
+		</span>
+
+		<span class="flex items-center gap-5">
+			{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', day: 'numeric' })}
+			{new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', month: 'long' })}
+			{parseFloat(year) + Number(4525)}
+		</span>
+	</div>
+</nav>
 
 <NavModal {menuTab} on:click={handeler} />

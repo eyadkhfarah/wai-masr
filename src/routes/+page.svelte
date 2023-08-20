@@ -29,6 +29,8 @@
 	import ArtWide from '$lib/Components/Cards/ArtWide.svelte';
 	import ArtImage from '$lib/Components/Cards/ArtImage.svelte';
 	import ArtText from '$lib/Components/Cards/ArtText.svelte';
+	import BlackBtn from '$lib/Components/Button/BlackBtn.svelte';
+	import WhiteBtn from '$lib/Components/Button/WhiteBtn.svelte';
 </script>
 
 <svelte:head>
@@ -39,18 +41,16 @@
 	<meta property="og:description" content="إبدأ تجربتك الأولى في القومية المصرية من وعي - مصر" />
 </svelte:head>
 
-<section class="bg-black m-0 p-0">
+<section class="bg-black m-0 mt-[-9.1rem] z-0 p-0">
 	<div class="relative h-fit w-fit">
 		<img
 			src={`https:${events[0].fields.image.fields.file.url}`}
 			alt={events[0].fields.name}
-			class="object-cover lg:h-[35rem] h-[75em] opacity-40"
+			class="object-cover lg:h-[100vh] h-[75em] opacity-40"
 			width="1920"
 		/>
 
-		<div
-			class="md:px-28 bg-gradient-to-t w-full from-black absolute bottom-0 grid h-full md:p-0 p-5"
-		>
+		<div class="md:px-28 bg-gradient-to-t w-full from-black absolute bottom-0 grid md:p-0 p-5">
 			<div class="grid gap-9 z-10">
 				<div class="py-10 text-white">
 					<div class="grid gap-5">
@@ -64,14 +64,10 @@
 								})}
 							</p>
 						</div>
-						<a
-							class="Whitebtn flex items-center gap-6 border-b-red"
-							data-sveltekit-prefetch
-							aria-label={events[0].fields.name}
-							href="/events"
-							rel="noopener noreferrer"
-							>اقرا التفاصيل<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
-						>
+
+						<span class="w-fit">
+							<WhiteBtn label={'شوف التفاصيل'} link={`/events/${events[0].fields.slug}`} />
+						</span>
 					</div>
 				</div>
 			</div>
@@ -129,12 +125,7 @@
 					<div class="text-white grid gap-3 h-fit lg:mt-0 mt-10">
 						<h3 class="m-0 w-full whitespace-nowrap">عايز تكتب مقالات؟</h3>
 						<p class="m-0 text-xs w-full">ابعت مقالتك لينا واحنا هننشرها لك</p>
-						<a
-							class="Whitebtn leading-none flex w-full items-center gap-6 border-b-red"
-							href="/contact"
-							rel="noopener noreferrer"
-							>أنشر مقالتك<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
-						>
+						<WhiteBtn label={'أنشر مقالتك'} link={`/contact`} />
 					</div>
 				</div>
 			</div>
@@ -206,14 +197,7 @@
 		/>
 	</div>
 
-	<a
-		class="Blackbtn"
-		data-sveltekit-prefetch
-		aria-label="المكتبة القومية"
-		href="https://maktabaqawmya.vercel.app"
-		rel="noopener noreferrer"
-		>ادخل المكتبة القومية <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
-	>
+	<BlackBtn label={'ادخل المكتبة القومية'} link={'https://maktabaqawmya.vercel.app'} />
 </section>
 
 <section class="grid">
@@ -225,21 +209,41 @@
 			{/if}
 		{/each}
 	</div>
-	<a
-		data-sveltekit-prefetch
-		class="Blackbtn"
-		aria-label="المزيد من المقالات"
-		href="/articles"
-		rel="noopener noreferrer"
-		>اقرا اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
-	>
+
+	<BlackBtn label={'المزيد من المقالات'} link={'/articles'} />
 </section>
 
-<section class="bg-black text-white">
-	<div class="grid gap-5">
-		<h2>عايز تعرف اخر الاخبار والمناسبات؟</h2>
-		<p>سجل بالبريد الالكتروني علشان توصلك كل المقالات واحدث المناسبات وابرز الاسئلة</p>
+<section>
+	<H2>محطة وعي</H2>
+
+	<div class="w-full h-full lg:flex grid place-items-center gap-4 mb-6">
+		<iframe
+			class="w-full lg:h-60 h-56"
+			src="https://www.youtube.com/embed/xIzWgdHdz8A"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			allowfullscreen
+		/>
+		<iframe
+			class="w-full lg:h-60 h-56"
+			src="https://www.youtube.com/embed/SSW6Pfa-xRw"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			allowfullscreen
+		/>
+		<iframe
+			class="w-full lg:h-60 h-56"
+			src="https://www.youtube.com/embed/hqcNi-WH47A"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			allowfullscreen
+		/>
 	</div>
+
+	<BlackBtn label={'أتفرج في محطة وعي'} link={'https://www.youtube.com/@w3istation'} />
 </section>
 
 <section class="grid">
@@ -252,43 +256,11 @@
 		{/each}
 	</div>
 
-	<a
-		data-sveltekit-prefetch
-		class="Blackbtn"
-		aria-label="المزيد من الفعاليات"
-		href="/events"
-		rel="noopener noreferrer"
-		>شوف فعاليات اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
-	>
+	<BlackBtn label={'شوف فعاليات اكتر'} link={'/events'} />
 </section>
 
 <section>
 	<H2>ألبوم الصور</H2>
 
-	<a
-		data-sveltekit-prefetch
-		class="Blackbtn"
-		aria-label="ألبوم الصور"
-		href="/images"
-		rel="noopener noreferrer"
-		>شوف ألبوم الصور<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
-	>
-</section>
-
-<section>
-	<H2>محطة وعي</H2>
-
-	<div class="w-full h-full lg:flex grid place-items-center gap-4 mb-6">
-		<iframe class="w-full lg:h-60 h-56" src="https://www.youtube.com/embed/xIzWgdHdz8A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-		<iframe class="w-full lg:h-60 h-56"  src="https://www.youtube.com/embed/SSW6Pfa-xRw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-		<iframe class="w-full lg:h-60 h-56"  src="https://www.youtube.com/embed/hqcNi-WH47A" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-	</div>
-	<a
-		data-sveltekit-prefetch
-		class="Blackbtn"
-		aria-label="قناة اليوتيوب"
-		href="https://www.youtube.com/@w3istation"
-		rel="noopener noreferrer"
-		>أتفرج في محطة وعي<span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
-	>
+	<BlackBtn label={'شوف ألبوم الصور'} link={'/images'} />
 </section>

@@ -49,7 +49,7 @@
 	</div>
 
 	<div class="grid gap-6 text-center place-items-center">
-		<div class="flex gap-4 text-white text-3xl">
+		<div class="flex flex-row-reverse gap-4 text-white text-3xl">
 			<a
 				href="https://web.facebook.com/W3i.EG"
 				class="hover:text-black transition-all ease-in-out duration-300"

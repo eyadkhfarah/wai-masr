@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 
@@ -7,6 +9,7 @@
 
 	import H1 from '$lib/Components/Text/H1.svelte';
 	import og from '$lib/images/main.png';
+	import BlackBtn from '$lib/Components/Button/BlackBtn.svelte';
 	let title = 'وعي - مصر :: خدمة الـ RSS ';
 	let desc = `صفحة خاصة لخدمة الـ RSS الخاصة بموقع وعي - مصر.`;
 </script>
@@ -88,7 +91,6 @@
 </section>
 
 <section class="grid place-items-center">
-	<a class="Blackbtn" href="/rss.xml" rel="noopener noreferrer"
-		><span class="flex items-center gap-1">شوف ملف RSS.XML <Icon color="orange" src={RiDeviceRssLine} /></span><span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
-	>
+
+	<BlackBtn label={"شوف ملف RSS.XML"} link={"/rss.xml"}/>
 </section>

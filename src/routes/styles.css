@@ -65,15 +65,27 @@ body {
     }
 
     h2 {
-        @apply text-3xl my-4 font-black
-    }
-
-    h3 {
         @apply text-2xl my-4 font-black
     }
 
+    h3 {
+        @apply text-xl my-4 font-black
+    }
+    
+    h4 {
+        @apply text-lg my-4 font-black
+    }
+
+    h5 {
+        @apply text-base my-4 font-black
+    }
+    
     p {
         @apply mb-7
+    }
+    
+    a {
+        @apply text-red font-black
     }
 
     q {
@@ -82,18 +94,6 @@ body {
 
     blockquote {
         @apply mb-7 text-red italic text-2xl font-black
-    }
-
-    h4 {
-        @apply text-xl my-4 font-black
-    }
-
-    h5 {
-        @apply text-xl my-4 font-black
-    }
-
-    a {
-        @apply text-red font-black
     }
 
     .Whitebtn {
@@ -107,7 +107,7 @@ body {
     /* pagnation */
 
     .pagination-nav {
-        @apply w-full h-fit flex justify-between items-center bg-red p-2 my-3 text-lg text-white
+        @apply w-full h-fit flex justify-between items-center p-2 my-3 text-lg text-white
     }
 
     .option {
