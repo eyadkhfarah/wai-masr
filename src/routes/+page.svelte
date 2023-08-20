@@ -49,7 +49,7 @@
 			class="object-cover lg:h-[100vh] h-[75em] opacity-40"
 			width="1920"
 		/>
-
+ 
 		<div class="md:px-28 bg-gradient-to-t w-full from-black absolute bottom-0 grid md:p-0 p-5">
 			<div class="grid gap-9 z-10">
 				<div class="py-10 text-white">
