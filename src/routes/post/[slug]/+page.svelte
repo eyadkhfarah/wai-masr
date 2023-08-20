@@ -34,8 +34,6 @@
 	import RiSystemCheckLine from 'svelte-icons-pack/ri/RiSystemCheckLine';
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
 
-	import { slide } from 'svelte/transition';
-
 	import { copy } from 'svelte-copy';
 
 	import { categories } from '../../../utils/categories';
@@ -132,7 +130,6 @@
 			{#each categories as categor}
 				{#if categor.title.includes(article.fields.category)}
 					<a
-						transition:slide
 						href={'/articles/' + categor.link}
 						class="flex gap-3 border-none text-text h-fit"
 					>
@@ -142,7 +139,7 @@
 					</a>
 				{/if}
 			{/each}
-			<h1 class="m-0" transition:slide>{article.fields.title}</h1>
+			<h1 class="m-0">{article.fields.title}</h1>
 		</div>
 
 		<div class="grid gap-4 w-full">
