@@ -4,7 +4,7 @@
 	export let data;
 
 	let images = data.images;
-	
+
 	import H1 from '$lib/Components/Text/H1.svelte';
 
 	import og from '$lib/images/main.png';
@@ -18,23 +18,29 @@
 	<meta property="og:image" content={og} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={desc} />
-	<script type="application/ld+json">
-		[
-			{
-				'@context': 'https://schema.org/',
-				'@type': 'ImageObject',
-				contentUrl: 'https://example.com/photos/1x1/black-labrador-puppy.jpg',
-				license: 'https://example.com/license',
-				acquireLicensePage: 'https://example.com/how-to-use-my-images',
-				creditText: 'Labrador PhotoLab',
-				creator: {
-					'@type': 'Person',
-					name: 'Brixton Brownstone'
-				},
-				copyrightNotice: 'Clara Kent'
-			}
-		];
-	</script>
+	<script
+		type="application/ld+json"
+		key="structured-data"
+		dangerouslySetInnerHTML={{
+			__html:
+			`[
+				${images.map((image) => 
+					`{
+						'@context': 'https://schema.org/',
+						'@type': 'ImageObject',
+						contentUrl: 'https://waimasr.vercel.app/images/${image.fields.slug}',
+						license: 'https://waimasr.vercel.app/terms',
+						creditText: 'Wai Masr',
+						creator: {
+							'@type': 'Person',
+							name: '${image.fields.owner}'
+						},
+						copyrightNotice: 'Wai Masr'
+					},`
+				)}
+			];`
+		}}
+	/>
 </svelte:head>
 
 <section>
