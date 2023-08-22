@@ -127,18 +127,30 @@
 	</span>
 	<article class="col-span-2 grid h-fit gap-9" id="article">
 		<div class="grid gap-4">
-			{#each categories as categor}
-				{#if categor.title.includes(article.fields.category)}
-					<a
-						href={'/articles/' + categor.link}
-						class="flex gap-3 border-none text-text h-fit"
-					>
-						<Category>
-							{article.fields.category}
-						</Category>
-					</a>
+			<div class="lg:flex grid gap-4">
+				{#each categories as categor}
+					{#if categor.title.includes(article.fields.category)}
+						<a href={'/articles/' + categor.link} class="flex gap-3 border-none text-text h-fit">
+							<Category>
+								{article.fields.category}
+							</Category>
+						</a>
+					{/if}
+				{/each}
+				<!-- Update Date -->
+				{#if article.sys.createdAt != article.sys.updatedAt}
+					<p class="text-[.5em]">
+						اخر تحديث | <span class="text-red">
+							{new Date(article.sys.updatedAt).toLocaleDateString('ar-EG', {
+								weekday: 'long',
+								year: 'numeric',
+								month: 'short',
+								day: 'numeric'
+							})}
+						</span>
+					</p>
 				{/if}
-			{/each}
+			</div>
 			<h1 class="m-0">{article.fields.title}</h1>
 		</div>
 
@@ -253,10 +265,14 @@
 			src={`https:${article.fields.thumbnail.fields.file.url}`}
 			alt={article.fields.title}
 			class="w-full"
+			width={1150}
+			height={647}
 		/>
 
 		<h2 class="font-black italic text-lg">{article.fields.subtitle}</h2>
-		<div bind:this={reading} style="direction: auto;">{@html documentToHtmlString(article.fields.post, options)}</div>
+		<div bind:this={reading} style="direction: auto;">
+			{@html documentToHtmlString(article.fields.post, options)}
+		</div>
 
 		<div class="flex gap-3 h-fit">
 			<div class="w-2 bg-red rounded-3xl" />
