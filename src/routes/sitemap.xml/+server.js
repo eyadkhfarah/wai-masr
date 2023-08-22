@@ -7,9 +7,11 @@ import { client } from '../../lib/contentful-fetch';
 export async function GET() {
 	const res = await client.getEntries({ content_type: 'news' });
 	const res1 = await client.getEntries({ content_type: 'events' });
+	const res2 = await client.getEntries({ content_type: 'images' });
 
 	const article = res.items;
 	const events = res1.items;
+	const images = res2.items;
 
 	return new Response(
 		`
@@ -57,6 +59,17 @@ export async function GET() {
 						(page) =>
 							`<url>
             <loc>${site}/post/${page.fields.slug}/</loc>
+            <lastmod>${new Date(page.sys.updatedAt).toISOString().slice(0, 10)}</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.7</priority>
+          </url>`
+					)
+					.join('')}
+        ${images
+					.map(
+						(page) =>
+							`<url>
+            <loc>${site}/images/${page.fields.slug}/</loc>
             <lastmod>${new Date(page.sys.updatedAt).toISOString().slice(0, 10)}</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.7</priority>
