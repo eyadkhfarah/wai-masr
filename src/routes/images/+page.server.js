@@ -7,7 +7,7 @@ export async function load() {
 		accessToken: CONTENTFUL_ACCESS_KEY
 	});
 
-	const res = await client.getEntries({ content_type: 'news' });
+	const res = await client.getEntries({ content_type: 'images' });
 
 	return {
 		images: res.items

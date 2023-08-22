@@ -1,9 +1,10 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 
 	export let data;
 
 	let images = data.images;
+	
 	import H1 from '$lib/Components/Text/H1.svelte';
 
 	import og from '$lib/images/main.png';
@@ -18,22 +19,48 @@
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={desc} />
 	<script type="application/ld+json">
-		[{
-		  "@context": "https://schema.org/",
-		  "@type": "ImageObject",
-		  "contentUrl": "https://example.com/photos/1x1/black-labrador-puppy.jpg",
-		  "license": "https://example.com/license",
-		  "acquireLicensePage": "https://example.com/how-to-use-my-images",
-		  "creditText": "Labrador PhotoLab",
-		  "creator": {
-			"@type": "Person",
-			"name": "Brixton Brownstone"
-		   },
-		  "copyrightNotice": "Clara Kent"
-		},]
-		</script>
+		[
+			{
+				'@context': 'https://schema.org/',
+				'@type': 'ImageObject',
+				contentUrl: 'https://example.com/photos/1x1/black-labrador-puppy.jpg',
+				license: 'https://example.com/license',
+				acquireLicensePage: 'https://example.com/how-to-use-my-images',
+				creditText: 'Labrador PhotoLab',
+				creator: {
+					'@type': 'Person',
+					name: 'Brixton Brownstone'
+				},
+				copyrightNotice: 'Clara Kent'
+			}
+		];
+	</script>
 </svelte:head>
 
 <section>
 	<H1>ألبوم الصور</H1>
+
+	<div
+		class="w-full max-w-full py-5 mx-auto mb-10 gap-5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1"
+	>
+		{#each images as image (image.sys.id)}
+			<a
+				href={`/images/${image.fields.slug}`}
+				aria-label={image.fields.title}
+				class="group relative h-fit"
+			>
+				<img
+					width={image.fields.image[0].fields.file.details.image.width}
+					height={image.fields.image[0].fields.file.details.image.height}
+					class="block h-full w-full object-cover object-center group-hover:opacity-50 transition-all ease-in-out duration-300"
+					src={`https:${image.fields.image[0].fields.file.url}`}
+					alt={image.fields.title}
+				/>
+				<span
+					class="absolute bottom-3 right-3 transition-opacity opacity-0 group-hover:opacity-100 text-black text-xl font-black"
+					>{image.fields.title}</span
+				>
+			</a>
+		{/each}
+	</div>
 </section>
