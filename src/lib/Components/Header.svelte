@@ -99,7 +99,7 @@
 		hidden || $page.url.pathname != '/'
 			? 'bg-black border-gray-900'
 			: 'bg-transparent border-gray-400'
-	}  z-40 text-white w-full transition-all ease-in-out duration-300 border-t p-3 text-xs lg:flex justify-between items-center hidden`}>
+	}  z-40 text-white w-full transition-all ease-in-out duration-300 border-t p-3 text-base lg:flex justify-between items-center hidden`}>
 	<ul class="flex gap-5 list-none m-0 p-0">
 		{#each menu as link (link.id)}
 			<li>
