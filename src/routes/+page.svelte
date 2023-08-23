@@ -184,7 +184,6 @@
 		</div>
 		<img
 			loading="lazy"
-			decoding="async"
 			src={qoute}
 			alt="مقولة تابعة للمكتبة القومية"
 			class="opacity-10 absolute md:left-[43%] left-[30%] top-[30%] w-44"
@@ -268,7 +267,6 @@
 				>
 					<img
 						loading="lazy"
-						decoding="async"
 						width={image.fields.image[0].fields.file.details.image.width}
 						height={image.fields.image[0].fields.file.details.image.height}
 						class="block h-full w-full object-cover object-center group-hover:opacity-50 transition-all ease-in-out duration-300"

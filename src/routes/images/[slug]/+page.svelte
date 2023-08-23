@@ -170,26 +170,24 @@
 			<div>
 				<img
 					loading="lazy"
-					decoding="async"
 					class="h-full max-w-full rounded-lg cursor-pointer"
 					src={`https:${one.fields.file.url}`}
-					alt=""
+					alt={one.fields.title}
 				/>
-				<!-- on:click={() => (imageClick = image.fields.image.fields.file.url)}-->
 			</div>
 		{/each}
 	</div>
 </section>
-
+<!-- 
 <div>
 	<span>&times;</span>
-	<!-- image.fields.image[0].fields.file.url -->
-	<!-- {#if imageClick === image.fields.image.fields.file.url}
+	image.fields.image[0].fields.file.url
+	 {#if imageClick === image.fields.image.fields.file.url}
 		
 	{/if}
 	<img
 		class="h-auto max-w-full rounded-lg cursor-pointer"
 		src={`https:${image.fields.image.fields.file.url}`}
 		alt=""
-	/> -->
-</div>
+	/> 
+</div> -->

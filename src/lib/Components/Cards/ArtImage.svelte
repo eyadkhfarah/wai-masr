@@ -32,7 +32,6 @@
 		</div>
 		<img
 			loading="lazy"
-			decoding="async"
 			src={`https:${article[0].fields.square.fields.file.url}`}
 			alt={article[0].fields.title}
 			class="object-cover h-full w-full"

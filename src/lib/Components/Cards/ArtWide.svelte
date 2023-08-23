@@ -12,7 +12,6 @@
 	<div class="card grid gap-4">
 		<img
 			loading="lazy"
-			decoding="async"
 			src={`https:${card.fields.thumbnail.fields.file.url}`}
 			alt={card.fields.title}
 			class="w-full"
