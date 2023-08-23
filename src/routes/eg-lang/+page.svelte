@@ -70,5 +70,6 @@
 	<BlackBtn
 		label={'أدخل علي المبادرة'}
 		link={'https://www.bibalex.org/learnhieroglyphs/Lesson/Introduction_Ar.aspx'}
+		newTab={true}
 	/>
 </section>

@@ -92,5 +92,5 @@
 
 <section class="grid place-items-center">
 
-	<BlackBtn label={"شوف ملف RSS.XML"} link={"/rss.xml"}/>
+	<BlackBtn label={"شوف ملف RSS.XML"} newTab={true} link={"/rss.xml"}/>
 </section>

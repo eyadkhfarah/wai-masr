@@ -39,7 +39,7 @@
 		</p>
 	</div>
 
-	<img src={team} alt="team" class="h-96 w-fit" />
+	<img src={team} alt="team" height="384" class="h-96 w-fit" />
 </section>
 
 <section class="bg-red m-0 lg:px-32 p-5 py-12">
@@ -101,5 +101,5 @@
 <section class="grid place-items-center">
 	<h2 class="text-center">خليك جزء في أحد اهم المنصات الصاعدة علي السوشيال ميديا</h2>
 
-	<BlackBtn label={"قدم دلوقتي"} link={"https://forms.gle/weNzsctgZPJKHSb5A"} />
+	<BlackBtn label={"قدم دلوقتي"} link={"https://forms.gle/weNzsctgZPJKHSb5A"} newTab={true}/>
 </section>

@@ -265,8 +265,8 @@
 			src={`https:${article.fields.thumbnail.fields.file.url}`}
 			alt={article.fields.title}
 			class="w-full"
-			width={1150}
-			height={647}
+			width="1150"
+			height="647"
 		/>
 
 		<h2 class="font-black italic text-lg">{article.fields.subtitle}</h2>

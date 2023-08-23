@@ -5,6 +5,7 @@
 
 	let article = data.articles;
 	let events = data.events;
+	let images = data.images;
 
 	let tabs = ['اخر المقالات', 'مختارات وعي', 'الأكثر قراءة'];
 	let activeTab = 'اخر المقالات';
@@ -49,7 +50,7 @@
 			class="object-cover lg:h-[100vh] h-[75em] opacity-40"
 			width="1920"
 		/>
- 
+
 		<div class="md:px-28 bg-gradient-to-t w-full from-black absolute bottom-0 grid md:p-0 p-5">
 			<div class="grid gap-9 z-10">
 				<div class="py-10 text-white">
@@ -261,6 +262,32 @@
 
 <section>
 	<H2>ألبوم الصور</H2>
+
+	<div
+		class="w-full max-w-full py-5 mx-auto mb-10 gap-5 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1"
+	>
+		{#each images as image, index (image.sys.id)}
+			{#if index < 6}
+				<a
+					href={`/images/${image.fields.slug}`}
+					aria-label={image.fields.title}
+					class="group relative h-fit"
+				>
+					<img
+						width={image.fields.image[0].fields.file.details.image.width}
+						height={image.fields.image[0].fields.file.details.image.height}
+						class="block h-full w-full object-cover object-center group-hover:opacity-50 transition-all ease-in-out duration-300"
+						src={`https:${image.fields.image[0].fields.file.url}`}
+						alt={image.fields.title}
+					/>
+					<span
+						class="absolute bottom-3 right-3 transition-opacity opacity-0 group-hover:opacity-100 text-black text-xl font-black"
+						>{image.fields.title}</span
+					>
+				</a>
+			{/if}
+		{/each}
+	</div>
 
 	<BlackBtn label={'شوف ألبوم الصور'} link={'/images'} />
 </section>
