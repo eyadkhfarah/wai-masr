@@ -91,8 +91,6 @@
 										class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
 									>
 										<img
-											loading="lazy"
-											decoding="async"
 											src={`https:${card.fields.square.fields.file.url}`}
 											alt={card.fields.title}
 											class="object-cover w-20 h-20"
@@ -102,19 +100,8 @@
 										<div class="grid gap-3 h-fit w-full">
 											<span class="text-gray-400 text-xs">
 												{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-													calendar: 'coptic',
-													day: 'numeric'
-												})}
-												{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-													calendar: 'coptic',
-													month: 'short'
-												})}
-												{parseFloat(
-													new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
-														calendar: 'coptic',
-														year: 'numeric'
-													})
-												) + Number(4525)}</span
+													dateStyle: 'full'
+												})}</span
 											>
 											<h3
 												class="text-black text-sm m-0 group-hover:text-red transition-all ease-in-out duration-300"
@@ -127,9 +114,9 @@
 							{/if}
 						{/each}
 					</div>
-					<div class="text-white grid gap-3 h-fit lg:mt-0 mt-10">
+					<div class="text-white grid h-fit lg:mt-0 mt-10">
 						<h3 class="m-0 w-full whitespace-nowrap">عايز تكتب مقالات؟</h3>
-						<p class="m-0 text-xs w-full">ابعت مقالتك لينا واحنا هننشرها لك</p>
+						<p class="my-1 text-xs w-full">ابعت مقالتك لينا واحنا هننشرها لك</p>
 						<WhiteBtn label={'أنشر مقالتك'} link={`/contact`} />
 					</div>
 				</div>

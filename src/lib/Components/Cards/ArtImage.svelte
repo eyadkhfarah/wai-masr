@@ -19,7 +19,7 @@
 				{article[0].fields.category}
 			</div>
 			<h2
-				class="text-white md:text-3xl text-lg group-hover:text-red transition-all ease-in-out duration-300"
+				class="text-white md:text-3xl text-lg transition-all ease-in-out duration-300"
 			>
 				{article[0].fields.title}
 			</h2>
