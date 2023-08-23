@@ -127,7 +127,7 @@
 	</span>
 	<article class="col-span-2 grid h-fit gap-9" id="article">
 		<div class="grid gap-4">
-			<div class="lg:flex grid gap-4">
+			<div class="lg:flex items-center justify-between grid gap-4">
 				{#each categories as categor}
 					{#if categor.title.includes(article.fields.category)}
 						<a href={'/articles/' + categor.link} class="flex gap-3 border-none text-text h-fit">
@@ -139,7 +139,7 @@
 				{/each}
 				<!-- Update Date -->
 				{#if article.sys.createdAt != article.sys.updatedAt}
-					<p class="text-[.5em]">
+					<p class="text-sm m-0">
 						اخر تحديث | <span class="text-red">
 							{new Date(article.sys.updatedAt).toLocaleDateString('ar-EG', {
 								weekday: 'long',
@@ -267,6 +267,8 @@
 			class="w-full"
 			width="1150"
 			height="647"
+			loading="lazy"
+			decoding="async"
 		/>
 
 		<h2 class="font-black italic text-lg">{article.fields.subtitle}</h2>

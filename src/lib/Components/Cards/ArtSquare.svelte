@@ -11,6 +11,8 @@
 >
 	<div class="card flex gap-8 border-t-2 border-t-gray-300">
 		<img
+			loading="lazy"
+			decoding="async"
 			src={`https:${card.fields.thumbnail.fields.file.url}`}
 			alt={card.fields.title}
 			class="object-cover lg:h-28 lg:w-28 h-20 w-20"

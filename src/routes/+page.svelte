@@ -45,6 +45,8 @@
 <section class="bg-black m-0 mt-[-9.7rem] z-0 p-0">
 	<div class="relative h-fit w-fit">
 		<img
+			loading="lazy"
+			decoding="async"
 			src={`https:${events[0].fields.image.fields.file.url}`}
 			alt={events[0].fields.name}
 			class="object-cover lg:h-[100vh] h-[75em] opacity-40"
@@ -89,6 +91,8 @@
 										class="card px-5 flex justify-center md:border-r border-b border-gray-300 gap-4"
 									>
 										<img
+											loading="lazy"
+											decoding="async"
 											src={`https:${card.fields.square.fields.file.url}`}
 											alt={card.fields.title}
 											class="object-cover w-20 h-20"
@@ -192,6 +196,8 @@
 			<p class="m-0">رائد الفكر القومي المصري - أحمد لطفي السيد</p>
 		</div>
 		<img
+			loading="lazy"
+			decoding="async"
 			src={qoute}
 			alt="مقولة تابعة للمكتبة القومية"
 			class="opacity-10 absolute md:left-[43%] left-[30%] top-[30%] w-44"
@@ -274,6 +280,8 @@
 					class="group relative h-fit"
 				>
 					<img
+						loading="lazy"
+						decoding="async"
 						width={image.fields.image[0].fields.file.details.image.width}
 						height={image.fields.image[0].fields.file.details.image.height}
 						class="block h-full w-full object-cover object-center group-hover:opacity-50 transition-all ease-in-out duration-300"

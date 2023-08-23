@@ -169,6 +169,8 @@
 		{#each image.fields.image as one}
 			<div>
 				<img
+					loading="lazy"
+					decoding="async"
 					class="h-full max-w-full rounded-lg cursor-pointer"
 					src={`https:${one.fields.file.url}`}
 					alt=""

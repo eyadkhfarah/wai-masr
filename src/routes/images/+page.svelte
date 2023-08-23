@@ -58,6 +58,8 @@
 				class="group relative h-fit"
 			>
 				<img
+					loading="lazy"
+					decoding="async"
 					width={image.fields.image[0].fields.file.details.image.width}
 					height={image.fields.image[0].fields.file.details.image.height}
 					class="block h-full w-full object-cover object-center group-hover:opacity-50 transition-all ease-in-out duration-300"
