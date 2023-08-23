@@ -6,6 +6,22 @@
 	export let data;
 	let image = data.images;
 
+	let struc = image.fields.image.map(
+		(images) =>
+			`{
+				"@context": "https://schema.org/",
+				"@type": "ImageObject",
+				"contentUrl": "https:${images.fields.file.url}",
+				"license": "https://waimasr.vercel.app/terms",
+				"creditText": "Wai Masr",
+				"creator": {
+					"@type": "Person",
+					"name": ${images.fields.owner}
+				},
+				"copyrightNotice": "Clara Kent"
+			},`
+	);
+
 	let imageClick = null;
 
 	let copied = false;
@@ -44,32 +60,59 @@
 		<meta property="og:image" content={`https:${tag.fields.image[0].fields.file.url}`} />=
 	{/each}
 
-	<meta property="og:image:type" content="image/jpeg" />
-	<meta property="og:image:width" content="400" />
-	<meta property="og:image:height" content="300" />
 	<meta property="og:image:alt" content={image.fields.title} />
 
 	<!-- Twitter -->
 	<meta property="twitter:title" content={image.fields.title} />
 	<meta property="og:description" content={image.fields.description.content[0].content[0].value} />
 
-	<meta name="twitter:creator" content="@W3i.egy" />
+	<!-- <script
+		type="application/ld+json"
+		key="structured-data"
+		dangerouslySetInnerHTML={{
+			__html: `[
+				${image.fields.image.map(
+					(images) =>
+						`{
+			'@context': 'https://schema.org/',
+			'@type': 'ImageObject',
+			contentUrl: '',
+			license: '',
+			creditText: 'Wai Masr',
+			creator: {
+				'@type': 'Person',
+				name: '${images.fields.owner}'
+			},
+			copyrightNotice: 'Wai Masr'
+		},`
+				)}
+				];`
+		}}
+	></script> -->
 
-	<script type="application/ld+json">
-        {
-          "@context": "https://schema.org/",
-          "@type": "ImageObject",
-          "contentUrl": {`"https://waimasr.vercel.app/images/${image.fields.slug}"`},
-          "license": "https://waimasr.vercel.app/terms",
-        //   "acquireLicensePage": "https://example.com/how-to-use-my-images",
-          "creditText": "Wai Masr",
-          "creator": {
-            "@type": "Person",
-            "name": {`"${image.fields.owner}"`}
-           },
-          "copyrightNotice": {`"Wai Masr"`}
-        }
-	</script>
+	<!-- <script
+		type="application/ld+json"
+		key="structured-data"
+		dangerouslySetInnerHTML={{
+			__html: `[
+				${image.fields.image.map(
+					(images) =>
+						`{
+			'@context': 'https://schema.org/',
+			'@type': 'ImageObject',
+			contentUrl: '',
+			license: '',
+			creditText: 'Wai Masr',
+			creator: {
+				'@type': 'Person',
+				name: '${images.fields.owner}'
+			},
+			copyrightNotice: 'Wai Masr'
+		},`
+				)}
+				];`
+		}}
+	/> -->
 </svelte:head>
 
 <section class="grid lg:grid-cols-2 gap-9">
@@ -123,28 +166,16 @@
 	</div>
 
 	<div class="grid gap-4">
-		<div>
-			<img
-				class="h-auto max-w-full rounded-lg cursor-pointer"
-				src={`https:${image.fields.image[0].fields.file.url}`}
-				alt=""
-			/>
-			<!-- on:click={() => (imageClick = image.fields.image.fields.file.url)} -->
-		</div>
-		<div class="grid grid-cols-5 gap-4">
-			{#each image.fields.image as one}
-				{#if image.fields.image[0].fields.file.url != one.fields.file.url}
-					<div>
-						<img
-							class="h-auto max-w-full rounded-lg cursor-pointer"
-							src={`https:${one.fields.file.url}`}
-							alt=""
-						/>
-						<!-- on:click={() => (imageClick = image.fields.image.fields.file.url)}-->
-					</div>
-				{/if}
-			{/each}
-		</div>
+		{#each image.fields.image as one}
+			<div>
+				<img
+					class="h-full max-w-full rounded-lg cursor-pointer"
+					src={`https:${one.fields.file.url}`}
+					alt=""
+				/>
+				<!-- on:click={() => (imageClick = image.fields.image.fields.file.url)}-->
+			</div>
+		{/each}
 	</div>
 </section>
 

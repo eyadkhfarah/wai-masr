@@ -42,7 +42,7 @@
 	<meta property="og:description" content="إبدأ تجربتك الأولى في القومية المصرية من وعي - مصر" />
 </svelte:head>
 
-<section class="bg-black m-0 mt-[-9.1rem] z-0 p-0">
+<section class="bg-black m-0 mt-[-9.7rem] z-0 p-0">
 	<div class="relative h-fit w-fit">
 		<img
 			src={`https:${events[0].fields.image.fields.file.url}`}

@@ -5,6 +5,22 @@
 
 	let images = data.images;
 
+	let struc = images.map(
+		(image) =>
+			`{
+						'@context': 'https://schema.org/',
+						'@type': 'ImageObject',
+						contentUrl: 'https:${image.fields.image[0].fields.file.url}',
+						license: 'https://waimasr.vercel.app/terms',
+						creditText: 'Wai Masr',
+						creator: {
+							'@type': 'Person',
+							name: '${image.fields.owner}'
+						},
+						copyrightNotice: 'Wai Masr'
+					},`
+	);
+
 	import H1 from '$lib/Components/Text/H1.svelte';
 
 	import og from '$lib/images/main.png';
@@ -22,25 +38,11 @@
 		type="application/ld+json"
 		key="structured-data"
 		dangerouslySetInnerHTML={{
-			__html:
-			`[
-				${images.map((image) => 
-					`{
-						'@context': 'https://schema.org/',
-						'@type': 'ImageObject',
-						contentUrl: 'https://waimasr.vercel.app/images/${image.fields.slug}',
-						license: 'https://waimasr.vercel.app/terms',
-						creditText: 'Wai Masr',
-						creator: {
-							'@type': 'Person',
-							name: '${image.fields.owner}'
-						},
-						copyrightNotice: 'Wai Masr'
-					},`
-				)}
-			];`
+			__html: `[
+				${struc}
+				];`
 		}}
-	/>
+	></script>
 </svelte:head>
 
 <section>
