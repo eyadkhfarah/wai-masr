@@ -76,6 +76,6 @@
 		<p transition:slide={{ delay: 250, duration: 300, axis: 'x' }} class="m-0 text-white">
 			{parseText(events[select].fields.description, 270)}
 		</p>
-		<WhiteBtn label={'شوف أكتر'} link={`/events/${events.fields.slug}`} />
+		<WhiteBtn label={'شوف أكتر'} link={`/events/${events[select].fields.slug}`} />
 	</div>
 </div>
