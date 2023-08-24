@@ -211,7 +211,7 @@
 		{/each}
 	</div>
 
-	<BlackBtn label={'المزيد من المقالات'} link={'/articles'} />
+	<BlackBtn label={'المزيد من المقالات'} newTab={true} link={'/articles'} />
 </section>
 
 <!-- Wai Staion -->
