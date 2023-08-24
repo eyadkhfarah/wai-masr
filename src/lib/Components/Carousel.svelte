@@ -24,13 +24,8 @@
 
 	import { slide } from 'svelte/transition';
 
-	import { onMount } from 'svelte';
-
 	let select = 0;
 
-	// let left, right;
-
-	// onMount(() => {
 	const left = () => {
 		if (select > 0) {
 			setect--;
@@ -46,10 +41,9 @@
 			select = 0;
 		}
 	};
-	// });
 </script>
 
-<div class="w-full overflow-hidden lg:h-96 h-full lg:flex grid justify-between">
+<div class="w-full overflow-hidden lg:h-[500px] h-full lg:flex grid justify-between">
 	<div class="w-full h-full relative">
 		<div class="absolute w-full bottom-0">
 			<div class="grid gap-3 p-9 place-content-between bg-gradient-to-t from-black">
@@ -78,9 +72,9 @@
 		/>
 	</div>
 
-	<div class="bg-gray-800 flex z-10 lg:w-80 w-full h-full flex-col justify-between p-12">
+	<div class="bg-gray-800 flex z-10 lg:w-96 w-full h-full flex-col justify-between p-12">
 		<p transition:slide={{ delay: 250, duration: 300, axis: 'x' }} class="m-0 text-white">
-			{parseText(events[select].fields.description, 180)}
+			{parseText(events[select].fields.description, 270)}
 		</p>
 		<WhiteBtn label={'شوف أكتر'} link={'https://google.com'} />
 	</div>

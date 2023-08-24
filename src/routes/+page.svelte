@@ -252,14 +252,6 @@
 <section class="">
 	<H2>ابرز الفعاليات</H2>
 
-	<div class="grid lg:grid-cols-2 gap-6">
-		<!-- {#each events as event, index (event.sys.id)}
-			{#if index < 4}
-				<Events {event} />
-			{/if}
-		{/each} -->
-	</div>
-
 	<Carousel {events}/>
 
 	<BlackBtn label={'شوف فعاليات اكتر'} link={'/events'} />
