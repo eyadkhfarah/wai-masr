@@ -256,7 +256,7 @@
 
 	<BlackBtn label={'شوف فعاليات اكتر'} link={'/events'} />
 </section>
-
+ 
 <!-- Image -->
 
 <section>
