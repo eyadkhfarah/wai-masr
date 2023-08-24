@@ -246,17 +246,21 @@
 		/>
 	</div>
 
-	<BlackBtn label={'أتفرج في محطة وعي'} newTab={true} link={'https://www.youtube.com/@w3istation'} />
+	<BlackBtn
+		label={'أتفرج في محطة وعي'}
+		newTab={true}
+		link={'https://www.youtube.com/@w3istation'}
+	/>
 </section>
 
 <section class="">
 	<H2>ابرز الفعاليات</H2>
 
-	<Carousel {events}/>
+	<Carousel {events} />
 
 	<BlackBtn label={'شوف فعاليات اكتر'} link={'/events'} />
 </section>
- 
+
 <!-- Image -->
 
 <section>
