@@ -46,6 +46,24 @@
 </section>
 
 <section>
+	<H2>الكتابة هيراطيقية</H2>
+	<p>
+		تقدر تتعلم طريقة كتابة ونطق الحروف المصرية بالكتابة الهيراطيقية دلوقتي عندنا مع الأثرية/ هند أسماعيل
+	</p>
+
+	<div class="w-full h-full grid place-items-center gap-4 mb-6">
+		<iframe
+			class="w-full lg:h-96 h-56 lg:px-60"
+			src="https://www.youtube.com/embed/videoseries?si=YoTXrc7pSpbqvuME&amp;list=PLbv84SI-QKkudhaTTuVtqVZIHnsDgWgvf"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			allowfullscreen
+		/>
+	</div>
+</section>
+
+<section>
 	<H2>الكتابة القبطية</H2>
 	<p>
 		تقدر تتعلم طريقة كتابة ونطق الحروف المصرية بالكتابة القبطية مع باسون/ جورج في اليوتيوب بعنوان <span
