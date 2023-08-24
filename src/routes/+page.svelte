@@ -14,6 +14,8 @@
 		activeTab = e.detail;
 	}
 
+	import Carousel from '$lib/Components/Carousel.svelte';
+
 	import og from '$lib/images/main.png';
 	import qoute from '$lib/images/quote.svg';
 
@@ -42,11 +44,12 @@
 	<meta property="og:description" content="إبدأ تجربتك الأولى في القومية المصرية من وعي - مصر" />
 </svelte:head>
 
+<!-- Main section -->
+
 <section class="bg-black m-0 mt-[-9.7rem] z-0 p-0">
 	<div class="relative h-fit w-fit">
 		<img
 			loading="lazy"
-			decoding="async"
 			src={`https:${events[0].fields.image.fields.file.url}`}
 			alt={events[0].fields.name}
 			class="object-cover lg:h-[100vh] h-[75em] opacity-40"
@@ -127,6 +130,7 @@
 
 <section>
 	<div class="lg:grid lg:grid-cols-4 gap-5 h-fit">
+		<!-- Articles -->
 		<div class="grid gap-2 w-full h-fit">
 			{#each article as card, index (card.sys.id)}
 				{#if index < 3}
@@ -142,6 +146,8 @@
 		</div>
 
 		<ArtImage {article} />
+
+		<!--Tabs  -->
 
 		<div class="grid gap-5 h-fit w-full">
 			<Tabs {tabs} {activeTab} on:tabChange={tabChange} />
@@ -168,6 +174,7 @@
 	</div>
 </section>
 
+<!-- Qoute -->
 <section>
 	<div class="border-4 border-red w-full p-16 relative text-center">
 		<span
@@ -193,11 +200,12 @@
 	<BlackBtn label={'ادخل المكتبة القومية'} link={'https://maktabaqawmya.vercel.app'} />
 </section>
 
+<!-- Recommended -->
 <section class="grid">
 	<H2>مقالات مختارة</H2>
 	<div class="grid gap-6 lg:grid-cols-3">
 		{#each article as card, index (card.sys.id)}
-			{#if index < 3}
+			{#if index < 3 && card.fields.feature == false}
 				<ArtWide {card} />
 			{/if}
 		{/each}
@@ -205,6 +213,8 @@
 
 	<BlackBtn label={'المزيد من المقالات'} link={'/articles'} />
 </section>
+
+<!-- Wai Staion -->
 
 <section>
 	<H2>محطة وعي</H2>
@@ -236,21 +246,26 @@
 		/>
 	</div>
 
-	<BlackBtn label={'أتفرج في محطة وعي'} link={'https://www.youtube.com/@w3istation'} />
+	<BlackBtn label={'أتفرج في محطة وعي'} newTab={true} link={'https://www.youtube.com/@w3istation'} />
 </section>
 
-<section class="grid">
+<section class="">
 	<H2>ابرز الفعاليات</H2>
+
 	<div class="grid lg:grid-cols-2 gap-6">
-		{#each events as event, index (event.sys.id)}
+		<!-- {#each events as event, index (event.sys.id)}
 			{#if index < 4}
 				<Events {event} />
 			{/if}
-		{/each}
+		{/each} -->
 	</div>
+
+	<Carousel {events}/>
 
 	<BlackBtn label={'شوف فعاليات اكتر'} link={'/events'} />
 </section>
+
+<!-- Image -->
 
 <section>
 	<H2>ألبوم الصور</H2>

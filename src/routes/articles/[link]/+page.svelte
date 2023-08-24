@@ -5,7 +5,7 @@
 
 	import { categories } from '../../../utils/categories';
 	import og from '$lib/images/main.png';
-	import ArtSquare from '$lib/Components/Cards/ArtSquare.svelte';
+	import ArtWide from '$lib/Components/Cards/ArtWide.svelte';
 
 	export let data;
 
@@ -41,13 +41,10 @@
 	</div>
 
 	<div class="grid gap-7 lg:grid-cols-3">
-		<div class="grid gap-3 col-span-2">
-			{#each articles as card (card.sys.id)}
-				{#if card.fields.category === category.title}
-					<ArtSquare {card} /> F
-				{/if}
-			{/each}
-		</div>
-		<Email />
+		{#each articles as card (card.sys.id)}
+			{#if card.fields.category === category.title}
+				<ArtWide {card} />
+			{/if}
+		{/each}
 	</div>
 </section>

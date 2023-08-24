@@ -15,6 +15,13 @@
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 	import H1 from '$lib/Components/Text/H1.svelte';
+
+	const data = [
+		{ label: 'كتابة طويلة', details: 'كتاب صغيرة بس مهمة علشان التفاصيل', color: 'blue-500' },
+		{ label: 'كتابة طويلة', details: 'كتاب صغيرة بس مهمة علشان التفاصيل', color: 'blue-400' },
+		{ label: 'كتابة طويلة', details: 'كتاب صغيرة بس مهمة علشان التفاصيل', color: 'blue-200' },
+		{ label: 'كتابة طويلة', details: 'كتاب صغيرة بس مهمة علشان التفاصيل', color: 'blue-500' }
+	];
 </script>
 
 <svelte:head>
@@ -63,6 +70,18 @@
 		}
 	</script>
 </svelte:head>
+
+<!-- <section class="h-96">
+	<Carousel
+	
+	>
+		<div class="h-96">test</div>
+		<div class="h-96">test</div>
+		<div class="h-96">test</div>
+		<div class="h-96">test</div>
+	</Carousel>
+
+</section> -->
 
 <section>
 	<article>

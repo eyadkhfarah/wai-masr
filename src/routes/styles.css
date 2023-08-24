@@ -97,11 +97,11 @@ body {
     }
 
     .Whitebtn {
-        @apply py-3 border-b-white hover:border-b-red border-b-4 text-white w-fit font-bold transition-all ease-in-out duration-300 whitespace-nowrap flex justify-between items-center gap-10
+        @apply py-3 border-b-white h-fit hover:border-b-red border-b-4 text-white w-fit font-bold transition-all ease-in-out duration-300 whitespace-nowrap flex justify-between items-center gap-10
     }
 
     .Blackbtn {
-        @apply py-3 border-b-black hover:border-b-red border-b-4 text-black w-fit font-bold transition-all ease-in-out duration-300 whitespace-nowrap flex justify-between items-center gap-10
+        @apply py-3 border-b-black h-fit hover:border-b-red border-b-4 text-black w-fit font-bold transition-all ease-in-out duration-300 whitespace-nowrap flex justify-between items-center gap-10
     }
 
     /* pagnation */

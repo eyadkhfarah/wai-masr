@@ -1,8 +1,8 @@
 import adapter from '@sveltejs/adapter-vercel';
 import { partytownVite } from '@builder.io/partytown/utils';
 import { vitePreprocess } from '@sveltejs/kit/vite';
-import { join } from 'path'
-import { sveltekit } from '@sveltejs/kit/vite'
+import { join } from 'path';
+import { sveltekit } from '@sveltejs/kit/vite';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,6 +11,9 @@ const config = {
 		// If your environment is not supported or you settled on a specific environment, switch out the adapter.
 		// See https://kit.svelte.dev/docs/adapters for more information about adapters.
 		adapter: adapter()
+	},
+	optimizeDeps: {
+		include: ['lodash.get', 'lodash.isequal', 'lodash.clonedeep']
 	},
 	plugins: [
 		sveltekit(),

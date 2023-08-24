@@ -11,14 +11,14 @@
 	import RiSystemArrowRightSLine from 'svelte-icons-pack/ri/RiSystemArrowRightSLine';
 	import RiSystemArrowLeftSLine from 'svelte-icons-pack/ri/RiSystemArrowLeftSLine';
 	import { paginate, PaginationNav } from 'svelte-paginate';
-	import ArtSquare from '$lib/Components/Cards/ArtSquare.svelte';
+	import ArtWide from '$lib/Components/Cards/ArtWide.svelte';
 
 	export let data;
 
 	let article = data.articles;
 	let items = article;
 	let currentPage = 1;
-	let pageSize = 6;
+	let pageSize = 9;
 	$: paginatedItems = paginate({ items, pageSize, currentPage });
 </script>
 
@@ -45,25 +45,22 @@
 	</div>
 
 	<div class="grid gap-7 lg:grid-cols-3">
-		<div class="grid gap-3 col-span-2">
-			{#each paginatedItems as card (card.sys.id)}
-				<ArtSquare {card} />
-			{/each}
-			<PaginationNav
-				totalItems={items.length}
-				{pageSize}
-				{currentPage}
-				limit={1}
-				showStepOptions={true}
-				global(.pagination-nav)
-				global(.option)
-				global(.option.active)
-				on:setPage={(e) => (currentPage = e.detail.page)}
-			>
-				<span slot="prev"><Icon src={RiSystemArrowRightSLine} color="black" /></span>
-				<span slot="next"><Icon src={RiSystemArrowLeftSLine} color="black" /></span>
-			</PaginationNav>
-		</div>
-		<Email />
+		{#each paginatedItems as card (card.sys.id)}
+			<ArtWide {card} />
+		{/each}
 	</div>
+	<PaginationNav
+		totalItems={items.length}
+		{pageSize}
+		{currentPage}
+		limit={1}
+		showStepOptions={true}
+		global(.pagination-nav)
+		global(.option)
+		global(.option.active)
+		on:setPage={(e) => (currentPage = e.detail.page)}
+	>
+		<span slot="prev"><Icon src={RiSystemArrowRightSLine} color="black" /></span>
+		<span slot="next"><Icon src={RiSystemArrowLeftSLine} color="black" /></span>
+	</PaginationNav>
 </section>

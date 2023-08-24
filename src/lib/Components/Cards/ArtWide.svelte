@@ -14,7 +14,8 @@
 			loading="lazy"
 			src={`https:${card.fields.thumbnail.fields.file.url}`}
 			alt={card.fields.title}
-			class="w-full"
+			class="object-cover h-[20rem] w-full"
+			height="20rem"
 		/>
 		<h2 class="text-black text-xl group-hover:text-red transition-all ease-in-out duration-300">
 			{card.fields.title}
