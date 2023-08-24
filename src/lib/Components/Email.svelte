@@ -4,6 +4,8 @@
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
 </script>
 
+
+
 <div class="md:grid gap-4 text-white w-full bg-red border p-4 h-fit hidden md:sticky top-28">
 	<h2 class="m-0">حبيت مقالاتنا؟</h2>
 	<p class="m-0 w-full">اكتب وابعت مقالتك لينا واحنا هننشرها لك</p>
