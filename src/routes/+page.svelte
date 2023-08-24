@@ -57,8 +57,8 @@
 		/>
 
 		<div class="md:px-28 bg-gradient-to-t w-full from-black absolute bottom-0 grid md:p-0 p-5">
-			<div class="grid gap-9 z-10">
-				<div class="py-10 text-white">
+			<div class="grid z-10">
+				<div class="py-5 text-white">
 					<div class="grid gap-5">
 						<div>
 							<h1>{events[0].fields.name}</h1>
@@ -211,7 +211,7 @@
 		{/each}
 	</div>
 
-	<BlackBtn label={'المزيد من المقالات'} link={'/articles'} />
+	<BlackBtn label={'المزيد من المقالات'} newTab={true} link={'/articles'} />
 </section>
 
 <!-- Wai Staion -->
