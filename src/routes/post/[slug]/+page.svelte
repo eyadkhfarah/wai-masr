@@ -23,7 +23,7 @@
 
 	let reading;
 
-	console.log(article)
+	// console.log(article)
 
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
