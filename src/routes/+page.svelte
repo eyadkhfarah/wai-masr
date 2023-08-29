@@ -116,7 +116,9 @@
 								</a>
 							{/if}
 						{/each}
+
 					</div>
+
 					<div class="text-white grid h-fit lg:mt-0 mt-10">
 						<h3 class="m-0 w-full whitespace-nowrap">عايز تكتب مقالات؟</h3>
 						<p class="my-1 text-xs w-full">ابعت مقالتك لينا واحنا هننشرها لك</p>
