@@ -24,7 +24,7 @@
 				{article[0].fields.title}
 			</h2>
 			<p class="text-gray-400 lg:text-base text-sm">
-				{new Date(article[0].sys.createdAt).toLocaleDateString('ar-arab', {
+				{new Date(article[0].fields.created).toLocaleDateString('ar-arab', {
 					dateStyle: 'full'
 				})} |
 				<span class="text-blue-600 font-black">{article[0].fields.author.fields.name}</span>

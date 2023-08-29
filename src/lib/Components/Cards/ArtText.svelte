@@ -20,7 +20,7 @@
 			{card.fields.title}
 		</h2>
 		<p class="text-gray-400 text-xs">
-			{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+			{new Date(card.fields.created).toLocaleDateString('ar-arab', {
 				dateStyle: 'full'
 			})} |
 			<span class="text-red font-black">{card.fields.author.fields.name}</span>

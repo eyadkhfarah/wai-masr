@@ -23,6 +23,8 @@
 
 	let reading;
 
+	console.log(article)
+
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import { onMount } from 'svelte';
@@ -56,7 +58,7 @@
 	<meta property="og:title" content={article.fields.title} />
 	<meta property="og:description" content={article.fields.subtitle} />
 	<meta property="og:image" content={`https:${article.fields.thumbnail.fields.file.url}`} />
-	<meta property="article:published_time" content={article.sys.createdAt} />
+	<meta property="article:published_time" content={article.fields.created} />
 	<meta property="article:modified_time" content={article.sys.updatedAt} />
 	<!-- Twitter -->
 	<meta property="twitter:title" content={article.fields.title} />
@@ -97,7 +99,7 @@
               "@type": "Organization",
               "name": "وعي - مصر"
             },
-            "datePublished": "${article.sys.createdAt}",
+            "datePublished": "${article.fields.created}",
             "dateModified": "${article.sys.updatedAt}"
           }
         `
@@ -138,7 +140,7 @@
 					{/if}
 				{/each}
 				<!-- Update Date -->
-				{#if article.sys.createdAt != article.sys.updatedAt}
+				{#if article.fields.created != article.sys.updatedAt}
 					<p class="text-sm m-0">
 						اخر تحديث | <span class="text-red">
 							{new Date(article.sys.updatedAt).toLocaleDateString('ar-EG', {
@@ -164,27 +166,27 @@
 					<span>تاريخ |</span>
 					<span class="text-red grid">
 						<span>
-							{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+							{new Date(article.fields.created).toLocaleDateString('ar-arab', {
 								calendar: 'coptic',
 								weekday: 'long'
 							})}
-							{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+							{new Date(article.fields.created).toLocaleDateString('ar-arab', {
 								calendar: 'coptic',
 								day: 'numeric'
 							})}
-							{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+							{new Date(article.fields.created).toLocaleDateString('ar-arab', {
 								calendar: 'coptic',
 								month: 'short'
 							})}
 							{parseFloat(
-								new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+								new Date(article.fields.created).toLocaleDateString('ar-arab', {
 									calendar: 'coptic',
 									year: 'numeric'
 								})
 							) + Number(4525)}
 						</span>
 						<span>
-							{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+							{new Date(article.fields.created).toLocaleDateString('ar-arab', {
 								dateStyle: 'full'
 							})}
 						</span>
@@ -192,26 +194,26 @@
 				</p>
 				<p class="m-0 font-black md:block hidden">
 					تاريخ | <span class="text-red">
-						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+						{new Date(article.fields.created).toLocaleDateString('ar-arab', {
 							calendar: 'coptic',
 							weekday: 'long'
 						})}
-						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+						{new Date(article.fields.created).toLocaleDateString('ar-arab', {
 							calendar: 'coptic',
 							day: 'numeric'
 						})}
-						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+						{new Date(article.fields.created).toLocaleDateString('ar-arab', {
 							calendar: 'coptic',
 							month: 'short'
 						})}
 						{parseFloat(
-							new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+							new Date(article.fields.created).toLocaleDateString('ar-arab', {
 								calendar: 'coptic',
 								year: 'numeric'
 							})
 						) + Number(4525)}
 						<span>—</span>
-						{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+						{new Date(article.fields.created).toLocaleDateString('ar-arab', {
 							dateStyle: 'full'
 						})}
 					</span>
@@ -320,7 +322,7 @@
 
 									<span>—</span>
 									<p class="whitespace-nowrap font-medium">
-										{new Date(article.sys.createdAt).toLocaleDateString('ar-arab', {
+										{new Date(card.fields.created).toLocaleDateString('ar-arab', {
 											dateStyle: 'full'
 										})}
 									</p>

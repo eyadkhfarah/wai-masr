@@ -145,61 +145,6 @@
 				<h3 class="border-b-red border-b-2 p-3 m-0 w-fit">عبد الرحمن المرشدي</h3>
 				<div class="grid gap-2">
 					<p class="italic m-0">مؤسس المنصة</p>
-					<div class="flex gap-3 items-center text-2xl">
-						<a
-							href="https://www.facebook.com/Abdelrahman1998"
-							target="_blank"
-							class="hover:text-black transition-all border-none ease-in-out duration-300"
-							aria-label="صفحة الفيسبوك"><Icon src={RiLogoFacebookCircleFill} color="black" /></a
-						>
-						<a
-							href="https://www.instagram.com/abdelra7man1998"
-							target="_blank"
-							class="hover:text-black transition-all border-none ease-in-out duration-300"
-							aria-label="صفحة الانستجرام"><Icon src={RiLogoInstagramLine} color="black" /></a
-						>
-						<a
-							href="https://www.twitter.com/Abdelra7man1998"
-							target="_blank"
-							class="hover:text-black transition-all border-none ease-in-out duration-300"
-							aria-label="صفحة الاكس"><Icon src={RiLogoTwitterFill} color="black" /></a
-						>
-					</div>
-				</div>
-			</div>
-			<div class="grid place-items-center gap-4">
-				<div
-					class="rounded-full group bg-amber-200 hover:bg-red transition-all ease-in-out duration-300 overflow-hidden h-52 w-52"
-				>
-					<img
-						src={zeyad}
-						class="object-cover saturate-0 group-hover:saturate-100 transition-all ease-in-out duration-300"
-						alt="زياد زين"
-					/>
-				</div>
-				<h3 class="border-b-red border-b-2 p-3 m-0 w-fit">زياد زين</h3>
-				<div class="grid gap-2">
-					<p class="italic m-0">مؤسس المنصة</p>
-					<div class="flex gap-3 items-center text-2xl">
-						<a
-							href="https://www.facebook.com/zeyad.mohammed.7"
-							target="_blank"
-							class="hover:text-black transition-all border-none ease-in-out duration-300"
-							aria-label="صفحة الفيسبوك"><Icon src={RiLogoFacebookCircleFill} color="black" /></a
-						>
-						<a
-							href="https://www.instagram.com/ziad.z.mohamed"
-							target="_blank"
-							class="hover:text-black transition-all border-none ease-in-out duration-300"
-							aria-label="صفحة الانستجرام"><Icon src={RiLogoInstagramLine} color="black" /></a
-						>
-						<a
-							href="https://www.twitter.com/imhotepremmelig"
-							target="_blank"
-							class="hover:text-black transition-all border-none ease-in-out duration-300"
-							aria-label="صفحة الاكس"><Icon src={RiLogoTwitterFill} color="black" /></a
-						>
-					</div>
 				</div>
 			</div>
 		</div>

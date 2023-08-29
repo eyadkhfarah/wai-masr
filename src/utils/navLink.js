@@ -24,13 +24,13 @@ export const menu = [
 		id: 6
 	},
 	{
-		name: 'مناسبات وفعاليات',
+		name: 'فعاليات',
 		link: '/events',
 		newTab: false,
 		id: 4
 	},
 	{
-		name: 'ألبومات',
+		name: 'البومات',
 		link: '/images',
 		newTab: false,
 		id: 3
@@ -48,13 +48,13 @@ export const menu = [
 		id: 8
 	},
 	{
-		name: 'إنضم لينا',
+		name: 'انضم لينا',
 		link: '/join',
 		newTab: false,
 		id: 10
 	},
 	{
-		name: 'إدعمنا',
+		name: 'ادعمنا',
 		link: '/support',
 		newTab: false,
 		id: 9

@@ -7,7 +7,7 @@
 	let events = data.events;
 	let images = data.images;
 
-	let tabs = ['اخر المقالات', 'مختارات وعي', 'الأكثر قراءة'];
+	let tabs = ['اخر المقالات', 'مختارات وعي'];
 	let activeTab = 'اخر المقالات';
 
 	function tabChange(e) {
@@ -102,7 +102,7 @@
 										/>
 										<div class="grid gap-3 h-fit w-full">
 											<span class="text-gray-400 text-xs">
-												{new Date(card.sys.createdAt).toLocaleDateString('ar-arab', {
+												{new Date(card.fields.created).toLocaleDateString('ar-arab', {
 													dateStyle: 'full'
 												})}</span
 											>
@@ -116,7 +116,6 @@
 								</a>
 							{/if}
 						{/each}
-
 					</div>
 
 					<div class="text-white grid h-fit lg:mt-0 mt-10">
@@ -165,12 +164,6 @@
 						<ArtTab {card} />
 					{/if}
 				{/each}
-			{:else if activeTab === 'الأكثر قراءة'}
-				{#each article as card, index (card.sys.id)}
-					{#if index < 4 && card.fields.category === 'اخبار تشرف'}
-						<ArtTab {card} />
-					{/if}
-				{/each}
 			{/if}
 		</div>
 	</div>
@@ -185,7 +178,7 @@
 		>
 		<div class="grid gap-4">
 			<p class="text-2xl font-black text-center m-0 italic z-10">
-				لا تتم وطنية المرء إلا إذا عرف أمته قديمها وحديثها، فإن من جهل قديمها فهو مدَّع في حبها، لأن
+				لا تتم وطنية المرء إلا إذا عرف أمته قديمها وحديثها، فإن من جهل قديمها فهو مدَّع في حبها، <br>لأن
 				من جهل شيئًا عاداه
 			</p>
 
@@ -219,7 +212,7 @@
 <!-- Wai Staion -->
 
 <section>
-	<H2>محطة وعي</H2>
+	<H2>أحدث الفيديوهات</H2>
 
 	<div class="w-full h-full lg:flex grid place-items-center gap-4 mb-6">
 		<iframe
