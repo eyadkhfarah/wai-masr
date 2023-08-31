@@ -145,6 +145,7 @@
 				<h3 class="border-b-red border-b-2 p-3 m-0 w-fit">عبد الرحمن المرشدي</h3>
 				<div class="grid gap-2">
 					<p class="italic m-0">مؤسس المنصة</p>
+					
 				</div>
 			</div>
 		</div>
