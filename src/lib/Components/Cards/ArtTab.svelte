@@ -20,7 +20,7 @@
 		/>
 		<div class="grid h-fit gap-3">
 			<h2 class="text-black text-base m-0 group-hover:text-red transition-all ease-in-out duration-300">{card.fields.title}</h2>
-			<p class="text-gray-400 text-sm">
+			<p class="text-gray-400 text-xs">
 				{new Date(card.fields.created).toLocaleDateString('ar-arab', {
 					dateStyle: 'full'
 				})} |
