@@ -200,7 +200,7 @@
 	<H2>مقالات مختارة</H2>
 	<div class="grid gap-6 lg:grid-cols-3">
 		{#each article as card, index (card.sys.id)}
-			{#if index < 3 && card.fields.feature == false}
+			{#if index < 4 && card.fields.feature == false}
 				<ArtWide {card} />
 			{/if}
 		{/each}
