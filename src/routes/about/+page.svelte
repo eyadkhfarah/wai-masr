@@ -16,12 +16,6 @@
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 	import H1 from '$lib/Components/Text/H1.svelte';
 
-	const data = [
-		{ label: 'كتابة طويلة', details: 'كتاب صغيرة بس مهمة علشان التفاصيل', color: 'blue-500' },
-		{ label: 'كتابة طويلة', details: 'كتاب صغيرة بس مهمة علشان التفاصيل', color: 'blue-400' },
-		{ label: 'كتابة طويلة', details: 'كتاب صغيرة بس مهمة علشان التفاصيل', color: 'blue-200' },
-		{ label: 'كتابة طويلة', details: 'كتاب صغيرة بس مهمة علشان التفاصيل', color: 'blue-500' }
-	];
 </script>
 
 <svelte:head>
@@ -70,18 +64,6 @@
 		}
 	</script>
 </svelte:head>
-
-<!-- <section class="h-96">
-	<Carousel
-	
-	>
-		<div class="h-96">test</div>
-		<div class="h-96">test</div>
-		<div class="h-96">test</div>
-		<div class="h-96">test</div>
-	</Carousel>
-
-</section> -->
 
 <section>
 	<article>
@@ -138,11 +120,27 @@
 				>
 					<img
 						src={elmorshedy}
-						class="object-cover saturate-0 group-hover:saturate-100 transition-all ease-in-out duration-300"
+						class="object-bottom saturate-0 group-hover:saturate-100 transition-all ease-in-out duration-300"
 						alt="عبد الرحمن المرشدي"
 					/>
 				</div>
 				<h3 class="border-b-red border-b-2 p-3 m-0 w-fit">عبد الرحمن المرشدي</h3>
+				<div class="grid gap-2">
+					<p class="italic m-0">مؤسس المنصة</p>
+					
+				</div>
+			</div>
+			<div class="grid place-items-center gap-4">
+				<div
+					class="rounded-full group bg-amber-200 hover:bg-red transition-all ease-in-out duration-300 overflow-hidden h-52 w-52"
+				>
+					<img
+						src={zeyad}
+						class="saturate-0 group-hover:saturate-100 transition-all ease-in-out duration-300"
+						alt="زياد زين"
+					/>
+				</div>
+				<h3 class="border-b-red border-b-2 p-3 m-0 w-fit">زياد زين</h3>
 				<div class="grid gap-2">
 					<p class="italic m-0">مؤسس المنصة</p>
 					

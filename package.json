@@ -1,6 +1,6 @@
 {
 	"name": "wai-masr",
-	"version": "0.0.2",
+	"version": "0.0.6",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",

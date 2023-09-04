@@ -9,6 +9,8 @@
 	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 	import RiLogoYoutubeFill from 'svelte-icons-pack/ri/RiLogoYoutubeFill';
+
+	import { footerLink } from '../../utils/footerLink';
 </script>
 
 <footer class="grid gap-5 md:p-7 md:px-32 p-5 pb-24 text-white bg-red">
@@ -34,14 +36,18 @@
 					class="bg-transparent focus:ring-0 border-none py-6 px-0 text-white placeholder:text-white w-full"
 					placeholder="بريدك الالكتروني"
 				/>
-				
+
 				<span class="cursor-pointer flex gap-2 items-center">
-					<input type="submit" name="subscribe" id="mc-embedded-subscribe" value="اشترك دلوقتي" class="w-36" />
+					<input
+						type="submit"
+						name="subscribe"
+						id="mc-embedded-subscribe"
+						value="اشترك دلوقتي"
+						class="w-36"
+					/>
 					<Icon src={RiSystemArrowLeftLine} />
 				</span>
 			</form>
-
-			
 		</div>
 	</div>
 	<div class="flex items-center justify-center">
@@ -78,56 +84,33 @@
 		</div>
 
 		<div class="md:flex grid md:m-0 mt-16 place-items-center gap-6 md:w-full justify-between">
-			<ul class="md:hidden gap-5 p-0 m-0 list-none text-white font-black text-xs flex">
-				<li>
-					<a
-						href="/privacy-policy"
-						class="text-white hover:border-b-white transition-all ease-in-out duration-300"
-						>سياسة الخصوصية</a
-					>
-				</li>
-				<li>
-					<a
-						href="/terms"
-						class="text-white hover:border-b-white transition-all ease-in-out duration-300"
-						>الشروط والاحكام</a
-					>
-				</li>
-				<li>
-					<a
-						href="/rss"
-						class="text-white hover:border-b-white transition-all ease-in-out duration-300"
-						>خدمة الـ RSS</a
-					>
-				</li>
+			<!-- Moblie -->
+			<ul
+				class="md:hidden p-0 m-0 list-none w-full mb-9 text-white font-black text-base grid gap-9"
+			>
+				{#each footerLink as link (link.id)}
+					<li>
+						<a
+							href={link.link}
+							class="text-white w-full hover:border-b-white border-b-red border-b-4 transition-all ease-in-out duration-300"
+							>{link.title}</a
+						>
+					</li>
+				{/each}
 			</ul>
 
 			<p class="m-0">© {new Date().getFullYear()} وعي مصر - جميع الحقوق محفوظة</p>
 
 			<ul class="md:flex gap-5 p-0 m-0 list-none text-white font-black hidden">
-				<li>
-					<a
-						href="/privacy-policy"
-						class="text-white hover:border-b-white transition-all ease-in-out duration-300"
-						>سياسة الخصوصية</a
-					>
-				</li>
-				<li>—</li>
-				<li>
-					<a
-						href="/terms"
-						class="text-white hover:border-b-white transition-all ease-in-out duration-300"
-						>الشروط والاحكام</a
-					>
-				</li>
-				<li>—</li>
-				<li>
-					<a
-						href="/rss"
-						class="text-white hover:border-b-white transition-all ease-in-out duration-300"
-						>خدمة الـ RSS</a
-					>
-				</li>
+				{#each footerLink as link (link.id)}
+					<li>
+						<a
+							href={link.link}
+							class="text-white hover:border-b-white border-b-red border-b-4 transition-all ease-in-out duration-300"
+							>{link.title}</a
+						>
+					</li>
+				{/each}
 			</ul>
 		</div>
 	</div>

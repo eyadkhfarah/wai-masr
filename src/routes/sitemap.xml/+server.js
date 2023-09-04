@@ -1,5 +1,7 @@
 import { categories } from '../../utils/categories';
 import { menu } from '../../utils/navLink';
+import { footerLink } from '../../utils/footerLink';
+
 let site = 'https://waimasr.vercel.app';
 
 import { client } from '../../lib/contentful-fetch';
@@ -44,6 +46,17 @@ export async function GET() {
             <priority>0.7</priority>
           </url>
         ${categories
+					.map(
+						(page) =>
+							`<url>
+            <loc>${site}/article/${page.link}/</loc>
+            <lastmod>2023-08-14</lastmod>
+            <changefreq>daily</changefreq>
+            <priority>0.7</priority>
+          </url>`
+					)
+					.join('')}
+        ${footerLink
 					.map(
 						(page) =>
 							`<url>
