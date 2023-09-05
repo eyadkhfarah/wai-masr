@@ -31,6 +31,7 @@
 		{#each categories as categorys}
 			<a
 				data-sveltekit-prefetch
+                                data-sveltekit-reload
 				aria-label={category.title}
 				class:border-b-red={categorys.title === category.title}
 				class:text-red={categorys.title === category.title}

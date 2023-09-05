@@ -84,6 +84,7 @@
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": "https://w3ieg.com/post/${article.fields.slug}"
+              "@id": "https://www.w3ieg.com/post/${article.fields.slug}"
             },
             "headline": "${article.fields.title}",
             "description": "${article.fields.subtitle}",
@@ -93,6 +94,7 @@
                 "@type": "Person",
                 "name": "${article.fields.author.fields.name}",
                 "url": "https://w3ieg.com/author/${article.fields.author.fields.slug}"
+                "url": "https://www.w3ieg.com/author/${article.fields.author.fields.slug}"
               }
             ],
             "publisher": {
@@ -111,7 +113,6 @@
           "@context": "https://schema.org/",
           "@type": "ImageObject",
           "contentUrl": {`"https:${article.fields.thumbnail.fields.file.url}"`},
-          "license": "https://w3ieg.com/terms",
         //   "acquireLicensePage": "https://example.com/how-to-use-my-images",
           "creditText": "Wai Masr",
           "creator": {
