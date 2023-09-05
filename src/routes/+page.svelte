@@ -6,6 +6,7 @@
 	let article = data.articles;
 	let events = data.events;
 	let images = data.images;
+	let youtubes = data.youtube;
 
 	let tabs = ['اخر المقالات', 'مختارات وعي'];
 	let activeTab = 'اخر المقالات';
@@ -178,8 +179,8 @@
 		>
 		<div class="grid gap-4">
 			<p class="text-2xl font-black text-center m-0 italic z-10">
-				لا تتم وطنية المرء إلا إذا عرف أمته قديمها وحديثها، فإن من جهل قديمها فهو مدَّع في حبها، <br>لأن
-				من جهل شيئًا عاداه
+				لا تتم وطنية المرء إلا إذا عرف أمته قديمها وحديثها، فإن من جهل قديمها فهو مدَّع في حبها، <br
+				/>لأن من جهل شيئًا عاداه
 			</p>
 
 			<p class="m-0">رائد الفكر القومي المصري - أحمد لطفي السيد</p>
@@ -200,7 +201,7 @@
 	<H2>مقالات مختارة</H2>
 	<div class="grid gap-6 lg:grid-cols-3">
 		{#each article as card, index (card.sys.id)}
-			{#if index < 4 && card.fields.feature == false}
+			{#if index < 3 && card.fields.feature == false}
 				<ArtWide {card} />
 			{/if}
 		{/each}
@@ -215,30 +216,18 @@
 	<H2>أحدث الفيديوهات</H2>
 
 	<div class="w-full h-full lg:flex grid place-items-center gap-4 mb-6">
-		<iframe
-			class="w-full lg:h-60 h-56"
-			src="https://www.youtube.com/embed/xIzWgdHdz8A"
-			title="YouTube video player"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-			allowfullscreen
-		/>
-		<iframe
-			class="w-full lg:h-60 h-56"
-			src="https://www.youtube.com/embed/SSW6Pfa-xRw"
-			title="YouTube video player"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-			allowfullscreen
-		/>
-		<iframe
-			class="w-full lg:h-60 h-56"
-			src="https://www.youtube.com/embed/hqcNi-WH47A"
-			title="YouTube video player"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-			allowfullscreen
-		/>
+		{#each youtubes as youtube (youtube.sys.id)}
+			{#if youtube.fields.main == true}
+				<iframe
+					class="w-full lg:h-60 h-56"
+					src={youtube.fields.link}
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen
+				/>
+			{/if}
+		{/each}
 	</div>
 
 	<BlackBtn

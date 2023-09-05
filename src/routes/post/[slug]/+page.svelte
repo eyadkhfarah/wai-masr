@@ -12,10 +12,6 @@
 	let copied = false;
 	let copiedClass = false;
 
-	const toggleCopy = () => {
-		copiedClass = !copiedClass;
-	};
-
 	export let data;
 
 	let article = data.article;
@@ -23,7 +19,7 @@
 
 	let reading;
 
-	// console.log(article)
+	console.log(article);
 
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
@@ -46,7 +42,23 @@
 			[BLOCKS.EMBEDDED_ASSET]: (node) =>
 				`<img src="https:${node.data.target.fields.file.url}" alt="${node.data.target.fields.title}"/>
 				<p class="mt-5 text-gray-500 text-sm text-center italic">${node.data.target.fields.title}</p>
-				`
+				`,
+			[BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
+				if (node.data.target.sys.contentType.sys.id == 'youtube') {
+					return
+					`	<iframe
+							height="100%"
+							width="100%"
+							scrolling="no"
+							src=${node.data.target.fields.link}
+							title="YouTube video player"
+							frameborder="0"
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+							allowfullscreen={true}
+						/>
+					`;
+				}
+			}
 		}
 	};
 </script>
@@ -84,7 +96,6 @@
             "mainEntityOfPage": {
               "@type": "WebPage",
               "@id": "https://w3ieg.com/post/${article.fields.slug}"
-              "@id": "https://www.w3ieg.com/post/${article.fields.slug}"
             },
             "headline": "${article.fields.title}",
             "description": "${article.fields.subtitle}",
@@ -94,7 +105,6 @@
                 "@type": "Person",
                 "name": "${article.fields.author.fields.name}",
                 "url": "https://w3ieg.com/author/${article.fields.author.fields.slug}"
-                "url": "https://www.w3ieg.com/author/${article.fields.author.fields.slug}"
               }
             ],
             "publisher": {
@@ -220,8 +230,8 @@
 					</span>
 				</p>
 			</div>
-			<div class="flex lg:justify-end justify-between gap-5 md:text-base w-full text-xl font-black">
-				<div class="flex lg:justify-end justify-between w-full gap-5">
+			<div class="flex md:justify-end justify-between gap-5 md:text-base w-full text-xl font-black">
+				<div class="flex md:justify-end justify-between w-full gap-5">
 					<span class="text-sm">شارك المقالة</span>
 					<div class="flex gap-4 relative">
 						<a

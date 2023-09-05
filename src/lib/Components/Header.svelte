@@ -9,18 +9,23 @@
 
 	import { menu } from '../../utils/navLink';
 	import { page } from '$app/stores';
+	import { browser } from '$app/environment';
 
 	let menuTab = false;
 
 	let hidden = true;
 
-	function handleOnScroll() {
-		if (window.scrollY > 140) {
-			hidden = true;
-		} else {
-			hidden = false;
-		}
-	}
+	if (browser) {
+		window.addEventListener(
+			'scroll',
+			() => {
+				if (window.scrollY > 140) {
+					hidden = true;
+				} else {
+					hidden = false;
+				}
+			}
+		)}
 
 	/**
 	 * @type {string}
@@ -55,7 +60,7 @@
 	let year = new Date().toLocaleDateString('ar-arab', { calendar: 'coptic', year: 'numeric' });
 </script>
 
-<svelte:window on:scroll={handleOnScroll} />
+<!-- <svelte:window on:scroll={handleOnScroll} /> -->
 
 <header
 	class={`z-[100] ${
@@ -95,23 +100,28 @@
 	</div>
 </header>
 
-<nav class={`sticky top-0 ${
+<nav
+	class={`sticky top-0 ${
 		hidden || $page.url.pathname != '/'
 			? 'bg-black border-gray-900'
 			: 'bg-transparent border-gray-400'
-	}  z-40 text-white w-full transition-all ease-in-out duration-300 border-t p-3 text-base lg:flex justify-between items-center hidden`}>
+	}  z-40 text-white w-full transition-all ease-in-out duration-300 border-t p-3 text-base lg:flex justify-between items-center hidden`}
+>
 	<ul class="flex gap-5 list-none m-0 p-0">
 		{#each menu as link (link.id)}
-			<li>
-				<a
-					href={link.link}
-					aria-label={link.name}
-					target={`${link.newTab === false ? '_self' : '_blank'}`}
-					class={`${
-						link.link === $page.url.pathname ? 'text-red' : 'text-white'
-					}  whitespace-nowrap hover:text-red transition-all ease-in-out duration-300`}>{link.name}</a
-				>
-			</li>
+			{#if link.link != '/support'}
+				<li>
+					<a
+						href={link.link}
+						aria-label={link.name}
+						target={`${link.newTab === false ? '_self' : '_blank'}`}
+						class={`${
+							link.link === $page.url.pathname ? 'text-red' : 'text-white'
+						}  whitespace-nowrap hover:text-red transition-all ease-in-out duration-300`}
+						>{link.name}</a
+					>
+				</li>
+			{/if}
 		{/each}
 	</ul>
 

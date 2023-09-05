@@ -9,11 +9,13 @@ const client = contentful.createClient({
 
 const res = await client.getEntries({ content_type: "news" })
 const res1 = await client.getEntries({ content_type: "events" })
-const res2 = await client.getEntries({ content_type: 'images' });
+const res2 = await client.getEntries({ content_type: 'images' })
+const res3 = await client.getEntries({ content_type: 'youtube' })
 
   return {
       articles: res.items,
       events: res1.items,
       images: res2.items,
+      youtube: res3.items,
   }
 }
