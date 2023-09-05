@@ -15,7 +15,7 @@
 
 <footer class="grid gap-5 md:p-7 md:px-32 p-5 pb-24 text-white bg-red">
 	<div class="grid gap-5 text-center">
-		<h2 class="text-4xl">سجل في نشرتـــنا الاخبــــارية</h2>
+		<h2 class="text-4xl">سجل في نشرتـــنا اليوميــــة</h2>
 		<p>عشان يوصلك كل جديد</p>
 
 		<div class="border-b-8 border-black mb-14">
