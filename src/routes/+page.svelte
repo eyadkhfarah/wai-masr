@@ -58,7 +58,7 @@
 
 		<div class="md:px-28 bg-gradient-to-t w-full from-black absolute bottom-0 grid md:p-0 p-5">
 			<div class="grid z-10">
-				<div class="py-5 text-white">
+				<div class="pb-5 text-white">
 					<div class="grid gap-5">
 						<div>
 							<h1>{events[0].fields.name}</h1>
