@@ -43,9 +43,8 @@
 				`<img src="https:${node.data.target.fields.file.url}" alt="${node.data.target.fields.title}"/>
 				<p class="mt-5 text-gray-500 text-sm text-center italic">${node.data.target.fields.title}</p>
 				`,
-			[BLOCKS.EMBEDDED_ENTRY]: (node, children) => {
+			[BLOCKS.EMBEDDED_ENTRY]: (node) => {
 				if (node.data.target.sys.contentType.sys.id == 'youtube') {
-					return
 					`	<iframe
 							height="100%"
 							width="100%"
