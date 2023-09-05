@@ -12,7 +12,7 @@
 				"@context": "https://schema.org/",
 				"@type": "ImageObject",
 				"contentUrl": "https:${images.fields.file.url}",
-				"license": "https://waimasr.vercel.app/terms",
+				"license": "https://w3ieg.com/terms",
 				"creditText": "Wai Masr",
 				"creator": {
 					"@type": "Person",
@@ -124,7 +124,7 @@
 				<span class="font-black">شارك الصورة</span>
 				<div class="flex gap-4 relative">
 					<a
-						href={`https://www.facebook.com/sharer/sharer.php?u=${`https://waimasr.vercel.app/images/${image.fields.slug}`}&t=${
+						href={`https://www.facebook.com/sharer/sharer.php?u=${`https://w3ieg.com/images/${image.fields.slug}`}&t=${
 							image.fields.description.content[0].content[0].value
 						}`}
 						target="_blank"
@@ -134,20 +134,20 @@
 					<a
 						href={`https://www.twitter.com/intent/tweet?text=${
 							image.fields.description.content[0].content[0].value
-						}&url=${`https://waimasr.vercel.app/images/${image.fields.slug}`}&hastags=وعي_مصر`}
+						}&url=${`https://w3ieg.com/images/${image.fields.slug}`}&hastags=وعي_مصر`}
 						target="_blank"
 						class="border-none"
 						aria-label="شارك عبر الاكس"><Icon src={RiLogoTwitterFill} /></a
 					>
 					<a
-						href={`https://wa.me/?text=${`https://waimasr.vercel.app/images/${image.fields.slug}`}&hastags=وعي_مصر`}
+						href={`https://wa.me/?text=${`https://w3ieg.com/images/${image.fields.slug}`}&hastags=وعي_مصر`}
 						target="_blank"
 						class="border-none"
 						aria-label="شارك عبر الواتس"><Icon src={RiLogoWhatsappLine} /></a
 					>
 					<span
 						class="cursor-pointer"
-						use:copy={`https://waimasr.vercel.app/images/${image.fields.slug}`}
+						use:copy={`https://w3ieg.com/images/${image.fields.slug}`}
 						on:svelte-copy={() => (copied = !copied)}
 					>
 						<Icon src={RiBusinessLinksLine} />

@@ -2,7 +2,7 @@ import { categories } from '../../utils/categories';
 import { menu } from '../../utils/navLink';
 import { footerLink } from '../../utils/footerLink';
 
-let site = 'https://waimasr.vercel.app';
+let site = 'https://w3ieg.com';
 
 import { client } from '../../lib/contentful-fetch';
 

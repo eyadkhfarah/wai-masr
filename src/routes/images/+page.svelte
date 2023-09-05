@@ -11,7 +11,7 @@
 						'@context': 'https://schema.org/',
 						'@type': 'ImageObject',
 						contentUrl: 'https:${image.fields.image[0].fields.file.url}',
-						license: 'https://waimasr.vercel.app/terms',
+						license: 'https://w3ieg.com/terms',
 						creditText: 'Wai Masr',
 						creator: {
 							'@type': 'Person',

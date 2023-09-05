@@ -3,7 +3,7 @@ import { client } from '../../lib/contentful-fetch';
 
 import { categories } from '../../utils/categories';
 
-const website = 'https://waimasr.vercel.app';
+const website = 'https://w3ieg.com';
 
 export async function GET() {
 	const res = await client.getEntries({ content_type: 'news' });

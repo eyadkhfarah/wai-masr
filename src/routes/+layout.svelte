@@ -15,7 +15,7 @@
 </script>
 
 <svelte:head>
-	<link rel="canonical" href={`https://waimasr.vercel.app${$page.url.pathname}`} />
+	<link rel="canonical" href={`https://w3ieg.com${$page.url.pathname}`} />
 	<script
 		async
 		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2125888694918985"
