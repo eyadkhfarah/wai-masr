@@ -41,14 +41,14 @@
 
 			<p>وبمجرد موافقة علي إعلانتك هتظهر في أول المقالة او في الصفحة الرئيسية.</p>
 
-			<H2>
+			<p class="font-black">
 				لو عايز معلومات بخصوص خيارات الإعلان: <span
 					><a href="mailto:nationalism.awareness@gmail.com" class="w-fit"
 						>nationalism.awareness@gmail.com</a
 					></span
 				>
-			</H2>
+			</p>
 		</div>
-		<img src={Image} alt="ads" height="384" class="h-96 w-fit" />
+		<img src={Image} alt="ads" height="320" class="h-80 w-fit" />
 	</div>
 </section>
