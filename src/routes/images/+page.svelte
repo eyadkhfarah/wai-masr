@@ -5,21 +5,7 @@
 
 	let images = data.images;
 
-	let struc = images.map(
-		(image) =>
-			`{
-						'@context': 'https://schema.org/',
-						'@type': 'ImageObject',
-						contentUrl: 'https:${image.fields.image[0].fields.file.url}',
-						license: 'https://w3ieg.com/terms',
-						creditText: 'Wai Masr',
-						creator: {
-							'@type': 'Person',
-							name: '${image.fields.owner}'
-						},
-						copyrightNotice: 'Wai Masr'
-					},`
-	);
+	import { JsonLd } from 'svelte-meta-tags';
 
 	import H1 from '$lib/Components/Text/H1.svelte';
 
@@ -34,15 +20,6 @@
 	<meta property="og:image" content={og} />
 	<meta property="og:title" content={title} />
 	<meta property="og:description" content={desc} />
-	<script
-		type="application/ld+json"
-		key="structured-data"
-		dangerouslySetInnerHTML={{
-			__html: `[
-				${struc}
-				];`
-		}}
-	></script>
 </svelte:head>
 
 <section>
@@ -53,6 +30,8 @@
 	>
 		{#each images as image (image.sys.id)}
 			<a
+				vocab="https://schema.org/"
+				typeof="ImageObject"
 				href={`/images/${image.fields.slug}`}
 				aria-label={image.fields.title}
 				class="group relative h-fit"
@@ -65,12 +44,24 @@
 					class="block h-full w-full object-cover object-center group-hover:opacity-50 transition-all ease-in-out duration-300"
 					src={`https:${image.fields.image[0].fields.file.url}`}
 					alt={image.fields.title}
+					property="contentUrl"
 				/>
 				<span
 					class="absolute bottom-3 right-3 transition-opacity opacity-0 group-hover:opacity-100 text-black text-xl font-black"
-					>{image.fields.title}</span
+					property="name">{image.fields.title}</span
 				>
 			</a>
+
+			<span rel="schema:creator">
+				<span typeof="schema:Person">
+					<span property="schema:name" content={image.fields.owner} />
+				</span>
+			</span>
+
+			<span class="hidden" property="license"> https://w3ieg.com/terms</span><br />
+
+			<span class="hidden" property="copyrightNotice">وعي - مصر</span><br />
+			<span class="hidden" property="creditText">وعي - مصر</span><br />
 		{/each}
 	</div>
 </section>

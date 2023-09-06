@@ -103,8 +103,6 @@
 	}}
 />
 
-<!--  -->
-
 <svelte:head>
 	<title>{article.fields.title} :: وعي - مصر</title>
 	<meta name="description" content={article.fields.subtitle} />
