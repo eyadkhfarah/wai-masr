@@ -48,6 +48,7 @@
 		"contentful": "^10.3.6",
 		"countapi-js": "^1.0.2",
 		"reading-time": "^1.5.0",
-		"svelte-icons-pack": "^2.1.0"
+		"svelte-icons-pack": "^2.1.0",
+		"svelte-meta-tags": "^3.0.3"
 	}
 }

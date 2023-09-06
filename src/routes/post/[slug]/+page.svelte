@@ -9,6 +9,8 @@
 
 	import news from '$lib/images/google-news.svg';
 
+	import { JsonLd } from 'svelte-meta-tags';
+
 	let copied = false;
 	let copiedClass = false;
 
@@ -41,15 +43,14 @@
 		renderNode: {
 			[BLOCKS.EMBEDDED_ASSET]: (node) =>
 				`<img src="https:${node.data.target.fields.file.url}" alt="${node.data.target.fields.title}"/>
-				<p class="mt-5 text-gray-500 text-sm text-center italic">${node.data.target.fields.title}</p>
-				`,
+				<p class="mt-5 text-gray-500 text-sm text-center italic">${node.data.target.fields.title}</p>`,
 			[BLOCKS.EMBEDDED_ENTRY]: (node) => {
 				if (node.data.target.sys.contentType.sys.id == 'youtube') {
 					`	<iframe
 							height="100%"
 							width="100%"
 							scrolling="no"
-							src=${node.data.target.fields.link}
+							src="${node.data.target.fields.link}"
 							title="YouTube video player"
 							frameborder="0"
 							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -62,6 +63,48 @@
 	};
 </script>
 
+<JsonLd
+	schema={{
+		'@type': 'Article',
+		mainEntityOfPage: {
+			'@type': 'WebPage',
+			'@id': 'https://w3ieg.com/article'
+		},
+		headline: article.fields.title,
+		description: article.fields.subtitle,
+		image: ['https:' + article.fields.thumbnail.fields.file.url],
+		datePublished: article.sys.createdAt,
+		dateModified: article.sys.updatedAt,
+		author: {
+			'@type': 'Person',
+			name: 'وعي - مصر'
+		},
+		publisher: {
+			'@type': 'Organization',
+			name: 'وعي - مصر',
+			logo: {
+				'@type': 'ImageObject',
+				url: 'https://w3ieg.com/favicon.svg'
+			}
+		}
+	}}
+/>
+
+<JsonLd
+	schema={{
+		'@type': 'ImageObject',
+		contentUrl: 'https:' + article.fields.thumbnail.fields.file.url,
+		creditText: 'Wai Masr',
+		creator: {
+			'@type': 'Person',
+			name: article.fields.author.fields.name
+		},
+		copyrightNotice: 'Wai Masr'
+	}}
+/>
+
+<!--  -->
+
 <svelte:head>
 	<title>{article.fields.title} :: وعي - مصر</title>
 	<meta name="description" content={article.fields.subtitle} />
@@ -69,7 +112,7 @@
 	<meta property="og:title" content={article.fields.title} />
 	<meta property="og:description" content={article.fields.subtitle} />
 	<meta property="og:image" content={`https:${article.fields.thumbnail.fields.file.url}`} />
-	<meta property="article:published_time" content={article.fields.created} />
+	<meta property="article:published_time" content={article.sys.createdAt} />
 	<meta property="article:modified_time" content={article.sys.updatedAt} />
 	<!-- Twitter -->
 	<meta property="twitter:title" content={article.fields.title} />
@@ -78,58 +121,10 @@
 	<meta property="article:section" content={article.fields.category} />
 	<meta name="twitter:creator" content="@" />
 	<meta property="og:type" content="article" />
-	<meta name="twitter:creator" content={article.fields.author.fields.twitterUrl} />
 
 	{#each article.fields.tags as tag (tag)}
 		<meta property="article:tag" content={tag} />
 	{/each}
-
-	<script
-		type="application/ld+json"
-		key="structured-data"
-		dangerouslySetInnerHTML={{
-			__html: `
-          {
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://w3ieg.com/post/${article.fields.slug}"
-            },
-            "headline": "${article.fields.title}",
-            "description": "${article.fields.subtitle}",
-            "image": "${article.fields.thumbnail.fields.file.url}",
-            "author": [
-              {
-                "@type": "Person",
-                "name": "${article.fields.author.fields.name}",
-                "url": "https://w3ieg.com/author/${article.fields.author.fields.slug}"
-              }
-            ],
-            "publisher": {
-              "@type": "Organization",
-              "name": "وعي - مصر"
-            },
-            "datePublished": "${article.fields.created}",
-            "dateModified": "${article.sys.updatedAt}"
-          }
-        `
-		}}
-	></script>
-
-	<script type="application/ld+json">
-        {
-          "@context": "https://schema.org/",
-          "@type": "ImageObject",
-          "contentUrl": `"https:${article.fields.thumbnail.fields.file.url}"`,
-          "creditText": "Wai Masr",
-          "creator": {
-            "@type": "Person",
-            "name": `"${article.fields.author.fields.name}"`
-           },
-          "copyrightNotice": "Wai Masr"
-        }
-	</script>
 </svelte:head>
 
 <section class="lg:grid lg:grid-cols-4 gap-10 m-0">
