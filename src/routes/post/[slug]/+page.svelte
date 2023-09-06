@@ -121,12 +121,11 @@
         {
           "@context": "https://schema.org/",
           "@type": "ImageObject",
-          "contentUrl": {`"https:${article.fields.thumbnail.fields.file.url}"`},
-        //   "acquireLicensePage": "https://example.com/how-to-use-my-images",
+          "contentUrl": `"https:${article.fields.thumbnail.fields.file.url}"`,
           "creditText": "Wai Masr",
           "creator": {
             "@type": "Person",
-            "name": {`"${article.fields.author.fields.name}"`}
+            "name": `"${article.fields.author.fields.name}"`
            },
           "copyrightNotice": "Wai Masr"
         }
