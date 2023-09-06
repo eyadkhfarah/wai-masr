@@ -51,17 +51,6 @@
 	{@html '<script>' + partytownSnippet() + '</script>'}
 </svelte:head>
 
-<!-- Google Tag Manager (noscript) -->
-<noscript>
-	<iframe
-		src="https://www.googletagmanager.com/ns.html?id=GTM-K74BSCHL"
-		height="0"
-		width="0"
-		style="display:none;visibility:hidden"
-	/>
-</noscript>
-<!-- End Google Tag Manager (noscript) -->
-
 <Header />
 
 {#if $Delayed}
@@ -74,6 +63,17 @@
 
 <Footer />
 <ToTop />
+
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+	<iframe
+		src="https://www.googletagmanager.com/ns.html?id=GTM-K74BSCHL"
+		height="0"
+		width="0"
+		style="display:none;visibility:hidden"
+	/>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
 
 <style>
 </style>
