@@ -51,17 +51,6 @@
 					property="name">{image.fields.title}</span
 				>
 			</a>
-
-			<span rel="schema:creator">
-				<span typeof="schema:Person">
-					<span property="schema:name" content={image.fields.owner} />
-				</span>
-			</span>
-
-			<span class="hidden" property="license"> https://w3ieg.com/terms</span><br />
-
-			<span class="hidden" property="copyrightNotice">وعي - مصر</span><br />
-			<span class="hidden" property="creditText">وعي - مصر</span><br />
 		{/each}
 	</div>
 </section>

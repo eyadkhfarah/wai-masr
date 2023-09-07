@@ -10,6 +10,9 @@
 
 	let title = 'وعي - مصر :: فعاليات';
 	let desc = 'أهم فعاليات والاعياد المصرية';
+
+	import { JsonLd } from 'svelte-meta-tags';
+
 </script>
 
 <svelte:head>

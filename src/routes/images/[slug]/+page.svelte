@@ -6,22 +6,6 @@
 	export let data;
 	let image = data.images;
 
-	let struc = image.fields.image.map(
-		(images) =>
-			`{
-				"@context": "https://schema.org/",
-				"@type": "ImageObject",
-				"contentUrl": "https:${images.fields.file.url}",
-				"license": "https://w3ieg.com/terms",
-				"creditText": "Wai Masr",
-				"creator": {
-					"@type": "Person",
-					"name": ${images.fields.owner}
-				},
-				"copyrightNotice": "Clara Kent"
-			},`
-	);
-
 	let imageClick = null;
 
 	let copied = false;
@@ -45,9 +29,24 @@
 	import H1 from '$lib/Components/Text/H1.svelte';
 
 	import og from '$lib/images/main.png';
+	import { JsonLd } from 'svelte-meta-tags';
 	let title = `${image.fields.title} :: وعي - مصر`;
 	let desc = image.fields.description.content[0].content[0].value;
 </script>
+
+<JsonLd
+	schema={{
+		'@type': 'ImageObject',
+			contentUrl: 'https:' + image.fields.image[0].fields.file.url,
+			license: 'https:w3ieg.com/terms',
+			creditText: 'Wai Masr',
+			creator: {
+				'@type': 'Person',
+				name: image.fields.owner
+			},
+		copyrightNotice: 'Wai Masr',
+	}}
+/>
 
 <svelte:head>
 	<title>{title}</title>
@@ -65,54 +64,6 @@
 	<!-- Twitter -->
 	<meta property="twitter:title" content={image.fields.title} />
 	<meta property="og:description" content={image.fields.description.content[0].content[0].value} />
-
-	<!-- <script
-		type="application/ld+json"
-		key="structured-data"
-		dangerouslySetInnerHTML={{
-			__html: `[
-				${image.fields.image.map(
-					(images) =>
-						`{
-			'@context': 'https://schema.org/',
-			'@type': 'ImageObject',
-			contentUrl: '',
-			license: '',
-			creditText: 'Wai Masr',
-			creator: {
-				'@type': 'Person',
-				name: '${images.fields.owner}'
-			},
-			copyrightNotice: 'Wai Masr'
-		},`
-				)}
-				];`
-		}}
-	></script> -->
-
-	<!-- <script
-		type="application/ld+json"
-		key="structured-data"
-		dangerouslySetInnerHTML={{
-			__html: `[
-				${image.fields.image.map(
-					(images) =>
-						`{
-			'@context': 'https://schema.org/',
-			'@type': 'ImageObject',
-			contentUrl: '',
-			license: '',
-			creditText: 'Wai Masr',
-			creator: {
-				'@type': 'Person',
-				name: '${images.fields.owner}'
-			},
-			copyrightNotice: 'Wai Masr'
-		},`
-				)}
-				];`
-		}}
-	/> -->
 </svelte:head>
 
 <section class="grid lg:grid-cols-2 gap-9">

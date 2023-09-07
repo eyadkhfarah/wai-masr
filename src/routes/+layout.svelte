@@ -12,6 +12,7 @@
 	import GoogleAnalytics from '$lib/Components/GoogleAnalytics.svelte';
 
 	import { partytownSnippet } from '@builder.io/partytown/integration';
+	import Cookies from '$lib/Components/Modal/Cookies.svelte';
 </script>
 
 <svelte:head>
@@ -59,6 +60,7 @@
 {/if}
 
 <Footer />
+<Cookies />
 <ToTop />
 
 <!-- Google Tag Manager (noscript) -->

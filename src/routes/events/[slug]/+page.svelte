@@ -3,10 +3,48 @@
 
 	import H1 from '$lib/Components/Text/H1.svelte';
 	import Email from '$lib/Components/Email.svelte';
+	import { JsonLd } from 'svelte-meta-tags';
 
 	export let data;
 	let events = data.event;
 </script>
+
+<JsonLd
+	schema={{
+		'@type': 'Event',
+		mainEntityOfPage: {
+			'@type': 'WebPage',
+			'@id': 'https://w3ieg.com/events'
+		},
+		name: event.fields.name,
+		description: events.fields.description,
+		image: ['https:' + events.fields.image.fields.file.url],
+		startDate: events.fields.date,
+		eventStatus: 'https://schema.org/EventScheduled',
+		eventAttendanceMode: 'https://schema.org/MixedEventAttendanceMode',
+		location: [
+			{
+				'@type': 'VirtualLocation',
+				url: ''
+			},
+			{
+				'@type': 'Place',
+				name: events.fields.location,
+				address: {
+					'@type': 'PostalAddress',
+					streetAddress: '',
+					addressLocality: '',
+					postalCode: '',
+					addressCountry: 'EG'
+				}
+			}
+		],
+		performer: {
+			'@type': 'Person',
+			name: ''
+		}
+	}}
+/>
 
 <svelte:head>
 	<title>{events.fields.name} :: وعي - مصر</title>
@@ -27,7 +65,7 @@
           "@context": "https://schema.org",
           "@type": "Event",
           "name": {`"${event.fields.name}"`},
-          "description": {`"${events.fields.description}"`},
+          "description": {`"${}"`},
           "image": {`"${events.fields.image.fields.file.url}"`},
           "startDate": {`"${events.fields.date}"`},
           "eventStatus": "https://schema.org/EventScheduled",
