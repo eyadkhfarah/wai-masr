@@ -73,7 +73,7 @@
 		on:click={handeler}
 		aria-label="menu"
 	>
-		<Icon src={CgMenuRightAlt} color="white" />
+		<Icon src={CgMenuRightAlt} color="white" size={48}/>
 	</button>
 
 	<div class="flex w-full place-items-center gap-4 items-center">

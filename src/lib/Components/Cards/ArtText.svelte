@@ -15,11 +15,11 @@
 	<div class="card p-0 grid gap-7 border-b-gray-300 border-b-2">
 		<Category>{card.fields.category}</Category>
 		<h2
-			class="text-black m-0 group-hover:text-red transition-all ease-in-out duration-300 md:text-xl text-sm"
+			class="text-black m-0 group-hover:text-red transition-all ease-in-out duration-300 text-xl"
 		>
 			{card.fields.title}
 		</h2>
-		<p class="text-gray-400 text-xs">
+		<p class="text-gray-400 text-base">
 			{new Date(card.fields.created).toLocaleDateString('ar-arab', {
 				dateStyle: 'full'
 			})} |

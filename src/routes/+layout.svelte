@@ -74,6 +74,3 @@
 	/>
 </noscript>
 <!-- End Google Tag Manager (noscript) -->
-
-<style>
-</style>

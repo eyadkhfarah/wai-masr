@@ -97,18 +97,18 @@
 										<img
 											src={`https:${card.fields.square.fields.file.url}`}
 											alt={card.fields.title}
-											class="object-cover w-20 h-20"
-											width="80"
-											height="80"
+											class="object-cover w-24 h-24"
+											width="96"
+											height="96"
 										/>
 										<div class="grid gap-3 h-fit w-full">
-											<span class="text-gray-400 text-xs">
+											<span class="text-gray-400 text-sm">
 												{new Date(card.fields.created).toLocaleDateString('ar-arab', {
 													dateStyle: 'full'
 												})}</span
 											>
 											<h3
-												class="text-black text-sm m-0 group-hover:text-red transition-all ease-in-out duration-300"
+												class="text-black text-base m-0 group-hover:text-red transition-all ease-in-out duration-300"
 											>
 												{card.fields.title}
 											</h3>
@@ -121,7 +121,7 @@
 
 					<div class="text-white grid h-fit lg:mt-0 mt-10">
 						<h3 class="m-0 w-full whitespace-nowrap">عايز تكتب مقالات؟</h3>
-						<p class="my-1 text-xs w-full">ابعت مقالتك لينا واحنا هننشرها لك</p>
+						<p class="my-1 text-base w-full">ابعت مقالتك لينا واحنا هننشرها لك</p>
 						<WhiteBtn label={'أنشر مقالتك'} link={`/contact`} />
 					</div>
 				</div>
@@ -140,7 +140,7 @@
 				{/if}
 			{/each}
 			<a
-				class="text-text w-full font-black flex justify-between items-center py-5 border-none"
+				class="text-text w-full lg:m-0 mb-5 font-black flex justify-between items-center py-5 border-none"
 				href="/articles"
 				rel="noopener noreferrer"
 				>اقرا اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
@@ -151,7 +151,7 @@
 
 		<!--Tabs  -->
 
-		<div class="grid gap-5 h-fit w-full">
+		<div class="grid gap-10 h-fit w-full">
 			<Tabs {tabs} {activeTab} on:tabChange={tabChange} />
 			{#if activeTab === 'اخر المقالات'}
 				{#each article as card, index (card.sys.id)}

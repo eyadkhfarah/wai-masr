@@ -47,8 +47,8 @@
 	<div class="w-full h-full relative">
 		<div class="absolute w-full bottom-0">
 			<div class="grid gap-3 p-9 place-content-between bg-gradient-to-t from-black">
-				<div class="flex gap-5">
-					<button class="bg-white rounded-full p-1" on:click={right}>
+				<div class="flex items-center gap-5">
+					<button class="bg-white rounded-full p-3" on:click={right}>
 						<Icon src={RiSystemArrowRightSLine} color="black" />
 					</button>
 
@@ -56,7 +56,7 @@
 					<span class="text-white"> | </span>
 					<span class="text-white">{events.length}</span>
 
-					<button class="bg-white rounded-full p-1" on:click={left}>
+					<button class="bg-white rounded-full p-3" on:click={left}>
 						<Icon src={RiSystemArrowLeftSLine} color="black" />
 					</button>
 				</div>
