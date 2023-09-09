@@ -78,7 +78,7 @@
 
 	<div class="flex w-full place-items-center gap-4 items-center">
 		<a href="/" aria-label="وعي مصر" class="text-white border-none">
-			<img src={logo} alt="لوجو وعي مصر" class="lg:h-16 h-12" />
+			<img src={logo} alt="لوجو وعي مصر" class="lg:h-16 h-12" height="48" width="128"/>
 		</a>
 
 		<span class="text-white font-black lg:text-xl text-sm">قلب مشروع الوعي القومي المصري </span>

@@ -1,4 +1,6 @@
 <script>
+// @ts-nocheck
+
 	import logo from '../images/logo.svg';
 
 	// @ts-ignore
@@ -84,7 +86,7 @@
 		</div>
 	</div>
 	<div class="flex items-center justify-center">
-		<a href="/" class="space-y-20 py-26"><img src={logo} alt="لوجو وعي - مصر" class="h-24" /></a>
+		<a href="/" class="space-y-20 py-26"><img src={logo} alt="لوجو وعي - مصر" class="h-24" height="96" width="240"/></a>
 	</div>
 
 	<div class="grid gap-6 text-center place-items-center">
