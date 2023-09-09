@@ -117,7 +117,7 @@
 				aria-label="قناة اليوتيوب"><Icon src={RiLogoYoutubeFill} color="white" /></a
 			>
 		</div>
-
+ 
 		<!-- Mobile -->
 		<div class="flex lg:hidden flex-row-reverse gap-4 text-white text-3xl">
 			<a
