@@ -8,6 +8,7 @@
 	aria-label={card.fields.title}
 	data-sveltekit-prefetch
 	class="border-none group"
+	data-sveltekit-reload
 >
 	<div class="card flex gap-8 border-t-2 border-t-gray-300">
 		<img

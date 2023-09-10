@@ -9,6 +9,7 @@
 	data-sveltekit-prefetch
 	aria-label={card.fields.title}
 	class="border-none group"
+	data-sveltekit-reload
 >
 	<div class="card p-0 flex gap-4">
 		<img

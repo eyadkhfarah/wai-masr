@@ -86,7 +86,8 @@
 						{#each article as card, index (card.sys.id)}
 							{#if index < 3}
 								<a
-									data-sveltekit-prefetch
+								data-sveltekit-prefetch
+									data-sveltekit-reload
 									aria-label={card.fields.title}
 									href={`/post/${card.fields.slug}`}
 									class="md:border-red border-none group"

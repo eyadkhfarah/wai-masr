@@ -10,6 +10,7 @@
 		data-sveltekit-prefetch
 		aria-label={article[0].fields.title}
 		class="border-none group"
+		data-sveltekit-reload
 	>
 		<div
 			class="absolute bottom-0 grid bg-gradient-to-t from-black place-items-center lg:gap-4 gap-2 text-center w-full px-7"

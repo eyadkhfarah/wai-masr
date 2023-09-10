@@ -24,7 +24,7 @@
 			{new Date(card.fields.created).toLocaleDateString('ar-arab', {
 				dateStyle: 'full'
 			})} |
-			<span class="text-blue-600 font-black" data-sveltekit-prefetch
+			<span class="text-blue-600 font-black" data-sveltekit-prefetch data-sveltekit-reload
 				><a aria-label={card.fields.title} href="/" class="border-none">{card.fields.category}</a
 				></span
 			>

@@ -9,6 +9,7 @@
 <a
 	class="border-none group"
 	data-sveltekit-prefetch
+	data-sveltekit-reload
 	aria-label={card.fields.title}
 	href={`/post/${card.fields.slug}`}
 >
