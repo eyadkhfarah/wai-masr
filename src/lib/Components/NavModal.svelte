@@ -19,8 +19,8 @@
 		class="lg:hidden md:flex flex-col gap-10 bg-primary text-white p-8 fixed top-0 h-full w-full z-[100] transition-all duration-300 ease-in-out overflow-y-auto"
 	>
 		<div class="flex justify-between items-center">
-			<button class="cursor-pointer text-3xl w-fit h-fit" aria-label="cloase" on:click>
-				<Icon src={RiSystemCloseLine} color="black" size={38}/>
+			<button class="cursor-pointer p-3 text-3xl w-fit h-fit" aria-label="cloase" on:click>
+				<Icon src={RiSystemCloseLine} color="black" size={25}/>
 			</button>
 
 			<span class="flex items-center gap-5 text-gray-500 font-black text-sm">

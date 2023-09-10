@@ -90,60 +90,31 @@
 	</div>
 
 	<div class="grid gap-6 text-center place-items-center">
-		<div class="lg:flex hidden flex-row-reverse gap-4 text-white text-3xl">
+		<div class="flex flex-row-reverse gap-2 text-white text-3xl">
 			<a
 				href="https://web.facebook.com/W3i.EG"
-				class="hover:text-black transition-all ease-in-out duration-300"
+				class="hover:text-black transition-all p-3 ease-in-out duration-300"
 				aria-label="صفحة الفيسبوك"><Icon src={RiLogoFacebookCircleFill} color="white" /></a
 			>
 			<a
 				href="https://www.instagram.com/w3i.eg"
-				class="hover:text-black transition-all ease-in-out duration-300"
+				class="hover:text-black transition-all p-3 ease-in-out duration-300"
 				aria-label="صفحة الانستجرام"><Icon src={RiLogoInstagramLine} color="white" /></a
 			>
 			<a
 				href="https://www.twitter.com/W3iEgy"
-				class="hover:text-black transition-all ease-in-out duration-300"
+				class="hover:text-black transition-all p-3 ease-in-out duration-300"
 				aria-label="صفحة الاكس"><Icon src={RiLogoTwitterFill} color="white" /></a
 			>
 			<a
 				href="https://t.me/W3iEgy"
-				class="hover:text-black transition-all ease-in-out duration-300"
+				class="hover:text-black transition-all p-3 ease-in-out duration-300"
 				aria-label="صفحة الاكس"><Icon src={RiLogoTelegramFill} color="white" /></a
 			>
 			<a
 				href="https://www.youtube.com/@w3istation"
-				class="hover:text-black transition-all ease-in-out duration-300"
+				class="hover:text-black transition-all p-3 ease-in-out duration-300"
 				aria-label="قناة اليوتيوب"><Icon src={RiLogoYoutubeFill} color="white" /></a
-			>
-		</div>
- 
-		<!-- Mobile -->
-		<div class="flex lg:hidden flex-row-reverse gap-4 text-white text-3xl">
-			<a
-				href="https://web.facebook.com/W3i.EG"
-				class="hover:text-black transition-all ease-in-out duration-300"
-				aria-label="صفحة الفيسبوك"><Icon src={RiLogoFacebookCircleFill} color="white" size={48} /></a
-			>
-			<a
-				href="https://www.instagram.com/w3i.eg"
-				class="hover:text-black transition-all ease-in-out duration-300"
-				aria-label="صفحة الانستجرام"><Icon src={RiLogoInstagramLine} color="white" size={48} /></a
-			>
-			<a
-				href="https://www.twitter.com/W3iEgy"
-				class="hover:text-black transition-all ease-in-out duration-300"
-				aria-label="صفحة الاكس"><Icon src={RiLogoTwitterFill} color="white" size={48} /></a
-			>
-			<a
-				href="https://t.me/W3iEgy"
-				class="hover:text-black transition-all ease-in-out duration-300"
-				aria-label="صفحة الاكس"><Icon src={RiLogoTelegramFill} color="white" size={48} /></a
-			>
-			<a
-				href="https://www.youtube.com/@w3istation"
-				class="hover:text-black transition-all ease-in-out duration-300"
-				aria-label="قناة اليوتيوب"><Icon src={RiLogoYoutubeFill} color="white" size={48} /></a
 			>
 		</div>
 
