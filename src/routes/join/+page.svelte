@@ -29,7 +29,7 @@
 </svelte:head>
 
 <section class="lg:flex md:grid md:place-items-center justify-between gap-7">
-	<div class="grid h-fit">
+	<div class="grid h-fit lg:w-1/2">
 		<H1>شارك معانا في مهمتنا</H1>
 		<p>
 			لو حابب تكون جزء من فريقنا وعندك شغف كبير بمواضيع القومية المصرية والتاريخ المصري وحابب تكتسب

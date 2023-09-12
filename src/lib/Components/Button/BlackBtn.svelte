@@ -19,5 +19,5 @@
 </script>
 
 <a class="Blackbtn" target={`${newTab === false ? '_self' : '_blank'}`} href={link} aria-label={label} rel="noopener noreferrer">
-	{@html label}<span><Icon color="red" src={RiSystemArrowLeftLine} /></span>
+	{@html label}<span><Icon color="red" src={RiSystemArrowLeftLine} size={20}/></span>
 </a>

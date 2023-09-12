@@ -20,14 +20,14 @@
 		<h2 class="text-4xl">سجل في نشرتـــنا اليوميــــة</h2>
 		<p>عشان يوصلك كل جديد</p>
 
-		<div class="lg:block hidden  border-b-8 border-black mb-14">
+		<div class="lg:border-b-8 border-black mb-14">
 			<form
 				action="https://app.us13.list-manage.com/subscribe/post?u=12828e0dccc7b63c7af44ec09&amp;id=64ffd839d7&amp;f_id=001890e2f0"
 				method="post"
 				id="mc-embedded-subscribe-form"
 				name="mc-embedded-subscribe-form"
 				target="_self"
-				class="flex items-center md:text-base text-sm validate"
+				class="md:flex grid md:gap-0 gap-4 items-center md:text-base text-sm validate"
 			>
 				<input
 					type="email"
@@ -35,52 +35,19 @@
 					required
 					value=""
 					name="email"
-					class="bg-transparent focus:ring-0 border-none py-6 px-0 text-white placeholder:text-white w-full"
+					class="bg-transparent lg:border-none border-t-0 border-x-0 border-b-8 border-black focus:ring-0 py-6 px-0 text-white placeholder:text-white w-full"
 					placeholder="بريدك الالكتروني"
 				/>
 
-				<span class="cursor-pointer lg:flex hidden gap-2 items-center">
+				<span class="cursor-pointer flex justify-between items-center gap-2 lg:border-none border-b-4 border-black py-4">
 					<input
 						type="submit"
 						name="subscribe"
 						id="mc-embedded-subscribe"
 						value="اشترك دلوقتي"
-						class="w-36"
+						class="lg:w-36 w-full cursor-pointer text-right"
 					/>
-					<Icon src={RiSystemArrowLeftLine} />
-				</span>
-			</form>
-		</div>
-
-		<!-- Moblie -->
-		<div class="lg:hidden block mb-14">
-			<form
-				action="https://app.us13.list-manage.com/subscribe/post?u=12828e0dccc7b63c7af44ec09&amp;id=64ffd839d7&amp;f_id=001890e2f0"
-				method="post"
-				id="mc-embedded-subscribe-form"
-				name="mc-embedded-subscribe-form"
-				target="_self"
-				class="grid gap-6 text-base validate"
-			>
-				<input
-					type="email"
-					id="mce-EMAIL"
-					required
-					value=""
-					name="email"
-					class="bg-transparent focus:ring-0 border-b-8 border-x-0 border-t-0 border-black py-6 px-0 text-white placeholder:text-white w-full"
-					placeholder="بريدك الالكتروني"
-				/>
-
-				<span class="cursor-pointer border-black border-b-4 py-3 gap-2 flex items-center">
-					<input
-						type="submit"
-						name="subscribe"
-						id="mc-embedded-subscribe"
-						value="اشترك دلوقتي"
-						class="w-full text-right"
-					/>
-					<Icon src={RiSystemArrowLeftLine} />
+					<Icon src={RiSystemArrowLeftLine} size={25}/>
 				</span>
 			</form>
 		</div>
@@ -109,7 +76,7 @@
 			<a
 				href="https://t.me/W3iEgy"
 				class="hover:text-black transition-all p-3 ease-in-out duration-300"
-				aria-label="صفحة الاكس"><Icon src={RiLogoTelegramFill} color="white" /></a
+				aria-label="قناة التليجرام"><Icon src={RiLogoTelegramFill} color="white" /></a
 			>
 			<a
 				href="https://www.youtube.com/@w3istation"

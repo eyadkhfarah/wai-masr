@@ -42,7 +42,7 @@
 	const options = {
 		renderNode: {
 			[BLOCKS.EMBEDDED_ASSET]: (node) =>
-				`<img src="https:${node.data.target.fields.file.url}" alt="${node.data.target.fields.title}"/>
+				`<img src="https:${node.data.target.fields.file.url}" width="${node.data.target.fields.file.details.image.width}" height="${node.data.target.fields.file.details.image.height}" alt="${node.data.target.fields.title}"/>
 				<p class="mt-5 text-gray-500 text-sm text-center italic">${node.data.target.fields.title}</p>`,
 			[BLOCKS.EMBEDDED_ENTRY]: (node) => {
 				if (node.data.target.sys.contentType.sys.id == 'youtube') {

@@ -68,7 +68,7 @@
 	} w-full p-5 flex sticky top-0 transition-all ease-in-out duration-300 gap-5 lg:justify-between items-center`}
 >
 	<button
-		class="text-xl lg:hidden p-3 block cursor-pointer text-white"
+		class="text-xl lg:hidden p-3 pr-0 block cursor-pointer text-white"
 		class:open={menuTab}
 		on:click={handeler}
 		aria-label="menu"

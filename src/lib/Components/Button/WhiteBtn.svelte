@@ -25,5 +25,5 @@
 	href={link}
 	rel="noopener noreferrer"
 >
-	{label}<span><Icon color="red" src={RiSystemArrowLeftLine} /></span>
+	{label}<span><Icon color="red" src={RiSystemArrowLeftLine} size={20}/></span>
 </a>
