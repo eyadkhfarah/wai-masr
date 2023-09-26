@@ -46,8 +46,6 @@
 		"@contentful/rich-text-html-renderer": "^16.1.0",
 		"@paypal/paypal-js": "^6.0.1",
 		"contentful": "^10.3.6",
-		"countapi-js": "^1.0.2",
-		"reading-time": "^1.5.0",
 		"svelte-icons-pack": "^2.1.0",
 		"svelte-meta-tags": "^3.0.3"
 	}
