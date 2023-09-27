@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 
 	import logo from '../images/logo.svg';
 
@@ -22,6 +22,7 @@
 
 		<div class="lg:border-b-8 border-black mb-14">
 			<form
+				netlify
 				action="https://app.us13.list-manage.com/subscribe/post?u=12828e0dccc7b63c7af44ec09&amp;id=64ffd839d7&amp;f_id=001890e2f0"
 				method="post"
 				id="mc-embedded-subscribe-form"
@@ -39,7 +40,9 @@
 					placeholder="بريدك الالكتروني"
 				/>
 
-				<span class="cursor-pointer flex justify-between items-center gap-2 lg:border-none border-b-4 border-black py-4">
+				<span
+					class="cursor-pointer flex justify-between items-center gap-2 lg:border-none border-b-4 border-black py-4"
+				>
 					<input
 						type="submit"
 						name="subscribe"
@@ -47,13 +50,15 @@
 						value="اشترك دلوقتي"
 						class="lg:w-36 w-full cursor-pointer text-right"
 					/>
-					<Icon src={RiSystemArrowLeftLine} size={25}/>
+					<Icon src={RiSystemArrowLeftLine} size={25} />
 				</span>
 			</form>
 		</div>
 	</div>
 	<div class="flex items-center justify-center">
-		<a href="/" class="space-y-20 py-26"><img src={logo} alt="لوجو وعي - مصر" class="h-24" height="96" width="240"/></a>
+		<a href="/" class="space-y-20 py-26"
+			><img src={logo} alt="لوجو وعي - مصر" class="h-24" height="96" width="240" /></a
+		>
 	</div>
 
 	<div class="grid gap-6 text-center place-items-center">

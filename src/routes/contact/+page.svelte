@@ -64,7 +64,7 @@
 		>
 	</div>
 
-	<form class="w-full grid gap-5" action="">
+	<form netlify class="w-full grid gap-5" action="">
 		<input
 			type="text"
 			name="First Name"
