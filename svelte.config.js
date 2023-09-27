@@ -1,4 +1,4 @@
-import adapter from '@sveltejs/adapter-static';
+import adapter from '@sveltejs/adapter-auto';
 import { partytownVite } from '@builder.io/partytown/utils';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import { join } from 'path';
