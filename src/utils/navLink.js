@@ -13,7 +13,7 @@ export const menu = [
 	},
 	{
 		name: 'المكتبة القومية',
-		link: 'https://maktabaqawmya.vercel.app',
+		link: 'https://www.maktabaqawmya.com/',
 		newTab: true,
 		id: 5
 	},
