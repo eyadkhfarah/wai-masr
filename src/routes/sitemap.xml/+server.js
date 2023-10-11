@@ -33,6 +33,17 @@ export async function GET() {
           </url>`
 					)
 					.join('')}
+          ${footerLink
+						.map(
+							(page) =>
+								`<url>
+              <loc>${site}${page.link}/</loc>
+              <lastmod>2023-08-14</lastmod>
+              <changefreq>daily</changefreq>
+              <priority>0.7</priority>
+            </url>`
+						)
+						.join('')}
         <url>
             <loc>${site}/privacy-policy/</loc>
             <lastmod>2023-08-14</lastmod>
@@ -46,17 +57,6 @@ export async function GET() {
             <priority>0.7</priority>
           </url>
         ${categories
-					.map(
-						(page) =>
-							`<url>
-            <loc>${site}/article/${page.link}/</loc>
-            <lastmod>2023-08-14</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.7</priority>
-          </url>`
-					)
-					.join('')}
-        ${footerLink
 					.map(
 						(page) =>
 							`<url>
