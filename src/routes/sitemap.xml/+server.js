@@ -60,7 +60,7 @@ export async function GET() {
 					.map(
 						(page) =>
 							`<url>
-            <loc>${site}/article/${page.link}/</loc>
+            <loc>${site}/articles/${page.link}/</loc>
             <lastmod>2023-08-14</lastmod>
             <changefreq>daily</changefreq>
             <priority>0.7</priority>
