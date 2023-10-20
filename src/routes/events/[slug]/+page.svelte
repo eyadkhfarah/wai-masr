@@ -16,7 +16,7 @@
 			'@type': 'WebPage',
 			'@id': 'https://w3ieg.com/events'
 		},
-		name: event.fields.name,
+		name: events.fields.name,
 		description: events.fields.description,
 		image: ['https:' + events.fields.image.fields.file.url],
 		startDate: events.fields.date,
@@ -39,10 +39,6 @@
 				}
 			}
 		],
-		performer: {
-			'@type': 'Person',
-			name: ''
-		}
 	}}
 />
 
