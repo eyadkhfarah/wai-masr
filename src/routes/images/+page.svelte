@@ -10,7 +10,7 @@
 	import H1 from '$lib/Components/Text/H1.svelte';
 
 	import og from '$lib/images/main.png';
-	let title = 'وعي - مصر :: ألبوم الصور ';
+	let title = 'ألبوم الصور :: وعي - مصر';
 	let desc = `صفحة ألبوم الصور بموقع وعي - مصر.`;
 </script>
 
