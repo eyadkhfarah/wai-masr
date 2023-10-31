@@ -13,7 +13,7 @@
 	import editing from '$lib/images/Jobs/video-editing.svg';
 	import writer from '$lib/images/Jobs/writer.svg';
 
-	let title = 'وعي - مصر :: انضم لينا';
+	let title = 'انضم لينا :: وعي - مصر';
 	let desc = 'انضم مع فريق وعي - مصر';
 
 	// @ts-ignore
