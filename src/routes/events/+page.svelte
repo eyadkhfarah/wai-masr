@@ -8,7 +8,7 @@
 
 	let events = data.events;
 
-	let title = 'وعي - مصر :: فعاليات';
+	let title = 'فعاليات :: وعي - مصر';
 	let desc = 'أهم فعاليات والاعياد المصرية';
 
 	import { JsonLd } from 'svelte-meta-tags';
