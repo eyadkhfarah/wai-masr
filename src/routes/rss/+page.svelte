@@ -10,7 +10,7 @@
 	import H1 from '$lib/Components/Text/H1.svelte';
 	import og from '$lib/images/main.png';
 	import BlackBtn from '$lib/Components/Button/BlackBtn.svelte';
-	let title = 'وعي - مصر :: خدمة الـ RSS ';
+	let title = '- خدمة الـ RSS :: وعي - مصر';
 	let desc = `صفحة خاصة لخدمة الـ RSS الخاصة بموقع وعي - مصر.`;
 </script>
 
