@@ -9,7 +9,7 @@
 	import BlackBtn from '$lib/Components/Button/BlackBtn.svelte';
 	import H2 from '$lib/Components/Text/H2.svelte';
 
-	let title = 'وعي - مصر :: اتعلم اللغة المصرية ';
+	let title = 'اتعلم اللغة المصرية :: وعي - مصر';
 	let desc = `تقدر تتعلم اللغة المصرية سواء بالكتابة الهيروغليفية أو الكتابة القبطية مع وعي - مصر.`;
 </script>
 
