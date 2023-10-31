@@ -4,7 +4,7 @@
 	import H1 from '$lib/Components/Text/H1.svelte';
 
 	import og from '$lib/images/main.png';
-	let title = 'وعي - مصر :: سياسة الخصوصية ';
+	let title = 'سياسة الخصوصية :: وعي - مصر';
 	let desc = `صفحة خاصة لسياسة الخصوصية الخاصة بموقع وعي - مصر.`;
 </script>
 
