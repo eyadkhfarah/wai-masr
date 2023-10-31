@@ -11,7 +11,7 @@
 	import og from '$lib/images/main.png';
 	import cash from '$lib/images/qr-code.png';
 
-	let title = 'وعي - مصر :: أدعمنا';
+	let title = 'أدعمنا :: وعي - مصر';
 	let desc = 'ادعم فريق وعي - مصر ماديا';
 
 	let amount = 1.62;
