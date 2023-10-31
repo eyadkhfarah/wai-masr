@@ -2,7 +2,7 @@
 	// @ts-nocheck
 
 	import og from '$lib/images/main.png';
-	let title = 'وعي - مصر :: احنا مين';
+	let title = 'احنا مين :: وعي - مصر';
 	let desc = `أهلًا بيكم في وعي - مصر إحنا هنا فى "وعي" بنقدم نفسنا إننا جزء من مشروع أكبر ألا وهو مشروع الوعي القومي المصري.`;
 
 	import zeyad from '$lib/images/zeyad.png';
