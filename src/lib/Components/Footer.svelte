@@ -66,26 +66,31 @@
 			<a
 				href="https://web.facebook.com/W3i.EG"
 				class="hover:text-black transition-all p-3 ease-in-out duration-300"
+				target="_blank"
 				aria-label="صفحة الفيسبوك"><Icon src={RiLogoFacebookCircleFill} color="white" /></a
 			>
 			<a
 				href="https://www.instagram.com/w3i.eg"
 				class="hover:text-black transition-all p-3 ease-in-out duration-300"
+				target="_blank"
 				aria-label="صفحة الانستجرام"><Icon src={RiLogoInstagramLine} color="white" /></a
 			>
 			<a
 				href="https://www.twitter.com/W3iEgy"
 				class="hover:text-black transition-all p-3 ease-in-out duration-300"
+				target="_blank"
 				aria-label="صفحة الاكس"><Icon src={RiLogoTwitterFill} color="white" /></a
 			>
 			<a
 				href="https://t.me/W3iEgy"
 				class="hover:text-black transition-all p-3 ease-in-out duration-300"
+				target="_blank"
 				aria-label="قناة التليجرام"><Icon src={RiLogoTelegramFill} color="white" /></a
 			>
 			<a
 				href="https://www.youtube.com/@w3istation"
 				class="hover:text-black transition-all p-3 ease-in-out duration-300"
+				target="_blank"
 				aria-label="قناة اليوتيوب"><Icon src={RiLogoYoutubeFill} color="white" /></a
 			>
 		</div>
