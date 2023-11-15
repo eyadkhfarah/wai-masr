@@ -344,7 +344,7 @@
 			<h3 class="m-0 text-white">تابعنا في Google News</h3>
 			<a
 				class="Blackbtn text-white hover:border-b-white"
-				href="https://news.google.com/publications/CAAqBwgKMKSi0wsw8r3qAw"
+				href="https://news.google.com/publications/CAAqBwgKMIW_pgww68zsAg"
 				aria-label="Google news"
 				>تابعنا هنا<span><Icon color="black" src={RiSystemArrowLeftLine} /></span></a
 			>
