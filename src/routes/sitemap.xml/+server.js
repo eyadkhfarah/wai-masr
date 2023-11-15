@@ -44,18 +44,6 @@ export async function GET() {
             </url>`
 						)
 						.join('')}
-        <url>
-            <loc>${site}/privacy-policy/</loc>
-            <lastmod>2023-08-14</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.7</priority>
-          </url>
-        <url>
-            <loc>${site}/terms/</loc>
-            <lastmod>2023-08-14</lastmod>
-            <changefreq>daily</changefreq>
-            <priority>0.7</priority>
-          </url>
         ${categories
 					.map(
 						(page) =>
