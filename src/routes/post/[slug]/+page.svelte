@@ -346,6 +346,7 @@
 				class="Blackbtn text-white hover:border-b-white"
 				href="https://news.google.com/publications/CAAqBwgKMIW_pgww68zsAg"
 				aria-label="Google news"
+				target="_blank"
 				>تابعنا هنا<span><Icon color="black" src={RiSystemArrowLeftLine} /></span></a
 			>
 		</div>
