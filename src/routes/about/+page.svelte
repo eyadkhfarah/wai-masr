@@ -4,10 +4,7 @@
 	import og from '$lib/images/main.png';
 	let title = 'احنا مين :: وعي - مصر';
 	let desc = `أهلًا بيكم في وعي - مصر إحنا هنا فى "وعي" بنقدم نفسنا إننا جزء من مشروع أكبر ألا وهو مشروع الوعي القومي المصري.`;
-
-	import zeyad from '$lib/images/zeyad.png';
-	import elmorshedy from '$lib/images/elmorshedy.png';
-
+	
 	// @ts-ignore
 	import Icon from 'svelte-icons-pack/Icon.svelte';
 	import RiLogoFacebookCircleFill from 'svelte-icons-pack/ri/RiLogoFacebookCircleFill';
@@ -112,41 +109,6 @@
 		</ul>
 
 		<h2>تعريفنا بنفسنا كمسؤلين فى "وعي"؟</h2>
-
-		<div class="md:flex grid justify-center gap-8 py-8">
-			<div class="grid place-items-center gap-4">
-				<div
-					class="rounded-full group bg-amber-200 hover:bg-red transition-all ease-in-out duration-300 overflow-hidden h-52 w-52"
-				>
-					<img
-						src={elmorshedy}
-						class="object-bottom saturate-0 group-hover:saturate-100 transition-all ease-in-out duration-300"
-						alt="عبد الرحمن المرشدي"
-					/>
-				</div>
-				<h3 class="border-b-red border-b-2 p-3 m-0 w-fit">عبد الرحمن المرشدي</h3>
-				<div class="grid gap-2">
-					<p class="italic m-0">مؤسس المنصة</p>
-					
-				</div>
-			</div>
-			<div class="grid place-items-center gap-4">
-				<div
-					class="rounded-full group bg-amber-200 hover:bg-red transition-all ease-in-out duration-300 overflow-hidden h-52 w-52"
-				>
-					<img
-						src={zeyad}
-						class="saturate-0 group-hover:saturate-100 transition-all ease-in-out duration-300"
-						alt="زياد زين"
-					/>
-				</div>
-				<h3 class="border-b-red border-b-2 p-3 m-0 w-fit">زياد زين</h3>
-				<div class="grid gap-2">
-					<p class="italic m-0">مؤسس المنصة</p>
-					
-				</div>
-			</div>
-		</div>
 
 		<p>
 			إحنا مجموعة شباب مصريين من تخصصات مختلفة، ولكن جمعنا أهداف مشتركة وهي حبنا وإعتزازنا وفخرنا
