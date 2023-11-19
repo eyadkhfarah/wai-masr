@@ -12,6 +12,7 @@
 	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
 	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 	import H1 from '$lib/Components/Text/H1.svelte';
+	import News from '$lib/Components/News.svelte';
 
 </script>
 
@@ -121,6 +122,8 @@
 			المصرية فوق أي إعتبار، بالإضافة الى إقصاء كل الأفكار الأممية المعادية للدولة المصرية وكيان
 			الوطن.
 		</p>
+
+		<News />
 
 		<h3>وعي - مصر نبض التيار القومي المصري، من داخل مصر وبأفكار شباب مصر القوميين</h3>
 		<p>شارك، إطرح، ناقش، محتواك القومي <a href="https://linktr.ee/w3i.eg">كل لينكاتنا</a>.</p>

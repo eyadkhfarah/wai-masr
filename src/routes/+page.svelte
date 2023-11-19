@@ -35,6 +35,7 @@
 	import ArtText from '$lib/Components/Cards/ArtText.svelte';
 	import BlackBtn from '$lib/Components/Button/BlackBtn.svelte';
 	import WhiteBtn from '$lib/Components/Button/WhiteBtn.svelte';
+	import News from '$lib/Components/News.svelte';
 </script>
 
 <svelte:head>
@@ -86,7 +87,7 @@
 						{#each article as card, index (card.sys.id)}
 							{#if index < 3}
 								<a
-								data-sveltekit-prefetch
+									data-sveltekit-prefetch
 									data-sveltekit-reload
 									aria-label={card.fields.title}
 									href={`/post/${card.fields.slug}`}
@@ -209,6 +210,10 @@
 	</div>
 
 	<BlackBtn label={'المزيد من المقالات'} newTab={true} link={'/articles'} />
+</section>
+
+<section>
+	<News />
 </section>
 
 <!-- Wai Staion -->
