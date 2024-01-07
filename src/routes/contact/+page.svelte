@@ -12,6 +12,34 @@
 	import og from '$lib/images/main.png';
 	let title = 'وعي - مصر :: اتواصل معانا';
 	let desc = 'تواصل مع فريق وعي - مصر';
+
+	import { form, field } from 'svelte-forms';
+	import { required, email, pattern, min } from 'svelte-forms/validators';
+
+	const FirstName = field('FirstName', '', [required()]);
+	const LastName = field('LastName', '', [required()]);
+	const emails = field('email', '', [
+		email(),
+		required(),
+		pattern(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]{2,4}$/)
+	]);
+	const phone = field('phone', '', [required(), min(11)]);
+	const governate = field('governate', '');
+	const message = field('message', '', [required()]);
+
+	const myForm = form(FirstName, LastName, emails, phone, governate, message);
+
+	// async function submit(event) {
+	// 	const form = event.target;
+	// 	const data = new FormData(form);
+
+	// 	console.log(data);
+
+	// 	// await fetch('/api/newsletter', {
+	// 	//   method: 'POST',
+	// 	//   body: data
+	// 	// })
+	// }
 </script>
 
 <svelte:head>
@@ -64,7 +92,7 @@
 		>
 	</div>
 
-	<form netlify class="w-full grid gap-5" action="">
+	<form netlify class="w-full grid gap-5" method="POST">
 		<input
 			type="text"
 			name="First Name"
@@ -73,6 +101,9 @@
 			placeholder="اسمك الاول*"
 			class="input"
 		/>
+		<!-- {#if $myForm.hasError('FirstName.required')}
+			<p class="text-red">اكتب اسمك الاول</p>
+		{/if} -->
 		<input
 			type="text"
 			name="Last Name"
@@ -92,7 +123,15 @@
 		<input type="tel" name="phone" id="phone" placeholder="رقم الموبايل" class="input" />
 		<input type="text" name="governate" id="governate" placeholder="محافظتك" class="input" />
 
-		<textarea class="input" name="message" id="message" placeholder="ابعتلنا رسالتك*" required />
+		<textarea
+			class="input"
+			name="message"
+			id="message"
+			rows={10}
+			cols={30}
+			placeholder="ابعتلنا رسالتك*"
+			required
+		/>
 
 		<input accept="application/pdf" type="file" id="actual-btn" hidden />
 
@@ -102,7 +141,7 @@
 			>أرفع مقالتك بملف PDF <span /></label
 		>
 
-		<button type="button" class="Blackbtn w-full font-black">
+		<button type="submit" class="Blackbtn w-full font-black">
 			ابعــــت
 			<span><Icon color="red" src={RiSystemArrowLeftLine} /></span>
 		</button>

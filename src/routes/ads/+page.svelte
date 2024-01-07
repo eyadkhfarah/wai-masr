@@ -2,7 +2,7 @@
 	// @ts-nocheck
 
 	import og from '$lib/images/main.png';
-	let title = 'وعي - مصر :: اعلن عندنا';
+	let title = 'اعلن عندنا :: وعي - مصر';
 	let desc = `لو عايز تعلن عن مشروعك أو منتج هتلاقي جمهورك اللي انت عايزه`;
 
 	// @ts-ignore
