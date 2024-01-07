@@ -48,7 +48,7 @@ body {
     }
     
     .input {
-        @apply w-full bg-transparent border-b-4 border-0 border-b-red px-0 focus:ring-0 
+        @apply w-full bg-transparent border-b-4 border-0 border-b-red px-0 focus:ring-0 focus:border-b-red
     }
 
     ul {

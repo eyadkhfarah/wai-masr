@@ -100,6 +100,7 @@
 			id="firstName"
 			placeholder="اسمك الاول*"
 			class="input"
+			bind:value={$FirstName.value}
 		/>
 		<!-- {#if $myForm.hasError('FirstName.required')}
 			<p class="text-red">اكتب اسمك الاول</p>
@@ -111,6 +112,7 @@
 			id="lastName"
 			placeholder="اسم العائلة*"
 			class="input"
+			bind:value={$LastName.value}
 		/>
 		<input
 			type="email"
@@ -141,7 +143,7 @@
 			>أرفع مقالتك بملف PDF <span /></label
 		>
 
-		<button type="submit" class="Blackbtn w-full font-black">
+		<button type="submit" class="Blackbtn w-full font-black" on:click={myForm.subscribe}>
 			ابعــــت
 			<span><Icon color="red" src={RiSystemArrowLeftLine} /></span>
 		</button>

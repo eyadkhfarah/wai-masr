@@ -6,11 +6,6 @@
 	let desc = `لو عايز تعلن عن مشروعك أو منتج هتلاقي جمهورك اللي انت عايزه`;
 
 	// @ts-ignore
-	import Icon from 'svelte-icons-pack/Icon.svelte';
-	import RiLogoFacebookCircleFill from 'svelte-icons-pack/ri/RiLogoFacebookCircleFill';
-	import RiLogoInstagramLine from 'svelte-icons-pack/ri/RiLogoInstagramLine';
-	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
-	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 	import H1 from '$lib/Components/Text/H1.svelte';
 
 	import Image from '$lib/images/design objectives.svg';
