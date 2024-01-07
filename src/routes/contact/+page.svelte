@@ -121,9 +121,10 @@
 			id="email"
 			placeholder="بريدك الإلكتروني*"
 			class="input"
+			bind:value={$emails.value}
 		/>
-		<input type="tel" name="phone" id="phone" placeholder="رقم الموبايل" class="input" />
-		<input type="text" name="governate" id="governate" placeholder="محافظتك" class="input" />
+		<input type="tel" name="phone" id="phone" placeholder="رقم الموبايل" class="input" bind:value={$phone.value} />
+		<input type="text" name="governate" id="governate" placeholder="محافظتك" class="input" bind:value={$governate.value} />
 
 		<textarea
 			class="input"
@@ -133,6 +134,7 @@
 			cols={30}
 			placeholder="ابعتلنا رسالتك*"
 			required
+			bind:value={$message.value}
 		/>
 
 		<input accept="application/pdf" type="file" id="actual-btn" hidden />
