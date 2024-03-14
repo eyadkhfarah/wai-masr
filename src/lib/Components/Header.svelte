@@ -4,7 +4,7 @@
 	import FiSearch from 'svelte-icons-pack/fi/FiSearch';
 	import CgMenuRightAlt from 'svelte-icons-pack/cg/CgMenuRightAlt';
 
-	import logo from '../images/logo.svg';
+	import logo from '../images/Ramadan.svg';
 	import NavModal from './NavModal.svelte';
 
 	import { menu } from '../../utils/navLink';
