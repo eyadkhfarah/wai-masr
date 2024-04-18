@@ -7,10 +7,8 @@
 	
 	// @ts-ignore
 	import { Icon } from 'svelte-icons-pack';
-	// import RiLogoFacebookCircleFill from 'svelte-icons-pack/ri/RiLogoFacebookCircleFill';
-	// import RiLogoInstagramLine from 'svelte-icons-pack/ri/RiLogoInstagramLine';
-	// import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
-	// import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
+	import { RiLogosFacebookCircleFill, RiLogosInstagramLine, RiLogosTelegramFill, RiLogosTwitterXFill } from 'svelte-icons-pack/ri';
+	
 	import H1 from '$lib/Components/Text/H1.svelte';
 	import News from '$lib/Components/News.svelte';
 	import AdsRegtangle from '$lib/Components/Ads/AdsRegtangle.svelte';
@@ -132,28 +130,28 @@
 
 		<h3>تابع حسابتنا على وسائل التواصل الإجتماعي المختلفة:</h3>
 
-		<!-- <div class="flex items-center gap-5 text-3xl my-5">
+		<div class="flex items-center gap-5 text-3xl my-5">
 			<a
 				href="https://web.facebook.com/W3i.EG"
 				class="hover:text-black transition-all border-none ease-in-out duration-300"
-				aria-label="صفحة الفيسبوك"><Icon src={RiLogoFacebookCircleFill} color="black" /></a
+				aria-label="صفحة الفيسبوك"><Icon src={RiLogosFacebookCircleFill} color="black" /></a
 			>
 			<a
 				href="https://www.instagram.com/w3i.eg"
 				class="hover:text-black transition-all border-none ease-in-out duration-300"
-				aria-label="صفحة الانستجرام"><Icon src={RiLogoInstagramLine} color="black" /></a
+				aria-label="صفحة الانستجرام"><Icon src={RiLogosInstagramLine} color="black" /></a
 			>
 			<a
 				href="https://www.twitter.com/W3iEgy"
 				class="hover:text-black transition-all border-none ease-in-out duration-300"
-				aria-label="صفحة الاكس"><Icon src={RiLogoTwitterFill} color="black" /></a
+				aria-label="صفحة الاكس"><Icon src={RiLogosTwitterXFill} color="black" /></a
 			>
 			<a
 				href="https://t.me/W3iEgy"
 				class="hover:text-black transition-all border-none ease-in-out duration-300"
-				aria-label="صفحة الاكس"><Icon src={RiLogoTelegramFill} color="black" /></a
+				aria-label="صفحة الاكس"><Icon src={RiLogosTelegramFill} color="black" /></a
 			>
-		</div> -->
+		</div>
 
 		<p>تقدر تشاركنا و تشوف كل أخبارنا و مقالاتنا علي الهاشتاجات الخاصة بينا</p>
 
