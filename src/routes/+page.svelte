@@ -23,8 +23,8 @@
 	import Tabs from '$lib/Components/Tabs.svelte';
 
 	// @ts-ignore
-	import Icon from 'svelte-icons-pack/Icon.svelte';
-	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
+	import { Icon } from 'svelte-icons-pack';
+	import { RiArrowsArrowLeftLine } from 'svelte-icons-pack/ri';
 	import Events from '$lib/Components/Cards/Events.svelte';
 	import H2 from '$lib/Components/Text/H2.svelte';
 
@@ -145,7 +145,7 @@
 				class="text-text w-full lg:m-0 mb-5 font-black flex justify-between items-center py-5 border-none"
 				href="/articles"
 				rel="noopener noreferrer"
-				>اقرا اكتر <span><Icon color="red" src={RiSystemArrowLeftLine} /></span></a
+				>اقرا اكتر <span><Icon color="red" src={RiArrowsArrowLeftLine} /></span></a
 			>
 		</div>
 

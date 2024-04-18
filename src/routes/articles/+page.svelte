@@ -7,9 +7,8 @@
 
 	import og from '$lib/images/main.png';
 	import H1 from '$lib/Components/Text/H1.svelte';
-	import Icon from 'svelte-icons-pack/Icon.svelte';
-	import RiSystemArrowRightSLine from 'svelte-icons-pack/ri/RiSystemArrowRightSLine';
-	import RiSystemArrowLeftSLine from 'svelte-icons-pack/ri/RiSystemArrowLeftSLine';
+	import { Icon } from 'svelte-icons-pack';
+	import { RiArrowsArrowLeftSLine, RiArrowsArrowRightSLine} from 'svelte-icons-pack/ri';
 	import { paginate, PaginationNav } from 'svelte-paginate';
 	import ArtWide from '$lib/Components/Cards/ArtWide.svelte';
 
@@ -60,7 +59,7 @@
 		global(.option.active)
 		on:setPage={(e) => (currentPage = e.detail.page)}
 	>
-		<span slot="prev"><Icon src={RiSystemArrowRightSLine} color="black" /></span>
-		<span slot="next"><Icon src={RiSystemArrowLeftSLine} color="black" /></span>
+		<span slot="prev"><Icon src={RiArrowsArrowRightSLine} color="black" /></span>
+		<span slot="next"><Icon src={RiArrowsArrowLeftSLine} color="black" /></span>
 	</PaginationNav>
 </section>

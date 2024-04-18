@@ -1,8 +1,8 @@
 <script>
 	// @ts-nocheck
-	import Icon from 'svelte-icons-pack/Icon.svelte';
-	import FiSearch from 'svelte-icons-pack/fi/FiSearch';
-	import CgMenuRightAlt from 'svelte-icons-pack/cg/CgMenuRightAlt';
+	import { Icon } from 'svelte-icons-pack';
+	import { FiSearch } from 'svelte-icons-pack/fi';
+	import { CgMenuRightAlt } from 'svelte-icons-pack/cg';
 
 	import logo from '../images/Ramadan.svg';
 	import NavModal from './NavModal.svelte';
@@ -16,16 +16,14 @@
 	let hidden = true;
 
 	if (browser) {
-		window.addEventListener(
-			'scroll',
-			() => {
-				if (window.scrollY > 140) {
-					hidden = true;
-				} else {
-					hidden = false;
-				}
+		window.addEventListener('scroll', () => {
+			if (window.scrollY > 140) {
+				hidden = true;
+			} else {
+				hidden = false;
 			}
-		)}
+		});
+	}
 
 	/**
 	 * @type {string}
@@ -73,12 +71,12 @@
 		on:click={handeler}
 		aria-label="menu"
 	>
-		<Icon src={CgMenuRightAlt} color="white" size={25}/>
+		<Icon src={CgMenuRightAlt} color="white" size={25} />
 	</button>
 
 	<div class="flex w-full place-items-center gap-4 items-center">
 		<a href="/" aria-label="وعي مصر" class="text-white border-none">
-			<img src={logo} alt="لوجو وعي مصر" class="lg:h-16 h-12" height="48" width="128"/>
+			<img src={logo} alt="لوجو وعي مصر" class="lg:h-16 h-12" height="48" width="128" />
 		</a>
 
 		<span class="text-white font-black lg:text-xl text-sm">قلب مشروع الوعي القومي المصري </span>
@@ -95,8 +93,10 @@
 			href={`/search-result?search=` + search}
 			aria-label="بحث"
 			data-sveltekit-reload
-			class="text-white border-none"><Icon src={FiSearch} /></a
+			class="text-white border-none"
 		>
+			<Icon src={FiSearch} />
+		</a>
 	</div>
 </header>
 

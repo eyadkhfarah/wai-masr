@@ -16,13 +16,8 @@
 	};
 
 	// @ts-ignore
-	import Icon from 'svelte-icons-pack/Icon.svelte';
-	import RiBusinessLinksLine from 'svelte-icons-pack/ri/RiBusinessLinksLine';
-	import RiLogoFacebookCircleFill from 'svelte-icons-pack/ri/RiLogoFacebookCircleFill';
-	import RiLogoWhatsappLine from 'svelte-icons-pack/ri/RiLogoWhatsappLine';
-	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
-
-	import RiSystemCheckLine from 'svelte-icons-pack/ri/RiSystemCheckLine';
+	import { Icon } from 'svelte-icons-pack';
+	import {RiBusinessLinksLine, RiLogosFacebookCircleFill, RiLogosWhatsappLine, RiLogosTwitterXFill, RiSystemCheckLine} from 'svelte-icons-pack/ri';
 
 	import { copy } from 'svelte-copy';
 
@@ -82,7 +77,7 @@
 						}`}
 						target="_blank"
 						class="border-none"
-						aria-label="شارك عبر الفيسبوك"><Icon src={RiLogoFacebookCircleFill} /></a
+						aria-label="شارك عبر الفيسبوك"><Icon src={RiLogosFacebookCircleFill} /></a
 					>
 					<a
 						href={`https://www.twitter.com/intent/tweet?text=${
@@ -90,13 +85,13 @@
 						}&url=${`https://w3ieg.com/images/${image.fields.slug}`}&hastags=وعي_مصر`}
 						target="_blank"
 						class="border-none"
-						aria-label="شارك عبر الاكس"><Icon src={RiLogoTwitterFill} /></a
+						aria-label="شارك عبر الاكس"><Icon src={RiLogosTwitterXFill} /></a
 					>
 					<a
 						href={`https://wa.me/?text=${`https://w3ieg.com/images/${image.fields.slug}`}&hastags=وعي_مصر`}
 						target="_blank"
 						class="border-none"
-						aria-label="شارك عبر الواتس"><Icon src={RiLogoWhatsappLine} /></a
+						aria-label="شارك عبر الواتس"><Icon src={RiLogosWhatsappLine} /></a
 					>
 					<span
 						class="cursor-pointer"

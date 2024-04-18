@@ -4,13 +4,18 @@
 	import logo from '../images/logo.svg';
 
 	// @ts-ignore
-	import Icon from 'svelte-icons-pack/Icon.svelte';
-	import RiLogoFacebookCircleFill from 'svelte-icons-pack/ri/RiLogoFacebookCircleFill';
-	import RiLogoInstagramLine from 'svelte-icons-pack/ri/RiLogoInstagramLine';
-	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
-	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
-	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
-	import RiLogoYoutubeFill from 'svelte-icons-pack/ri/RiLogoYoutubeFill';
+	import { Icon } from 'svelte-icons-pack';
+
+	import {
+		RiLogosTwitterXLine,
+		RiArrowsArrowLeftLine,
+		RiLogosTelegramFill,
+		RiLogosYoutubeFill,
+		RiLogosFacebookCircleFill,
+
+		RiLogosInstagramLine
+
+	} from 'svelte-icons-pack/ri';
 
 	import { footerLink } from '../../utils/footerLink';
 </script>
@@ -50,7 +55,7 @@
 						value="اشترك دلوقتي"
 						class="lg:w-36 w-full cursor-pointer text-right"
 					/>
-					<Icon src={RiSystemArrowLeftLine} size={25} />
+					<Icon src={RiArrowsArrowLeftLine} size={25} />
 				</span>
 			</form>
 		</div>
@@ -68,36 +73,35 @@
 				class="hover:text-black transition-all p-3 ease-in-out duration-300"
 				target="_blank"
 				aria-label="صفحة الفيسبوك"
-				title="تابع وعي مصر علي الفيسبوك"
-				><Icon src={RiLogoFacebookCircleFill} color="white" /></a
+				title="تابع وعي مصر علي الفيسبوك"><Icon src={RiLogosFacebookCircleFill} color="white" /></a
 			>
-			<a
+			 <a
 				href="https://www.instagram.com/w3i.eg"
 				class="hover:text-black transition-all p-3 ease-in-out duration-300"
 				target="_blank"
 				title="تابع وعي مصر علي الانستاجرام"
-				aria-label="صفحة الانستجرام"><Icon src={RiLogoInstagramLine} color="white" /></a
+				aria-label="صفحة الانستجرام"><Icon src={RiLogosInstagramLine} color="white" /></a
 			>
 			<a
 				href="https://www.twitter.com/W3iEgy"
 				class="hover:text-black transition-all p-3 ease-in-out duration-300"
 				target="_blank"
 				title="تابع وعي مصر علي الاكس (تويتر)"
-				aria-label="صفحة الاكس"><Icon src={RiLogoTwitterFill} color="white" /></a
+				aria-label="صفحة الاكس"><Icon src={RiLogosTwitterXLine} color="white" /></a
 			>
 			<a
 				href="https://t.me/W3iEgy"
 				class="hover:text-black transition-all p-3 ease-in-out duration-300"
 				target="_blank"
 				title="اشترك في قناة وعي مصر علي التليجرام"
-				aria-label="قناة التليجرام"><Icon src={RiLogoTelegramFill} color="white" /></a
+				aria-label="قناة التليجرام"><Icon src={RiLogosTelegramFill} color="white" /></a
 			>
 			<a
 				href="https://www.youtube.com/@w3istation"
 				class="hover:text-black transition-all p-3 ease-in-out duration-300"
 				target="_blank"
 				title="اشترك في محطة وعي علي اليوتيوب"
-				aria-label="قناة اليوتيوب"><Icon src={RiLogoYoutubeFill} color="white" /></a
+				aria-label="قناة اليوتيوب"><Icon src={RiLogosYoutubeFill} color="white" /></a
 			>
 		</div>
 

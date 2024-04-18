@@ -21,18 +21,12 @@
 
 	let reading;
 
-	console.log(article);
+	// console.log(article);
 
-	// @ts-ignore
-	import Icon from 'svelte-icons-pack/Icon.svelte';
+	
+	import { Icon } from 'svelte-icons-pack';
 	import { onMount } from 'svelte';
-	import RiBusinessLinksLine from 'svelte-icons-pack/ri/RiBusinessLinksLine';
-	import RiLogoFacebookCircleFill from 'svelte-icons-pack/ri/RiLogoFacebookCircleFill';
-	import RiLogoWhatsappLine from 'svelte-icons-pack/ri/RiLogoWhatsappLine';
-	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
-
-	import RiSystemCheckLine from 'svelte-icons-pack/ri/RiSystemCheckLine';
-	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
+	import {RiBusinessLinksLine, RiLogosFacebookCircleFill, RiLogosWhatsappLine, RiLogosTwitterXFill, RiSystemCheckLine, RiArrowsArrowLeftLine} from 'svelte-icons-pack/ri';
 
 	import { copy } from 'svelte-copy';
 
@@ -231,7 +225,7 @@
 							}`}
 							target="_blank"
 							class="border-none"
-							aria-label="شارك عبر الفيسبوك"><Icon src={RiLogoFacebookCircleFill} /></a
+							aria-label="شارك عبر الفيسبوك"><Icon src={RiLogosFacebookCircleFill} /></a
 						>
 						<a
 							href={`https://www.twitter.com/intent/tweet?text=${
@@ -239,13 +233,13 @@
 							}&url=${`https://w3ieg.com/post/${article.fields.slug}`}&hastags=وعي_مصر`}
 							target="_blank"
 							class="border-none"
-							aria-label="شارك عبر الاكس"><Icon src={RiLogoTwitterFill} /></a
+							aria-label="شارك عبر الاكس"><Icon src={RiLogosTwitterXFill} /></a
 						>
 						<a
 							href={`https://wa.me/?text=${`https://w3ieg.com/post/${article.fields.slug}`}&hastags=وعي_مصر`}
 							target="_blank"
 							class="border-none"
-							aria-label="شارك عبر الواتس"><Icon src={RiLogoWhatsappLine} /></a
+							aria-label="شارك عبر الواتس"><Icon src={RiLogosWhatsappLine} /></a
 						>
 						<span
 							class="cursor-pointer"
@@ -347,7 +341,7 @@
 				href="https://news.google.com/publications/CAAqBwgKMIW_pgww68zsAg"
 				aria-label="Google news"
 				target="_blank"
-				>تابعنا هنا<span><Icon color="black" src={RiSystemArrowLeftLine} /></span></a
+				>تابعنا هنا<span><Icon color="black" src={RiArrowsArrowLeftLine} /></span></a
 			>
 		</div>
 		<img src={news} class="h-20 w-20" alt="" />

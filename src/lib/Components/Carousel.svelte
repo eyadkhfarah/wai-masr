@@ -17,9 +17,8 @@
 		} else return text;
 	};
 
-	import Icon from 'svelte-icons-pack/Icon.svelte';
-	import RiSystemArrowRightSLine from 'svelte-icons-pack/ri/RiSystemArrowRightSLine';
-	import RiSystemArrowLeftSLine from 'svelte-icons-pack/ri/RiSystemArrowLeftSLine';
+	import {Icon} from 'svelte-icons-pack';
+	import {RiArrowsArrowRightLine, RiArrowsArrowLeftLine} from 'svelte-icons-pack/ri';
 	import WhiteBtn from './Button/WhiteBtn.svelte';
 
 	import { slide } from 'svelte/transition';
@@ -49,7 +48,7 @@
 			<div class="grid gap-3 p-9 place-content-between bg-gradient-to-t from-black">
 				<div class="flex items-center gap-5">
 					<button class="bg-white rounded-full p-3" on:click={right}>
-						<Icon src={RiSystemArrowRightSLine} color="black" />
+						<Icon src={RiArrowsArrowRightLine} color="black" />
 					</button>
 
 					<span class="text-white">{select + 1}</span>
@@ -57,7 +56,7 @@
 					<span class="text-white">{events.length}</span>
 
 					<button class="bg-white rounded-full p-3" on:click={left}>
-						<Icon src={RiSystemArrowLeftSLine} color="black" />
+						<Icon src={RiArrowsArrowLeftLine} color="black" />
 					</button>
 				</div>
 				<div class="slider">

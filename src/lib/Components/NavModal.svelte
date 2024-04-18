@@ -3,9 +3,9 @@
 
 	import { menu } from '../../utils/navLink';
 
-	import Icon from 'svelte-icons-pack/Icon.svelte';
-	import RiSystemCloseLine from 'svelte-icons-pack/ri/RiSystemCloseLine';
-	import FiSearch from 'svelte-icons-pack/fi/FiSearch';
+	import { Icon } from 'svelte-icons-pack';
+	import { RiSystemCloseLine } from 'svelte-icons-pack/ri';
+	import { FiSearch } from 'svelte-icons-pack/fi';
 	import { page } from '$app/stores';
 
 	export let menuTab = false;
@@ -20,7 +20,7 @@
 	>
 		<div class="flex justify-between items-center">
 			<button class="cursor-pointer p-3 text-3xl w-fit h-fit" aria-label="close" on:click>
-				<Icon src={RiSystemCloseLine} color="black" size={25}/>
+				<Icon src={RiSystemCloseLine} color="black" size={25} />
 			</button>
 
 			<span class="flex items-center gap-5 text-gray-500 font-black text-sm">
@@ -47,10 +47,10 @@
 				href={`/search-result?search=` + search}
 				aria-label={search}
 				data-sveltekit-reload
-				class="border-none"><Icon src={FiSearch} color="black" /></a
+				class="border-none"></a
 			>
 		</div>
-
+		<Icon src={FiSearch} color="black" />
 		<ul class="grid gap-9 list-none m-0 p-0">
 			{#each menu as link (link.id)}
 				{#if link.link != '/support'}

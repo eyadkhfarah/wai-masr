@@ -2,10 +2,9 @@
 // @ts-nocheck
 
 	// @ts-ignore
-	import Icon from 'svelte-icons-pack/Icon.svelte';
+	import { Icon } from 'svelte-icons-pack';
 
-	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
-	import RiDeviceRssLine from 'svelte-icons-pack/ri/RiDeviceRssLine';
+	import {RiArrowsArrowLeftLine, RiDeviceRssLine} from 'svelte-icons-pack/ri';
 
 	import H1 from '$lib/Components/Text/H1.svelte';
 	import og from '$lib/images/main.png';

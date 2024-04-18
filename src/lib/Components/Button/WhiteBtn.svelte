@@ -1,5 +1,5 @@
 <script>
-// @ts-nocheck
+	// @ts-nocheck
 
 	/**
 	 * @type {any}
@@ -10,11 +10,11 @@
 	 */
 	export let link;
 
-	export let newTab = false
+	export let newTab = false;
 
-	import Icon from 'svelte-icons-pack/Icon.svelte';
+	import { Icon } from 'svelte-icons-pack';
 
-	import RiSystemArrowLeftLine from 'svelte-icons-pack/ri/RiSystemArrowLeftLine';
+	import { RiArrowsArrowLeftLine } from 'svelte-icons-pack/ri';
 </script>
 
 <a
@@ -25,5 +25,5 @@
 	href={link}
 	rel="noopener noreferrer"
 >
-	{label}<span><Icon color="red" src={RiSystemArrowLeftLine} size={20}/></span>
+	{label}<span><Icon color="red" src={RiArrowsArrowLeftLine} size={20} /></span>
 </a>

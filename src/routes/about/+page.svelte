@@ -6,13 +6,14 @@
 	let desc = `أهلًا بيكم في وعي - مصر إحنا هنا فى "وعي" بنقدم نفسنا إننا جزء من مشروع أكبر ألا وهو مشروع الوعي القومي المصري.`;
 	
 	// @ts-ignore
-	import Icon from 'svelte-icons-pack/Icon.svelte';
-	import RiLogoFacebookCircleFill from 'svelte-icons-pack/ri/RiLogoFacebookCircleFill';
-	import RiLogoInstagramLine from 'svelte-icons-pack/ri/RiLogoInstagramLine';
-	import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
-	import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
+	import { Icon } from 'svelte-icons-pack';
+	// import RiLogoFacebookCircleFill from 'svelte-icons-pack/ri/RiLogoFacebookCircleFill';
+	// import RiLogoInstagramLine from 'svelte-icons-pack/ri/RiLogoInstagramLine';
+	// import RiLogoTwitterFill from 'svelte-icons-pack/ri/RiLogoTwitterFill';
+	// import RiLogoTelegramFill from 'svelte-icons-pack/ri/RiLogoTelegramFill';
 	import H1 from '$lib/Components/Text/H1.svelte';
 	import News from '$lib/Components/News.svelte';
+	import AdsRegtangle from '$lib/Components/Ads/AdsRegtangle.svelte';
 
 </script>
 
@@ -64,6 +65,7 @@
 </svelte:head>
 
 <section>
+	<AdsRegtangle />
 	<article>
 		<H1>احنا مين؟</H1>
 
@@ -130,7 +132,7 @@
 
 		<h3>تابع حسابتنا على وسائل التواصل الإجتماعي المختلفة:</h3>
 
-		<div class="flex items-center gap-5 text-3xl my-5">
+		<!-- <div class="flex items-center gap-5 text-3xl my-5">
 			<a
 				href="https://web.facebook.com/W3i.EG"
 				class="hover:text-black transition-all border-none ease-in-out duration-300"
@@ -151,7 +153,7 @@
 				class="hover:text-black transition-all border-none ease-in-out duration-300"
 				aria-label="صفحة الاكس"><Icon src={RiLogoTelegramFill} color="black" /></a
 			>
-		</div>
+		</div> -->
 
 		<p>تقدر تشاركنا و تشوف كل أخبارنا و مقالاتنا علي الهاشتاجات الخاصة بينا</p>
 
